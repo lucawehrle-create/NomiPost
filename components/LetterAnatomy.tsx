@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
 import ImageSlot from "./ImageSlot";
@@ -78,32 +78,32 @@ export default function LetterAnatomy() {
       />
 
       <div className="container-wide relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-          <div className="eyebrow mb-6 justify-center">
-            <span className="w-10 h-px bg-mattgold" />
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 lg:mb-20">
+          <div className="eyebrow mb-5 md:mb-6 justify-center">
+            <span className="w-8 md:w-10 h-px bg-mattgold" />
             Was im Umschlag steckt
-            <span className="w-10 h-px bg-mattgold" />
+            <span className="w-8 md:w-10 h-px bg-mattgold" />
           </div>
           <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
             Ein ganzes Abenteuer.
             <br />
             <span className="italic">Zum Anfassen.</span>
           </h2>
-          <p className="mt-8 text-lg lg:text-xl text-tintengrau leading-relaxed max-w-2xl mx-auto text-pretty">
+          <p className="mt-6 md:mt-8 text-base md:text-lg lg:text-xl text-tintengrau leading-relaxed max-w-2xl mx-auto text-pretty">
             Jeder Brief ist kein Stapel Papier. Er ist eine kleine Reise, die
             dein Kind aus dem Umschlag holt – zehn Seiten plus Beilagen,
             erzählerisch verwoben in Nomis Welt.
           </p>
-          <HandDivider className="mt-10" />
+          <HandDivider className="mt-8 md:mt-10" />
         </div>
 
         {/* ─── BILD-SLOT: Letter Preview ─────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-5xl mx-auto mb-20 lg:mb-24"
+          className="max-w-5xl mx-auto mb-12 md:mb-20 lg:mb-24"
         >
           <ImageSlot
             src=""
@@ -121,32 +121,32 @@ export default function LetterAnatomy() {
         </motion.div>
 
         {/* 6 Content-Karten im Raster */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true, margin: "-40px" }}
               transition={{
-                duration: 0.7,
-                delay: (i % 3) * 0.1,
+                duration: 0.6,
+                delay: (i % 3) * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="paper-card p-8 lg:p-10 hand-border group hover:-translate-y-2 transition-all duration-500"
+              className="paper-card p-6 md:p-8 lg:p-10 hand-border group hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-500"
             >
-              <div className="flex items-start justify-between mb-5">
-                <span className="handwritten text-2xl text-mattgold-dark">
+              <div className="flex items-start justify-between mb-4 md:mb-5">
+                <span className="handwritten text-xl md:text-2xl text-mattgold-dark">
                   {item.label}
                 </span>
                 <span className="text-mattgold text-lg group-hover:rotate-[90deg] transition-transform duration-700">
                   ✦
                 </span>
               </div>
-              <h3 className="headline-serif text-xl lg:text-2xl font-semibold text-nomi-violet mb-3 leading-tight">
+              <h3 className="headline-serif text-lg md:text-xl lg:text-2xl font-semibold text-nomi-violet mb-2 md:mb-3 leading-tight">
                 {item.title}
               </h3>
-              <p className="text-[0.95rem] text-tintengrau leading-relaxed text-pretty">
+              <p className="text-[0.9rem] md:text-[0.95rem] text-tintengrau leading-relaxed text-pretty">
                 {item.description}
               </p>
             </motion.div>
@@ -157,22 +157,22 @@ export default function LetterAnatomy() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-20 lg:mt-24 max-w-5xl mx-auto"
+          className="mt-14 md:mt-20 lg:mt-24 max-w-5xl mx-auto"
         >
-          <div className="paper-card hand-border paper-card-elevated p-10 md:p-14 lg:p-16 relative">
-            <div className="absolute -top-4 left-12 bg-mattgold text-warmcreme px-5 py-1.5 text-[10px] uppercase tracking-[0.25em] font-semibold rounded-sm shadow-md">
+          <div className="paper-card hand-border paper-card-elevated p-7 md:p-14 lg:p-16 relative">
+            <div className="absolute -top-3.5 left-6 md:left-12 bg-mattgold text-warmcreme px-4 md:px-5 py-1.5 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-semibold rounded-sm shadow-md">
               Und obendrauf
             </div>
-            <h3 className="headline-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-nomi-violet mb-10 leading-tight">
+            <h3 className="headline-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-nomi-violet mb-7 md:mb-10 leading-tight">
               Die physischen Beweise
               <br />
-              <span className="italic text-tintengrau text-xl md:text-2xl lg:text-3xl font-normal">
+              <span className="italic text-tintengrau text-lg md:text-2xl lg:text-3xl font-normal">
                 von Nomis Reise
               </span>
             </h3>
-            <ul className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+            <ul className="grid sm:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
               {extras.map((e) => (
                 <li
                   key={e.text}
@@ -199,9 +199,9 @@ export default function LetterAnatomy() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-16 max-w-4xl mx-auto text-center"
+          className="mt-12 md:mt-16 max-w-4xl mx-auto text-center px-2"
         >
-          <p className="handwritten text-2xl lg:text-3xl text-nomi-violet leading-relaxed">
+          <p className="handwritten text-xl md:text-2xl lg:text-3xl text-nomi-violet leading-relaxed">
             Beim ersten Brief liegt außerdem ein ganzes Willkommens-Paket
             bei: Sammelmappe, A2-Poster, Namensaufkleber und ein
             Abenteuer-Ausweis – damit dein Kind von Tag eins weiß:

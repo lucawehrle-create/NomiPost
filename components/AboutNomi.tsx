@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import CompassRose from "./CompassRose";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
@@ -36,17 +36,17 @@ export default function AboutNomi() {
       />
 
       <div className="container-wide relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-10 md:gap-14 lg:gap-20 items-center max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 flex justify-center"
+            className="lg:col-span-5 flex justify-center order-first"
           >
             {/* Nomi-Portrait mit goldenem Kompass-Akzent */}
-            <div className="relative w-full max-w-[380px]">
-              <div className="absolute inset-0 bg-mattgold/15 blur-[80px] rounded-full scale-110" />
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px]">
+              <div className="absolute inset-0 bg-mattgold/15 blur-[60px] md:blur-[80px] rounded-full scale-110" />
 
               {/* Bild-Slot im Vordergrund */}
               <div className="relative">
@@ -63,11 +63,11 @@ export default function AboutNomi() {
               </div>
 
               {/* Kleine schwebende Kompassrose als Akzent rechts oben */}
-              <div className="absolute -top-6 -right-6 w-20 lg:w-24 animate-float z-20">
+              <div className="absolute -top-5 -right-5 md:-top-6 md:-right-6 w-16 md:w-20 lg:w-24 animate-float z-20">
                 <CompassRose className="w-full h-full gold-glow" />
               </div>
 
-              <p className="handwritten text-center mt-6 text-xl lg:text-2xl text-nomi-violet">
+              <p className="handwritten text-center mt-5 md:mt-6 text-lg md:text-xl lg:text-2xl text-nomi-violet">
                 Nomi mit ihrem goldenen Kompass ✦
               </p>
             </div>
@@ -80,17 +80,17 @@ export default function AboutNomi() {
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7"
           >
-            <div className="eyebrow mb-6">
-              <span className="w-10 h-px bg-mattgold" />
+            <div className="eyebrow mb-5 md:mb-6">
+              <span className="w-8 md:w-10 h-px bg-mattgold" />
               Wer ist Nomi?
             </div>
-            <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] mb-8 text-balance">
+            <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] mb-6 md:mb-8 text-balance">
               Die Entdeckerin,
               <br />
               <span className="italic">die dein Kind in sein Zimmer einlädt.</span>
             </h2>
-            <HandDivider className="mb-8 justify-start" />
-            <div className="space-y-5 text-lg text-tintengrau leading-relaxed text-pretty max-w-2xl">
+            <HandDivider className="mb-6 md:mb-8 justify-start" />
+            <div className="space-y-4 md:space-y-5 text-base md:text-lg text-tintengrau leading-relaxed text-pretty max-w-2xl">
               <p>
                 Nomi ist kein Maskottchen. Sie ist die Absenderin jedes Briefes,
                 die Erzählerin jeder Geschichte – und die unsichtbare Freundin,
@@ -110,13 +110,13 @@ export default function AboutNomi() {
             </div>
 
             {/* Traits als Mini-Grid */}
-            <div className="mt-10 grid sm:grid-cols-3 gap-5">
+            <div className="mt-8 md:mt-10 grid sm:grid-cols-3 gap-4 md:gap-5">
               {traits.map((t) => (
                 <div
                   key={t.title}
                   className="border-l-[1.5px] border-mattgold/40 pl-4 py-1"
                 >
-                  <p className="headline-serif text-lg font-semibold text-nomi-violet mb-1">
+                  <p className="headline-serif text-base md:text-lg font-semibold text-nomi-violet mb-1">
                     {t.title}
                   </p>
                   <p className="text-xs text-tintengrau-light leading-relaxed">
@@ -126,11 +126,11 @@ export default function AboutNomi() {
               ))}
             </div>
 
-            <div className="mt-10 p-8 paper-card hand-border paper-card-elevated relative">
-              <span className="absolute -top-3 left-8 bg-warmcreme px-3 text-mattgold text-xl">
+            <div className="mt-8 md:mt-10 p-6 md:p-8 paper-card hand-border paper-card-elevated relative">
+              <span className="absolute -top-3 left-6 md:left-8 bg-warmcreme px-3 text-mattgold text-xl">
                 &ldquo;
               </span>
-              <p className="handwritten text-xl lg:text-2xl text-nomi-violet italic leading-relaxed">
+              <p className="handwritten text-lg md:text-xl lg:text-2xl text-nomi-violet italic leading-relaxed">
                 Psst&hellip; ich verrate dir ein Geheimnis. Unter den Steinen
                 am Bach lebt etwas, das noch nie jemand gesehen hat. Wollen
                 wir herausfinden, was es ist?

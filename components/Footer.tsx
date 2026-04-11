@@ -2,24 +2,24 @@ import CompassRose from "./CompassRose";
 
 export default function Footer() {
   return (
-    <footer className="relative pt-20 pb-12 lg:pt-28 lg:pb-14 border-t border-nomi-violet/10 bg-gradient-to-b from-warmcreme to-warmcreme-dark/40">
+    <footer className="relative pt-14 pb-10 md:pt-20 md:pb-12 lg:pt-28 lg:pb-14 border-t border-nomi-violet/10 bg-gradient-to-b from-warmcreme to-warmcreme-dark/40">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-start">
+          <div className="sm:col-span-2 lg:col-span-5">
+            <div className="flex items-center gap-3 mb-4 md:mb-5">
+              <div className="w-11 h-11 md:w-12 md:h-12">
                 <CompassRose className="w-full h-full" />
               </div>
-              <span className="headline-serif text-2xl font-semibold text-nomi-violet">
+              <span className="headline-serif text-xl md:text-2xl font-semibold text-nomi-violet">
                 NomiPost
               </span>
             </div>
-            <p className="text-sm lg:text-base text-tintengrau-light leading-relaxed max-w-sm mb-6">
+            <p className="text-sm lg:text-base text-tintengrau-light leading-relaxed max-w-sm mb-5 md:mb-6">
               Persönliche Post für kleine Entdecker. Handgemachte Abenteuer in
               Briefform, jeden Monat neu. Ein Kunstwerk, das dein Kind in
               zwanzig Jahren noch aus dem Regal zieht.
             </p>
-            <p className="handwritten text-lg text-mattgold-dark flex items-center gap-2">
+            <p className="handwritten text-base md:text-lg text-mattgold-dark flex items-center gap-2">
               <span className="w-6 h-px bg-mattgold-dark" />
               Mit Sorgfalt aus Deutschland ✦
             </p>
@@ -84,7 +84,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 lg:mt-20 pt-8 border-t border-nomi-violet/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-tintengrau-light">
+        <div className="mt-10 md:mt-16 lg:mt-20 pt-6 md:pt-8 border-t border-nomi-violet/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-tintengrau-light">
           <p>© {new Date().getFullYear()} NomiPost · Mit Liebe gestaltet ✦</p>
           <div className="flex items-center gap-6">
             <a

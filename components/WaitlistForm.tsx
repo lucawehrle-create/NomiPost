@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 
 type Step = "form" | "survey" | "done";
 
@@ -135,7 +135,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
   const containerClass =
     variant === "hero"
       ? "w-full"
-      : "paper-card hand-border paper-card-elevated p-8 md:p-10 lg:p-12 w-full max-w-2xl mx-auto";
+      : "paper-card hand-border paper-card-elevated p-6 md:p-10 lg:p-12 w-full max-w-2xl mx-auto";
 
   return (
     <div className={containerClass}>

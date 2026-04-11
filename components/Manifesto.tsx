@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import WatercolorBlob from "./WatercolorBlob";
 
 export default function Manifesto() {
   return (
-    <section className="relative py-28 md:py-36 lg:py-44 overflow-hidden">
+    <section className="relative py-20 md:py-32 lg:py-44 overflow-hidden">
       <div className="absolute inset-0 bg-nomi-violet" />
 
       {/* Subtile Sterne im Hintergrund */}
@@ -60,14 +60,14 @@ export default function Manifesto() {
           <motion.blockquote
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <span className="absolute -top-12 lg:-top-16 left-1/2 -translate-x-1/2 headline-serif text-8xl lg:text-[10rem] text-mattgold/40 leading-none font-serif">
+            <span className="absolute -top-8 md:-top-12 lg:-top-16 left-1/2 -translate-x-1/2 headline-serif text-7xl md:text-8xl lg:text-[10rem] text-mattgold/40 leading-none font-serif">
               &ldquo;
             </span>
-            <p className="headline-serif text-[clamp(1.75rem,3.5vw,3.25rem)] font-medium text-warmcreme leading-[1.25] italic text-balance">
+            <p className="headline-serif text-[clamp(1.375rem,4.5vw,3.25rem)] font-semibold text-warmcreme leading-[1.25] italic text-balance">
               Das Ziel ist nicht, dass Eltern ein Abo kaufen.
               <br />
               Das Ziel ist, dass ein Kind in zwanzig Jahren sagt:
@@ -95,7 +95,7 @@ export default function Manifesto() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-8 text-warmcreme/70 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto text-pretty"
+            className="mt-6 md:mt-8 text-warmcreme/70 text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto text-pretty"
           >
             Jeder Brief ist ein Kunstwerk. Jede Geschichte ein Abenteuer. Jedes
             Detail eine bewusste Entscheidung. Wir bauen NomiPost nicht, um zu

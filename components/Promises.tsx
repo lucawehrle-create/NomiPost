@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import HandDivider from "./HandDivider";
 
 const promises = [
@@ -106,31 +106,31 @@ export default function Promises() {
   return (
     <section className="section-spacing relative">
       <div className="container-wide">
-        <div className="text-center max-w-3xl mx-auto mb-20 lg:mb-24">
-          <div className="eyebrow mb-6 justify-center">
-            <span className="w-10 h-px bg-mattgold" />
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-24">
+          <div className="eyebrow mb-5 md:mb-6 justify-center">
+            <span className="w-8 md:w-10 h-px bg-mattgold" />
             Unser Versprechen
-            <span className="w-10 h-px bg-mattgold" />
+            <span className="w-8 md:w-10 h-px bg-mattgold" />
           </div>
           <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
             Drei Versprechen,
             <br />
             <span className="italic">auf die wir alles setzen</span>
           </h2>
-          <HandDivider className="mt-10" />
+          <HandDivider className="mt-8 md:mt-10" />
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8 lg:gap-16 max-w-7xl mx-auto">
           {promises.map((p, i) => (
             <motion.div
               key={p.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="text-center group"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center group sm:last:col-span-2 lg:last:col-span-1"
             >
-              <div className="relative w-24 h-24 lg:w-28 lg:h-28 mx-auto mb-8 transition-transform duration-700 group-hover:-translate-y-1 group-hover:rotate-[-2deg]">
+              <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 mx-auto mb-5 md:mb-8 transition-transform duration-700 group-hover:-translate-y-1 group-hover:rotate-[-2deg]">
                 <div className="absolute inset-0 bg-mattgold/10 rounded-full blur-2xl scale-75" />
                 <div className="relative">{p.icon}</div>
               </div>

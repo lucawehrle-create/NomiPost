@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import CompassRose from "./CompassRose";
 import EnvelopeIllustration from "./EnvelopeIllustration";
 import WatercolorBlob from "./WatercolorBlob";
@@ -10,30 +10,45 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-44 lg:pb-28"
+      className="relative overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28"
     >
       {/* Dezente Aquarell-Akzente im Hintergrund */}
       <WatercolorBlob
-        className="absolute -top-40 -left-32 w-[700px] opacity-60 pointer-events-none"
+        className="absolute -top-20 -left-20 w-[500px] md:w-[700px] opacity-50 pointer-events-none"
         color="#C9A84B"
         variant={1}
       />
       <WatercolorBlob
-        className="absolute top-60 -right-40 w-[800px] opacity-40 pointer-events-none"
+        className="absolute top-60 -right-40 w-[500px] md:w-[800px] opacity-30 md:opacity-40 pointer-events-none"
         color="#3B2D5F"
         variant={2}
       />
 
-      {/* Dekorative Sterne verteilt */}
-      <div className="absolute top-32 left-[12%] text-mattgold/40 text-2xl hidden lg:block animate-float-slow">
+      {/* Dekorative Sterne – jetzt auch auf Mobile */}
+      <div className="absolute top-28 right-[8%] text-mattgold/40 text-lg md:text-xl lg:text-2xl animate-float-slow pointer-events-none">
         ✦
       </div>
-      <div className="absolute top-48 right-[22%] text-mattgold/30 text-xl hidden lg:block animate-float">
+      <div className="absolute top-40 left-[6%] text-mattgold/30 text-base md:text-lg lg:text-xl hidden sm:block animate-float pointer-events-none">
         ✦
       </div>
 
       <div className="container-wide relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
+          {/* ───── Mobile-only Umschlag-Vignette (kompakt, oben) ───── */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+            animate={{ opacity: 1, scale: 1, rotate: -3 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden relative mx-auto w-[240px] sm:w-[280px] -mb-4"
+          >
+            <div className="absolute -top-2 -right-2 w-16 sm:w-20 animate-float z-20">
+              <CompassRose className="w-full h-full gold-glow" />
+            </div>
+            <div className="absolute inset-0 bg-nomi-violet/10 blur-3xl rounded-full" />
+            <EnvelopeIllustration className="relative w-full drop-shadow-[0_15px_30px_rgba(59,45,95,0.2)]" />
+          </motion.div>
+
+          {/* ───── Content Column ───── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,25 +59,26 @@ export default function Hero() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="eyebrow mb-8"
+              className="eyebrow mb-5 md:mb-8"
             >
-              <span className="w-10 h-px bg-mattgold" />
-              Persönliche Post für kleine Entdecker
-              <span className="text-mattgold">✦</span>
+              <span className="w-8 md:w-10 h-px bg-mattgold" />
+              <span className="whitespace-nowrap">Persönliche Post für kleine Entdecker</span>
+              <span className="text-mattgold hidden sm:inline">✦</span>
             </motion.div>
 
-            <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
+            <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2rem,7.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
               Ein Brief, der dein Kind{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 italic text-nomi-violet">
                   zum Leuchten
                 </span>
                 <svg
-                  className="absolute -bottom-2 lg:-bottom-3 left-0 w-full"
+                  className="absolute -bottom-1 md:-bottom-2 lg:-bottom-3 left-0 w-full"
                   viewBox="0 0 300 16"
                   fill="none"
                   preserveAspectRatio="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     d="M 3 10 Q 80 2 150 8 T 297 6"
@@ -80,33 +96,33 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="mt-8 lg:mt-10 text-lg md:text-xl text-tintengrau leading-relaxed max-w-[36rem] text-pretty"
+              className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-tintengrau leading-relaxed max-w-[36rem] text-pretty"
             >
               Einmal im Monat trifft ein Umschlag im Briefkasten ein –
               handgemacht, persönlich adressiert, von{" "}
               <span className="text-nomi-violet font-semibold">Nomi</span>.
-              Keine App, kein Bildschirm, keine Batterien. Nur ein Kunstwerk
-              aus Papier, das dein Kind Jahre später noch aus dem Regal ziehen
-              wird.
+              Keine App, kein Bildschirm. Nur ein Kunstwerk aus Papier, das
+              dein Kind Jahre später noch aus dem Regal zieht.
             </motion.p>
 
-            {/* Inline-Form direkt im Hero – max. Conversion */}
+            {/* Inline-Form direkt im Hero */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-8 lg:mt-10 max-w-[38rem]"
+              className="mt-8 md:mt-10 max-w-[38rem]"
             >
               <WaitlistForm variant="hero" />
             </motion.div>
 
+            {/* Social Proof */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-10 flex items-center gap-5 text-sm text-tintengrau-light"
+              className="mt-8 md:mt-10 flex items-center gap-4 md:gap-5 text-sm text-tintengrau-light"
             >
-              <div className="flex -space-x-2.5">
+              <div className="flex -space-x-2.5 flex-shrink-0">
                 {[
                   { bg: "#C9A84B", letters: "LM" },
                   { bg: "#3B2D5F", letters: "JK" },
@@ -115,7 +131,7 @@ export default function Hero() {
                 ].map((p, i) => (
                   <div
                     key={i}
-                    className="w-9 h-9 rounded-full border-[3px] border-warmcreme flex items-center justify-center text-[11px] text-warmcreme font-semibold shadow-sm"
+                    className="w-8 h-8 md:w-9 md:h-9 rounded-full border-[3px] border-warmcreme flex items-center justify-center text-[10px] md:text-[11px] text-warmcreme font-semibold shadow-sm"
                     style={{ backgroundColor: p.bg }}
                   >
                     {p.letters}
@@ -123,35 +139,33 @@ export default function Hero() {
                 ))}
               </div>
               <p className="leading-tight">
-                <span className="font-semibold text-nomi-violet">
-                  Die ersten Familien halten schon Wache am Briefkasten.
+                <span className="font-semibold text-nomi-violet text-[13px] md:text-sm">
+                  Die ersten Familien sind schon dabei.
                 </span>
                 <br />
-                <span className="text-xs">
-                  Werde Teil der ersten Welle von Abenteurern.
+                <span className="text-[11px] md:text-xs">
+                  Werde Teil der ersten Welle.
                 </span>
               </p>
             </motion.div>
           </motion.div>
 
+          {/* ───── Desktop-only: Großer Umschlag + Handwritten Note ───── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="lg:col-span-5 relative hidden lg:block"
           >
-            {/* Schwebende Kompassrose als Akzent */}
             <div className="absolute -top-8 -right-4 lg:-right-8 w-28 lg:w-36 xl:w-40 animate-float z-20">
               <CompassRose className="w-full h-full gold-glow" />
             </div>
 
-            {/* Leicht gekippter Umschlag */}
             <div className="relative transform rotate-[-3deg] hover:rotate-0 transition-transform duration-[800ms] ease-out">
               <div className="absolute inset-0 bg-nomi-violet/15 blur-3xl rounded-full" />
               <EnvelopeIllustration className="relative w-full max-w-xl mx-auto drop-shadow-[0_25px_50px_rgba(59,45,95,0.25)]" />
             </div>
 
-            {/* Handgeschriebene Notiz */}
             <motion.div
               initial={{ opacity: 0, rotate: -5, y: 20 }}
               animate={{ opacity: 1, rotate: 2, y: 0 }}

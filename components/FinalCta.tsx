@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
 
@@ -20,32 +20,32 @@ export default function FinalCta() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl mx-auto text-center"
         >
-          <div className="eyebrow mb-6 justify-center">
-            <span className="w-10 h-px bg-mattgold" />
-            Nomi packt schon den ersten Umschlag
-            <span className="w-10 h-px bg-mattgold" />
+          <div className="eyebrow mb-5 md:mb-6 justify-center">
+            <span className="w-8 md:w-10 h-px bg-mattgold" />
+            <span className="text-pretty">Nomi packt schon den ersten Umschlag</span>
+            <span className="w-8 md:w-10 h-px bg-mattgold" />
           </div>
 
-          <h2 className="headline-serif text-4xl md:text-5xl lg:text-[3.5rem] font-semibold text-nomi-violet leading-[1.05] text-balance">
+          <h2 className="headline-serif text-[clamp(2rem,6.5vw,3.5rem)] font-semibold text-nomi-violet leading-[1.05] text-balance">
             Sei dabei,
             <br />
             <span className="italic">wenn die Post losgeht.</span>
           </h2>
 
-          <HandDivider className="mt-8 mb-8" />
+          <HandDivider className="mt-6 md:mt-8 mb-6 md:mb-8" />
 
-          <p className="text-lg text-tintengrau leading-relaxed max-w-xl mx-auto text-pretty">
+          <p className="text-base md:text-lg text-tintengrau leading-relaxed max-w-xl mx-auto text-pretty">
             Vorname, E-Mail, fertig. Keine Werbung, kein Weitersagen, kein
             Stress. Nur eine Nachricht, sobald Nomis erster Brief auf die
             Reise geht – und die Zusicherung, dass du zur allerersten Welle
             gehörst.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-4">
             <a href="#top" className="btn-primary">
               Jetzt eintragen
               <svg
@@ -54,6 +54,7 @@ export default function FinalCta() {
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M12 19V5M5 12l7-7 7 7"
@@ -66,7 +67,7 @@ export default function FinalCta() {
             </a>
           </div>
 
-          <p className="handwritten text-xl text-mattgold-dark mt-10">
+          <p className="handwritten text-lg md:text-xl text-mattgold-dark mt-8 md:mt-10">
             Wir freuen uns auf dich ✦
           </p>
         </motion.div>

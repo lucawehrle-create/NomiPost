@@ -17,16 +17,20 @@ export default function Navigation() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-warmcreme/85 backdrop-blur-xl border-b border-nomi-violet/5 shadow-[0_1px_20px_-5px_rgba(59,45,95,0.08)]"
+          ? "bg-warmcreme/90 backdrop-blur-xl border-b border-nomi-violet/5 shadow-[0_1px_20px_-5px_rgba(59,45,95,0.08)]"
           : "bg-transparent"
       }`}
     >
-      <div className="container-wide flex items-center justify-between py-5 lg:py-6">
-        <a href="#top" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 lg:w-11 lg:h-11 transition-transform duration-700 group-hover:rotate-[15deg]">
+      <div className="container-wide flex items-center justify-between py-3.5 md:py-5 lg:py-6">
+        <a
+          href="#top"
+          className="flex items-center gap-2.5 md:gap-3 group min-h-[44px]"
+          aria-label="NomiPost Startseite"
+        >
+          <div className="w-9 h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 transition-transform duration-700 group-hover:rotate-[15deg]">
             <CompassRose className="w-full h-full" />
           </div>
-          <span className="headline-serif text-xl lg:text-[1.35rem] font-semibold text-nomi-violet tracking-tight">
+          <span className="headline-serif text-lg md:text-xl lg:text-[1.35rem] font-semibold text-nomi-violet tracking-tight">
             NomiPost
           </span>
         </a>
@@ -34,23 +38,27 @@ export default function Navigation() {
         <nav className="hidden md:flex items-center gap-8 text-[0.9rem] font-medium text-nomi-violet/75">
           <a
             href="#was"
-            className="relative hover:text-nomi-violet transition-colors duration-300 group"
+            className="relative hover:text-nomi-violet transition-colors duration-300 group py-2"
           >
             Was drin ist
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
+            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
           </a>
           <a
             href="#faq"
-            className="relative hover:text-nomi-violet transition-colors duration-300 group"
+            className="relative hover:text-nomi-violet transition-colors duration-300 group py-2"
           >
             Fragen
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
+            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
           </a>
         </nav>
 
-        <a href="#top" className="btn-primary py-2.5 px-5 lg:px-6 text-sm">
-          Warteliste
-          <span className="text-mattgold-light text-xs">✦</span>
+        <a
+          href="#top"
+          className="btn-primary py-2.5 px-4 md:px-5 lg:px-6 text-[0.8rem] md:text-sm min-h-[44px]"
+        >
+          <span className="hidden sm:inline">Warteliste</span>
+          <span className="sm:hidden">Jetzt dabei sein</span>
+          <span className="text-mattgold-light text-xs hidden sm:inline">✦</span>
         </a>
       </div>
     </header>

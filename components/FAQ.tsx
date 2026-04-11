@@ -40,21 +40,21 @@ export default function FAQ() {
   return (
     <section id="faq" className="section-spacing relative">
       <div className="container-wide relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-          <div className="eyebrow mb-6 justify-center">
-            <span className="w-10 h-px bg-mattgold" />
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 lg:mb-20">
+          <div className="eyebrow mb-5 md:mb-6 justify-center">
+            <span className="w-8 md:w-10 h-px bg-mattgold" />
             Häufige Fragen
-            <span className="w-10 h-px bg-mattgold" />
+            <span className="w-8 md:w-10 h-px bg-mattgold" />
           </div>
           <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
             Noch ein paar Antworten
             <br />
             <span className="italic">für dich</span>
           </h2>
-          <HandDivider className="mt-10" />
+          <HandDivider className="mt-8 md:mt-10" />
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
           {faqs.map((faq, i) => (
             <div
               key={i}
@@ -62,14 +62,14 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-5 p-6 md:p-7 text-left group"
+                className="w-full flex items-center justify-between gap-3 md:gap-5 p-5 md:p-6 lg:p-7 text-left group min-h-[64px]"
                 aria-expanded={open === i}
               >
-                <span className="headline-serif text-lg md:text-xl font-semibold text-nomi-violet pr-4">
+                <span className="headline-serif text-base md:text-lg lg:text-xl font-semibold text-nomi-violet pr-2 md:pr-4 leading-snug">
                   {faq.q}
                 </span>
                 <span
-                  className={`flex-shrink-0 w-9 h-9 rounded-full border-[1.5px] border-mattgold flex items-center justify-center text-mattgold-dark transition-all duration-500 group-hover:bg-mattgold group-hover:text-warmcreme ${
+                  className={`flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-full border-[1.5px] border-mattgold flex items-center justify-center text-mattgold-dark transition-all duration-500 group-hover:bg-mattgold group-hover:text-warmcreme ${
                     open === i ? "rotate-45 bg-mattgold text-warmcreme" : ""
                   }`}
                   aria-hidden="true"
@@ -92,9 +92,9 @@ export default function FAQ() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-6 md:px-7 pb-7">
-                    <div className="h-px bg-mattgold/20 mb-5" />
-                    <p className="text-tintengrau leading-relaxed text-pretty">
+                  <div className="px-5 md:px-6 lg:px-7 pb-6 md:pb-7">
+                    <div className="h-px bg-mattgold/20 mb-4 md:mb-5" />
+                    <p className="text-sm md:text-base text-tintengrau leading-relaxed text-pretty">
                       {faq.a}
                     </p>
                   </div>

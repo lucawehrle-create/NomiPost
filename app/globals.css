@@ -61,31 +61,31 @@
 }
 
 @layer components {
-  /* Container: Premium Breakpoints für moderne Desktops */
+  /* Container: Mobile-first (px-5 = 20px), Desktop großzügig */
   .container-narrow {
-    @apply mx-auto w-full max-w-5xl px-6 md:px-10 lg:px-16;
+    @apply mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 lg:px-16;
   }
 
   .container-wide {
-    @apply mx-auto w-full max-w-[88rem] px-6 md:px-10 lg:px-16 xl:px-20;
+    @apply mx-auto w-full max-w-[88rem] px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20;
   }
 
   .container-ultra {
-    @apply mx-auto w-full max-w-[96rem] px-6 md:px-10 lg:px-16 xl:px-24;
+    @apply mx-auto w-full max-w-[96rem] px-5 sm:px-6 md:px-10 lg:px-16 xl:px-24;
   }
 
-  /* Section-Spacing – stark skalierend auf Desktop */
+  /* Section-Spacing – mobile-first, stark skalierend auf Desktop */
   .section-spacing {
-    @apply py-24 md:py-32 lg:py-40;
+    @apply py-16 md:py-24 lg:py-40;
   }
 
   .section-spacing-sm {
-    @apply py-20 md:py-24 lg:py-32;
+    @apply py-14 md:py-20 lg:py-32;
   }
 
-  /* Buttons – mit echtem Premium-Feeling */
+  /* Buttons – mit echtem Premium-Feeling, Touch-freundlich (min 44px) */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-3 rounded-full bg-nomi-violet px-8 py-4 text-base font-semibold text-warmcreme transition-all duration-500 ease-out;
+    @apply relative inline-flex items-center justify-center gap-3 rounded-full bg-nomi-violet px-7 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-warmcreme transition-all duration-500 ease-out min-h-[48px];
     box-shadow:
       0 1px 0 rgba(255, 248, 240, 0.15) inset,
       0 10px 30px -10px rgba(59, 45, 95, 0.4),
@@ -129,7 +129,7 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-nomi-violet/25 bg-warmcreme/50 backdrop-blur-sm px-8 py-4 text-base font-semibold text-nomi-violet transition-all duration-500 ease-out hover:border-nomi-violet/60 hover:bg-warmcreme hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-nomi-violet/25 bg-warmcreme/50 backdrop-blur-sm px-7 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-nomi-violet transition-all duration-500 ease-out hover:border-nomi-violet/60 hover:bg-warmcreme hover:-translate-y-0.5 min-h-[48px];
   }
 
   /* Eyebrow Label – der kleine Gold-Akzent über jeder Headline */
@@ -185,18 +185,19 @@
     background-size: 120px 6px;
   }
 
-  /* Input im Papier-Look */
+  /* Input im Papier-Look – Touch-freundlich (min 48px) + kein iOS-Zoom */
   .paper-input {
-    @apply w-full rounded-lg border-[1.5px] border-nomi-violet/15 bg-warmcreme/70 px-5 py-4 text-base text-tintengrau placeholder:text-tintengrau-light/70 transition-all duration-300 focus:border-nomi-violet focus:bg-warmcreme focus:outline-none focus:ring-4 focus:ring-nomi-violet/10;
+    @apply w-full rounded-lg border-[1.5px] border-nomi-violet/15 bg-warmcreme/70 px-5 py-4 text-base text-tintengrau placeholder:text-tintengrau-light/70 transition-all duration-300 focus:border-nomi-violet focus:bg-warmcreme focus:outline-none focus:ring-4 focus:ring-nomi-violet/10 min-h-[52px];
+    font-size: 16px; /* verhindert ungewolltes Zoom auf iOS beim Focus */
   }
 
   .paper-select {
     @apply paper-input appearance-none bg-[url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%20fill='%233B2D5F'%3E%3Cpath%20d='M5.25%207.5L10%2012.25%2014.75%207.5z'/%3E%3C/svg%3E")] bg-[length:20px_20px] bg-[right_1.25rem_center] bg-no-repeat pr-12 cursor-pointer;
   }
 
-  /* Tag/Chip Button für Multi-Select */
+  /* Tag/Chip Button für Multi-Select – Touch-freundlich */
   .chip {
-    @apply cursor-pointer select-none rounded-full border-[1.5px] border-nomi-violet/20 bg-warmcreme px-4 py-2 text-sm font-medium text-nomi-violet transition-all duration-300 hover:border-nomi-violet/60 hover:-translate-y-0.5;
+    @apply cursor-pointer select-none rounded-full border-[1.5px] border-nomi-violet/20 bg-warmcreme px-4 py-2.5 text-sm font-medium text-nomi-violet transition-all duration-300 hover:border-nomi-violet/60 hover:-translate-y-0.5 min-h-[40px] inline-flex items-center;
   }
 
   .chip-active {
