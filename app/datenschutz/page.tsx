@@ -186,20 +186,15 @@ export default function DatenschutzPage() {
           Eintrag aktiviert und wir dürfen dich zum Produktstart informieren.
         </li>
       </ul>
-      <p>
-        Folgende Daten werden dabei erfasst:
-      </p>
+      <p>Folgende Daten werden dabei erfasst:</p>
       <ul>
-        <li>Vorname der Eltern</li>
-        <li>E-Mail-Adresse</li>
-        <li>Vorname des Kindes (optional)</li>
-        <li>Alter des Kindes (als Altersgruppe)</li>
         <li>
-          Angaben zur Produkt-Entwicklung: Interessen, gewünschte Häufigkeit,
-          Preisvorstellung, wichtige Kriterien
+          <strong>Pflichtangaben:</strong> Dein Vorname, deine E-Mail-Adresse
         </li>
-        <li>Herkunft (wie du auf uns aufmerksam geworden bist)</li>
-        <li>Optionales Freitext-Feedback</li>
+        <li>
+          <strong>Freiwillig (Bonus-Umfrage):</strong> Wunsch-Feedback
+          („Was würde NomiPost für dich perfekt machen?"), Preisvorstellung
+        </li>
         <li>
           <strong>Einwilligungs-Nachweis (zwingend erforderlich):</strong>{" "}
           Zeitstempel der Eingabe, IP-Adresse bei Eingabe, Zeitstempel des
@@ -208,11 +203,16 @@ export default function DatenschutzPage() {
         </li>
       </ul>
       <p>
+        Wir erheben <strong>keine personenbezogenen Daten über Kinder</strong>.
+        Weder Name, Alter noch Interessen deines Kindes werden gespeichert.
+        Die angebotene Umfrage ist ausschließlich für dich als Elternteil.
+      </p>
+      <p>
         <strong>Zweck der Verarbeitung:</strong> Die Kontaktdaten werden
         ausschließlich dafür verwendet, dich über den Start von NomiPost per
-        E-Mail zu informieren. Die Umfrage-Antworten werden anonymisiert für
-        die Produktentwicklung ausgewertet, sofern du dem separat zustimmst.
-        Eine Weitergabe an Dritte zu Werbezwecken findet nicht statt.
+        E-Mail zu informieren. Die freiwilligen Umfrage-Antworten werden für
+        die Produktentwicklung ausgewertet. Eine Weitergabe an Dritte zu
+        Werbezwecken findet nicht statt.
       </p>
       <p>
         <strong>Rechtsgrundlage:</strong> Die Verarbeitung erfolgt auf
@@ -281,23 +281,6 @@ export default function DatenschutzPage() {
           Supabase Data Processing Addendum
         </a>
         .
-      </p>
-
-      <h3>4.2 Verarbeitung von Daten zu Kindern</h3>
-      <p>
-        Wenn du in der Warteliste den Namen und/oder das Alter deines Kindes
-        angibst, verarbeiten wir personenbezogene Daten eines Dritten (deines
-        Kindes). Diese Angaben sind <strong>freiwillig</strong> und dienen
-        ausschließlich dazu, die spätere Produktkommunikation an das Alter des
-        Kindes anzupassen.
-      </p>
-      <p>
-        <strong>Du handelst als Sorgeberechtigte:r:</strong> Mit der
-        Einwilligung im Formular bestätigst du, dass du sorgeberechtigt bist
-        und in die Verarbeitung der angegebenen Daten deines Kindes
-        einwilligst (§ 1626 BGB, Art. 8 DSGVO). Die Angaben werden vertraulich
-        behandelt, nicht an Dritte weitergegeben und auf Wunsch jederzeit
-        gelöscht.
       </p>
 
       <h2>5. Einsatz von Cookies</h2>

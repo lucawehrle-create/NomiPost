@@ -53,19 +53,13 @@ export async function POST(request: Request) {
     const entry: WaitlistEntry = {
       parent_name: input.parentName,
       email: input.email,
-      child_name: input.childName ? input.childName : null,
-      child_age: input.childAge,
-      interests: input.interests,
-      price_expectation: input.priceExpectation || null,
-      importance: input.importance,
-      frequency: input.frequency || null,
-      heard_from: input.heardFrom || null,
-      feedback: input.feedback || null,
+
+      // Umfrage-Felder initial leer, werden ggf. später per survey-Route befüllt
+      wishes: null,
+      price_expectation: null,
 
       // DSGVO: Nachweisbare Einwilligung mit Zeitstempel und Version
       consent_contact: input.consentContact,
-      consent_guardian: input.consentGuardian,
-      consent_survey: input.consentSurvey,
       consent_at: consentAt,
       consent_text_version: CONSENT_TEXT_VERSION,
 
@@ -98,10 +92,16 @@ export async function POST(request: Request) {
       unsubscribeUrl,
     });
 
-    // Response-Payload: Im Dev-Modus geben wir den Confirm-Link direkt
-    // zurück, damit man ohne echten Mail-Service testen kann. In
-    // Produktion wird er NIEMALS zurückgegeben.
-    const responseBody: Record<string, unknown> = { ok: true };
+    // Token kommt zurück, damit der Client die optionale Umfrage
+    // diesem Eintrag zuordnen kann. Der Token ist ohnehin bereits
+    // als Confirmation-Link in der E-Mail enthalten.
+    const responseBody: Record<string, unknown> = {
+      ok: true,
+      token: confirmationToken,
+    };
+
+    // Im Dev-Modus geben wir den Confirm-Link direkt zurück, damit
+    // man ohne echten Mail-Service testen kann.
     if (
       process.env.NODE_ENV !== "production" &&
       mailResult.provider === "console"

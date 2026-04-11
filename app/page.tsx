@@ -5,8 +5,8 @@ import LetterAnatomy from "@/components/LetterAnatomy";
 import HowItWorks from "@/components/HowItWorks";
 import AboutNomi from "@/components/AboutNomi";
 import Manifesto from "@/components/Manifesto";
-import WaitlistSection from "@/components/WaitlistSection";
 import FAQ from "@/components/FAQ";
+import FinalCta from "@/components/FinalCta";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -20,8 +20,8 @@ export default function Home() {
         <HowItWorks />
         <AboutNomi />
         <Manifesto />
-        <WaitlistSection />
         <FAQ />
+        <FinalCta />
       </main>
       <Footer />
     </>

@@ -16,19 +16,14 @@ function toCsv(entries: WaitlistEntry[]): string {
     "created_at",
     "parent_name",
     "email",
-    "child_name",
-    "child_age",
-    "interests",
+    "wishes",
     "price_expectation",
-    "importance",
-    "frequency",
-    "heard_from",
-    "feedback",
     "consent_contact",
-    "consent_survey",
     "consent_at",
     "consent_text_version",
     "confirmed_at",
+    "ip_signup",
+    "ip_confirm",
   ];
 
   const escape = (v: string | null | undefined | boolean) => {
@@ -43,19 +38,14 @@ function toCsv(entries: WaitlistEntry[]): string {
       escape(e.created_at),
       escape(e.parent_name),
       escape(e.email),
-      escape(e.child_name),
-      escape(e.child_age),
-      escape((e.interests ?? []).join("; ")),
+      escape(e.wishes),
       escape(e.price_expectation),
-      escape((e.importance ?? []).join("; ")),
-      escape(e.frequency),
-      escape(e.heard_from),
-      escape(e.feedback),
       escape(e.consent_contact),
-      escape(e.consent_survey),
       escape(e.consent_at),
       escape(e.consent_text_version),
       escape(e.confirmed_at),
+      escape(e.ip_signup),
+      escape(e.ip_confirm),
     ].join(",")
   );
 
@@ -69,7 +59,7 @@ export default function AdminDashboard({ entries, mode }: Props) {
     const q = query.trim().toLowerCase();
     if (!q) return entries;
     return entries.filter((e) =>
-      [e.parent_name, e.email, e.child_name, e.feedback, e.heard_from]
+      [e.parent_name, e.email, e.wishes]
         .filter(Boolean)
         .some((v) => v!.toLowerCase().includes(q))
     );
@@ -77,27 +67,19 @@ export default function AdminDashboard({ entries, mode }: Props) {
 
   // Stats
   const stats = useMemo(() => {
-    const ages: Record<string, number> = {};
     const prices: Record<string, number> = {};
-    const sources: Record<string, number> = {};
-    const interests: Record<string, number> = {};
-    const importance: Record<string, number> = {};
-
     entries.forEach((e) => {
-      if (e.child_age) ages[e.child_age] = (ages[e.child_age] || 0) + 1;
       if (e.price_expectation)
         prices[e.price_expectation] = (prices[e.price_expectation] || 0) + 1;
-      if (e.heard_from) sources[e.heard_from] = (sources[e.heard_from] || 0) + 1;
-      (e.interests ?? []).forEach((i) => {
-        interests[i] = (interests[i] || 0) + 1;
-      });
-      (e.importance ?? []).forEach((i) => {
-        importance[i] = (importance[i] || 0) + 1;
-      });
     });
-
-    return { ages, prices, sources, interests, importance };
+    return { prices };
   }, [entries]);
+
+  const confirmedCount = entries.filter((e) => e.confirmed_at).length;
+  const withWishesCount = entries.filter((e) => e.wishes && e.wishes.length > 0).length;
+  const withPriceCount = entries.filter(
+    (e) => e.price_expectation && e.price_expectation.length > 0
+  ).length;
 
   const handleDownload = () => {
     const csv = toCsv(filtered);
@@ -158,38 +140,23 @@ export default function AdminDashboard({ entries, mode }: Props) {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           <StatCard label="Einträge gesamt" value={entries.length} />
-          <StatCard
-            label="Heute"
-            value={
-              entries.filter((e) =>
-                e.created_at?.startsWith(new Date().toISOString().slice(0, 10))
-              ).length
-            }
-          />
-          <StatCard
-            label="Mit Umfrage-Consent"
-            value={entries.filter((e) => e.consent_survey).length}
-          />
-          <StatCard
-            label="Mit Feedback"
-            value={entries.filter((e) => e.feedback && e.feedback.length > 0).length}
-          />
+          <StatCard label="Bestätigt (DOI)" value={confirmedCount} />
+          <StatCard label="Mit Wunsch-Feedback" value={withWishesCount} />
+          <StatCard label="Mit Preisangabe" value={withPriceCount} />
         </div>
 
-        {/* Analyse-Blöcke */}
-        <div className="grid md:grid-cols-2 gap-6 mb-10">
-          <AnalysisCard title="Preisvorstellung" data={stats.prices} />
-          <AnalysisCard title="Alter der Kinder" data={stats.ages} />
-          <AnalysisCard title="Interessen (Top)" data={stats.interests} />
-          <AnalysisCard title="Wichtigste Kriterien" data={stats.importance} />
-          <AnalysisCard title="Gehört über" data={stats.sources} />
-        </div>
+        {/* Preisvorstellungs-Verteilung */}
+        {Object.keys(stats.prices).length > 0 && (
+          <div className="mb-10 grid md:grid-cols-1 gap-6">
+            <AnalysisCard title="Preisvorstellung" data={stats.prices} />
+          </div>
+        )}
 
         {/* Toolbar */}
         <div className="flex items-center justify-between gap-4 mb-4 flex-wrap">
           <input
             type="search"
-            placeholder="Suchen (Name, E-Mail, Feedback…)"
+            placeholder="Suchen (Name, E-Mail, Wunsch …)"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="paper-input max-w-sm"
@@ -205,20 +172,17 @@ export default function AdminDashboard({ entries, mode }: Props) {
             <thead className="bg-nomi-violet/5 border-b-2 border-nomi-violet/10">
               <tr className="text-left text-nomi-violet">
                 <th className="p-3 font-semibold">Datum</th>
-                <th className="p-3 font-semibold">Eltern</th>
+                <th className="p-3 font-semibold">Name</th>
                 <th className="p-3 font-semibold">E-Mail</th>
-                <th className="p-3 font-semibold">Kind</th>
-                <th className="p-3 font-semibold">Alter</th>
+                <th className="p-3 font-semibold">DOI</th>
                 <th className="p-3 font-semibold">Preis</th>
-                <th className="p-3 font-semibold">Interessen</th>
-                <th className="p-3 font-semibold">Consent</th>
-                <th className="p-3 font-semibold">Feedback</th>
+                <th className="p-3 font-semibold">Wunsch / Feedback</th>
               </tr>
             </thead>
             <tbody>
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={9} className="p-8 text-center text-tintengrau-light">
+                  <td colSpan={6} className="p-8 text-center text-tintengrau-light">
                     {entries.length === 0
                       ? "Noch keine Einträge. Sobald sich jemand in die Warteliste einträgt, erscheint er hier."
                       : "Keine Treffer für deine Suche."}
@@ -243,45 +207,25 @@ export default function AdminDashboard({ entries, mode }: Props) {
                     {e.parent_name}
                   </td>
                   <td className="p-3 text-tintengrau">{e.email}</td>
-                  <td className="p-3 text-tintengrau">{e.child_name || "–"}</td>
-                  <td className="p-3 text-tintengrau">{e.child_age}</td>
-                  <td className="p-3 text-tintengrau">{e.price_expectation || "–"}</td>
-                  <td className="p-3 text-tintengrau text-xs">
-                    {(e.interests ?? []).slice(0, 3).join(", ")}
-                    {(e.interests ?? []).length > 3 &&
-                      ` +${(e.interests ?? []).length - 3}`}
-                  </td>
                   <td className="p-3 text-xs whitespace-nowrap">
-                    <div className="flex flex-col gap-0.5">
-                      <span
-                        className={`inline-flex items-center gap-1 ${
-                          e.consent_contact
-                            ? "text-green-700"
-                            : "text-red-700"
-                        }`}
-                        title={
-                          e.consent_at
-                            ? `Eingewilligt am ${new Date(
-                                e.consent_at
-                              ).toLocaleString("de-DE")}`
-                            : ""
-                        }
-                      >
-                        {e.consent_contact ? "✓" : "✗"} Kontakt
-                      </span>
-                      <span
-                        className={`inline-flex items-center gap-1 ${
-                          e.consent_survey
-                            ? "text-green-700"
-                            : "text-tintengrau-light"
-                        }`}
-                      >
-                        {e.consent_survey ? "✓" : "–"} Umfrage
-                      </span>
-                    </div>
+                    <span
+                      className={`inline-flex items-center gap-1 ${
+                        e.confirmed_at ? "text-green-700" : "text-mattgold-dark"
+                      }`}
+                      title={
+                        e.confirmed_at
+                          ? `Bestätigt am ${new Date(e.confirmed_at).toLocaleString("de-DE")}`
+                          : "Noch nicht bestätigt"
+                      }
+                    >
+                      {e.confirmed_at ? "✓ Bestätigt" : "⧖ Wartet"}
+                    </span>
                   </td>
-                  <td className="p-3 text-tintengrau text-xs max-w-[240px] truncate">
-                    {e.feedback || "–"}
+                  <td className="p-3 text-tintengrau">
+                    {e.price_expectation || "–"}
+                  </td>
+                  <td className="p-3 text-tintengrau text-xs max-w-[380px]">
+                    {e.wishes || <span className="text-tintengrau-light">–</span>}
                   </td>
                 </tr>
               ))}
@@ -294,9 +238,10 @@ export default function AdminDashboard({ entries, mode }: Props) {
           <strong className="text-nomi-violet">DSGVO-Hinweis:</strong> Alle
           Einträge enthalten Einwilligungs-Zeitpunkt (<code>consent_at</code>)
           und Text-Version (<code>consent_text_version</code>) als Nachweis
-          gemäß Art. 7 Abs. 1 DSGVO. Bei Löschanfragen bitte den entsprechenden
-          Eintrag aus der Datenbank entfernen (Supabase Dashboard oder{" "}
-          <code>data/waitlist.json</code>).
+          gemäß Art. 7 Abs. 1 DSGVO. IP-Adressen (Signup + Confirmation)
+          werden ausschließlich zu Nachweiszwecken gespeichert. Bei
+          Löschanfragen bitte den entsprechenden Eintrag aus der Datenbank
+          entfernen (Supabase Dashboard oder <code>data/waitlist.json</code>).
         </div>
       </div>
     </main>
@@ -327,7 +272,7 @@ function AnalysisCard({
   const max = Math.max(1, ...entries.map(([, v]) => v));
 
   return (
-    <div className="paper-card hand-border p-5">
+    <div className="paper-card hand-border p-6">
       <h3 className="headline-serif text-lg font-semibold text-nomi-violet mb-4">
         {title}
       </h3>

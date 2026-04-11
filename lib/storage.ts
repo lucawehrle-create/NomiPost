@@ -19,19 +19,13 @@ export type WaitlistEntry = {
   created_at?: string;
   parent_name: string;
   email: string;
-  child_name: string | null;
-  child_age: string;
-  interests: string[];
+
+  // Bonus-Umfrage (freiwillig, nachträglich befüllbar via /api/waitlist/survey)
+  wishes: string | null; // Offene Frage: "Was würde NomiPost für dich perfekt machen?"
   price_expectation: string | null;
-  importance: string[];
-  frequency: string | null;
-  heard_from: string | null;
-  feedback: string | null;
 
   // DSGVO: Nachweis der Einwilligung (Art. 7 Abs. 1 DSGVO)
   consent_contact: boolean;
-  consent_survey: boolean;
-  consent_guardian: boolean; // Sorgeberechtigten-Einwilligung für Kinddaten (§ 1626 BGB)
   consent_at: string; // ISO-Timestamp Einwilligung
   consent_text_version: string;
 
@@ -51,7 +45,7 @@ export type WaitlistEntry = {
  * damit bei Datenschutz-Anfragen nachweisbar ist, welchem
  * Text der Nutzer zugestimmt hat.
  */
-export const CONSENT_TEXT_VERSION = "2026-04-11.v2";
+export const CONSENT_TEXT_VERSION = "2026-04-11.v3";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "waitlist.json");
@@ -108,7 +102,7 @@ export async function addEntry(entry: WaitlistEntry): Promise<WaitlistEntry> {
   // Fallback: lokale Datei
   const entries = await readFile();
 
-  // Duplikate abfangen (E-Mail)
+  // Duplikate abfangen (E-Mail) – bei erneutem Eintrag aktualisieren
   const existingIdx = entries.findIndex(
     (e) => e.email.toLowerCase() === entry.email.toLowerCase()
   );
@@ -178,6 +172,36 @@ export async function confirmEntry(
   if (idx < 0) return null;
   entries[idx].confirmed_at = confirmedAt;
   entries[idx].ip_confirm = ipConfirm;
+  await writeFile(entries);
+  return entries[idx];
+}
+
+export async function updateSurvey(
+  token: string,
+  data: { wishes?: string; priceExpectation?: string }
+): Promise<WaitlistEntry | null> {
+  const client = getSupabaseClient();
+  const update = {
+    wishes: data.wishes ? data.wishes : null,
+    price_expectation: data.priceExpectation ? data.priceExpectation : null,
+  };
+
+  if (client) {
+    const { data: updated, error } = await client
+      .from("waitlist")
+      .update(update)
+      .eq("confirmation_token", token)
+      .select()
+      .maybeSingle();
+    if (error) throw new Error(`Supabase-Fehler: ${error.message}`);
+    return (updated as WaitlistEntry | null) ?? null;
+  }
+
+  const entries = await readFile();
+  const idx = entries.findIndex((e) => e.confirmation_token === token);
+  if (idx < 0) return null;
+  entries[idx].wishes = update.wishes;
+  entries[idx].price_expectation = update.price_expectation;
   await writeFile(entries);
   return entries[idx];
 }

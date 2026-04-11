@@ -31,27 +31,25 @@ export default function Navigation() {
           </span>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-10 text-[0.9rem] font-medium text-nomi-violet/75">
-          <a href="#was" className="relative hover:text-nomi-violet transition-colors duration-300 group">
-            Was steckt drin?
+        <nav className="hidden md:flex items-center gap-8 text-[0.9rem] font-medium text-nomi-violet/75">
+          <a
+            href="#was"
+            className="relative hover:text-nomi-violet transition-colors duration-300 group"
+          >
+            Was drin ist
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
           </a>
-          <a href="#wie" className="relative hover:text-nomi-violet transition-colors duration-300 group">
-            Wie es funktioniert
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
-          </a>
-          <a href="#nomi" className="relative hover:text-nomi-violet transition-colors duration-300 group">
-            Über Nomi
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
-          </a>
-          <a href="#faq" className="relative hover:text-nomi-violet transition-colors duration-300 group">
+          <a
+            href="#faq"
+            className="relative hover:text-nomi-violet transition-colors duration-300 group"
+          >
             Fragen
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
           </a>
         </nav>
 
-        <a href="#warteliste" className="btn-primary py-2.5 px-5 lg:px-6 text-sm">
-          Auf die Warteliste
+        <a href="#top" className="btn-primary py-2.5 px-5 lg:px-6 text-sm">
+          Warteliste
           <span className="text-mattgold-light text-xs">✦</span>
         </a>
       </div>

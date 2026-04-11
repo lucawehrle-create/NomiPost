@@ -22,11 +22,11 @@ const faqs = [
   },
   {
     q: "Wie persönlich ist der Brief wirklich?",
-    a: "Sehr persönlich. Dein Kind wird beim Namen angesprochen, die Themen werden an seine Interessen angepasst, und es gibt ein wiederkehrendes Begleit-Element (Begleittier oder magischer Gegenstand), das in jedem Brief auftaucht. Das ist nicht einfach nur ein personalisierter Name im Text.",
+    a: "Sehr persönlich. Beim echten Produktstart fragen wir dich nach dem Namen und den Interessen deines Kindes, sodass es im Brief direkt angesprochen wird – inklusive wiederkehrendem Begleit-Element, das in jedem Brief auftaucht. Für die Warteliste hier reichen aber Vorname und E-Mail – wir sammeln bewusst keine Kinddaten, solange das Produkt noch nicht startet.",
   },
   {
     q: "Wie viel wird NomiPost kosten?",
-    a: "Der genaue Preis steht noch nicht fest – das ist auch einer der Gründe für diese Warteliste. Wir möchten ein Produkt schaffen, das sich wirklich lohnt, und dabei einen fairen Preis finden. In der Umfrage kannst du uns gerne deine Preisvorstellung mitteilen.",
+    a: "Der genaue Preis steht noch nicht fest – das ist auch einer der Gründe für diese Warteliste. Wir möchten ein Produkt schaffen, das sich wirklich lohnt, und dabei einen fairen Preis finden. In der kurzen Bonus-Umfrage nach der Anmeldung kannst du uns gerne deine Preisvorstellung mitteilen – freiwillig, versteht sich.",
   },
   {
     q: "Kann ich jederzeit pausieren oder beenden?",

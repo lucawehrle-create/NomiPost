@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import CompassRose from "./CompassRose";
 import EnvelopeIllustration from "./EnvelopeIllustration";
 import WatercolorBlob from "./WatercolorBlob";
+import WaitlistForm from "./WaitlistForm";
 
 export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32 lg:pt-52 lg:pb-40 xl:pt-56 xl:pb-48"
+      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-44 lg:pb-28"
     >
       {/* Dezente Aquarell-Akzente im Hintergrund */}
       <WatercolorBlob
@@ -24,9 +25,12 @@ export default function Hero() {
       />
 
       {/* Dekorative Sterne verteilt */}
-      <div className="absolute top-32 left-[15%] text-mattgold/40 text-2xl hidden lg:block animate-float-slow">✦</div>
-      <div className="absolute top-48 right-[25%] text-mattgold/30 text-xl hidden lg:block animate-float">✦</div>
-      <div className="absolute bottom-40 left-[30%] text-mattgold/35 text-lg hidden lg:block animate-float-slow">✦</div>
+      <div className="absolute top-32 left-[12%] text-mattgold/40 text-2xl hidden lg:block animate-float-slow">
+        ✦
+      </div>
+      <div className="absolute top-48 right-[22%] text-mattgold/30 text-xl hidden lg:block animate-float">
+        ✦
+      </div>
 
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-center">
@@ -47,10 +51,12 @@ export default function Hero() {
               <span className="text-mattgold">✦</span>
             </motion.div>
 
-            <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2.75rem,6vw,5.5rem)] leading-[1.02] tracking-[-0.025em]">
+            <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
               Ein Brief, der dein Kind{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 italic text-nomi-violet">zum Leuchten</span>
+                <span className="relative z-10 italic text-nomi-violet">
+                  zum Leuchten
+                </span>
                 <svg
                   className="absolute -bottom-2 lg:-bottom-3 left-0 w-full"
                   viewBox="0 0 300 16"
@@ -73,44 +79,30 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="mt-10 lg:mt-12 text-lg md:text-xl lg:text-[1.35rem] text-tintengrau leading-relaxed lg:leading-[1.55] max-w-[38rem] text-pretty"
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="mt-8 lg:mt-10 text-lg md:text-xl text-tintengrau leading-relaxed max-w-[36rem] text-pretty"
             >
-              Jeden Monat kommt ein handgemachter Brief von{" "}
-              <span className="text-nomi-violet font-semibold">Nomi</span>, einer
-              neugierigen Entdeckerin, die dein Kind auf ein Abenteuer mitnimmt –
-              mit Geschichte, Rätsel, Sticker und Hörbuch. Anfassen statt
-              wegklicken.
+              Jeden Monat ein handgemachter Brief von{" "}
+              <span className="text-nomi-violet font-semibold">Nomi</span>, der
+              Geschichten, Rätsel und Sticker bringt – ein Abenteuer zum
+              Anfassen. Jetzt auf die Warteliste:
             </motion.p>
 
+            {/* Inline-Form direkt im Hero – max. Conversion */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
-              className="mt-12 flex flex-wrap items-center gap-4"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mt-8 lg:mt-10 max-w-[38rem]"
             >
-              <a href="#warteliste" className="btn-primary">
-                Jetzt auf die Warteliste
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5 12h14M13 5l7 7-7 7"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-              <a href="#was" className="btn-secondary">
-                Was drinsteckt
-              </a>
+              <WaitlistForm variant="hero" />
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-14 flex items-center gap-6 text-sm text-tintengrau-light"
+              className="mt-10 flex items-center gap-5 text-sm text-tintengrau-light"
             >
               <div className="flex -space-x-2.5">
                 {[
@@ -121,21 +113,20 @@ export default function Hero() {
                 ].map((p, i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full border-[3px] border-warmcreme flex items-center justify-center text-xs text-warmcreme font-semibold shadow-sm"
+                    className="w-9 h-9 rounded-full border-[3px] border-warmcreme flex items-center justify-center text-[11px] text-warmcreme font-semibold shadow-sm"
                     style={{ backgroundColor: p.bg }}
                   >
                     {p.letters}
                   </div>
                 ))}
               </div>
-              <div className="leading-tight">
-                <p className="font-semibold text-nomi-violet">
+              <p className="leading-tight">
+                <span className="font-semibold text-nomi-violet">
                   Erste Familien sind schon dabei
-                </p>
-                <p className="text-xs mt-0.5">
-                  Werde Teil der ersten Welle von Abenteurern
-                </p>
-              </div>
+                </span>
+                <br />
+                <span className="text-xs">Werde Teil der ersten Welle</span>
+              </p>
             </motion.div>
           </motion.div>
 
@@ -143,7 +134,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-5 relative hidden lg:block"
           >
             {/* Schwebende Kompassrose als Akzent */}
             <div className="absolute -top-8 -right-4 lg:-right-8 w-28 lg:w-36 xl:w-40 animate-float z-20">
@@ -161,7 +152,7 @@ export default function Hero() {
               initial={{ opacity: 0, rotate: -5, y: 20 }}
               animate={{ opacity: 1, rotate: 2, y: 0 }}
               transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-              className="absolute -bottom-6 -left-4 md:left-4 lg:-left-8"
+              className="absolute -bottom-6 left-4 lg:-left-8"
             >
               <div className="paper-card hand-border p-5 max-w-[220px] paper-card-elevated">
                 <p className="handwritten text-nomi-violet text-xl leading-tight">
@@ -175,33 +166,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Subtiler Scroll-Indikator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-mattgold-dark/60"
-        >
-          <span className="text-[10px] uppercase tracking-[0.3em] font-semibold">
-            Weiterentdecken
-          </span>
-          <svg
-            width="14"
-            height="22"
-            viewBox="0 0 14 22"
-            fill="none"
-            className="animate-float"
-          >
-            <path
-              d="M 7 2 L 7 16 M 2 12 L 7 18 L 12 12"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </motion.div>
       </div>
     </section>
   );

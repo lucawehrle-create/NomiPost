@@ -57,18 +57,11 @@ und hat ein schönes Dashboard zum Ansehen der Einträge.
      created_at timestamptz not null default now(),
      parent_name text not null,
      email text not null,
-     child_name text,
-     child_age text not null,
-     interests text[] default '{}',
+     -- Bonus-Umfrage (freiwillig, wird via /api/waitlist/survey befüllt)
+     wishes text,
      price_expectation text,
-     importance text[] default '{}',
-     frequency text,
-     heard_from text,
-     feedback text,
      -- DSGVO: Nachweis der Einwilligung (Art. 7 Abs. 1 DSGVO)
      consent_contact boolean not null default false,
-     consent_guardian boolean not null default false,
-     consent_survey boolean not null default false,
      consent_at timestamptz not null default now(),
      consent_text_version text not null,
      -- Double-Opt-In (§ 7 Abs. 2 UWG, BGH I ZR 164/09)
@@ -81,6 +74,24 @@ und hat ein schönes Dashboard zum Ansehen der Einträge.
 
    create unique index waitlist_email_idx on public.waitlist (lower(email));
    create index waitlist_token_idx on public.waitlist (confirmation_token);
+   ```
+
+   **Falls du schon eine alte Tabelle hast** (v2-Schema mit Kinddaten),
+   kannst du einfach `drop table public.waitlist;` ausführen und neu
+   erstellen – solange du noch keine Echtdaten hast. Alternativ Migration:
+
+   ```sql
+   -- Migration v2 → v3 (Formular radikal vereinfacht)
+   alter table public.waitlist drop column if exists child_name;
+   alter table public.waitlist drop column if exists child_age;
+   alter table public.waitlist drop column if exists interests;
+   alter table public.waitlist drop column if exists importance;
+   alter table public.waitlist drop column if exists heard_from;
+   alter table public.waitlist drop column if exists frequency;
+   alter table public.waitlist drop column if exists feedback;
+   alter table public.waitlist drop column if exists consent_guardian;
+   alter table public.waitlist drop column if exists consent_survey;
+   alter table public.waitlist add column if not exists wishes text;
    ```
 
    **Wichtig:** Wähle beim Anlegen des Supabase-Projekts eine **Region in der
