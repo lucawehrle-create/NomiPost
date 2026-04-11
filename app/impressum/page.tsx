@@ -12,14 +12,6 @@ export default function ImpressumPage() {
       title="Impressum"
       lastUpdated="April 2026"
     >
-      <div className="notice">
-        <strong>Hinweis für den Betreiber:</strong> Alle mit{" "}
-        <span className="placeholder">[…]</span> markierten Felder müssen vor
-        dem Go-Live mit echten Daten ausgefüllt werden. Dies ist ein Template,
-        keine Rechtsberatung. Im Zweifel bitte eine:n Fachanwält:in für IT-Recht
-        konsultieren.
-      </div>
-
       <h2>Angaben gemäß § 5 DDG</h2>
       <p>
         <em>
@@ -29,56 +21,32 @@ export default function ImpressumPage() {
         </em>
       </p>
       <p>
-        <strong>
-          <span className="placeholder">[Vor- und Nachname bzw. Firmenname]</span>
-        </strong>
+        <strong>Luca Wehrle</strong>
         <br />
-        <span className="placeholder">[Straße und Hausnummer]</span>
+        Geschwister-Scholl-Straße 17
         <br />
-        <span className="placeholder">[PLZ und Ort]</span>
+        78333 Stockach
         <br />
         Deutschland
       </p>
 
-      <h3>Vertreten durch</h3>
-      <p>
-        <span className="placeholder">
-          [Nur bei juristischen Personen: Vertretungsberechtigte:r, z. B.
-          Geschäftsführer:in bei GmbH/UG]
-        </span>
-      </p>
-
       <h3>Kontakt</h3>
       <p>
-        Telefon: <span className="placeholder">[+49 …]</span>
+        Telefon: +49 159 01494684
         <br />
         E-Mail:{" "}
-        <span className="placeholder">[hallo@deine-domain.de]</span>
-      </p>
-
-      <h3>Registereintrag</h3>
-      <p>
-        <span className="placeholder">
-          [Nur bei eingetragenen Unternehmen: Handelsregister, Registergericht,
-          Registernummer — sonst diesen Abschnitt weglassen]
-        </span>
-      </p>
-
-      <h3>Umsatzsteuer-ID</h3>
-      <p>
-        <span className="placeholder">
-          [Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz,
-          sofern vorhanden — sonst diesen Abschnitt weglassen]
-        </span>
+        <a href="mailto:hallo@nomipost.de">hallo@nomipost.de</a>
       </p>
 
       <h2>
         Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
       </h2>
       <p>
-        <span className="placeholder">[Vor- und Nachname]</span>
+        Luca Wehrle
         <br />
-        <span className="placeholder">[Anschrift wie oben]</span>
+        Geschwister-Scholl-Straße 17
+        <br />
+        78333 Stockach
       </p>
 
       <h2>EU-Streitschlichtung</h2>
@@ -134,7 +102,7 @@ export default function ImpressumPage() {
 
       <h2>Urheberrecht</h2>
       <p>
-        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
+        Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen
         Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
         Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
         Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des

@@ -113,16 +113,61 @@ und hat ein schönes Dashboard zum Ansehen der Einträge.
    neue Einträge dort hinein. Das Admin-Dashboard zeigt oben den aktuellen
    Speicher-Modus an.
 
-## Deployment auf Vercel
+## Deployment
 
-1. Repo zu GitHub pushen.
-2. Auf [vercel.com](https://vercel.com) importieren.
+### Wichtig: IONOS Shared Hosting funktioniert NICHT
+
+NomiPost ist eine **Next.js-Anwendung mit serverseitigen API-Routes**
+(`/api/waitlist`, `/api/waitlist/survey`, `/api/unsubscribe`). Diese
+benötigen einen Node.js-Server zur Laufzeit. **IONOS Shared Hosting**
+(HTML/PHP-Pakete) kann das **nicht** – dort würden alle Formular-Submits,
+der Double-Opt-In-Flow und das Admin-Dashboard schlicht nicht
+funktionieren. Der Impressum-Datenschutz-Text referenziert IONOS als
+Hosting-Partner; technisch brauchst du aber eine dieser drei Varianten:
+
+**Option A (empfohlen): Vercel für den Code, IONOS nur für die Domain**
+
+Am einfachsten und kostenlos. Die Domain `nomipost.de` bleibt bei IONOS,
+nur die DNS-Einträge zeigen auf Vercel. Der Code läuft auf Vercel.
+
+1. Repo zu GitHub pushen (ist bereits gemacht)
+2. Auf [vercel.com](https://vercel.com) mit GitHub-Account einloggen, Repo
+   importieren
 3. Environment Variables setzen: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`,
-   `ADMIN_PASSWORD`.
-4. Deployen. Das Admin-Dashboard liegt dann unter `https://deine-domain.de/admin`.
+   `ADMIN_PASSWORD`, `RESEND_API_KEY`, `MAIL_FROM`, `MAIL_REPLY_TO`
+4. Deployen (passiert automatisch)
+5. Im Vercel-Dashboard unter „Settings → Domains" deine Domain `nomipost.de`
+   hinzufügen. Vercel zeigt dir zwei DNS-Einträge (A-Record und
+   CNAME-Record), die du im IONOS-Control-Center unter „Domains & SSL →
+   nomipost.de → DNS" eintragen musst.
 
-> **Achtung:** Ohne Supabase auf Vercel gehen Einträge verloren, weil das
-> lokale Dateisystem nicht persistent ist.
+   → **Achtung:** Wenn du Vercel als Hoster nutzt, muss die
+   Datenschutzerklärung entsprechend geändert werden: Vercel statt IONOS,
+   mit EU-US Data Privacy Framework-Verweis. Frag mich, ich passe das an.
+
+**Option B: IONOS Cloud Server / VPS (ab ca. 5 €/Monat)**
+
+Du mietest bei IONOS einen Linux-Server (z. B. „Cloud Server XS" oder
+„VPS Linux S"). Darauf installierst du Node.js und nginx als Proxy, und
+deployst die App via PM2 oder Docker. Vorteil: Hosting und Domain bei
+demselben Anbieter, Datenschutztexte bleiben 1:1 so wie jetzt.
+
+Technisch anspruchsvoller – lohnt sich, wenn du langfristig bei IONOS
+bleiben willst.
+
+**Option C: IONOS Deploy Now** (nicht geeignet)
+
+IONOS Deploy Now unterstützt zwar Next.js, aber **nur als statischen
+Export**. Mit unseren API-Routes funktioniert das nicht – das Formular
+würde nichts speichern können.
+
+---
+
+### Supabase ist zwingend
+
+Ohne Supabase gehen Einträge verloren, weil Serverless-Filesysteme
+(Vercel) nicht persistent sind. Die lokale JSON-Datei funktioniert nur
+auf deinem Mac während der Entwicklung.
 
 ## Daten ansehen & exportieren
 

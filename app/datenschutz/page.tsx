@@ -13,14 +13,6 @@ export default function DatenschutzPage() {
       title="Datenschutzerklärung"
       lastUpdated="April 2026"
     >
-      <div className="notice">
-        <strong>Hinweis für den Betreiber:</strong> Alle mit{" "}
-        <span className="placeholder">[…]</span> markierten Felder müssen vor
-        dem Go-Live mit echten Daten ausgefüllt werden. Dieser Text ist ein
-        Template und ersetzt keine Rechtsberatung. Die Prüfung durch eine:n
-        Fachanwält:in für IT-Recht wird dringend empfohlen.
-      </div>
-
       <h2>1. Verantwortlicher</h2>
       <p>
         Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und
@@ -28,18 +20,17 @@ export default function DatenschutzPage() {
         sonstiger datenschutzrechtlicher Bestimmungen ist:
       </p>
       <p>
-        <strong>
-          <span className="placeholder">[Vor- und Nachname / Firma]</span>
-        </strong>
+        <strong>Luca Wehrle</strong>
         <br />
-        <span className="placeholder">[Straße und Hausnummer]</span>
+        Geschwister-Scholl-Straße 17
         <br />
-        <span className="placeholder">[PLZ und Ort]</span>
+        78333 Stockach
         <br />
         Deutschland
         <br />
-        E-Mail:{" "}
-        <span className="placeholder">[datenschutz@deine-domain.de]</span>
+        E-Mail: <a href="mailto:hallo@nomipost.de">hallo@nomipost.de</a>
+        <br />
+        Telefon: +49 159 01494684
       </p>
 
       <h2>2. Allgemeines zur Datenverarbeitung</h2>
@@ -84,19 +75,21 @@ export default function DatenschutzPage() {
       </p>
       <ul>
         <li>
-          <strong>Warteliste-Einträge:</strong> Löschung bis zu 12 Monate nach
-          Produktstart. Wenn das Produkt NomiPost nicht bis zum{" "}
-          <span className="placeholder">[Stichtag, z. B. 31.12.2027]</span>{" "}
-          startet, werden alle Warteliste-Daten automatisch gelöscht.
+          <strong>Warteliste-Einträge:</strong> Sollte das Produkt NomiPost
+          bis zum <strong>31.12.2026</strong> nicht starten, werden alle
+          Warteliste-Daten automatisch gelöscht. Bei erfolgreichem
+          Produktstart werden die Daten bis zu 12 Monate nach Versand der
+          letzten Launch-Benachrichtigung gespeichert.
         </li>
         <li>
           <strong>Nicht bestätigte Anmeldungen:</strong> Einträge, bei denen
-          innerhalb von 14 Tagen keine Bestätigung per Double-Opt-In-Link
-          erfolgt, werden automatisch gelöscht.
+          innerhalb von 14 Tagen keine Bestätigung per
+          Double-Opt-In-Link erfolgt, werden automatisch gelöscht.
         </li>
         <li>
-          <strong>Server-Logfiles:</strong> Nach 14 Tagen automatische
-          Löschung durch unseren Hosting-Anbieter (siehe Abschnitt 3).
+          <strong>Server-Logfiles:</strong> Nach maximal 14 Tagen
+          automatische Löschung durch unseren Hosting-Anbieter (siehe
+          Abschnitt 3).
         </li>
         <li>
           <strong>Widerruf:</strong> Bei Widerruf der Einwilligung sofortige
@@ -123,42 +116,37 @@ export default function DatenschutzPage() {
         <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. Unser berechtigtes
         Interesse folgt aus der Notwendigkeit, die Stabilität und Sicherheit
         der Website zu gewährleisten sowie Missbrauch abzuwehren. Diese
-        Logfiles werden nach <strong>maximal 30 Tagen</strong> automatisch
-        gelöscht.
+        Logfiles werden nach maximal 14 Tagen automatisch gelöscht.
       </p>
 
-      <h3>3.1 Hosting bei Vercel</h3>
+      <h3>3.1 Hosting bei IONOS</h3>
       <p>
         Unsere Website wird bei folgendem externen Dienstleister gehostet:
       </p>
       <p>
-        <strong>Vercel Inc.</strong>
+        <strong>IONOS SE</strong>
         <br />
-        440 N Barranca Ave #4133
+        Elgendorfer Straße 57
         <br />
-        Covina, CA 91723
+        56410 Montabaur
         <br />
-        USA
+        Deutschland
       </p>
       <p>
-        Vercel speichert beim Aufruf der Website die unter Abschnitt 3
-        genannten Server-Logfiles. Die Übermittlung von Daten in die USA
-        erfolgt auf Grundlage des{" "}
-        <strong>EU-US Data Privacy Framework (DPF)</strong>. Vercel Inc. ist
-        unter dem DPF zertifiziert. Die Europäische Kommission hat am
-        10.07.2023 einen Angemessenheitsbeschluss nach Art. 45 DSGVO für das
-        DPF erlassen. Ergänzend wurden Standardvertragsklauseln (SCC) gemäß
-        Art. 46 Abs. 2 lit. c DSGVO vereinbart. Mit Vercel wurde ein Vertrag
-        zur Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO abgeschlossen.
+        IONOS speichert beim Aufruf der Website die unter Abschnitt 3
+        genannten Server-Logfiles. Die Server von IONOS stehen in
+        Deutschland, eine Datenübermittlung in Drittländer findet{" "}
+        <strong>nicht</strong> statt. Mit IONOS wurde ein Vertrag zur
+        Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO abgeschlossen.
       </p>
       <p>
         Weitere Informationen findest du in der{" "}
         <a
-          href="https://vercel.com/legal/privacy-policy"
+          href="https://www.ionos.de/terms-gtc/terms-privacy"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Datenschutzerklärung von Vercel
+          Datenschutzerklärung von IONOS
         </a>
         .
       </p>
@@ -224,10 +212,9 @@ export default function DatenschutzPage() {
         (Nachweispflicht für die Einwilligung).
       </p>
       <p>
-        <strong>Speicherdauer:</strong> Wir speichern deine Kontaktdaten bis
-        zum Start des Produkts und maximal 12 Monate danach, spätestens jedoch
-        bis du deine Einwilligung widerrufst. IP-Adressen werden ausschließlich
-        zu Nachweiszwecken gespeichert und bei Widerruf gelöscht.
+        <strong>Speicherdauer:</strong> Siehe Löschkonzept in Abschnitt 2.3.
+        Spätester automatischer Löschtermin bei ausbleibendem Produktstart:{" "}
+        <strong>31.12.2026</strong>.
       </p>
       <p>
         <strong>Widerrufsrecht:</strong> Du kannst deine Einwilligung
@@ -240,11 +227,10 @@ export default function DatenschutzPage() {
         </li>
         <li>
           Per E-Mail an{" "}
-          <span className="placeholder">[datenschutz@deine-domain.de]</span>
+          <a href="mailto:hallo@nomipost.de">hallo@nomipost.de</a>
         </li>
         <li>
-          Über die Abmelde-Seite{" "}
-          <a href="/abmelden">/abmelden</a>
+          Über die Abmelde-Seite <a href="/abmelden">/abmelden</a>
         </li>
       </ul>
       <p>
@@ -268,8 +254,7 @@ export default function DatenschutzPage() {
       </p>
       <p>
         Wir nutzen Supabase mit einem Server-Standort in der Europäischen
-        Union (Region{" "}
-        <span className="placeholder">[eu-central-1 / Frankfurt]</span>),
+        Union (Region <strong>eu-central-1 / Frankfurt, Deutschland</strong>),
         sodass deine Daten innerhalb des Geltungsbereichs der DSGVO
         verarbeitet werden. Mit Supabase wurde ein Vertrag zur
         Auftragsverarbeitung nach Art. 28 DSGVO abgeschlossen. Details siehe{" "}
@@ -411,26 +396,38 @@ export default function DatenschutzPage() {
 
       <p>
         Zur Ausübung deiner Rechte genügt eine formlose E-Mail an{" "}
-        <span className="placeholder">[datenschutz@deine-domain.de]</span>.
+        <a href="mailto:hallo@nomipost.de">hallo@nomipost.de</a>.
       </p>
 
       <h2>10. Zuständige Aufsichtsbehörde</h2>
       <p>
-        Die für uns zuständige Aufsichtsbehörde ist{" "}
-        <span className="placeholder">
-          [zuständige Landes-Datenschutzbehörde gemäß Wohnsitz, z. B. „Der
-          Landesbeauftragte für den Datenschutz und die Informationsfreiheit
-          Baden-Württemberg"]
-        </span>
-        . Eine Liste aller Aufsichtsbehörden in Deutschland findest du unter{" "}
+        Die für uns zuständige Aufsichtsbehörde ist:
+      </p>
+      <p>
+        <strong>
+          Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit
+          Baden-Württemberg (LfDI BW)
+        </strong>
+        <br />
+        Lautenschlagerstraße 20
+        <br />
+        70173 Stuttgart
+        <br />
+        Deutschland
+        <br />
+        Telefon: +49 711 615541-0
+        <br />
+        E-Mail:{" "}
+        <a href="mailto:poststelle@lfdi.bwl.de">poststelle@lfdi.bwl.de</a>
+        <br />
+        Website:{" "}
         <a
-          href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html"
+          href="https://www.baden-wuerttemberg.datenschutz.de"
           target="_blank"
           rel="noopener noreferrer"
         >
-          bfdi.bund.de
+          www.baden-wuerttemberg.datenschutz.de
         </a>
-        .
       </p>
 
       <h2>11. Aktualität und Änderung dieser Datenschutzerklärung</h2>
