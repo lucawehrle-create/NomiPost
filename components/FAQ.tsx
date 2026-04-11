@@ -5,32 +5,32 @@ import HandDivider from "./HandDivider";
 
 const faqs = [
   {
-    q: "Für welches Alter ist NomiPost geeignet?",
-    a: "Die Briefe sind für Kinder von ungefähr 5 bis 10 Jahren gestaltet. Sprache, Schriftgröße und Rätsel-Schwierigkeit passen wir an das Leseniveau deines Kindes an (Beginner, Intermediate, Advanced).",
+    q: "Für welches Alter ist NomiPost gemacht?",
+    a: "Die Briefe sind für Kinder zwischen 5 und 10 Jahren gedacht. Sprache, Schriftgröße und Rätsel-Schwierigkeit passen wir ans Leseniveau deines Kindes an – vom Leseanfänger bis zum kleinen Profi.",
   },
   {
     q: "Wann startet NomiPost tatsächlich?",
-    a: "Wir sind gerade dabei, das Produkt sorgfältig zu entwickeln. Über diese Seite möchten wir zuerst herausfinden, ob genügend Familien daran interessiert sind. Alle auf der Warteliste bekommen als Erste Bescheid, wenn es losgeht – und sichern sich einen Early-Bird-Preis.",
+    a: "Wir bauen NomiPost gerade sorgfältig auf. Bevor wir starten, wollen wir herausfinden, welche Familien wirklich Lust drauf haben. Alle auf der Warteliste bekommen als Erste Bescheid – und sichern sich automatisch einen Early-Bird-Preis.",
   },
   {
-    q: "Was macht NomiPost anders als andere Kinder-Abos?",
-    a: "NomiPost ist keine Überraschungsbox mit Bastelkram. Es ist ein interaktives Kinderbuch in Briefform: eine durchgehende Geschichte, pädagogisch fundiert, handgemacht im Look und persönlich in jedem Detail. Dein Kind soll nicht nur beschäftigt werden – es soll etwas erhalten, an das es sich in 20 Jahren noch erinnert.",
+    q: "Was ist NomiPost eigentlich nicht?",
+    a: "Keine Überraschungsbox mit Bastelkram. Kein Abo für generische Kinder-Magazine. Keine App, die Aufmerksamkeit jagt. NomiPost ist ein interaktives Kinderbuch in Briefform – eine durchgehende Geschichte, pädagogisch fundiert, handgemacht im Look und persönlich in jedem Detail. Nicht zum Beschäftigen, sondern zum Schenken.",
   },
   {
     q: "Wird mein Kind mit Werbung oder Zusatzkäufen konfrontiert?",
-    a: "Niemals. NomiPost ist komplett werbefrei. Es gibt keine Cross-Promotion, keine In-App-Käufe, keine versteckten Kosten. Was im Umschlag steckt, ist alles, was dein Kind braucht – ohne Upsells.",
+    a: "Niemals. NomiPost ist komplett werbefrei. Keine Cross-Promotion, keine In-App-Käufe, keine versteckten Kosten. Was im Umschlag steckt, ist alles – ohne Nachkaufen, ohne Haken.",
   },
   {
-    q: "Wie persönlich ist der Brief wirklich?",
-    a: "Sehr persönlich. Beim echten Produktstart fragen wir dich nach dem Namen und den Interessen deines Kindes, sodass es im Brief direkt angesprochen wird – inklusive wiederkehrendem Begleit-Element, das in jedem Brief auftaucht. Für die Warteliste hier reichen aber Vorname und E-Mail – wir sammeln bewusst keine Kinddaten, solange das Produkt noch nicht startet.",
+    q: "Wie persönlich wird der Brief wirklich?",
+    a: "Sehr persönlich. Sobald NomiPost startet, fragen wir dich nach Namen und Interessen deines Kindes – inklusive einem wiederkehrenden Begleit-Element (Begleittier oder magischer Gegenstand), das in jedem Brief auftaucht. Für die Warteliste hier reichen Vorname und E-Mail – wir sammeln bewusst keine Kinddaten, solange es noch nicht losgeht.",
   },
   {
     q: "Wie viel wird NomiPost kosten?",
-    a: "Der genaue Preis steht noch nicht fest – das ist auch einer der Gründe für diese Warteliste. Wir möchten ein Produkt schaffen, das sich wirklich lohnt, und dabei einen fairen Preis finden. In der kurzen Bonus-Umfrage nach der Anmeldung kannst du uns gerne deine Preisvorstellung mitteilen – freiwillig, versteht sich.",
+    a: "Der genaue Preis steht noch nicht fest – das ist auch einer der Gründe für diese Warteliste. Wir möchten etwas schaffen, das sich wirklich lohnt, und dabei einen fairen Preis finden. In der kurzen Bonus-Umfrage nach der Anmeldung kannst du uns deine Vorstellung mitteilen. Freiwillig, versteht sich.",
   },
   {
     q: "Kann ich jederzeit pausieren oder beenden?",
-    a: "Ja. Sobald NomiPost startet, kannst du dein Abonnement jederzeit flexibel pausieren oder beenden. Kein Kleingedrucktes, keine Mindestlaufzeit über den aktuellen Monat hinaus.",
+    a: "Ja. Sobald NomiPost startet, kannst du jederzeit pausieren oder beenden. Kein Kleingedrucktes, keine Mindestlaufzeit – der aktuelle Monat läuft zu Ende, danach bist du frei.",
   },
 ];
 

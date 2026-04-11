@@ -16,8 +16,8 @@ export default function Footer() {
             </div>
             <p className="text-sm lg:text-base text-tintengrau-light leading-relaxed max-w-sm mb-6">
               Persönliche Post für kleine Entdecker. Handgemachte Abenteuer in
-              Briefform – jeden Monat neu. Ein Kunstwerk, an das sich dein Kind
-              in zwanzig Jahren noch erinnert.
+              Briefform, jeden Monat neu. Ein Kunstwerk, das dein Kind in
+              zwanzig Jahren noch aus dem Regal zieht.
             </p>
             <p className="handwritten text-lg text-mattgold-dark flex items-center gap-2">
               <span className="w-6 h-px bg-mattgold-dark" />
@@ -74,8 +74,8 @@ export default function Footer() {
               Bleib in Kontakt
             </h4>
             <p className="text-sm text-tintengrau mb-5 leading-relaxed">
-              Trag dich in die Warteliste ein und bekomme als Erste:r Bescheid,
-              wenn Nomis erster Brief auf Reisen geht.
+              Zwei Felder, und du bist dabei. Wir melden uns, sobald Nomis
+              erster Umschlag auf die Reise geht.
             </p>
             <a href="#warteliste" className="btn-primary py-3 px-6 text-sm">
               Zur Warteliste

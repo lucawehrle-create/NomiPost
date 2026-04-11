@@ -3,62 +3,63 @@
 import { motion } from "framer-motion";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
+import ImageSlot from "./ImageSlot";
 
 const items = [
   {
     title: "Eine Abenteuer-Geschichte",
     description:
-      "Kein Sachtext, keine Belehrung – eine echte Geschichte aus Nomis Reisetagebuch, liebevoll illustriert und pädagogisch fundiert.",
+      "Eine echte Geschichte aus Nomis Reisetagebuch. Mit Spot-Illustrationen am Rand und einem Cliffhanger am Ende – damit dein Kind den nächsten Brief kaum erwarten kann.",
     label: "Seite 1–4",
   },
   {
     title: "Ein Rätsel zum Knobeln",
     description:
-      "Wortsuche, Geheimschrift oder Quiz – passend zur Geschichte. Für kleine Detektive mit wachem Blick.",
+      "Geheimschrift, Wortsuche oder Quiz – immer verwoben mit der Geschichte. Für die, die gerne zwischen den Zeilen lesen.",
     label: "Seite 5",
   },
   {
     title: "Ein Ausmalbild",
     description:
-      "Eine ganzseitige Lineart-Illustration zum Thema. Stifte raus – Bildschirm aus. Kunst, die aus dem Kind kommt.",
+      "Ganzseitig, handgezeichnet, zum komplett ausfüllen. Keine Vorgaben, keine richtigen Farben – nur Stifte, Zeit, und ein Nachmittag, der im Flug vergeht.",
     label: "Seite 6",
   },
   {
     title: "\u201EWusstest du schon?\u201C",
     description:
-      "Vier bis fünf Fun Facts, die neugierig machen – verpackt in kleine Illustrationen, nie in trockene Listen.",
+      "Vier, fünf Dinge, die Nomi auf ihrer Reise gelernt hat – und die dein Kind beim Abendessen erzählen wird. Versprochen.",
     label: "Seite 7",
   },
   {
     title: "Eine Bastelanleitung",
     description:
-      "Schritt für Schritt mit Dingen, die fast jede Familie zu Hause hat. Keine Spezial-Sets, kein Zusatzkauf.",
+      "Schritt für Schritt, mit Dingen, die sowieso in der Schublade liegen. Kein Bausatz zum Nachkaufen – einfach aufklappen und loslegen.",
     label: "Seite 8",
   },
   {
-    title: "Antwortbrief-Vorlage",
+    title: "Ein Antwortbrief",
     description:
-      "Dein Kind schreibt Nomi zurück – mit Linien zum Schreiben und einem Feld zum Zeichnen. Wirklicher Austausch.",
+      "Linien zum Schreiben, ein Feld zum Zeichnen, und eine Adresse. Dein Kind antwortet Nomi zurück – und das ist der Anfang einer echten Brieffreundschaft.",
     label: "Seite 9",
   },
 ];
 
 const extras = [
   {
-    text: "Sticker-Bogen",
-    sub: "\u201ESkizzen, die Nomi unterwegs gemacht hat\u201C",
+    text: "Ein Stickerbogen",
+    sub: "\u201ESkizzen, die ich unterwegs gemacht habe\u201C",
   },
   {
-    text: "Postkarte",
-    sub: "zum Selbstbeschriften und Verschicken",
+    text: "Eine Postkarte",
+    sub: "zum Selbstbeschriften und an Oma verschicken",
   },
   {
-    text: "Wechselnde Sonderbeilage",
-    sub: "Masken, Lesezeichen, Decoder…",
+    text: "Eine wechselnde Beilage",
+    sub: "Maske, Lesezeichen, Decoder\u2026",
   },
   {
-    text: "Hörbuch per QR-Code",
-    sub: "Geschichte zum Einschlafen",
+    text: "Ein Hörbuch per QR-Code",
+    sub: "Gute-Nacht-Geschichte, von Nomi selbst gelesen",
   },
 ];
 
@@ -77,7 +78,7 @@ export default function LetterAnatomy() {
       />
 
       <div className="container-wide relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 lg:mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <div className="eyebrow mb-6 justify-center">
             <span className="w-10 h-px bg-mattgold" />
             Was im Umschlag steckt
@@ -89,12 +90,35 @@ export default function LetterAnatomy() {
             <span className="italic">Zum Anfassen.</span>
           </h2>
           <p className="mt-8 text-lg lg:text-xl text-tintengrau leading-relaxed max-w-2xl mx-auto text-pretty">
-            Jeder Brief ist kein Stapel Papier – er ist ein Kunstwerk in Briefform.
-            Zehn Seiten plus physische Beigaben, sorgfältig gestaltet und
-            erzählerisch verankert in Nomis Welt.
+            Jeder Brief ist kein Stapel Papier. Er ist eine kleine Reise, die
+            dein Kind aus dem Umschlag holt – zehn Seiten plus Beilagen,
+            erzählerisch verwoben in Nomis Welt.
           </p>
           <HandDivider className="mt-10" />
         </div>
+
+        {/* ─── BILD-SLOT: Letter Preview ─────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-5xl mx-auto mb-20 lg:mb-24"
+        >
+          <ImageSlot
+            src=""
+            alt="Ein aufgeklappter NomiPost-Brief mit allen Beilagen"
+            aspect="wide"
+            framed={false}
+            className="paper-card hand-border paper-card-elevated overflow-hidden"
+            placeholderTitle="Brief-Vorschau"
+            placeholderDescription="Ein Foto oder eine Illustration des aufgeklappten Briefs mit allen Beilagen – Draufsicht, warmes Setting (Holztisch, Kakao-Tasse, Aquarell-Akzente)."
+            filename="/images/letter-preview.jpg"
+          />
+          <p className="handwritten text-center mt-4 text-lg text-mattgold-dark">
+            So sieht ein Brief aus, wenn du ihn aufklappst ✦
+          </p>
+        </motion.div>
 
         {/* 6 Content-Karten im Raster */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
@@ -178,8 +202,9 @@ export default function LetterAnatomy() {
           className="mt-16 max-w-4xl mx-auto text-center"
         >
           <p className="handwritten text-2xl lg:text-3xl text-nomi-violet leading-relaxed">
-            Beim ersten Brief gibt es außerdem eine Sammelmappe, ein A2-Poster
-            und einen Abenteuer-Ausweis – damit dein Kind von Tag eins weiß:
+            Beim ersten Brief liegt außerdem ein ganzes Willkommens-Paket
+            bei: Sammelmappe, A2-Poster, Namensaufkleber und ein
+            Abenteuer-Ausweis – damit dein Kind von Tag eins weiß:
             <br />
             <span className="text-mattgold-dark">
               Das hier ist etwas Besonderes.

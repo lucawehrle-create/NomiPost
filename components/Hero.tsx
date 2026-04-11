@@ -82,10 +82,12 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.25 }}
               className="mt-8 lg:mt-10 text-lg md:text-xl text-tintengrau leading-relaxed max-w-[36rem] text-pretty"
             >
-              Jeden Monat ein handgemachter Brief von{" "}
-              <span className="text-nomi-violet font-semibold">Nomi</span>, der
-              Geschichten, Rätsel und Sticker bringt – ein Abenteuer zum
-              Anfassen. Jetzt auf die Warteliste:
+              Einmal im Monat trifft ein Umschlag im Briefkasten ein –
+              handgemacht, persönlich adressiert, von{" "}
+              <span className="text-nomi-violet font-semibold">Nomi</span>.
+              Keine App, kein Bildschirm, keine Batterien. Nur ein Kunstwerk
+              aus Papier, das dein Kind Jahre später noch aus dem Regal ziehen
+              wird.
             </motion.p>
 
             {/* Inline-Form direkt im Hero – max. Conversion */}
@@ -122,10 +124,12 @@ export default function Hero() {
               </div>
               <p className="leading-tight">
                 <span className="font-semibold text-nomi-violet">
-                  Erste Familien sind schon dabei
+                  Die ersten Familien halten schon Wache am Briefkasten.
                 </span>
                 <br />
-                <span className="text-xs">Werde Teil der ersten Welle</span>
+                <span className="text-xs">
+                  Werde Teil der ersten Welle von Abenteurern.
+                </span>
               </p>
             </motion.div>
           </motion.div>

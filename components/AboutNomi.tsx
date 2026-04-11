@@ -4,15 +4,16 @@ import { motion } from "framer-motion";
 import CompassRose from "./CompassRose";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
+import ImageSlot from "./ImageSlot";
 
 const traits = [
   {
     title: "Neugierig",
-    text: "Sie beobachtet Details, die andere übersehen: die Form eines Schattens, das Muster einer Baumrinde.",
+    text: "Sie beobachtet Details, die andere übersehen: die Form eines Schattens, das Muster einer Baumrinde, den Geruch von Regen auf heißem Stein.",
   },
   {
     title: "Auf Augenhöhe",
-    text: "Sie behandelt Kinder nicht wie Babys, sondern wie ihre wichtigste Komplizin und treueste Forschungspartnerin.",
+    text: "Sie behandelt Kinder nicht wie Babys, sondern wie ihre wichtigste Komplizin und treueste Forschungspartnerin in der Heimat.",
   },
   {
     title: "Mutig, aber verletzlich",
@@ -43,13 +44,31 @@ export default function AboutNomi() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 flex justify-center"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-mattgold/15 blur-[80px] rounded-full scale-125" />
-              <div className="relative w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 animate-float-slow">
+            {/* Nomi-Portrait mit goldenem Kompass-Akzent */}
+            <div className="relative w-full max-w-[380px]">
+              <div className="absolute inset-0 bg-mattgold/15 blur-[80px] rounded-full scale-110" />
+
+              {/* Bild-Slot im Vordergrund */}
+              <div className="relative">
+                <ImageSlot
+                  src=""
+                  alt="Nomi, die Entdeckerin – Maskottchen von NomiPost"
+                  aspect="portrait"
+                  framed
+                  className="relative z-10 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-[800ms] ease-out"
+                  placeholderTitle="Nomi-Portrait"
+                  placeholderDescription="Das große Maskottchen-Bild von Nomi: Entdeckerin mit altem goldenen Kompass, Aquarell-Stil, warme Farben, leicht nostalgisch."
+                  filename="/images/nomi-portrait.jpg"
+                />
+              </div>
+
+              {/* Kleine schwebende Kompassrose als Akzent rechts oben */}
+              <div className="absolute -top-6 -right-6 w-20 lg:w-24 animate-float z-20">
                 <CompassRose className="w-full h-full gold-glow" />
               </div>
+
               <p className="handwritten text-center mt-6 text-xl lg:text-2xl text-nomi-violet">
-                Nomis goldener Kompass ✦
+                Nomi mit ihrem goldenen Kompass ✦
               </p>
             </div>
           </motion.div>
@@ -80,15 +99,23 @@ export default function AboutNomi() {
               <p>
                 Sie reist mit einem alten, goldenen Kompass, dessen Nadel nicht
                 nach Norden zeigt, sondern dorthin, wo das nächste Abenteuer
-                wartet. Mal zu einem Leuchtturm, mal tief unter die Erde, mal in
-                die Werkstatt eines alten Erfinders.
+                wartet. Mal zu einem Leuchtturm, mal tief unter die Erde, mal
+                in die Werkstatt eines alten Erfinders.
+              </p>
+              <p>
+                Und weil ihre Posttasche direkt mit dem Briefkasten deines
+                Kindes verbunden ist, landen ihre Briefe jeden Monat genau
+                dort, wo sie hingehören.
               </p>
             </div>
 
             {/* Traits als Mini-Grid */}
             <div className="mt-10 grid sm:grid-cols-3 gap-5">
               {traits.map((t) => (
-                <div key={t.title} className="border-l-[1.5px] border-mattgold/40 pl-4 py-1">
+                <div
+                  key={t.title}
+                  className="border-l-[1.5px] border-mattgold/40 pl-4 py-1"
+                >
                   <p className="headline-serif text-lg font-semibold text-nomi-violet mb-1">
                     {t.title}
                   </p>
@@ -104,9 +131,9 @@ export default function AboutNomi() {
                 &ldquo;
               </span>
               <p className="handwritten text-xl lg:text-2xl text-nomi-violet italic leading-relaxed">
-                Psst&hellip; ich verrate dir ein Geheimnis. Unter den Steinen am
-                Bach lebt etwas, das noch nie jemand gesehen hat. Wollen wir
-                herausfinden, was es ist?
+                Psst&hellip; ich verrate dir ein Geheimnis. Unter den Steinen
+                am Bach lebt etwas, das noch nie jemand gesehen hat. Wollen
+                wir herausfinden, was es ist?
               </p>
               <p className="handwritten text-mattgold-dark text-right mt-3 flex items-center justify-end gap-2">
                 <span className="w-6 h-px bg-mattgold-dark" />

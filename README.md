@@ -179,6 +179,42 @@ data/
 - **Tonalität:** Beruhigend, professionell, wertschätzend – nie kindlich.
   Keine verbotenen Begriffe („KI", „Abo-Box", „Algorithmus").
 
+## Bilder einpflegen
+
+Die Seite hat drei strategische Bildslots, die aktuell mit eleganten
+Platzhaltern im Brand-Stil gefüllt sind. Sobald du Bilder hochlädst,
+werden sie automatisch angezeigt.
+
+**So pflegst du ein Bild ein:**
+
+1. Leg die Datei in `public/images/` ab – unter dem genauen Namen, der im
+   Platzhalter auf der Seite angezeigt wird (z. B. `nomi-portrait.jpg`).
+2. Öffne die zugehörige Komponente (Pfad steht im Platzhalter).
+3. Setze den `src`-Prop:
+
+   **Vorher:**
+   ```tsx
+   <ImageSlot src="" filename="/images/nomi-portrait.jpg" ... />
+   ```
+
+   **Nachher:**
+   ```tsx
+   <ImageSlot src="/images/nomi-portrait.jpg" filename="/images/nomi-portrait.jpg" ... />
+   ```
+
+4. Speichern, fertig. Die Seite lädt dein Bild.
+
+**Die drei Slots:**
+
+| Dateiname | Komponente | Was reingehört |
+|---|---|---|
+| `nomi-portrait.jpg` | `components/AboutNomi.tsx` | Großes Nomi-Maskottchen-Portrait im Aquarell-Stil, Hochformat 3:4 |
+| `letter-preview.jpg` | `components/LetterAnatomy.tsx` | Foto/Illustration eines aufgeklappten Briefs mit allen Beilagen, Querformat 16:10 |
+| `nomi-hero.jpg` | `components/Hero.tsx` (optional) | Kleines Nomi-Vignetten-Bild als Akzent im Hero |
+
+Eine vollständige Anleitung mit Format-Empfehlungen findest du unter
+[`public/images/README.md`](./public/images/README.md).
+
 ## Rechtskonformität (DSGVO / DDG / UWG)
 
 Die Seite ist umfassend auf die aktuellen deutschen Rechts-Anforderungen

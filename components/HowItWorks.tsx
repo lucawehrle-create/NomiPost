@@ -6,27 +6,27 @@ import HandDivider from "./HandDivider";
 const steps = [
   {
     number: "01",
-    title: "Du meldest dich an",
+    title: "Du trägst dich ein",
     description:
-      "Name und Alter deines Kindes reichen. Ein paar Fragen zu Lieblingsthemen helfen uns, die Briefe zu personalisieren.",
+      "Zwei Felder: dein Vorname und deine E-Mail. Mehr brauchen wir jetzt noch nicht – alles andere kommt, wenn NomiPost wirklich startet.",
   },
   {
     number: "02",
-    title: "Nomi schickt den ersten Brief",
+    title: "Nomi packt den ersten Umschlag",
     description:
-      "Dein Kind bekommt sein Willkommens-Paket: Sammelmappe, Poster, Abenteuer-Ausweis – und den ersten Brief von Nomi, persönlich adressiert.",
+      "Sobald es losgeht, bekommst du als Erste:r Bescheid. Im ersten Umschlag: Nomis Willkommens-Paket mit Sammelmappe, A2-Poster, Abenteuer-Ausweis – und dem allerersten Brief.",
   },
   {
     number: "03",
     title: "Jeden Monat eine neue Reise",
     description:
-      "Einmal pro Monat landet ein neuer Umschlag im Briefkasten. Neue Geschichte, neue Welt, neue Rätsel – aber immer dieselbe Nomi.",
+      "Danach kommt jeden Monat ein neuer Umschlag. Neue Geschichte, neue Welt, neue Rätsel – aber immer dieselbe Nomi, die dein Kind beim Namen nennt.",
   },
   {
     number: "04",
     title: "Die Sammlung wächst",
     description:
-      "Jeder Brief kommt in die Sammelmappe. Nach einem Jahr hat dein Kind ein ganzes Reisetagebuch – ein Schatz, der bleibt.",
+      "Jeder Brief wandert in die Sammelmappe. Nach einem Jahr hält dein Kind ein ganzes Reisetagebuch in der Hand – einen Schatz, den es später nicht hergibt.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function HowItWorks() {
           <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
             Von der Anmeldung
             <br />
-            <span className="italic">bis zum großen Staunen</span>
+            <span className="italic">bis zu leuchtenden Augen am Briefkasten</span>
           </h2>
           <HandDivider className="mt-10" />
         </div>

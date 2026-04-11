@@ -215,8 +215,9 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 </svg>
               </span>
               <span className="text-[0.8rem] text-tintengrau leading-[1.55] text-pretty">
-                Ich willige ein, per E-Mail über den Start von NomiPost
-                informiert zu werden. Widerruf jederzeit möglich. Mehr in der{" "}
+                Ich möchte per E-Mail Bescheid bekommen, sobald Nomis erster
+                Brief auf die Reise geht. Widerruf jederzeit mit einem Klick.
+                Mehr dazu in der{" "}
                 <a
                   href="/datenschutz"
                   target="_blank"
@@ -240,14 +241,14 @@ export default function WaitlistForm({ variant = "card" }: Props) {
               disabled={!canSubmitStep1 || submitting}
               className="btn-primary w-full sm:w-auto text-base"
             >
-              {submitting ? "Einen Moment …" : "Auf die Warteliste"}
+              {submitting ? "Einen Moment …" : "Nomi Bescheid geben"}
               {!submitting && <span className="text-mattgold-light">✦</span>}
             </button>
 
             <p className="text-[0.7rem] text-tintengrau-light leading-snug">
-              Double-Opt-In: Wir schicken dir eine Bestätigungs-Mail,
-              bitte kurz den Link klicken. Keine Werbung, keine Weitergabe
-              an Dritte.
+              Wir schicken dir gleich eine Bestätigungs-Mail. Kurz den Link
+              klicken – und du bist dabei. Kein Weitersagen an Dritte,
+              versprochen.
             </p>
           </motion.form>
         )}
@@ -283,11 +284,11 @@ export default function WaitlistForm({ variant = "card" }: Props) {
               </div>
               <div className="flex-1">
                 <h3 className="headline-serif text-xl md:text-2xl font-semibold text-nomi-violet leading-tight">
-                  Du bist dabei, {parentName}!
+                  Willkommen auf der Liste, {parentName} ✦
                 </h3>
                 <p className="text-sm text-tintengrau leading-snug mt-1">
-                  Check kurz dein Postfach – wir haben dir einen
-                  Bestätigungs-Link geschickt.
+                  Schau kurz in dein Postfach – dort wartet Nomis
+                  Bestätigungs-Brief auf dich.
                 </p>
               </div>
             </div>
@@ -295,9 +296,9 @@ export default function WaitlistForm({ variant = "card" }: Props) {
             <div className="pt-2 border-t border-mattgold/25">
               <p className="text-sm text-tintengrau leading-relaxed mt-4 mb-4">
                 <strong className="text-nomi-violet">
-                  Zwei Fragen noch (optional) –
+                  Zwei Fragen noch, wenn du magst –
                 </strong>{" "}
-                sie helfen uns enorm, NomiPost richtig gut zu machen:
+                sie helfen uns enorm, NomiPost für euch richtig gut zu machen:
               </p>
 
               <div className="space-y-4">
@@ -306,13 +307,13 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                     htmlFor="wl-wishes"
                     className="block text-sm font-semibold text-nomi-violet mb-2"
                   >
-                    Was würde NomiPost für dich perfekt machen?
+                    Was würde NomiPost zu etwas Besonderem für euch machen?
                   </label>
                   <textarea
                     id="wl-wishes"
                     value={wishes}
                     onChange={(e) => setWishes(e.target.value)}
-                    placeholder="z. B. Was darf auf keinen Fall fehlen? Worauf würdest du achten?"
+                    placeholder="Was darf auf keinen Fall fehlen? Worauf achtest du bei so etwas?"
                     rows={3}
                     className="paper-input resize-none"
                     maxLength={2000}
@@ -324,7 +325,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                     htmlFor="wl-price"
                     className="block text-sm font-semibold text-nomi-violet mb-2"
                   >
-                    Welcher Monatspreis wäre für dich fair?
+                    Was wäre für dich ein fairer Monatspreis?
                   </label>
                   <select
                     id="wl-price"
@@ -424,16 +425,16 @@ export default function WaitlistForm({ variant = "card" }: Props) {
               </svg>
             </div>
             <h3 className="headline-serif text-2xl md:text-3xl font-semibold text-nomi-violet leading-tight mb-3">
-              Danke, {parentName}! ✦
+              Bis bald, {parentName} ✦
             </h3>
             <p className="text-tintengrau leading-relaxed max-w-sm mx-auto text-sm md:text-base">
-              Du bist auf der Warteliste. Vergiss nicht, die
-              Bestätigungs-Mail an{" "}
-              <strong className="text-nomi-violet">{email}</strong> zu
-              klicken – sonst sehen wir uns nicht wieder.
+              Eine Sache noch: Schau bitte kurz in dein Postfach und klicke
+              auf den Bestätigungs-Link, den wir an{" "}
+              <strong className="text-nomi-violet">{email}</strong> geschickt
+              haben. Sonst verlieren wir uns wieder.
             </p>
             <p className="handwritten text-lg text-mattgold-dark mt-5">
-              Bis bald, dein NomiPost-Team
+              Nomi meldet sich ✦
             </p>
 
             {devConfirmUrl && (

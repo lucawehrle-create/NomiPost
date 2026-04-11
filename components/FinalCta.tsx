@@ -26,21 +26,23 @@ export default function FinalCta() {
         >
           <div className="eyebrow mb-6 justify-center">
             <span className="w-10 h-px bg-mattgold" />
-            Bereit für Nomis ersten Brief?
+            Nomi packt schon den ersten Umschlag
             <span className="w-10 h-px bg-mattgold" />
           </div>
 
           <h2 className="headline-serif text-4xl md:text-5xl lg:text-[3.5rem] font-semibold text-nomi-violet leading-[1.05] text-balance">
-            Warteliste wartet.
+            Sei dabei,
             <br />
-            <span className="italic">Nur zwei Felder.</span>
+            <span className="italic">wenn die Post losgeht.</span>
           </h2>
 
           <HandDivider className="mt-8 mb-8" />
 
           <p className="text-lg text-tintengrau leading-relaxed max-w-xl mx-auto text-pretty">
-            Vorname, E-Mail, fertig. Kein Kleingedrucktes, keine Werbung,
-            keine Weitergabe an Dritte – nur eine Nachricht, wenn es losgeht.
+            Vorname, E-Mail, fertig. Keine Werbung, kein Weitersagen, kein
+            Stress. Nur eine Nachricht, sobald Nomis erster Brief auf die
+            Reise geht – und die Zusicherung, dass du zur allerersten Welle
+            gehörst.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

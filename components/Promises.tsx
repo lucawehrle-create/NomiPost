@@ -7,7 +7,7 @@ const promises = [
   {
     title: "Persönlich und einzigartig",
     description:
-      "Jeder Brief fühlt sich an, als wäre er nur für dieses eine Kind gemacht. Die Ansprache, die Geschichte, jedes Detail – beim Namen, bei den Themen, bei der Reise.",
+      "Nicht nur ein Name in einem Template. Jeder Brief ist eine kleine Welt, die für dein Kind gebaut wurde – mit seinen Lieblingsthemen und einem wiederkehrenden Begleiter, den es sofort erkennt.",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -46,7 +46,7 @@ const promises = [
   {
     title: "Kunstvoll, nie billig",
     description:
-      "Jeder Brief sieht aus wie eine Seite aus einem preisgekrönten Kinderbuch. Aquarell-Illustrationen, hochwertiges Papier, liebevolle Details in jedem Element.",
+      "Aquarell statt Clip-Art. Handgezeichnete Linien statt Vektoren. Papier, das sich wie ein echtes Kinderbuch anfühlt – und das dein Kind nicht einfach weglegt.",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -77,7 +77,7 @@ const promises = [
   {
     title: "Mehr als nur lesen",
     description:
-      "Ein multisensorisches Erlebnis: Geschichte, Rätsel, Ausmalbild, Bastelanleitung, Sticker zum Sammeln und ein Hörbuch zum Lauschen. Ein Abenteuer zum Anfassen.",
+      "Zum Lesen, Kleben, Malen, Knobeln, Basteln, Anhören und unter das Kopfkissen legen. Bildschirmfreie Fantasiezeit, die von ganz allein entsteht – ohne dass du etwas dazukaufen musst.",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -113,9 +113,9 @@ export default function Promises() {
             <span className="w-10 h-px bg-mattgold" />
           </div>
           <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
-            Drei Dinge, auf die du dich
+            Drei Versprechen,
             <br />
-            <span className="italic">verlassen kannst</span>
+            <span className="italic">auf die wir alles setzen</span>
           </h2>
           <HandDivider className="mt-10" />
         </div>
