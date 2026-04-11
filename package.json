@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/caveat": "^5.2.8",
+    "@fontsource/fraunces": "^5.2.9",
+    "@fontsource/inter": "^5.2.8",
     "@supabase/supabase-js": "^2.45.4",
     "framer-motion": "^11.11.1",
     "next": "14.2.15",

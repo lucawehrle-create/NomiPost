@@ -24,9 +24,14 @@ function toCsv(entries: WaitlistEntry[]): string {
     "frequency",
     "heard_from",
     "feedback",
+    "consent_contact",
+    "consent_survey",
+    "consent_at",
+    "consent_text_version",
+    "confirmed_at",
   ];
 
-  const escape = (v: string | null | undefined) => {
+  const escape = (v: string | null | undefined | boolean) => {
     if (v === null || v === undefined) return "";
     const s = String(v).replace(/"/g, '""');
     return `"${s}"`;
@@ -46,6 +51,11 @@ function toCsv(entries: WaitlistEntry[]): string {
       escape(e.frequency),
       escape(e.heard_from),
       escape(e.feedback),
+      escape(e.consent_contact),
+      escape(e.consent_survey),
+      escape(e.consent_at),
+      escape(e.consent_text_version),
+      escape(e.confirmed_at),
     ].join(",")
   );
 
@@ -157,12 +167,12 @@ export default function AdminDashboard({ entries, mode }: Props) {
             }
           />
           <StatCard
-            label="Mit Feedback"
-            value={entries.filter((e) => e.feedback && e.feedback.length > 0).length}
+            label="Mit Umfrage-Consent"
+            value={entries.filter((e) => e.consent_survey).length}
           />
           <StatCard
-            label="Mit Kinder-Name"
-            value={entries.filter((e) => e.child_name && e.child_name.length > 0).length}
+            label="Mit Feedback"
+            value={entries.filter((e) => e.feedback && e.feedback.length > 0).length}
           />
         </div>
 
@@ -201,13 +211,14 @@ export default function AdminDashboard({ entries, mode }: Props) {
                 <th className="p-3 font-semibold">Alter</th>
                 <th className="p-3 font-semibold">Preis</th>
                 <th className="p-3 font-semibold">Interessen</th>
+                <th className="p-3 font-semibold">Consent</th>
                 <th className="p-3 font-semibold">Feedback</th>
               </tr>
             </thead>
             <tbody>
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={8} className="p-8 text-center text-tintengrau-light">
+                  <td colSpan={9} className="p-8 text-center text-tintengrau-light">
                     {entries.length === 0
                       ? "Noch keine Einträge. Sobald sich jemand in die Warteliste einträgt, erscheint er hier."
                       : "Keine Treffer für deine Suche."}
@@ -240,6 +251,35 @@ export default function AdminDashboard({ entries, mode }: Props) {
                     {(e.interests ?? []).length > 3 &&
                       ` +${(e.interests ?? []).length - 3}`}
                   </td>
+                  <td className="p-3 text-xs whitespace-nowrap">
+                    <div className="flex flex-col gap-0.5">
+                      <span
+                        className={`inline-flex items-center gap-1 ${
+                          e.consent_contact
+                            ? "text-green-700"
+                            : "text-red-700"
+                        }`}
+                        title={
+                          e.consent_at
+                            ? `Eingewilligt am ${new Date(
+                                e.consent_at
+                              ).toLocaleString("de-DE")}`
+                            : ""
+                        }
+                      >
+                        {e.consent_contact ? "✓" : "✗"} Kontakt
+                      </span>
+                      <span
+                        className={`inline-flex items-center gap-1 ${
+                          e.consent_survey
+                            ? "text-green-700"
+                            : "text-tintengrau-light"
+                        }`}
+                      >
+                        {e.consent_survey ? "✓" : "–"} Umfrage
+                      </span>
+                    </div>
+                  </td>
                   <td className="p-3 text-tintengrau text-xs max-w-[240px] truncate">
                     {e.feedback || "–"}
                   </td>
@@ -247,6 +287,16 @@ export default function AdminDashboard({ entries, mode }: Props) {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* DSGVO-Hinweis für den Admin */}
+        <div className="mt-8 p-5 border-l-4 border-mattgold bg-mattgold/10 text-sm text-tintengrau">
+          <strong className="text-nomi-violet">DSGVO-Hinweis:</strong> Alle
+          Einträge enthalten Einwilligungs-Zeitpunkt (<code>consent_at</code>)
+          und Text-Version (<code>consent_text_version</code>) als Nachweis
+          gemäß Art. 7 Abs. 1 DSGVO. Bei Löschanfragen bitte den entsprechenden
+          Eintrag aus der Datenbank entfernen (Supabase Dashboard oder{" "}
+          <code>data/waitlist.json</code>).
         </div>
       </div>
     </main>

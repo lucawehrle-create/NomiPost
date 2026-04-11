@@ -6,9 +6,14 @@
   :root {
     --color-bg: #fff8f0;
     --color-ink: #3a3a3a;
+    /* Selbst-gehostete Schriften via Fontsource (GDPR-konform) */
     --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
     --font-fraunces: "Fraunces", Georgia, "Times New Roman", serif;
     --font-caveat: "Caveat", "Brush Script MT", cursive;
+  }
+
+  body {
+    font-family: var(--font-inter);
   }
 
   html {
@@ -19,7 +24,6 @@
   }
 
   body {
-    font-family: var(--font-inter), system-ui, sans-serif;
     font-feature-settings: "ss01", "cv11", "kern";
     color: var(--color-ink);
     background-color: var(--color-bg);
@@ -197,6 +201,48 @@
 
   .chip-active {
     @apply border-nomi-violet bg-nomi-violet text-warmcreme shadow-md shadow-nomi-violet/30;
+  }
+
+  /* Typografie für Rechtstexte – ruhig, gut lesbar */
+  .legal-content h2 {
+    @apply headline-serif text-2xl lg:text-[1.75rem] font-semibold text-nomi-violet leading-tight mt-12 mb-4;
+  }
+
+  .legal-content h3 {
+    @apply headline-serif text-xl font-semibold text-nomi-violet leading-tight mt-8 mb-3;
+  }
+
+  .legal-content p {
+    @apply text-[1.0625rem] leading-[1.7] text-tintengrau;
+  }
+
+  .legal-content a {
+    @apply text-nomi-violet underline decoration-mattgold decoration-1 underline-offset-[3px] hover:decoration-2;
+  }
+
+  .legal-content strong {
+    @apply text-nomi-violet font-semibold;
+  }
+
+  .legal-content ul {
+    @apply list-none space-y-2 pl-0;
+  }
+
+  .legal-content ul li {
+    @apply relative pl-6 text-[1.0625rem] leading-[1.7];
+  }
+
+  .legal-content ul li::before {
+    content: "✦";
+    @apply absolute left-0 top-0 text-mattgold text-sm;
+  }
+
+  .legal-content .placeholder {
+    @apply inline-block rounded-sm bg-mattgold/15 text-nomi-violet px-2 py-0.5 border border-mattgold/40 text-sm font-mono;
+  }
+
+  .legal-content .notice {
+    @apply rounded-sm border-l-4 border-mattgold bg-mattgold/10 p-5 my-6 text-[0.95rem];
   }
 
   /* Gold-Sparkle Utility */

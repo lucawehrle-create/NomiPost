@@ -27,7 +27,25 @@ export type WaitlistEntry = {
   frequency: string | null;
   heard_from: string | null;
   feedback: string | null;
+
+  // DSGVO: Nachweis der Einwilligung (Art. 7 Abs. 1 DSGVO)
+  consent_contact: boolean;
+  consent_survey: boolean;
+  consent_at: string; // ISO-Timestamp
+  consent_text_version: string; // Text-Version der Einwilligung
+
+  // Optional: Für späteres Double-Opt-In
+  confirmation_token: string | null;
+  confirmed_at: string | null;
 };
+
+/**
+ * Die aktuelle Version des Einwilligungstexts.
+ * Bei Änderung des Consent-Textes diese Version hochzählen,
+ * damit bei Datenschutz-Anfragen nachweisbar ist, welchem
+ * Text der Nutzer zugestimmt hat.
+ */
+export const CONSENT_TEXT_VERSION = "2026-04-11.v1";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "waitlist.json");

@@ -64,11 +64,23 @@ und hat ein schönes Dashboard zum Ansehen der Einträge.
      importance text[] default '{}',
      frequency text,
      heard_from text,
-     feedback text
+     feedback text,
+     -- DSGVO: Nachweis der Einwilligung (Art. 7 Abs. 1 DSGVO)
+     consent_contact boolean not null default false,
+     consent_survey boolean not null default false,
+     consent_at timestamptz not null default now(),
+     consent_text_version text not null,
+     -- Für späteres Double-Opt-In
+     confirmation_token text,
+     confirmed_at timestamptz
    );
 
    create unique index waitlist_email_idx on public.waitlist (lower(email));
    ```
+
+   **Wichtig:** Wähle beim Anlegen des Supabase-Projekts eine **Region in der
+   EU** (z. B. `eu-central-1` / Frankfurt), damit die Daten im
+   Geltungsbereich der DSGVO verarbeitet werden.
 
 3. **API-Keys kopieren:** Gehe in **Project Settings → API** und kopiere:
    - `Project URL` → `SUPABASE_URL`
@@ -150,6 +162,57 @@ data/
   mit leichten Turbulenz-Filtern für den handgemachten Look.
 - **Tonalität:** Beruhigend, professionell, wertschätzend – nie kindlich.
   Keine verbotenen Begriffe („KI", „Abo-Box", „Algorithmus").
+
+## Rechtskonformität (DSGVO / TMG)
+
+Die Seite ist bereits weitgehend DSGVO- und TMG-konform ausgelegt:
+
+- **Impressum** unter `/impressum` (Template mit Platzhaltern – **muss vor
+  Go-Live ausgefüllt werden**)
+- **Datenschutzerklärung** unter `/datenschutz` (Template mit Platzhaltern –
+  **muss vor Go-Live ausgefüllt werden**)
+- **Einwilligungs-Checkbox** (nicht vorangekreuzt, Pflicht nach Art. 7 DSGVO)
+- **Einwilligungs-Zeitstempel** und **Text-Version** werden pro Eintrag
+  gespeichert (Nachweis nach Art. 7 Abs. 1 DSGVO)
+- **Google Fonts selbst gehostet** über `next/font` (kein Drittlandtransfer
+  beim Seitenaufruf – siehe LG München, 20.01.2022, Az. 3 O 17493/20)
+- **Keine Tracking-Cookies**, **kein Analytics**, **keine Marketing-Pixel**
+- **Admin-Cookie** ist httpOnly, SameSite=Lax und nur „strictly necessary"
+- **Link zur Datenschutzerklärung** direkt am Formular
+
+### Was du noch selbst tun musst (vor Go-Live)
+
+1. **Impressum ausfüllen** (`app/impressum/page.tsx`) – alle
+   `[… Platzhalter]` durch echte Daten ersetzen. Für eine Privatperson ohne
+   eingetragenes Unternehmen: Name + Adresse reichen, Handelsregister und
+   USt-ID entfallen.
+2. **Datenschutzerklärung ausfüllen** (`app/datenschutz/page.tsx`) – vor
+   allem: Verantwortlicher, E-Mail-Adresse für Datenschutz-Anfragen,
+   Hosting-Anbieter, Supabase-Region, zuständige Aufsichtsbehörde.
+3. **Auftragsverarbeitungsverträge (AVV)** abschließen:
+   - **Supabase** – im Supabase-Dashboard unter „Settings → Legal → DPA"
+   - **Vercel** (oder anderer Hosting-Anbieter) – siehe DPA der jeweiligen
+     Anbieter
+4. **Kontakt-E-Mail** (z. B. `datenschutz@deine-domain.de`) einrichten und
+   Löschanfragen bearbeiten können.
+5. **Double-Opt-In** implementieren, sobald du echte Marketing-E-Mails
+   versenden willst. Die Datenbank ist bereits darauf vorbereitet
+   (`confirmation_token`, `confirmed_at`). Empfohlene Dienste: Resend, Loops,
+   SendGrid – alle mit DSGVO-konformem Setup.
+6. **Letzte Prüfung** durch eine:n Rechtsanwält:in, besonders wenn du noch
+   kein eingetragenes Unternehmen hast.
+
+### Einwilligungs-Änderungen nachvollziehbar halten
+
+Wenn du den Text der Einwilligungs-Checkbox später änderst, **erhöhe die
+Version** in `lib/storage.ts`:
+
+```ts
+export const CONSENT_TEXT_VERSION = "2026-04-11.v1"; // → "2026-06-01.v2"
+```
+
+So kannst du bei Datenschutz-Anfragen später nachweisen, welcher
+Einwilligungs-Text zum jeweiligen Zeitpunkt gültig war.
 
 ## Nächste Schritte (nach der Validierung)
 

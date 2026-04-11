@@ -86,11 +86,17 @@ export default function Footer() {
 
         <div className="mt-16 lg:mt-20 pt-8 border-t border-nomi-violet/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-tintengrau-light">
           <p>© {new Date().getFullYear()} NomiPost · Mit Liebe gestaltet ✦</p>
-          <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-nomi-violet transition-colors">
+          <div className="flex items-center gap-6">
+            <a
+              href="/impressum"
+              className="hover:text-nomi-violet transition-colors"
+            >
               Impressum
             </a>
-            <a href="#" className="hover:text-nomi-violet transition-colors">
+            <a
+              href="/datenschutz"
+              className="hover:text-nomi-violet transition-colors"
+            >
               Datenschutz
             </a>
           </div>

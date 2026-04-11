@@ -20,6 +20,10 @@ type FormState = {
   frequency: string;
   heardFrom: string;
   feedback: string;
+
+  // Step 3: Einwilligungen (DSGVO)
+  consentContact: boolean; // Pflicht – Speicherung & E-Mail-Benachrichtigung
+  consentSurvey: boolean; // Optional – Umfragedaten für Produktentwicklung
 };
 
 const initialState: FormState = {
@@ -33,6 +37,8 @@ const initialState: FormState = {
   frequency: "",
   heardFrom: "",
   feedback: "",
+  consentContact: false,
+  consentSurvey: false,
 };
 
 const interestOptions = [
@@ -114,6 +120,9 @@ export default function WaitlistForm() {
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
 
   const canProceedStep2 = form.childAge !== "";
+
+  // Ohne Pflicht-Einwilligung darf nicht abgeschickt werden (Art. 7 DSGVO)
+  const canSubmit = form.consentContact;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -481,6 +490,111 @@ export default function WaitlistForm() {
                     className="paper-input resize-none"
                   />
                 </div>
+
+                {/* DSGVO-Einwilligung: nicht vorangekreuzt, Pflicht */}
+                <div className="pt-4 border-t border-mattgold/30 space-y-4">
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <span className="relative flex-shrink-0 mt-0.5">
+                      <input
+                        type="checkbox"
+                        required
+                        checked={form.consentContact}
+                        onChange={(e) =>
+                          update("consentContact", e.target.checked)
+                        }
+                        className="peer sr-only"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="block w-5 h-5 rounded-[4px] border-[1.5px] border-nomi-violet/30 bg-warmcreme transition-all duration-200 peer-checked:bg-nomi-violet peer-checked:border-nomi-violet peer-focus-visible:ring-2 peer-focus-visible:ring-mattgold peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-warmcreme group-hover:border-nomi-violet/60"
+                      />
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        className="absolute inset-0 w-5 h-5 p-0.5 text-warmcreme opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <path
+                          d="M 3 8 L 6.5 11.5 L 13 4.5"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill="none"
+                        />
+                      </svg>
+                    </span>
+                    <span className="text-[0.85rem] text-tintengrau leading-[1.55] text-pretty">
+                      <strong className="text-nomi-violet">
+                        Ich willige ein
+                      </strong>
+                      , dass NomiPost meine oben angegebenen Daten speichert und
+                      mich per E-Mail über den Launch und Early-Bird-Konditionen
+                      informiert. Ich kann diese Einwilligung jederzeit mit
+                      Wirkung für die Zukunft per E-Mail widerrufen. Weitere
+                      Informationen in der{" "}
+                      <a
+                        href="/datenschutz"
+                        target="_blank"
+                        rel="noopener"
+                        className="underline decoration-mattgold decoration-1 underline-offset-2 hover:decoration-2 text-nomi-violet"
+                      >
+                        Datenschutzerklärung
+                      </a>
+                      .{" "}
+                      <span className="text-red-700" aria-hidden="true">
+                        *
+                      </span>
+                    </span>
+                  </label>
+
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <span className="relative flex-shrink-0 mt-0.5">
+                      <input
+                        type="checkbox"
+                        checked={form.consentSurvey}
+                        onChange={(e) =>
+                          update("consentSurvey", e.target.checked)
+                        }
+                        className="peer sr-only"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="block w-5 h-5 rounded-[4px] border-[1.5px] border-nomi-violet/30 bg-warmcreme transition-all duration-200 peer-checked:bg-nomi-violet peer-checked:border-nomi-violet peer-focus-visible:ring-2 peer-focus-visible:ring-mattgold peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-warmcreme group-hover:border-nomi-violet/60"
+                      />
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        className="absolute inset-0 w-5 h-5 p-0.5 text-warmcreme opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <path
+                          d="M 3 8 L 6.5 11.5 L 13 4.5"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill="none"
+                        />
+                      </svg>
+                    </span>
+                    <span className="text-[0.85rem] text-tintengrau leading-[1.55] text-pretty">
+                      Zusätzlich willige ich ein, dass meine Umfrage-Antworten
+                      anonymisiert zur{" "}
+                      <strong className="text-nomi-violet">
+                        Produktentwicklung
+                      </strong>{" "}
+                      ausgewertet werden. (Freiwillig)
+                    </span>
+                  </label>
+
+                  <p className="text-[0.7rem] text-tintengrau-light pt-1 flex items-start gap-1.5">
+                    <span className="text-red-700" aria-hidden="true">
+                      *
+                    </span>
+                    <span>Pflichtangabe – ohne diese Einwilligung können wir dich nicht auf die Warteliste aufnehmen.</span>
+                  </p>
+                </div>
               </div>
             </motion.div>
           )}
@@ -532,8 +646,9 @@ export default function WaitlistForm() {
           {step === totalSteps && (
             <button
               type="submit"
-              disabled={submitting}
+              disabled={submitting || !canSubmit}
               className="btn-primary py-3 px-6 text-sm"
+              title={!canSubmit ? "Bitte bestätige die Einwilligung" : undefined}
             >
               {submitting ? "Sende ..." : "Auf die Warteliste"}
               {!submitting && <span className="text-mattgold-light">✦</span>}

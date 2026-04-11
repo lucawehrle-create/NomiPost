@@ -20,6 +20,15 @@ export const waitlistSchema = z.object({
   frequency: z.string().trim().max(40).optional().default(""),
   heardFrom: z.string().trim().max(60).optional().default(""),
   feedback: z.string().trim().max(2000).optional().default(""),
+
+  // DSGVO-Einwilligungen – die Pflicht-Einwilligung muss zwingend true sein
+  consentContact: z.literal(true, {
+    errorMap: () => ({
+      message:
+        "Bitte bestätige die Einwilligung zur Datenspeicherung und E-Mail-Kontaktaufnahme.",
+    }),
+  }),
+  consentSurvey: z.boolean().default(false),
 });
 
 export type WaitlistInput = z.infer<typeof waitlistSchema>;

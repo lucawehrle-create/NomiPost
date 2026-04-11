@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
-import { addEntry, type WaitlistEntry } from "@/lib/storage";
+import {
+  addEntry,
+  type WaitlistEntry,
+  CONSENT_TEXT_VERSION,
+} from "@/lib/storage";
 import { waitlistSchema } from "@/lib/validation";
 
 export const runtime = "nodejs";
@@ -16,6 +20,7 @@ export async function POST(request: Request) {
     }
 
     const input = parsed.data;
+    const consentAt = new Date().toISOString();
 
     const entry: WaitlistEntry = {
       parent_name: input.parentName,
@@ -28,6 +33,16 @@ export async function POST(request: Request) {
       frequency: input.frequency || null,
       heard_from: input.heardFrom || null,
       feedback: input.feedback || null,
+
+      // DSGVO: Nachweisbare Einwilligung mit Zeitstempel und Version
+      consent_contact: input.consentContact,
+      consent_survey: input.consentSurvey,
+      consent_at: consentAt,
+      consent_text_version: CONSENT_TEXT_VERSION,
+
+      // Für spätere Double-Opt-In-Integration vorbereiten (noch nicht aktiv)
+      confirmation_token: null,
+      confirmed_at: null,
     };
 
     await addEntry(entry);
