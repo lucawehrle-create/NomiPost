@@ -7,70 +7,96 @@ const promises = [
   {
     title: "Persönlich und einzigartig",
     description:
-      "Jeder Brief fühlt sich an, als wäre er nur für dieses eine Kind gemacht. Die Ansprache, die Geschichte, jedes Detail.",
+      "Jeder Brief fühlt sich an, als wäre er nur für dieses eine Kind gemacht. Die Ansprache, die Geschichte, jedes Detail – beim Namen, bei den Themen, bei der Reise.",
     icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M 32 12 C 20 12 12 22 12 34 C 12 46 22 54 32 54 C 42 54 52 46 52 34 C 52 22 44 12 32 12 Z"
-          stroke="#3B2D5F"
-          strokeWidth="2.5"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <circle cx="24" cy="30" r="2" fill="#3B2D5F" />
-        <circle cx="40" cy="30" r="2" fill="#3B2D5F" />
-        <path
-          d="M 24 40 Q 32 45 40 40"
-          stroke="#3B2D5F"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M 18 18 L 15 14 M 46 18 L 49 14"
-          stroke="#C9A84B"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="p1-rough">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" />
+            <feDisplacementMap in="SourceGraphic" scale="1" />
+          </filter>
+        </defs>
+        <g filter="url(#p1-rough)">
+          <path
+            d="M 40 14 C 26 14 16 26 16 40 C 16 54 28 66 40 66 C 52 66 64 54 64 40 C 64 26 54 14 40 14 Z"
+            stroke="#3B2D5F"
+            strokeWidth="2"
+            fill="#FFF8F0"
+            strokeLinecap="round"
+          />
+          <circle cx="30" cy="36" r="2" fill="#3B2D5F" />
+          <circle cx="50" cy="36" r="2" fill="#3B2D5F" />
+          <path
+            d="M 30 48 Q 40 54 50 48"
+            stroke="#3B2D5F"
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+          />
+          <path
+            d="M 22 22 L 18 16 M 58 22 L 62 16 M 14 40 L 8 40 M 66 40 L 72 40"
+            stroke="#C9A84B"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </g>
       </svg>
     ),
   },
   {
     title: "Kunstvoll, nie billig",
     description:
-      "Jeder Brief sieht aus wie eine Seite aus einem preisgekrönten Kinderbuch. Aquarell, hochwertiges Papier, liebevolle Details.",
+      "Jeder Brief sieht aus wie eine Seite aus einem preisgekrönten Kinderbuch. Aquarell-Illustrationen, hochwertiges Papier, liebevolle Details in jedem Element.",
     icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M 16 14 L 48 14 L 48 50 L 32 58 L 16 50 Z"
-          stroke="#3B2D5F"
-          strokeWidth="2.5"
-          fill="none"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 24 24 L 40 24 M 24 32 L 40 32 M 24 40 L 34 40"
-          stroke="#C9A84B"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="p2-rough">
+            <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" />
+            <feDisplacementMap in="SourceGraphic" scale="1" />
+          </filter>
+        </defs>
+        <g filter="url(#p2-rough)">
+          <path
+            d="M 20 16 L 60 16 L 60 62 L 40 72 L 20 62 Z"
+            stroke="#3B2D5F"
+            strokeWidth="2"
+            fill="#FFF8F0"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M 28 30 L 52 30 M 28 40 L 52 40 M 28 50 L 44 50"
+            stroke="#C9A84B"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <circle cx="40" cy="20" r="3" fill="#C9A84B" />
+        </g>
       </svg>
     ),
   },
   {
     title: "Mehr als nur lesen",
     description:
-      "Ein multisensorisches Erlebnis: Geschichte zum Lesen, Rätsel zum Knobeln, Sticker zum Sammeln, Hörbuch zum Lauschen.",
+      "Ein multisensorisches Erlebnis: Geschichte, Rätsel, Ausmalbild, Bastelanleitung, Sticker zum Sammeln und ein Hörbuch zum Lauschen. Ein Abenteuer zum Anfassen.",
     icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M 32 10 L 36 24 L 50 26 L 40 36 L 42 50 L 32 44 L 22 50 L 24 36 L 14 26 L 28 24 Z"
-          stroke="#3B2D5F"
-          strokeWidth="2.5"
-          fill="#C9A84B"
-          fillOpacity="0.2"
-          strokeLinejoin="round"
-        />
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="p3-rough">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" />
+            <feDisplacementMap in="SourceGraphic" scale="1" />
+          </filter>
+        </defs>
+        <g filter="url(#p3-rough)">
+          <path
+            d="M 40 12 L 46 30 L 64 32 L 50 44 L 54 62 L 40 52 L 26 62 L 30 44 L 16 32 L 34 30 Z"
+            stroke="#3B2D5F"
+            strokeWidth="2"
+            fill="#C9A84B"
+            fillOpacity="0.25"
+            strokeLinejoin="round"
+          />
+          <circle cx="40" cy="40" r="4" fill="#C9A84B" />
+        </g>
       </svg>
     ),
   },
@@ -78,35 +104,42 @@ const promises = [
 
 export default function Promises() {
   return (
-    <section className="py-20 md:py-28 relative">
+    <section className="section-spacing relative">
       <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="eyebrow mb-4 justify-center">
-            <span className="w-8 h-px bg-mattgold" />
+        <div className="text-center max-w-3xl mx-auto mb-20 lg:mb-24">
+          <div className="eyebrow mb-6 justify-center">
+            <span className="w-10 h-px bg-mattgold" />
             Unser Versprechen
-            <span className="w-8 h-px bg-mattgold" />
+            <span className="w-10 h-px bg-mattgold" />
           </div>
-          <h2 className="headline-serif text-4xl md:text-5xl font-semibold text-nomi-violet leading-tight text-balance">
-            Drei Dinge, auf die du dich verlassen kannst
+          <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
+            Drei Dinge, auf die du dich
+            <br />
+            <span className="italic">verlassen kannst</span>
           </h2>
-          <HandDivider className="mt-8" />
+          <HandDivider className="mt-10" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 max-w-7xl mx-auto">
           {promises.map((p, i) => (
             <motion.div
               key={p.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="text-center"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center group"
             >
-              <div className="w-20 h-20 mx-auto mb-6">{p.icon}</div>
-              <h3 className="headline-serif text-2xl font-semibold text-nomi-violet mb-3">
+              <div className="relative w-24 h-24 lg:w-28 lg:h-28 mx-auto mb-8 transition-transform duration-700 group-hover:-translate-y-1 group-hover:rotate-[-2deg]">
+                <div className="absolute inset-0 bg-mattgold/10 rounded-full blur-2xl scale-75" />
+                <div className="relative">{p.icon}</div>
+              </div>
+              <h3 className="headline-serif text-2xl lg:text-[1.75rem] font-semibold text-nomi-violet mb-4 leading-tight">
                 {p.title}
               </h3>
-              <p className="text-tintengrau leading-relaxed">{p.description}</p>
+              <p className="text-tintengrau leading-relaxed text-pretty max-w-sm mx-auto">
+                {p.description}
+              </p>
             </motion.div>
           ))}
         </div>

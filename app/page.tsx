@@ -4,6 +4,7 @@ import Promises from "@/components/Promises";
 import LetterAnatomy from "@/components/LetterAnatomy";
 import HowItWorks from "@/components/HowItWorks";
 import AboutNomi from "@/components/AboutNomi";
+import Manifesto from "@/components/Manifesto";
 import WaitlistSection from "@/components/WaitlistSection";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
         <LetterAnatomy />
         <HowItWorks />
         <AboutNomi />
+        <Manifesto />
         <WaitlistSection />
         <FAQ />
       </main>

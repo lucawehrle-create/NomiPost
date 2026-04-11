@@ -5,51 +5,73 @@ import CompassRose from "./CompassRose";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
 
+const traits = [
+  {
+    title: "Neugierig",
+    text: "Sie beobachtet Details, die andere übersehen: die Form eines Schattens, das Muster einer Baumrinde.",
+  },
+  {
+    title: "Auf Augenhöhe",
+    text: "Sie behandelt Kinder nicht wie Babys, sondern wie ihre wichtigste Komplizin und treueste Forschungspartnerin.",
+  },
+  {
+    title: "Mutig, aber verletzlich",
+    text: "Sie hat Ängste und Zweifel. Sie zeigt: Mut bedeutet Handeln trotz Angst – nie Handeln ohne Angst.",
+  },
+];
+
 export default function AboutNomi() {
   return (
-    <section id="nomi" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="nomi" className="section-spacing relative overflow-hidden">
       <WatercolorBlob
-        className="absolute top-10 right-0 w-[500px] opacity-30 pointer-events-none"
+        className="absolute top-10 right-0 w-[600px] opacity-25 pointer-events-none"
         color="#7A5BA6"
         variant={1}
       />
+      <WatercolorBlob
+        className="absolute bottom-10 left-0 w-[500px] opacity-20 pointer-events-none"
+        color="#C9A84B"
+        variant={2}
+      />
 
       <div className="container-wide relative z-10">
-        <div className="grid md:grid-cols-5 gap-12 items-center max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8 }}
-            className="md:col-span-2 flex justify-center"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex justify-center"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-mattgold/20 blur-3xl rounded-full" />
-              <div className="relative w-64 h-64 animate-float-slow">
-                <CompassRose className="w-full h-full drop-shadow-2xl" />
+              <div className="absolute inset-0 bg-mattgold/15 blur-[80px] rounded-full scale-125" />
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 animate-float-slow">
+                <CompassRose className="w-full h-full gold-glow" />
               </div>
-              <p className="handwritten text-center mt-4 text-xl text-nomi-violet">
+              <p className="handwritten text-center mt-6 text-xl lg:text-2xl text-nomi-violet">
                 Nomis goldener Kompass ✦
               </p>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="md:col-span-3"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
           >
-            <div className="eyebrow mb-4">
-              <span className="w-8 h-px bg-mattgold" />
+            <div className="eyebrow mb-6">
+              <span className="w-10 h-px bg-mattgold" />
               Wer ist Nomi?
             </div>
-            <h2 className="headline-serif text-4xl md:text-5xl font-semibold text-nomi-violet leading-tight mb-6 text-balance">
-              Die Entdeckerin, die dein Kind in sein Zimmer einlädt.
+            <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] mb-8 text-balance">
+              Die Entdeckerin,
+              <br />
+              <span className="italic">die dein Kind in sein Zimmer einlädt.</span>
             </h2>
-            <HandDivider className="mb-6 justify-start md:justify-start" />
-            <div className="space-y-4 text-tintengrau leading-relaxed">
+            <HandDivider className="mb-8 justify-start" />
+            <div className="space-y-5 text-lg text-tintengrau leading-relaxed text-pretty max-w-2xl">
               <p>
                 Nomi ist kein Maskottchen. Sie ist die Absenderin jedes Briefes,
                 die Erzählerin jeder Geschichte – und die unsichtbare Freundin,
@@ -61,21 +83,34 @@ export default function AboutNomi() {
                 wartet. Mal zu einem Leuchtturm, mal tief unter die Erde, mal in
                 die Werkstatt eines alten Erfinders.
               </p>
-              <p>
-                Und sie spricht mit deinem Kind nicht von oben herab, sondern auf
-                Augenhöhe. Wie ihre wichtigste Komplizin. Wie ihr treuester
-                Forschungspartner.
-              </p>
             </div>
 
-            <div className="mt-8 p-6 paper-card hand-border">
-              <p className="handwritten text-xl md:text-2xl text-nomi-violet italic leading-relaxed">
-                &bdquo;Psst... ich verrate dir ein Geheimnis. Unter den Steinen am
+            {/* Traits als Mini-Grid */}
+            <div className="mt-10 grid sm:grid-cols-3 gap-5">
+              {traits.map((t) => (
+                <div key={t.title} className="border-l-[1.5px] border-mattgold/40 pl-4 py-1">
+                  <p className="headline-serif text-lg font-semibold text-nomi-violet mb-1">
+                    {t.title}
+                  </p>
+                  <p className="text-xs text-tintengrau-light leading-relaxed">
+                    {t.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 p-8 paper-card hand-border paper-card-elevated relative">
+              <span className="absolute -top-3 left-8 bg-warmcreme px-3 text-mattgold text-xl">
+                &ldquo;
+              </span>
+              <p className="handwritten text-xl lg:text-2xl text-nomi-violet italic leading-relaxed">
+                Psst&hellip; ich verrate dir ein Geheimnis. Unter den Steinen am
                 Bach lebt etwas, das noch nie jemand gesehen hat. Wollen wir
-                herausfinden, was es ist?&ldquo;
+                herausfinden, was es ist?
               </p>
-              <p className="handwritten text-mattgold-dark text-right mt-2">
-                — Nomi
+              <p className="handwritten text-mattgold-dark text-right mt-3 flex items-center justify-end gap-2">
+                <span className="w-6 h-px bg-mattgold-dark" />
+                Nomi
               </p>
             </div>
           </motion.div>

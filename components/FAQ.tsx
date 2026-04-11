@@ -38,37 +38,39 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 md:py-28 relative">
-      <div className="container-narrow relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="eyebrow mb-4 justify-center">
-            <span className="w-8 h-px bg-mattgold" />
+    <section id="faq" className="section-spacing relative">
+      <div className="container-wide relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+          <div className="eyebrow mb-6 justify-center">
+            <span className="w-10 h-px bg-mattgold" />
             Häufige Fragen
-            <span className="w-8 h-px bg-mattgold" />
+            <span className="w-10 h-px bg-mattgold" />
           </div>
-          <h2 className="headline-serif text-4xl md:text-5xl font-semibold text-nomi-violet leading-tight text-balance">
-            Noch ein paar Antworten für dich
+          <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
+            Noch ein paar Antworten
+            <br />
+            <span className="italic">für dich</span>
           </h2>
-          <HandDivider className="mt-8" />
+          <HandDivider className="mt-10" />
         </div>
 
-        <div className="space-y-3">
+        <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="paper-card hand-border overflow-hidden transition-all"
+              className="paper-card hand-border overflow-hidden transition-all duration-500 hover:paper-card-elevated"
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left group"
+                className="w-full flex items-center justify-between gap-5 p-6 md:p-7 text-left group"
                 aria-expanded={open === i}
               >
-                <span className="headline-serif text-lg md:text-xl font-semibold text-nomi-violet">
+                <span className="headline-serif text-lg md:text-xl font-semibold text-nomi-violet pr-4">
                   {faq.q}
                 </span>
                 <span
-                  className={`flex-shrink-0 w-8 h-8 rounded-full border-2 border-mattgold flex items-center justify-center text-mattgold-dark transition-transform duration-300 ${
-                    open === i ? "rotate-45" : ""
+                  className={`flex-shrink-0 w-9 h-9 rounded-full border-[1.5px] border-mattgold flex items-center justify-center text-mattgold-dark transition-all duration-500 group-hover:bg-mattgold group-hover:text-warmcreme ${
+                    open === i ? "rotate-45 bg-mattgold text-warmcreme" : ""
                   }`}
                   aria-hidden="true"
                 >
@@ -83,14 +85,19 @@ export default function FAQ() {
                 </span>
               </button>
               <div
-                className={`grid transition-all duration-300 ease-out ${
-                  open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                className={`grid transition-all duration-500 ease-out ${
+                  open === i
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="px-5 md:px-6 pb-6 text-tintengrau leading-relaxed">
-                    {faq.a}
-                  </p>
+                  <div className="px-6 md:px-7 pb-7">
+                    <div className="h-px bg-mattgold/20 mb-5" />
+                    <p className="text-tintengrau leading-relaxed text-pretty">
+                      {faq.a}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

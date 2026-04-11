@@ -185,7 +185,7 @@ export default function WaitlistForm() {
   }
 
   return (
-    <div className="paper-card hand-border p-6 md:p-10 lg:p-12 max-w-2xl mx-auto relative">
+    <div className="paper-card hand-border paper-card-elevated p-8 md:p-12 lg:p-14 max-w-2xl mx-auto relative">
       {/* Fortschritt */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

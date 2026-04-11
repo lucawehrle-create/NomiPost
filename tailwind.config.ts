@@ -30,6 +30,16 @@ const config: Config = {
         serif: ["var(--font-fraunces)", "Georgia", "serif"],
         hand: ["var(--font-caveat)", "cursive"],
       },
+      fontSize: {
+        // Premium-Display-Größen für Desktop
+        "display-xl": ["clamp(3rem, 7vw, 6.5rem)", { lineHeight: "1", letterSpacing: "-0.03em" }],
+        "display-lg": ["clamp(2.5rem, 5vw, 4.5rem)", { lineHeight: "1.05", letterSpacing: "-0.025em" }],
+        "display-md": ["clamp(2rem, 4vw, 3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+      },
+      maxWidth: {
+        "8xl": "88rem",
+        "9xl": "96rem",
+      },
       backgroundImage: {
         "paper-texture": "url('/textures/paper.svg')",
       },

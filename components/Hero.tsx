@@ -9,40 +9,53 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
+      className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32 lg:pt-52 lg:pb-40 xl:pt-56 xl:pb-48"
     >
       {/* Dezente Aquarell-Akzente im Hintergrund */}
       <WatercolorBlob
-        className="absolute -top-20 -left-20 w-[500px] opacity-60 pointer-events-none"
+        className="absolute -top-40 -left-32 w-[700px] opacity-60 pointer-events-none"
         color="#C9A84B"
         variant={1}
       />
       <WatercolorBlob
-        className="absolute top-40 -right-32 w-[600px] opacity-40 pointer-events-none"
+        className="absolute top-60 -right-40 w-[800px] opacity-40 pointer-events-none"
         color="#3B2D5F"
         variant={2}
       />
 
+      {/* Dekorative Sterne verteilt */}
+      <div className="absolute top-32 left-[15%] text-mattgold/40 text-2xl hidden lg:block animate-float-slow">✦</div>
+      <div className="absolute top-48 right-[25%] text-mattgold/30 text-xl hidden lg:block animate-float">✦</div>
+      <div className="absolute bottom-40 left-[30%] text-mattgold/35 text-lg hidden lg:block animate-float-slow">✦</div>
+
       <div className="container-wide relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-8 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
           >
-            <div className="eyebrow mb-6">
-              <span className="w-8 h-px bg-mattgold" />
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="eyebrow mb-8"
+            >
+              <span className="w-10 h-px bg-mattgold" />
               Persönliche Post für kleine Entdecker
-            </div>
+              <span className="text-mattgold">✦</span>
+            </motion.div>
 
-            <h1 className="headline-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-nomi-violet leading-[1.05] tracking-tight text-balance">
+            <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2.75rem,6vw,5.5rem)] leading-[1.02] tracking-[-0.025em]">
               Ein Brief, der dein Kind{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">zum Leuchten</span>
+                <span className="relative z-10 italic text-nomi-violet">zum Leuchten</span>
                 <svg
-                  className="absolute -bottom-2 left-0 w-full"
+                  className="absolute -bottom-2 lg:-bottom-3 left-0 w-full"
                   viewBox="0 0 300 16"
                   fill="none"
+                  preserveAspectRatio="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -57,15 +70,25 @@ export default function Hero() {
               bringt.
             </h1>
 
-            <p className="mt-8 text-lg md:text-xl text-tintengrau leading-relaxed max-w-xl">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-10 lg:mt-12 text-lg md:text-xl lg:text-[1.35rem] text-tintengrau leading-relaxed lg:leading-[1.55] max-w-[38rem] text-pretty"
+            >
               Jeden Monat kommt ein handgemachter Brief von{" "}
               <span className="text-nomi-violet font-semibold">Nomi</span>, einer
               neugierigen Entdeckerin, die dein Kind auf ein Abenteuer mitnimmt –
               mit Geschichte, Rätsel, Sticker und Hörbuch. Anfassen statt
               wegklicken.
-            </p>
+            </motion.p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.45 }}
+              className="mt-12 flex flex-wrap items-center gap-4"
+            >
               <a href="#warteliste" className="btn-primary">
                 Jetzt auf die Warteliste
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,56 +104,104 @@ export default function Hero() {
               <a href="#was" className="btn-secondary">
                 Was drinsteckt
               </a>
-            </div>
+            </motion.div>
 
-            <div className="mt-10 flex items-center gap-5 text-sm text-tintengrau-light">
-              <div className="flex -space-x-2">
-                {["#C9A84B", "#3B2D5F", "#7A5BA6", "#A68735"].map((c, i) => (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="mt-14 flex items-center gap-6 text-sm text-tintengrau-light"
+            >
+              <div className="flex -space-x-2.5">
+                {[
+                  { bg: "#C9A84B", letters: "LM" },
+                  { bg: "#3B2D5F", letters: "JK" },
+                  { bg: "#7A5BA6", letters: "SB" },
+                  { bg: "#A68735", letters: "AM" },
+                ].map((p, i) => (
                   <div
                     key={i}
-                    className="w-9 h-9 rounded-full border-2 border-warmcreme flex items-center justify-center text-xs text-warmcreme font-semibold"
-                    style={{ backgroundColor: c }}
+                    className="w-10 h-10 rounded-full border-[3px] border-warmcreme flex items-center justify-center text-xs text-warmcreme font-semibold shadow-sm"
+                    style={{ backgroundColor: p.bg }}
                   >
-                    {["LM", "JK", "SB", "AM"][i]}
+                    {p.letters}
                   </div>
                 ))}
               </div>
-              <span className="leading-tight">
-                <span className="font-semibold text-nomi-violet">Erste Familien</span>
-                <br />
-                sind schon auf der Warteliste
-              </span>
-            </div>
+              <div className="leading-tight">
+                <p className="font-semibold text-nomi-violet">
+                  Erste Familien sind schon dabei
+                </p>
+                <p className="text-xs mt-0.5">
+                  Werde Teil der ersten Welle von Abenteurern
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="relative"
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="lg:col-span-5 relative"
           >
             {/* Schwebende Kompassrose als Akzent */}
-            <div className="absolute -top-6 -right-4 w-24 md:w-32 animate-float">
-              <CompassRose className="w-full h-full drop-shadow-xl" />
+            <div className="absolute -top-8 -right-4 lg:-right-8 w-28 lg:w-36 xl:w-40 animate-float z-20">
+              <CompassRose className="w-full h-full gold-glow" />
             </div>
 
             {/* Leicht gekippter Umschlag */}
-            <div className="relative transform rotate-[-3deg] hover:rotate-0 transition-transform duration-700">
-              <div className="absolute inset-0 bg-nomi-violet/10 blur-3xl rounded-full" />
-              <EnvelopeIllustration className="relative w-full max-w-lg mx-auto drop-shadow-2xl" />
+            <div className="relative transform rotate-[-3deg] hover:rotate-0 transition-transform duration-[800ms] ease-out">
+              <div className="absolute inset-0 bg-nomi-violet/15 blur-3xl rounded-full" />
+              <EnvelopeIllustration className="relative w-full max-w-xl mx-auto drop-shadow-[0_25px_50px_rgba(59,45,95,0.25)]" />
             </div>
 
             {/* Handgeschriebene Notiz */}
-            <div className="absolute -bottom-4 left-4 md:left-12 transform rotate-[2deg]">
-              <div className="paper-card hand-border p-4 max-w-[200px]">
+            <motion.div
+              initial={{ opacity: 0, rotate: -5, y: 20 }}
+              animate={{ opacity: 1, rotate: 2, y: 0 }}
+              transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+              className="absolute -bottom-6 -left-4 md:left-4 lg:-left-8"
+            >
+              <div className="paper-card hand-border p-5 max-w-[220px] paper-card-elevated">
                 <p className="handwritten text-nomi-violet text-xl leading-tight">
-                  &ldquo;Du wirst nicht glauben, was ich heute entdeckt habe...&rdquo;
+                  &ldquo;Du wirst nicht glauben, was ich heute entdeckt habe…&rdquo;
                 </p>
-                <p className="handwritten text-mattgold-dark text-sm mt-1">— Nomi ✦</p>
+                <p className="handwritten text-mattgold-dark text-sm mt-2 flex items-center gap-1">
+                  <span className="w-4 h-px bg-mattgold-dark" />
+                  Nomi ✦
+                </p>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
+
+        {/* Subtiler Scroll-Indikator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-mattgold-dark/60"
+        >
+          <span className="text-[10px] uppercase tracking-[0.3em] font-semibold">
+            Weiterentdecken
+          </span>
+          <svg
+            width="14"
+            height="22"
+            viewBox="0 0 14 22"
+            fill="none"
+            className="animate-float"
+          >
+            <path
+              d="M 7 2 L 7 16 M 2 12 L 7 18 L 12 12"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.div>
       </div>
     </section>
   );
