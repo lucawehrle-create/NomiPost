@@ -2,7 +2,7 @@ import LegalLayout from "@/components/LegalLayout";
 
 export const metadata = {
   title: "Impressum – NomiPost",
-  description: "Anbieterkennzeichnung nach § 5 TMG.",
+  description: "Anbieterkennzeichnung nach § 5 DDG.",
 };
 
 export default function ImpressumPage() {
@@ -16,11 +16,18 @@ export default function ImpressumPage() {
         <strong>Hinweis für den Betreiber:</strong> Alle mit{" "}
         <span className="placeholder">[…]</span> markierten Felder müssen vor
         dem Go-Live mit echten Daten ausgefüllt werden. Dies ist ein Template,
-        keine Rechtsberatung. Im Zweifel bitte eine:n Rechtsanwält:in
+        keine Rechtsberatung. Im Zweifel bitte eine:n Fachanwält:in für IT-Recht
         konsultieren.
       </div>
 
-      <h2>Angaben gemäß § 5 TMG</h2>
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p>
+        <em>
+          Seit dem 14. Mai 2024 gilt in Deutschland das Digitale-Dienste-Gesetz
+          (DDG). Es ersetzt das frühere Telemediengesetz (TMG). Die
+          Pflichtangaben sind inhaltlich identisch.
+        </em>
+      </p>
       <p>
         <strong>
           <span className="placeholder">[Vor- und Nachname bzw. Firmenname]</span>
@@ -35,12 +42,15 @@ export default function ImpressumPage() {
 
       <h3>Vertreten durch</h3>
       <p>
-        <span className="placeholder">[Vertretungsberechtigte:r, nur bei juristischen Personen, z. B. GmbH, UG]</span>
+        <span className="placeholder">
+          [Nur bei juristischen Personen: Vertretungsberechtigte:r, z. B.
+          Geschäftsführer:in bei GmbH/UG]
+        </span>
       </p>
 
       <h3>Kontakt</h3>
       <p>
-        Telefon: <span className="placeholder">[optional]</span>
+        Telefon: <span className="placeholder">[+49 …]</span>
         <br />
         E-Mail:{" "}
         <span className="placeholder">[hallo@deine-domain.de]</span>
@@ -50,7 +60,7 @@ export default function ImpressumPage() {
       <p>
         <span className="placeholder">
           [Nur bei eingetragenen Unternehmen: Handelsregister, Registergericht,
-          Registernummer]
+          Registernummer — sonst diesen Abschnitt weglassen]
         </span>
       </p>
 
@@ -58,7 +68,7 @@ export default function ImpressumPage() {
       <p>
         <span className="placeholder">
           [Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz,
-          sofern vorhanden]
+          sofern vorhanden — sonst diesen Abschnitt weglassen]
         </span>
       </p>
 
@@ -95,9 +105,9 @@ export default function ImpressumPage() {
 
       <h2>Haftung für Inhalte</h2>
       <p>
-        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte
         auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
-        §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet,
+        §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet,
         übermittelte oder gespeicherte fremde Informationen zu überwachen oder
         nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
         hinweisen.

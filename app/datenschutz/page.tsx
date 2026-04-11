@@ -18,7 +18,7 @@ export default function DatenschutzPage() {
         <span className="placeholder">[…]</span> markierten Felder müssen vor
         dem Go-Live mit echten Daten ausgefüllt werden. Dieser Text ist ein
         Template und ersetzt keine Rechtsberatung. Die Prüfung durch eine:n
-        Rechtsanwält:in wird dringend empfohlen.
+        Fachanwält:in für IT-Recht wird dringend empfohlen.
       </div>
 
       <h2>1. Verantwortlicher</h2>
@@ -48,11 +48,11 @@ export default function DatenschutzPage() {
         Wir verarbeiten personenbezogene Daten unserer Nutzer:innen
         grundsätzlich nur, soweit dies zur Bereitstellung einer
         funktionsfähigen Website sowie unserer Inhalte und Leistungen
-        erforderlich ist. Die Verarbeitung personenbezogener Daten unserer
-        Nutzer:innen erfolgt regelmäßig nur nach Einwilligung. Eine Ausnahme
-        gilt in solchen Fällen, in denen eine vorherige Einholung einer
-        Einwilligung aus tatsächlichen Gründen nicht möglich ist und die
-        Verarbeitung der Daten durch gesetzliche Vorschriften gestattet ist.
+        erforderlich ist. Die Verarbeitung personenbezogener Daten erfolgt
+        regelmäßig nur nach Einwilligung der betroffenen Person. Eine Ausnahme
+        gilt in Fällen, in denen eine vorherige Einholung einer Einwilligung
+        aus tatsächlichen Gründen nicht möglich ist und die Verarbeitung der
+        Daten durch gesetzliche Vorschriften gestattet ist.
       </p>
 
       <h3>2.2 Rechtsgrundlage für die Verarbeitung personenbezogener Daten</h3>
@@ -72,30 +72,47 @@ export default function DatenschutzPage() {
         Soweit eine Verarbeitung personenbezogener Daten zur Wahrung eines
         berechtigten Interesses unseres Unternehmens oder eines Dritten
         erforderlich ist und die Interessen, Grundrechte und Grundfreiheiten
-        des Betroffenen das erstgenannte Interesse nicht überwiegen, dient{" "}
-        <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> als Rechtsgrundlage.
+        der betroffenen Person das erstgenannte Interesse nicht überwiegen,
+        dient <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> als Rechtsgrundlage.
       </p>
 
-      <h3>2.3 Datenlöschung und Speicherdauer</h3>
+      <h3>2.3 Datenlöschung und Speicherdauer (Löschkonzept)</h3>
       <p>
         Die personenbezogenen Daten der betroffenen Person werden gelöscht
-        oder gesperrt, sobald der Zweck der Speicherung entfällt. Eine
-        Speicherung kann darüber hinaus erfolgen, wenn dies durch den
-        europäischen oder nationalen Gesetzgeber in unionsrechtlichen
-        Verordnungen, Gesetzen oder sonstigen Vorschriften vorgesehen wurde.
-        Eine Sperrung oder Löschung der Daten erfolgt auch dann, wenn eine
-        durch die genannten Normen vorgeschriebene Speicherfrist abläuft.
+        oder gesperrt, sobald der Zweck der Speicherung entfällt. Konkret
+        gelten folgende Löschfristen:
       </p>
+      <ul>
+        <li>
+          <strong>Warteliste-Einträge:</strong> Löschung bis zu 12 Monate nach
+          Produktstart. Wenn das Produkt NomiPost nicht bis zum{" "}
+          <span className="placeholder">[Stichtag, z. B. 31.12.2027]</span>{" "}
+          startet, werden alle Warteliste-Daten automatisch gelöscht.
+        </li>
+        <li>
+          <strong>Nicht bestätigte Anmeldungen:</strong> Einträge, bei denen
+          innerhalb von 14 Tagen keine Bestätigung per Double-Opt-In-Link
+          erfolgt, werden automatisch gelöscht.
+        </li>
+        <li>
+          <strong>Server-Logfiles:</strong> Nach 14 Tagen automatische
+          Löschung durch unseren Hosting-Anbieter (siehe Abschnitt 3).
+        </li>
+        <li>
+          <strong>Widerruf:</strong> Bei Widerruf der Einwilligung sofortige
+          Löschung binnen 72 Stunden.
+        </li>
+      </ul>
 
       <h2>3. Bereitstellung der Website und Erstellung von Logfiles</h2>
       <p>
-        Bei jedem Aufruf unserer Website erfasst unser
-        Hosting-Dienstleister automatisch Daten und Informationen vom
-        Computersystem des aufrufenden Rechners (sogenannte Server-Logfiles).
-        Folgende Daten werden hierbei erhoben:
+        Bei jedem Aufruf unserer Website erfasst unser Hosting-Dienstleister
+        automatisch Daten und Informationen vom Computersystem des
+        aufrufenden Rechners (sogenannte Server-Logfiles). Folgende Daten
+        werden hierbei erhoben:
       </p>
       <ul>
-        <li>IP-Adresse des anfragenden Rechners (in gekürzter/anonymisierter Form)</li>
+        <li>IP-Adresse des anfragenden Rechners</li>
         <li>Datum und Uhrzeit des Zugriffs</li>
         <li>Name und URL der abgerufenen Datei</li>
         <li>Website, von der aus der Zugriff erfolgt (Referrer)</li>
@@ -105,30 +122,72 @@ export default function DatenschutzPage() {
         Die Verarbeitung der Daten erfolgt auf Grundlage von{" "}
         <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. Unser berechtigtes
         Interesse folgt aus der Notwendigkeit, die Stabilität und Sicherheit
-        der Website zu gewährleisten. Diese Daten werden nach 14 Tagen
-        automatisch gelöscht.
+        der Website zu gewährleisten sowie Missbrauch abzuwehren. Diese
+        Logfiles werden nach <strong>maximal 30 Tagen</strong> automatisch
+        gelöscht.
       </p>
 
-      <h3>3.1 Hosting</h3>
+      <h3>3.1 Hosting bei Vercel</h3>
       <p>
-        Unsere Website wird bei einem externen Dienstleister gehostet:
+        Unsere Website wird bei folgendem externen Dienstleister gehostet:
       </p>
       <p>
-        <span className="placeholder">[Hosting-Anbieter, z. B. Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA]</span>
+        <strong>Vercel Inc.</strong>
+        <br />
+        440 N Barranca Ave #4133
+        <br />
+        Covina, CA 91723
+        <br />
+        USA
       </p>
       <p>
-        Bei der Nutzung eines Hosting-Anbieters mit Sitz in einem Drittland
-        erfolgt die Datenübermittlung auf Grundlage von
-        Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO. Mit dem
-        Anbieter wurde ein Vertrag zur Auftragsverarbeitung (AVV) gemäß Art.
-        28 DSGVO abgeschlossen.
+        Vercel speichert beim Aufruf der Website die unter Abschnitt 3
+        genannten Server-Logfiles. Die Übermittlung von Daten in die USA
+        erfolgt auf Grundlage des{" "}
+        <strong>EU-US Data Privacy Framework (DPF)</strong>. Vercel Inc. ist
+        unter dem DPF zertifiziert. Die Europäische Kommission hat am
+        10.07.2023 einen Angemessenheitsbeschluss nach Art. 45 DSGVO für das
+        DPF erlassen. Ergänzend wurden Standardvertragsklauseln (SCC) gemäß
+        Art. 46 Abs. 2 lit. c DSGVO vereinbart. Mit Vercel wurde ein Vertrag
+        zur Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO abgeschlossen.
+      </p>
+      <p>
+        Weitere Informationen findest du in der{" "}
+        <a
+          href="https://vercel.com/legal/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Datenschutzerklärung von Vercel
+        </a>
+        .
       </p>
 
-      <h2>4. Warteliste / Kontaktaufnahme</h2>
+      <h2>4. Warteliste mit Double-Opt-In-Verfahren</h2>
       <p>
         Auf unserer Website bieten wir die Möglichkeit, sich in eine
-        Warteliste für unser zukünftiges Produkt NomiPost einzutragen. Dabei
-        werden folgende Daten erfasst:
+        Warteliste für unser zukünftiges Produkt NomiPost einzutragen. Wir
+        verwenden dafür das gesetzlich vorgesehene{" "}
+        <strong>Double-Opt-In-Verfahren</strong> (§ 7 Abs. 2 UWG, Art. 7
+        DSGVO).
+      </p>
+      <p>Der Ablauf:</p>
+      <ul>
+        <li>
+          <strong>Schritt 1:</strong> Du trägst deine Daten in das Formular
+          ein und bestätigst die Einwilligung.
+        </li>
+        <li>
+          <strong>Schritt 2:</strong> Wir senden dir eine E-Mail mit einem
+          Bestätigungs-Link an die von dir angegebene Adresse.
+        </li>
+        <li>
+          <strong>Schritt 3:</strong> Erst nach Klick auf den Link wird dein
+          Eintrag aktiviert und wir dürfen dich zum Produktstart informieren.
+        </li>
+      </ul>
+      <p>
+        Folgende Daten werden dabei erfasst:
       </p>
       <ul>
         <li>Vorname der Eltern</li>
@@ -141,32 +200,57 @@ export default function DatenschutzPage() {
         </li>
         <li>Herkunft (wie du auf uns aufmerksam geworden bist)</li>
         <li>Optionales Freitext-Feedback</li>
-        <li>Zeitpunkt der Einwilligung (Consent-Timestamp)</li>
+        <li>
+          <strong>Einwilligungs-Nachweis (zwingend erforderlich):</strong>{" "}
+          Zeitstempel der Eingabe, IP-Adresse bei Eingabe, Zeitstempel des
+          Confirmation-Klicks, IP-Adresse beim Confirmation-Klick, verwendeter
+          Token, exakter Wortlaut der Einwilligung (Text-Version)
+        </li>
       </ul>
       <p>
-        <strong>Zweck der Verarbeitung:</strong> Die Daten werden
+        <strong>Zweck der Verarbeitung:</strong> Die Kontaktdaten werden
         ausschließlich dafür verwendet, dich über den Start von NomiPost per
-        E-Mail zu informieren und das Produkt auf Basis der Umfrage-Antworten
-        weiterzuentwickeln. Eine Weitergabe an Dritte zu Werbezwecken findet
-        nicht statt.
+        E-Mail zu informieren. Die Umfrage-Antworten werden anonymisiert für
+        die Produktentwicklung ausgewertet, sofern du dem separat zustimmst.
+        Eine Weitergabe an Dritte zu Werbezwecken findet nicht statt.
       </p>
       <p>
         <strong>Rechtsgrundlage:</strong> Die Verarbeitung erfolgt auf
         Grundlage deiner ausdrücklichen Einwilligung nach{" "}
-        <strong>Art. 6 Abs. 1 lit. a DSGVO</strong>.
+        <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> i.V.m. § 7 Abs. 2 Nr. 3
+        UWG. Die Speicherung der IP-Adressen und Zeitstempel zum Nachweis der
+        Einwilligung erfolgt auf Grundlage unseres berechtigten Interesses
+        nach Art. 6 Abs. 1 lit. f DSGVO i.V.m. Art. 7 Abs. 1 DSGVO
+        (Nachweispflicht für die Einwilligung).
       </p>
       <p>
-        <strong>Speicherdauer:</strong> Wir speichern deine Daten bis zum
-        Start des Produkts und bis zu 12 Monate danach, spätestens jedoch bis
-        du deine Einwilligung widerrufst.
+        <strong>Speicherdauer:</strong> Wir speichern deine Kontaktdaten bis
+        zum Start des Produkts und maximal 12 Monate danach, spätestens jedoch
+        bis du deine Einwilligung widerrufst. IP-Adressen werden ausschließlich
+        zu Nachweiszwecken gespeichert und bei Widerruf gelöscht.
       </p>
       <p>
         <strong>Widerrufsrecht:</strong> Du kannst deine Einwilligung
-        jederzeit formlos per E-Mail an{" "}
-        <span className="placeholder">[datenschutz@deine-domain.de]</span>{" "}
-        widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten
-        Verarbeitung bleibt vom Widerruf unberührt. Nach Widerruf werden
-        deine Daten unverzüglich gelöscht.
+        jederzeit formlos widerrufen:
+      </p>
+      <ul>
+        <li>
+          Über den <strong>Abmelde-Link</strong> in jeder E-Mail, die wir dir
+          senden (One-Click-Unsubscribe)
+        </li>
+        <li>
+          Per E-Mail an{" "}
+          <span className="placeholder">[datenschutz@deine-domain.de]</span>
+        </li>
+        <li>
+          Über die Abmelde-Seite{" "}
+          <a href="/abmelden">/abmelden</a>
+        </li>
+      </ul>
+      <p>
+        Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt
+        vom Widerruf unberührt. Nach Widerruf werden deine Daten unverzüglich
+        gelöscht.
       </p>
 
       <h3>4.1 Datenspeicherung bei Supabase</h3>
@@ -184,17 +268,44 @@ export default function DatenschutzPage() {
       </p>
       <p>
         Wir nutzen Supabase mit einem Server-Standort in der Europäischen
-        Union (Region <span className="placeholder">[eu-central-1 / Frankfurt]</span>
-        ), sodass deine Daten innerhalb des Geltungsbereichs der DSGVO
+        Union (Region{" "}
+        <span className="placeholder">[eu-central-1 / Frankfurt]</span>),
+        sodass deine Daten innerhalb des Geltungsbereichs der DSGVO
         verarbeitet werden. Mit Supabase wurde ein Vertrag zur
-        Auftragsverarbeitung nach Art. 28 DSGVO abgeschlossen.
+        Auftragsverarbeitung nach Art. 28 DSGVO abgeschlossen. Details siehe{" "}
+        <a
+          href="https://supabase.com/legal/dpa"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Supabase Data Processing Addendum
+        </a>
+        .
+      </p>
+
+      <h3>4.2 Verarbeitung von Daten zu Kindern</h3>
+      <p>
+        Wenn du in der Warteliste den Namen und/oder das Alter deines Kindes
+        angibst, verarbeiten wir personenbezogene Daten eines Dritten (deines
+        Kindes). Diese Angaben sind <strong>freiwillig</strong> und dienen
+        ausschließlich dazu, die spätere Produktkommunikation an das Alter des
+        Kindes anzupassen.
+      </p>
+      <p>
+        <strong>Du handelst als Sorgeberechtigte:r:</strong> Mit der
+        Einwilligung im Formular bestätigst du, dass du sorgeberechtigt bist
+        und in die Verarbeitung der angegebenen Daten deines Kindes
+        einwilligst (§ 1626 BGB, Art. 8 DSGVO). Die Angaben werden vertraulich
+        behandelt, nicht an Dritte weitergegeben und auf Wunsch jederzeit
+        gelöscht.
       </p>
 
       <h2>5. Einsatz von Cookies</h2>
       <p>
-        Unsere Website verwendet keine Tracking- oder Marketing-Cookies. Es
-        werden ausschließlich technisch notwendige Cookies eingesetzt, die
-        für den Betrieb der Website erforderlich sind:
+        Unsere Website verwendet <strong>keine</strong> Tracking-,
+        Analytics- oder Marketing-Cookies. Es werden ausschließlich technisch
+        notwendige Cookies eingesetzt, die für den Betrieb der Website
+        erforderlich sind:
       </p>
       <ul>
         <li>
@@ -207,40 +318,47 @@ export default function DatenschutzPage() {
       </ul>
       <p>
         Die Verwendung dieses technisch notwendigen Cookies erfolgt auf
-        Grundlage von <strong>§ 25 Abs. 2 Nr. 2 TTDSG</strong> in Verbindung
-        mit <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. Eine
-        Einwilligungspflicht besteht nicht, da das Cookie unbedingt
-        erforderlich ist, um die gewünschte Funktion bereitzustellen.
+        Grundlage von{" "}
+        <strong>§ 25 Abs. 2 Nr. 2 TDDDG</strong> (Telekommunikation-
+        Digitale-Dienste-Datenschutz-Gesetz, ehemals TTDSG, seit 14.05.2024
+        umbenannt) in Verbindung mit{" "}
+        <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. Eine Einwilligungspflicht
+        besteht nicht, da das Cookie unbedingt erforderlich ist, um die
+        gewünschte Funktion bereitzustellen. Ein Cookie-Banner ist daher auf
+        dieser Website nicht erforderlich.
       </p>
 
       <h2>6. Schriftarten</h2>
       <p>
         Diese Website verwendet die Schriftarten „Inter", „Fraunces" und
-        „Caveat" von Google Fonts. Die Schriftarten werden{" "}
-        <strong>nicht</strong> direkt von Google-Servern geladen, sondern
-        zum Zeitpunkt des Website-Builds auf unseren eigenen Server kopiert
-        und von dort ausgeliefert. Es findet daher{" "}
-        <strong>keine Verbindung deines Browsers zu Google</strong> statt,
-        wenn du unsere Seite besuchst. Deine IP-Adresse wird nicht an Google
-        übermittelt.
+        „Caveat". Die Schriftarten werden{" "}
+        <strong>vollständig selbst gehostet</strong> und aus unseren eigenen
+        Server-Ressourcen ausgeliefert. Es findet{" "}
+        <strong>keine Verbindung deines Browsers zu Google</strong> oder
+        anderen Drittanbietern statt, wenn du unsere Seite besuchst. Deine
+        IP-Adresse wird nicht an Google übermittelt (vgl. LG München I, Urteil
+        vom 20.01.2022, Az. 3 O 17493/20).
       </p>
 
       <h2>7. Keine Analyse- oder Marketing-Tools</h2>
       <p>
         Wir verwenden auf dieser Website <strong>keine</strong>{" "}
         Analyse-Tools (wie Google Analytics oder Matomo),{" "}
-        <strong>keine</strong> Retargeting- oder Conversion-Pixel und{" "}
-        <strong>keine</strong> Social-Media-Plugins. Es erfolgt kein
-        personenbezogenes Tracking deines Surfverhaltens.
+        <strong>keine</strong> Retargeting- oder Conversion-Pixel,{" "}
+        <strong>keine</strong> Social-Media-Plugins und{" "}
+        <strong>keine</strong> externen Video-, Karten- oder Fonts-Einbindungen.
+        Es erfolgt kein personenbezogenes Tracking deines Surfverhaltens.
       </p>
 
-      <h2>8. SSL-/TLS-Verschlüsselung</h2>
+      <h2>8. SSL-/TLS-Verschlüsselung und Sicherheit</h2>
       <p>
         Diese Website nutzt aus Sicherheitsgründen und zum Schutz der
         Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung.
-        Eine verschlüsselte Verbindung erkennst du daran, dass die
-        Adresszeile des Browsers von „http://" auf „https://" wechselt und
-        am Schloss-Symbol in deiner Browserzeile.
+        Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile
+        des Browsers von „http://" auf „https://" wechselt und am Schloss-
+        Symbol in der Browserzeile. Zusätzlich setzen wir technische und
+        organisatorische Maßnahmen nach Art. 32 DSGVO ein (Security-Headers,
+        Rate-Limiting, Zugriffskontrolle).
       </p>
 
       <h2>9. Deine Rechte als betroffene Person</h2>
@@ -262,12 +380,7 @@ export default function DatenschutzPage() {
         </li>
         <li>
           <strong>Recht auf Löschung</strong> (Art. 17 DSGVO) – Du kannst die
-          Löschung deiner bei uns gespeicherten Daten verlangen, soweit deren
-          Verarbeitung nicht zur Ausübung des Rechts auf freie
-          Meinungsäußerung und Information, zur Erfüllung einer rechtlichen
-          Verpflichtung, aus Gründen des öffentlichen Interesses oder zur
-          Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen
-          erforderlich ist.
+          Löschung deiner bei uns gespeicherten Daten verlangen.
         </li>
         <li>
           <strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18
@@ -278,11 +391,6 @@ export default function DatenschutzPage() {
           <strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO) –
           Du kannst verlangen, dass wir dir deine Daten in einem
           strukturierten, gängigen und maschinenlesbaren Format aushändigen.
-        </li>
-        <li>
-          <strong>Widerspruchsrecht</strong> (Art. 21 DSGVO) – Du kannst
-          jederzeit Widerspruch gegen die Verarbeitung deiner Daten erheben,
-          soweit diese auf einem berechtigten Interesse beruht.
         </li>
         <li>
           <strong>Recht auf Widerruf der Einwilligung</strong> (Art. 7 Abs. 3
@@ -296,6 +404,28 @@ export default function DatenschutzPage() {
           beschweren.
         </li>
       </ul>
+
+      <div className="notice">
+        <h3 style={{ marginTop: 0 }}>
+          Widerspruchsrecht nach Art. 21 DSGVO
+        </h3>
+        <p>
+          <strong>
+            Du hast das Recht, aus Gründen, die sich aus deiner besonderen
+            Situation ergeben, jederzeit gegen die Verarbeitung dich
+            betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs.
+            1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen.
+          </strong>
+        </p>
+        <p>
+          Wir verarbeiten die personenbezogenen Daten dann nicht mehr, es sei
+          denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung
+          nachweisen, die deine Interessen, Rechte und Freiheiten überwiegen,
+          oder die Verarbeitung dient der Geltendmachung, Ausübung oder
+          Verteidigung von Rechtsansprüchen.
+        </p>
+      </div>
+
       <p>
         Zur Ausübung deiner Rechte genügt eine formlose E-Mail an{" "}
         <span className="placeholder">[datenschutz@deine-domain.de]</span>.

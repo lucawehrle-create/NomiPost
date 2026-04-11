@@ -21,11 +21,19 @@ export const waitlistSchema = z.object({
   heardFrom: z.string().trim().max(60).optional().default(""),
   feedback: z.string().trim().max(2000).optional().default(""),
 
-  // DSGVO-Einwilligungen – die Pflicht-Einwilligung muss zwingend true sein
+  // DSGVO-Einwilligungen – Pflicht-Einwilligungen müssen zwingend true sein
   consentContact: z.literal(true, {
     errorMap: () => ({
       message:
         "Bitte bestätige die Einwilligung zur Datenspeicherung und E-Mail-Kontaktaufnahme.",
+    }),
+  }),
+  // Sorgeberechtigten-Einwilligung (§ 1626 BGB, Art. 8 DSGVO) – Pflicht,
+  // weil wir Daten über das Kind (Alter, ggf. Name) verarbeiten
+  consentGuardian: z.literal(true, {
+    errorMap: () => ({
+      message:
+        "Bitte bestätige, dass du sorgeberechtigt bist und in die Verarbeitung der Daten deines Kindes einwilligst.",
     }),
   }),
   consentSurvey: z.boolean().default(false),

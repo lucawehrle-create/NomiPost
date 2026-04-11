@@ -67,15 +67,20 @@ und hat ein schönes Dashboard zum Ansehen der Einträge.
      feedback text,
      -- DSGVO: Nachweis der Einwilligung (Art. 7 Abs. 1 DSGVO)
      consent_contact boolean not null default false,
+     consent_guardian boolean not null default false,
      consent_survey boolean not null default false,
      consent_at timestamptz not null default now(),
      consent_text_version text not null,
-     -- Für späteres Double-Opt-In
+     -- Double-Opt-In (§ 7 Abs. 2 UWG, BGH I ZR 164/09)
      confirmation_token text,
-     confirmed_at timestamptz
+     confirmed_at timestamptz,
+     -- IP-Nachweis gemäß Art. 6 Abs. 1 lit. f i.V.m. Art. 7 Abs. 1 DSGVO
+     ip_signup text,
+     ip_confirm text
    );
 
    create unique index waitlist_email_idx on public.waitlist (lower(email));
+   create index waitlist_token_idx on public.waitlist (confirmation_token);
    ```
 
    **Wichtig:** Wähle beim Anlegen des Supabase-Projekts eine **Region in der
@@ -163,44 +168,119 @@ data/
 - **Tonalität:** Beruhigend, professionell, wertschätzend – nie kindlich.
   Keine verbotenen Begriffe („KI", „Abo-Box", „Algorithmus").
 
-## Rechtskonformität (DSGVO / TMG)
+## Rechtskonformität (DSGVO / DDG / UWG)
 
-Die Seite ist bereits weitgehend DSGVO- und TMG-konform ausgelegt:
+Die Seite ist umfassend auf die aktuellen deutschen Rechts-Anforderungen
+(Stand April 2026) ausgelegt:
 
-- **Impressum** unter `/impressum` (Template mit Platzhaltern – **muss vor
-  Go-Live ausgefüllt werden**)
-- **Datenschutzerklärung** unter `/datenschutz` (Template mit Platzhaltern –
-  **muss vor Go-Live ausgefüllt werden**)
-- **Einwilligungs-Checkbox** (nicht vorangekreuzt, Pflicht nach Art. 7 DSGVO)
-- **Einwilligungs-Zeitstempel** und **Text-Version** werden pro Eintrag
-  gespeichert (Nachweis nach Art. 7 Abs. 1 DSGVO)
-- **Google Fonts selbst gehostet** über `next/font` (kein Drittlandtransfer
-  beim Seitenaufruf – siehe LG München, 20.01.2022, Az. 3 O 17493/20)
-- **Keine Tracking-Cookies**, **kein Analytics**, **keine Marketing-Pixel**
-- **Admin-Cookie** ist httpOnly, SameSite=Lax und nur „strictly necessary"
-- **Link zur Datenschutzerklärung** direkt am Formular
+**Pflichtseiten:**
+- `/impressum` nach § 5 **DDG** (Digitale-Dienste-Gesetz, seit 14.05.2024 –
+  ersetzt das frühere TMG)
+- `/datenschutz` nach Art. 13 DSGVO mit allen Pflichtangaben inkl.
+  Löschkonzept, Widerspruchsrecht hervorgehoben, Vercel namentlich genannt
+  mit EU-US Data Privacy Framework-Verweis
+- `/bestaetigung` (Double-Opt-In Confirmation, nicht indexiert)
+- `/abmelden` (Widerruf-Seite, nicht indexiert)
+
+**Einwilligung nach Art. 7 DSGVO:**
+- **Drei Einwilligungen** im Formular: (1) Datenspeicherung + E-Mail,
+  (2) Sorgeberechtigten-Einwilligung für Kinddaten, (3) optional Umfrage
+- Alle Checkboxen nicht vorangekreuzt (Art. 7 Abs. 1 DSGVO)
+- Ohne die Pflicht-Einwilligungen bleibt der Submit-Button disabled
+- Serverseitige Validierung via Zod (`z.literal(true)`)
+
+**Double-Opt-In (§ 7 Abs. 2 UWG, BGH I ZR 164/09):**
+- Nach dem Submit wird eine Bestätigungsmail mit eindeutigem Token versendet
+- Erst nach Klick auf den Confirmation-Link ist die Einwilligung gültig
+- **Mail-Inhalt enthält bewusst KEINE Werbung** (OLG München 29 U 1682/12)
+- **One-Click-Unsubscribe** nach RFC 8058 via List-Unsubscribe-Header
+- Confirmation-Token funktioniert gleichzeitig als Unsubscribe-Token
+
+**Beweispflicht (Art. 7 Abs. 1 DSGVO):**
+Pro Eintrag werden gespeichert:
+- `consent_at` – Zeitstempel der Einwilligung
+- `consent_text_version` – Version des zugestimmten Texts
+- `ip_signup` – IP beim Formular-Submit
+- `ip_confirm` – IP beim Confirmation-Klick
+- `confirmed_at` – Zeitstempel der Bestätigung
+
+**Selbst-gehostete Schriften (LG München 3 O 17493/20 + Folge-Urteile):**
+- Inter, Fraunces, Caveat über **Fontsource-npm-Pakete** lokal ausgeliefert
+- Null Requests an fonts.googleapis.com, Google, CDNs
+- Keine externen Scripts, keine Analytics, keine Tracking-Pixel
+
+**Security (Art. 32 DSGVO, BSI APP.3.1):**
+- Content-Security-Policy, HSTS, X-Frame-Options DENY, Referrer-Policy,
+  Permissions-Policy, X-Content-Type-Options (alles in `next.config.mjs`)
+- Rate-Limiting auf `/api/waitlist` (5/h pro IP) und `/api/unsubscribe`
+- **Timing-safe Passwort-Vergleich** im Admin (crypto.timingSafeEqual)
+- **Kein Default-Passwort** – Admin bleibt gesperrt bis `ADMIN_PASSWORD`
+  gesetzt ist
+- Next.js `X-Powered-By` Header deaktiviert
+- Next.js Telemetry via `.env.production` und CLI deaktiviert
+
+**TDDDG § 25 (ehemals TTDSG):**
+- Nur ein einziges Cookie: `nomi_admin_auth` für den Admin-Login
+- Kein Tracking, kein LocalStorage, kein externes Pixel
+- Daher kein Cookie-Banner nötig (nur „strictly necessary")
+
+### Mail-Versand (Resend) konfigurieren
+
+Damit Double-Opt-In funktioniert, brauchst du einen Mail-Service. Ich
+empfehle **Resend** (kostenlos bis 3000 Mails/Monat, einfach, DSGVO-konform):
+
+1. Kostenlosen Account auf [resend.com](https://resend.com) erstellen
+2. Domain verifizieren (oder im Dev-Modus Resend-Test-Domain nutzen)
+3. API-Key erstellen und in `.env.local` eintragen:
+   ```
+   RESEND_API_KEY=re_...
+   MAIL_FROM="NomiPost <no-reply@deine-domain.de>"
+   ```
+4. Server neu starten
+
+**Ohne Resend-Key läuft der Dev-Fallback:** Der Bestätigungs-Link wird im
+Server-Log ausgegeben und zusätzlich direkt im Success-Screen angezeigt, damit
+du lokal testen kannst.
+
+**Wichtig:** Die Seite darf **nicht produktiv** eingesetzt werden ohne
+funktionierendem Mail-Versand. Ohne DOI-Mails ist die Einwilligung
+rechtlich unwirksam.
 
 ### Was du noch selbst tun musst (vor Go-Live)
 
-1. **Impressum ausfüllen** (`app/impressum/page.tsx`) – alle
-   `[… Platzhalter]` durch echte Daten ersetzen. Für eine Privatperson ohne
-   eingetragenes Unternehmen: Name + Adresse reichen, Handelsregister und
-   USt-ID entfallen.
+**Kritisch (Blocker):**
+
+1. **Impressum ausfüllen** (`app/impressum/page.tsx`) – alle `[…]` durch
+   echte Daten ersetzen. Für Privatperson: Name, Adresse, E-Mail, Telefon.
 2. **Datenschutzerklärung ausfüllen** (`app/datenschutz/page.tsx`) – vor
-   allem: Verantwortlicher, E-Mail-Adresse für Datenschutz-Anfragen,
-   Hosting-Anbieter, Supabase-Region, zuständige Aufsichtsbehörde.
-3. **Auftragsverarbeitungsverträge (AVV)** abschließen:
-   - **Supabase** – im Supabase-Dashboard unter „Settings → Legal → DPA"
-   - **Vercel** (oder anderer Hosting-Anbieter) – siehe DPA der jeweiligen
-     Anbieter
-4. **Kontakt-E-Mail** (z. B. `datenschutz@deine-domain.de`) einrichten und
-   Löschanfragen bearbeiten können.
-5. **Double-Opt-In** implementieren, sobald du echte Marketing-E-Mails
-   versenden willst. Die Datenbank ist bereits darauf vorbereitet
-   (`confirmation_token`, `confirmed_at`). Empfohlene Dienste: Resend, Loops,
-   SendGrid – alle mit DSGVO-konformem Setup.
-6. **Letzte Prüfung** durch eine:n Rechtsanwält:in, besonders wenn du noch
-   kein eingetragenes Unternehmen hast.
+   allem Verantwortlicher, Datenschutz-E-Mail, Supabase-Region, Aufsichts-
+   behörde, Löschstichtag für Warteliste.
+3. **Resend-Account erstellen** und `RESEND_API_KEY` setzen
+4. **`ADMIN_PASSWORD` setzen** (mind. 8 Zeichen, nicht committen)
+5. **Supabase einrichten** in EU-Region (eu-central-1 / Frankfurt)
+
+**Wichtig (AV-Verträge):**
+
+6. **AVV mit Vercel** – wird automatisch akzeptiert bei Account-Erstellung,
+   siehe [vercel.com/legal/dpa](https://vercel.com/legal/dpa)
+7. **AVV mit Supabase** – im Dashboard unter Settings → Legal → DPA
+8. **AVV mit Resend** – siehe [resend.com/legal/dpa](https://resend.com/legal/dpa)
+
+**Dringend empfohlen:**
+
+9. **Datenschutz-E-Mail-Adresse** einrichten (z. B. `datenschutz@deine-domain.de`)
+   und Löschanfragen binnen 30 Tagen beantworten können
+10. **Anwaltliche Prüfung** durch Fachanwält:in für IT-Recht – besonders
+    wichtig, wenn du noch kein eingetragenes Unternehmen hast
+
+**Darüber hinaus denken an:**
+
+11. **Verzeichnis von Verarbeitungstätigkeiten (Art. 30 DSGVO)** intern
+    führen
+12. **Löschfristen technisch umsetzen** – Cron-Job, der nicht bestätigte
+    Einträge nach 14 Tagen automatisch löscht (noch nicht implementiert)
+13. **BFSG** (Barrierefreiheitsstärkungsgesetz, ab 28.06.2025) prüfen – für
+    reine Warteliste voraussichtlich nicht anwendbar, aber grenzwertig
 
 ### Einwilligungs-Änderungen nachvollziehbar halten
 
@@ -208,11 +288,11 @@ Wenn du den Text der Einwilligungs-Checkbox später änderst, **erhöhe die
 Version** in `lib/storage.ts`:
 
 ```ts
-export const CONSENT_TEXT_VERSION = "2026-04-11.v1"; // → "2026-06-01.v2"
+export const CONSENT_TEXT_VERSION = "2026-04-11.v2"; // → "2026-06-01.v3"
 ```
 
-So kannst du bei Datenschutz-Anfragen später nachweisen, welcher
-Einwilligungs-Text zum jeweiligen Zeitpunkt gültig war.
+So kannst du bei Datenschutz-Anfragen später nachweisen, welchem Text die
+jeweilige Person zugestimmt hat.
 
 ## Nächste Schritte (nach der Validierung)
 

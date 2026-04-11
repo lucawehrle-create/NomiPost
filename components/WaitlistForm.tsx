@@ -23,6 +23,7 @@ type FormState = {
 
   // Step 3: Einwilligungen (DSGVO)
   consentContact: boolean; // Pflicht – Speicherung & E-Mail-Benachrichtigung
+  consentGuardian: boolean; // Pflicht – Sorgeberechtigten-Einwilligung
   consentSurvey: boolean; // Optional – Umfragedaten für Produktentwicklung
 };
 
@@ -38,6 +39,7 @@ const initialState: FormState = {
   heardFrom: "",
   feedback: "",
   consentContact: false,
+  consentGuardian: false,
   consentSurvey: false,
 };
 
@@ -97,6 +99,7 @@ export default function WaitlistForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [devConfirmUrl, setDevConfirmUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const totalSteps = 3;
@@ -121,8 +124,8 @@ export default function WaitlistForm() {
 
   const canProceedStep2 = form.childAge !== "";
 
-  // Ohne Pflicht-Einwilligung darf nicht abgeschickt werden (Art. 7 DSGVO)
-  const canSubmit = form.consentContact;
+  // Ohne Pflicht-Einwilligungen darf nicht abgeschickt werden (Art. 7 DSGVO)
+  const canSubmit = form.consentContact && form.consentGuardian;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -136,11 +139,18 @@ export default function WaitlistForm() {
         body: JSON.stringify(form),
       });
 
+      const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Etwas ist schiefgelaufen. Bitte versuche es noch einmal.");
+        throw new Error(
+          data.error ||
+            "Etwas ist schiefgelaufen. Bitte versuche es noch einmal."
+        );
       }
 
+      if (typeof data.devConfirmUrl === "string") {
+        setDevConfirmUrl(data.devConfirmUrl);
+      }
       setDone(true);
     } catch (err) {
       setError(
@@ -159,36 +169,70 @@ export default function WaitlistForm() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="paper-card hand-border p-10 md:p-14 text-center max-w-2xl mx-auto"
+        className="paper-card hand-border paper-card-elevated p-10 md:p-14 text-center max-w-2xl mx-auto"
       >
         <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-mattgold/20 flex items-center justify-center">
           <svg
             width="40"
             height="40"
-            viewBox="0 0 40 40"
+            viewBox="0 0 48 48"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M 8 20 L 16 28 L 32 12"
+            <rect
+              x="6"
+              y="12"
+              width="36"
+              height="26"
+              rx="2"
               stroke="#C9A84B"
-              strokeWidth="4"
+              strokeWidth="3"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M 6 14 L 24 28 L 42 14"
+              stroke="#C9A84B"
+              strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
+              fill="none"
             />
           </svg>
         </div>
-        <h3 className="headline-serif text-3xl md:text-4xl font-semibold text-nomi-violet mb-4">
-          Nomi hat dich auf ihre Liste gesetzt ✦
+        <h3 className="headline-serif text-3xl md:text-4xl font-semibold text-nomi-violet mb-4 leading-tight">
+          Schau in dein Postfach, {form.parentName} ✦
         </h3>
-        <p className="text-tintengrau leading-relaxed mb-6">
-          Vielen Dank, {form.parentName}! Sobald Nomis erster Brief auf die Reise
-          geht, bekommst du als Erste:r Bescheid. Bis dahin – halt deinen
-          Briefkasten bereit.
+        <p className="text-tintengrau leading-relaxed mb-6 max-w-lg mx-auto">
+          Wir haben dir gerade eine Bestätigungs-E-Mail an{" "}
+          <strong className="text-nomi-violet">{form.email}</strong> gesendet.
+          Bitte klicke auf den Link in der Mail, um deine Anmeldung
+          abzuschließen.
         </p>
-        <p className="handwritten text-xl text-mattgold-dark">
-          Bis bald, dein NomiPost-Team
+        <p className="text-sm text-tintengrau-light mb-4">
+          Keine Mail bekommen? Schau kurz im Spam-Ordner nach. Falls nichts
+          angekommen ist, kannst du es gleich noch einmal versuchen.
         </p>
+        <p className="handwritten text-xl text-mattgold-dark mt-6">
+          Bis gleich, dein NomiPost-Team
+        </p>
+
+        {devConfirmUrl && (
+          <div className="mt-8 p-4 border-l-4 border-mattgold bg-mattgold/10 text-left rounded-sm">
+            <p className="text-xs font-semibold text-mattgold-dark uppercase tracking-wider mb-2">
+              Dev-Modus · Kein Mail-Service konfiguriert
+            </p>
+            <p className="text-xs text-tintengrau mb-2">
+              In Produktion würde jetzt eine Bestätigungsmail gesendet. Zum
+              Testen kannst du den Link direkt öffnen:
+            </p>
+            <a
+              href={devConfirmUrl}
+              className="text-xs text-nomi-violet underline break-all"
+            >
+              {devConfirmUrl}
+            </a>
+          </div>
+        )}
       </motion.div>
     );
   }
@@ -528,11 +572,14 @@ export default function WaitlistForm() {
                       <strong className="text-nomi-violet">
                         Ich willige ein
                       </strong>
-                      , dass NomiPost meine oben angegebenen Daten speichert und
-                      mich per E-Mail über den Launch und Early-Bird-Konditionen
-                      informiert. Ich kann diese Einwilligung jederzeit mit
-                      Wirkung für die Zukunft per E-Mail widerrufen. Weitere
-                      Informationen in der{" "}
+                      , dass NomiPost meine oben angegebenen Daten speichert
+                      und mich per E-Mail über den Launch und Early-Bird-
+                      Konditionen informiert. Ich bekomme eine
+                      Bestätigungs-E-Mail und muss meine Anmeldung dort
+                      bestätigen (Double-Opt-In). Ich kann diese Einwilligung
+                      jederzeit mit Wirkung für die Zukunft widerrufen – über
+                      den Abmelde-Link in jeder E-Mail oder per Nachricht an
+                      uns. Weitere Informationen in der{" "}
                       <a
                         href="/datenschutz"
                         target="_blank"
@@ -542,6 +589,53 @@ export default function WaitlistForm() {
                         Datenschutzerklärung
                       </a>
                       .{" "}
+                      <span className="text-red-700" aria-hidden="true">
+                        *
+                      </span>
+                    </span>
+                  </label>
+
+                  {/* Sorgeberechtigten-Einwilligung – § 1626 BGB, Art. 8 DSGVO */}
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <span className="relative flex-shrink-0 mt-0.5">
+                      <input
+                        type="checkbox"
+                        required
+                        checked={form.consentGuardian}
+                        onChange={(e) =>
+                          update("consentGuardian", e.target.checked)
+                        }
+                        className="peer sr-only"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="block w-5 h-5 rounded-[4px] border-[1.5px] border-nomi-violet/30 bg-warmcreme transition-all duration-200 peer-checked:bg-nomi-violet peer-checked:border-nomi-violet peer-focus-visible:ring-2 peer-focus-visible:ring-mattgold peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-warmcreme group-hover:border-nomi-violet/60"
+                      />
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        className="absolute inset-0 w-5 h-5 p-0.5 text-warmcreme opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <path
+                          d="M 3 8 L 6.5 11.5 L 13 4.5"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill="none"
+                        />
+                      </svg>
+                    </span>
+                    <span className="text-[0.85rem] text-tintengrau leading-[1.55] text-pretty">
+                      Ich bin{" "}
+                      <strong className="text-nomi-violet">
+                        sorgeberechtigt
+                      </strong>{" "}
+                      und willige in die Verarbeitung der angegebenen Daten
+                      meines Kindes (Alter, ggf. Name) ein. Die Daten werden
+                      nur zur Personalisierung der späteren Produkt­kommunikation
+                      genutzt.{" "}
                       <span className="text-red-700" aria-hidden="true">
                         *
                       </span>
