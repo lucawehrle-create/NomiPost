@@ -10,6 +10,9 @@ import { sendConfirmationMail } from "@/lib/email";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+// DSGVO: Function läuft bevorzugt in Frankfurt, damit eingehende
+// personenbezogene Daten (Name, E-Mail, IP) im EU-Raum verarbeitet werden.
+export const preferredRegion = "fra1";
 
 export async function POST(request: Request) {
   // Rate-Limiting: max. 5 Einträge pro IP pro Stunde

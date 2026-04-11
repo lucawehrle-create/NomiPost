@@ -4,6 +4,7 @@ import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const preferredRegion = "fra1"; // Frankfurt – DSGVO-Raum
 
 /**
  * POST /api/unsubscribe – Löscht einen Warteliste-Eintrag anhand des

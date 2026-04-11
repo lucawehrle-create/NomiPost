@@ -87,7 +87,7 @@ export default function DatenschutzPage() {
           Double-Opt-In-Link erfolgt, werden automatisch gelöscht.
         </li>
         <li>
-          <strong>Server-Logfiles:</strong> Nach maximal 14 Tagen
+          <strong>Server-Logfiles:</strong> Nach maximal 30 Tagen
           automatische Löschung durch unseren Hosting-Anbieter (siehe
           Abschnitt 3).
         </li>
@@ -116,37 +116,72 @@ export default function DatenschutzPage() {
         <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. Unser berechtigtes
         Interesse folgt aus der Notwendigkeit, die Stabilität und Sicherheit
         der Website zu gewährleisten sowie Missbrauch abzuwehren. Diese
-        Logfiles werden nach maximal 14 Tagen automatisch gelöscht.
+        Logfiles werden nach maximal 30 Tagen automatisch gelöscht.
       </p>
 
-      <h3>3.1 Hosting bei IONOS</h3>
+      <h3>3.1 Hosting bei Vercel</h3>
       <p>
-        Unsere Website wird bei folgendem externen Dienstleister gehostet:
+        Die Domain <strong>nomipost.de</strong> ist beim deutschen Anbieter
+        IONOS SE registriert. Die eigentliche Website (Code, statische
+        Inhalte, serverseitige Funktionen) wird aus Gründen der technischen
+        Funktionalität bei folgendem externen Dienstleister betrieben:
       </p>
       <p>
-        <strong>IONOS SE</strong>
+        <strong>Vercel Inc.</strong>
         <br />
-        Elgendorfer Straße 57
+        440 N Barranca Ave #4133
         <br />
-        56410 Montabaur
+        Covina, CA 91723
         <br />
-        Deutschland
+        USA
       </p>
       <p>
-        IONOS speichert beim Aufruf der Website die unter Abschnitt 3
-        genannten Server-Logfiles. Die Server von IONOS stehen in
-        Deutschland, eine Datenübermittlung in Drittländer findet{" "}
-        <strong>nicht</strong> statt. Mit IONOS wurde ein Vertrag zur
-        Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO abgeschlossen.
+        Vercel speichert beim Aufruf der Website die unter Abschnitt 3
+        genannten Server-Logfiles zur Gewährleistung des Betriebs, der
+        Stabilität und zur Missbrauchsabwehr. Die Speicherung erfolgt auf
+        Grundlage unseres berechtigten Interesses nach{" "}
+        <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. Die Logs werden nach
+        maximal 30 Tagen gelöscht.
       </p>
       <p>
-        Weitere Informationen findest du in der{" "}
+        <strong>Datenübermittlung in die USA:</strong> Da Vercel Inc. seinen
+        Sitz in den USA hat, liegt ein Drittlandtransfer vor. Die
+        Übermittlung erfolgt auf Grundlage des{" "}
+        <strong>EU-US Data Privacy Framework (DPF)</strong>. Vercel Inc. ist
+        unter dem DPF aktiv zertifiziert. Die Europäische Kommission hat am
+        10.07.2023 mit dem Angemessenheitsbeschluss (EU) 2023/1795 nach Art.
+        45 DSGVO das DPF als angemessenen Schutz für Datentransfers in die
+        USA anerkannt. Ergänzend gelten Standardvertragsklauseln gemäß Art.
+        46 Abs. 2 lit. c DSGVO.
+      </p>
+      <p>
+        <strong>EU-Regions-Präferenz:</strong> Unsere serverseitigen
+        Funktionen (API-Routen zum Speichern der Warteliste-Einträge, zur
+        Double-Opt-In-Bestätigung und zum Widerruf) sind so konfiguriert,
+        dass sie bevorzugt in der{" "}
+        <strong>EU-Region Frankfurt am Main (fra1)</strong> ausgeführt
+        werden. Dadurch bleiben die im Formular übermittelten
+        personenbezogenen Daten (Name, E-Mail, IP-Adresse) nach Möglichkeit
+        innerhalb des EU-Raums, bevor sie in unsere Datenbank (siehe
+        Abschnitt 4.1) geschrieben werden.
+      </p>
+      <p>
+        Mit Vercel wurde ein Vertrag zur Auftragsverarbeitung (AVV/DPA)
+        gemäß Art. 28 DSGVO abgeschlossen. Weitere Informationen in der{" "}
         <a
-          href="https://www.ionos.de/terms-gtc/terms-privacy"
+          href="https://vercel.com/legal/privacy-policy"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Datenschutzerklärung von IONOS
+          Datenschutzerklärung von Vercel
+        </a>{" "}
+        und im{" "}
+        <a
+          href="https://vercel.com/legal/dpa"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Data Processing Addendum
         </a>
         .
       </p>

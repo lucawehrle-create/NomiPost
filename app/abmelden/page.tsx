@@ -7,6 +7,7 @@ import HandDivider from "@/components/HandDivider";
 import UnsubscribeButton from "./UnsubscribeButton";
 
 export const dynamic = "force-dynamic";
+export const preferredRegion = "fra1"; // Frankfurt – DSGVO-Raum
 
 type Props = {
   searchParams: { token?: string };

@@ -113,61 +113,120 @@ und hat ein schönes Dashboard zum Ansehen der Einträge.
    neue Einträge dort hinein. Das Admin-Dashboard zeigt oben den aktuellen
    Speicher-Modus an.
 
-## Deployment
+## Deployment auf Vercel (Setup-Architektur)
 
-### Wichtig: IONOS Shared Hosting funktioniert NICHT
+Die Landingpage wird auf **Vercel** gehostet (Code + Serverless Functions
+in Frankfurt), die Domain `nomipost.de` bleibt bei **IONOS**. Daten
+landen in einer **Supabase**-Datenbank in Frankfurt. Mails verschickt
+**Resend**.
 
-NomiPost ist eine **Next.js-Anwendung mit serverseitigen API-Routes**
-(`/api/waitlist`, `/api/waitlist/survey`, `/api/unsubscribe`). Diese
-benötigen einen Node.js-Server zur Laufzeit. **IONOS Shared Hosting**
-(HTML/PHP-Pakete) kann das **nicht** – dort würden alle Formular-Submits,
-der Double-Opt-In-Flow und das Admin-Dashboard schlicht nicht
-funktionieren. Der Impressum-Datenschutz-Text referenziert IONOS als
-Hosting-Partner; technisch brauchst du aber eine dieser drei Varianten:
+```
+Besucher:in → nomipost.de (IONOS Domain)
+                ↓ (DNS zeigt auf Vercel)
+            Vercel Edge (Deutschland)
+                ↓ (API-Routes in fra1 Frankfurt)
+            Supabase EU-central-1 (Frankfurt)
+                ↓ (bei DOI-Mail)
+            Resend → Empfänger-Postfach
+```
 
-**Option A (empfohlen): Vercel für den Code, IONOS nur für die Domain**
-
-Am einfachsten und kostenlos. Die Domain `nomipost.de` bleibt bei IONOS,
-nur die DNS-Einträge zeigen auf Vercel. Der Code läuft auf Vercel.
-
-1. Repo zu GitHub pushen (ist bereits gemacht)
-2. Auf [vercel.com](https://vercel.com) mit GitHub-Account einloggen, Repo
-   importieren
-3. Environment Variables setzen: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`,
-   `ADMIN_PASSWORD`, `RESEND_API_KEY`, `MAIL_FROM`, `MAIL_REPLY_TO`
-4. Deployen (passiert automatisch)
-5. Im Vercel-Dashboard unter „Settings → Domains" deine Domain `nomipost.de`
-   hinzufügen. Vercel zeigt dir zwei DNS-Einträge (A-Record und
-   CNAME-Record), die du im IONOS-Control-Center unter „Domains & SSL →
-   nomipost.de → DNS" eintragen musst.
-
-   → **Achtung:** Wenn du Vercel als Hoster nutzt, muss die
-   Datenschutzerklärung entsprechend geändert werden: Vercel statt IONOS,
-   mit EU-US Data Privacy Framework-Verweis. Frag mich, ich passe das an.
-
-**Option B: IONOS Cloud Server / VPS (ab ca. 5 €/Monat)**
-
-Du mietest bei IONOS einen Linux-Server (z. B. „Cloud Server XS" oder
-„VPS Linux S"). Darauf installierst du Node.js und nginx als Proxy, und
-deployst die App via PM2 oder Docker. Vorteil: Hosting und Domain bei
-demselben Anbieter, Datenschutztexte bleiben 1:1 so wie jetzt.
-
-Technisch anspruchsvoller – lohnt sich, wenn du langfristig bei IONOS
-bleiben willst.
-
-**Option C: IONOS Deploy Now** (nicht geeignet)
-
-IONOS Deploy Now unterstützt zwar Next.js, aber **nur als statischen
-Export**. Mit unseren API-Routes funktioniert das nicht – das Formular
-würde nichts speichern können.
+**Warum nicht IONOS Shared Hosting?** Weil NomiPost serverseitige
+API-Routes hat (`/api/waitlist`, `/api/waitlist/survey`,
+`/api/unsubscribe`), die einen Node.js-Server brauchen. IONOS Shared
+Hosting kann das nicht. Deswegen läuft der Code bei Vercel.
 
 ---
 
-### Supabase ist zwingend
+### Schritt-für-Schritt Deployment-Anleitung
 
-Ohne Supabase gehen Einträge verloren, weil Serverless-Filesysteme
-(Vercel) nicht persistent sind. Die lokale JSON-Datei funktioniert nur
-auf deinem Mac während der Entwicklung.
+#### 1. Supabase-Projekt einrichten (5 Min)
+
+1. Account auf [supabase.com](https://supabase.com) erstellen
+2. **New Project** → Name: `nomipost`, Region: **Frankfurt (eu-central-1)**
+3. Passwort für die DB notieren (brauchst du nicht, aber sicher ist sicher)
+4. Warten bis das Projekt gestartet ist (~1 Min)
+5. **SQL Editor** öffnen, das SQL-Schema aus dem nächsten Abschnitt
+   einfügen und ausführen
+6. **Project Settings → API**: `Project URL` und `service_role` Key
+   kopieren (NICHT den `anon` Key!)
+7. **Settings → Legal → Data Processing Agreement** → „Accept DPA"
+   klicken
+
+#### 2. Resend-Account einrichten (5 Min)
+
+1. Account auf [resend.com](https://resend.com) erstellen
+2. **Domains → Add Domain** → `nomipost.de` eingeben
+3. Resend zeigt dir mehrere DNS-Einträge (MX, TXT für SPF, TXT für DKIM)
+4. Diese trägst du später im IONOS-Control-Center ein (siehe Schritt 5)
+5. **API Keys → Create API Key** → Namen geben, Key kopieren und sicher
+   speichern (wird nur einmal angezeigt)
+6. **Settings → Legal → DPA** akzeptieren
+
+#### 3. Code zu Vercel deployen (5 Min)
+
+1. Auf [vercel.com](https://vercel.com) mit deinem **GitHub-Account**
+   einloggen
+2. **Add New → Project**
+3. Das Repo `lucawehrle-create/nomipost` importieren
+4. Vercel erkennt Next.js automatisch – Einstellungen lassen wie sie sind
+5. **Environment Variables** setzen (ganz unten im Import-Dialog):
+
+   ```
+   SUPABASE_URL           = https://xxxxxxxxxx.supabase.co
+   SUPABASE_SERVICE_ROLE_KEY = eyJhbGci...
+   ADMIN_PASSWORD         = <mindestens 8 Zeichen, sicher wählen>
+   RESEND_API_KEY         = re_xxxxx
+   MAIL_FROM              = NomiPost <no-reply@nomipost.de>
+   MAIL_REPLY_TO          = hallo@nomipost.de
+   ```
+
+6. **Deploy** klicken. Nach ~2 Min ist die Seite live unter einer
+   `*.vercel.app`-URL.
+7. Öffne die URL und teste den kompletten Flow einmal mit deiner
+   eigenen E-Mail.
+
+#### 4. Domain nomipost.de bei Vercel hinzufügen (3 Min)
+
+1. Im Vercel-Dashboard: **Projekt → Settings → Domains**
+2. `nomipost.de` eingeben → **Add**
+3. Vercel zeigt dir **zwei DNS-Einträge**:
+   - **A-Record**: `@` zeigt auf `76.76.21.21`
+   - **CNAME-Record**: `www` zeigt auf `cname.vercel-dns.com`
+4. Diese Einträge merken – die trägst du gleich bei IONOS ein
+
+#### 5. DNS bei IONOS konfigurieren (10 Min + Wartezeit)
+
+1. Ins IONOS-Control-Center einloggen
+2. **Domains & SSL → nomipost.de → DNS**
+3. **Bestehende A-Records für `@` und `www` löschen** (falls
+   vorhanden – IONOS setzt dort meistens einen Parking-Eintrag)
+4. **Neue Einträge anlegen:**
+   - **A-Record**: Host `@`, Wert `76.76.21.21`
+   - **CNAME-Record**: Host `www`, Wert `cname.vercel-dns.com`
+5. **Für Resend (Mail-Versand) zusätzlich folgende Einträge anlegen**
+   (Resend zeigt dir die genauen Werte in seinem Dashboard):
+   - **MX-Record**: `send.nomipost.de` → `feedback-smtp.eu-west-1.amazonses.com` (Priorität 10)
+   - **TXT-Record (SPF)**: `send.nomipost.de` → `"v=spf1 include:amazonses.com ~all"`
+   - **TXT-Record (DKIM)**: `resend._domainkey` → Resend zeigt dir den Schlüssel
+6. **Speichern.** DNS-Propagierung dauert 5 Min bis 24 h, meistens
+   ca. 15 Min.
+7. Während du wartest: Zurück zu Vercel, dort wird das Häkchen neben
+   deiner Domain grün, sobald die DNS-Einträge aktiv sind. Vercel
+   stellt dann automatisch ein SSL-Zertifikat aus (Let's Encrypt).
+
+#### 6. Admin-Bereich einrichten
+
+Sobald die Domain aktiv ist:
+
+1. Öffne `https://nomipost.de/admin`
+2. Gib das `ADMIN_PASSWORD` ein, das du in Schritt 3 gesetzt hast
+3. Du siehst das Dashboard mit CSV-Export
+
+---
+
+### SQL-Schema für Supabase
+
+(Im SQL-Editor ausführen, Schritt 1.5 oben)
 
 ## Daten ansehen & exportieren
 
