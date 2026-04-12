@@ -71,7 +71,7 @@ export default function Hero() {
             </motion.div>
 
             <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2rem,7.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              Ein Brief, der dein Kind{" "}
+              Ein Brief, der Kinderaugen{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 italic text-nomi-violet">
                   zum Leuchten
