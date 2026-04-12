@@ -53,12 +53,12 @@ export default function AboutNomi() {
                 <ImageSlot
                   src=""
                   alt="Nomi, die Entdeckerin – Maskottchen von NomiPost"
-                  aspect="portrait"
+                  aspect="square"
                   framed
                   className="relative z-10 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-[800ms] ease-out"
                   placeholderTitle="Nomi-Portrait"
-                  placeholderDescription="Das große Maskottchen-Bild von Nomi: Entdeckerin mit altem goldenen Kompass, Aquarell-Stil, warme Farben, leicht nostalgisch."
-                  filename="/images/nomi-portrait.jpg"
+                  placeholderDescription="Nomi-Maskottchen, quadratisch 1:1, mind. 900×900 px, Aquarell-Stil."
+                  filename="/images/nomi-portrait.png"
                 />
               </div>
 

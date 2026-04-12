@@ -167,12 +167,12 @@ export default function Hero() {
               <ImageSlot
                 src=""
                 alt="NomiPost – Ein handgemachter Brief für Kinder"
-                aspect="portrait"
+                aspect="square"
                 framed
                 priority
                 className="relative z-10 shadow-[0_25px_60px_-15px_rgba(59,45,95,0.3)]"
                 placeholderTitle="Hero-Bild"
-                placeholderDescription="Das Hauptbild im Hero: Nomi-Illustration, Produktfoto eines Briefs, oder eine stimmungsvolle Szene. Hochformat 3:4, mind. 900×1200 px."
+                placeholderDescription="Nomi-Illustration oder Produktfoto, quadratisch 1:1, mind. 900×900 px."
                 filename="/images/hero-visual.png"
               />
             </div>
