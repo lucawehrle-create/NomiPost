@@ -21,7 +21,7 @@ import "@fontsource/caveat/400.css";
 export const metadata: Metadata = {
   title: "NomiPost – Persönliche Post, die Kinderaugen zum Leuchten bringt",
   description:
-    "Jeden Monat ein handgemachter Brief von Nomi, der dein Kind auf ein Abenteuer mitnimmt. Geschichte, Rätsel, Sticker, Hörbuch – ein Kunstwerk zum Anfassen. Jetzt auf die Warteliste.",
+    "Jeden Monat ein persönlicher Brief von Nomi, der Kinderaugen zum Leuchten bringt. Geschichte, Rätsel und kleine Überraschungen – Post, an die sich dein Kind noch Jahre später erinnert.",
   icons: {
     icon: "/images/nomi-portrait.png",
     apple: "/images/nomi-portrait.png",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NomiPost – Persönliche Post für kleine Entdecker",
     description:
-      "Ein handgemachter Brief im Monat, der dein Kind zum Staunen bringt. Jetzt auf die Warteliste.",
+      "Persönliche Post von Nomi – jeden Monat ein neues Abenteuer für dein Kind. Jetzt auf die Warteliste.",
     type: "website",
     locale: "de_DE",
   },
