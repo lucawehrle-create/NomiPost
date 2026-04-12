@@ -343,14 +343,42 @@ export default function DatenschutzPage() {
         vom 20.01.2022, Az. 3 O 17493/20).
       </p>
 
-      <h2>7. Keine Analyse- oder Marketing-Tools</h2>
+      <h2>7. Webanalyse (Vercel Web Analytics)</h2>
       <p>
-        Wir verwenden auf dieser Website <strong>keine</strong>{" "}
-        Analyse-Tools (wie Google Analytics oder Matomo),{" "}
-        <strong>keine</strong> Retargeting- oder Conversion-Pixel,{" "}
+        Wir verwenden <strong>Vercel Web Analytics</strong>, einen
+        datenschutzfreundlichen Analysedienst unseres Hosting-Anbieters
+        Vercel Inc. (siehe Abschnitt 3.1). Vercel Web Analytics erfasst
+        <strong> keine personenbezogenen Daten</strong>. Es werden keine
+        Cookies gesetzt, keine IP-Adressen gespeichert und keine
+        Fingerprinting-Techniken eingesetzt.
+      </p>
+      <p>
+        Erfasst werden ausschließlich aggregierte, anonyme Metriken:
+      </p>
+      <ul>
+        <li>Anzahl der Seitenaufrufe (ohne Rückschluss auf einzelne Personen)</li>
+        <li>Verweisquelle (z. B. „Instagram" oder „direkt")</li>
+        <li>Land (auf Basis der Server-Region, nicht der IP-Adresse)</li>
+        <li>Verwendetes Gerät und Browser (aggregiert, nicht individuell)</li>
+      </ul>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Die Verarbeitung erfolgt auf
+        Grundlage unseres berechtigten Interesses nach{" "}
+        <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. Unser berechtigtes
+        Interesse liegt in der Analyse der allgemeinen Nutzung unserer
+        Website zur Verbesserung unseres Angebots.
+      </p>
+      <p>
+        Da Vercel Web Analytics <strong>keine personenbezogenen Daten</strong>{" "}
+        verarbeitet und <strong>keine Cookies</strong> einsetzt, ist nach{" "}
+        <strong>§ 25 Abs. 2 Nr. 2 TDDDG</strong> keine Einwilligung
+        erforderlich. Ein Cookie-Banner ist weiterhin nicht nötig.
+      </p>
+      <p>
+        Wir verwenden darüber hinaus <strong>keine</strong>{" "}
+        Retargeting- oder Conversion-Pixel,{" "}
         <strong>keine</strong> Social-Media-Plugins und{" "}
-        <strong>keine</strong> externen Video-, Karten- oder Fonts-Einbindungen.
-        Es erfolgt kein personenbezogenes Tracking deines Surfverhaltens.
+        <strong>keine</strong> externen Video- oder Karten-Einbindungen.
       </p>
 
       <h2>8. SSL-/TLS-Verschlüsselung und Sicherheit</h2>

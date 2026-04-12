@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Providers from "@/components/Providers";
+import { Analytics } from "@vercel/analytics/react";
 
 /**
  * Schriftarten via Fontsource als npm-Pakete. Vollständig selbst gehostet,
@@ -68,6 +69,7 @@ export default function RootLayout({
     <html lang="de">
       <body className="bg-warmcreme text-tintengrau antialiased">
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
