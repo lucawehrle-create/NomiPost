@@ -37,7 +37,7 @@ export default function HowItWorks() {
       className="section-spacing relative overflow-hidden bg-gradient-to-b from-warmcreme via-warmcreme-dark/30 to-warmcreme"
     >
       <div className="container-wide relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20">
           <div className="eyebrow mb-5 md:mb-6 justify-center">
             <span className="w-8 md:w-10 h-px bg-mattgold" />
             Wie es funktioniert

@@ -77,7 +77,7 @@ export default function LetterAnatomy() {
       />
 
       <div className="container-wide relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 lg:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20">
           <div className="eyebrow mb-5 md:mb-6 justify-center">
             <span className="w-8 md:w-10 h-px bg-mattgold" />
             Was im Umschlag steckt
@@ -177,7 +177,7 @@ export default function LetterAnatomy() {
           transition={{ duration: 1, delay: 0.3 }}
           className="mt-12 md:mt-16 max-w-4xl mx-auto text-center px-2"
         >
-          <p className="handwritten text-xl md:text-2xl lg:text-3xl text-nomi-violet leading-relaxed">
+          <p className="handwritten text-xl md:text-2xl text-nomi-violet leading-relaxed">
             Unsere Idee: Beim allerersten Brief soll es eine besondere
             Überraschung geben – damit dein Kind von Tag eins weiß:
             <br />

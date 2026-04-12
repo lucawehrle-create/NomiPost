@@ -44,11 +44,11 @@ export default function Hero() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="eyebrow mb-5 md:mb-8"
+              className="eyebrow mb-5 md:mb-6"
             >
               <span className="w-8 md:w-10 h-px bg-mattgold" />
               Persönliche Post für kleine Entdecker
-              <span className="text-mattgold hidden sm:inline">✦</span>
+              <span className="w-8 md:w-10 h-px bg-mattgold" />
             </motion.div>
 
             <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2rem,7.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">

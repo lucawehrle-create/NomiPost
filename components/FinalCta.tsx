@@ -36,7 +36,7 @@ export default function FinalCta() {
             <span className="italic">wenn die Post losgeht.</span>
           </h2>
 
-          <HandDivider className="mt-6 md:mt-8 mb-6 md:mb-8" />
+          <HandDivider className="mt-8 mb-8" />
 
           <p className="text-base md:text-lg text-tintengrau leading-relaxed max-w-xl mx-auto text-pretty">
             Nur dein Vorname und deine E-Mail – mehr braucht es nicht. Keine

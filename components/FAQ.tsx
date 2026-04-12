@@ -40,7 +40,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="section-spacing relative overflow-hidden">
       <div className="container-wide relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 lg:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20">
           <div className="eyebrow mb-5 md:mb-6 justify-center">
             <span className="w-8 md:w-10 h-px bg-mattgold" />
             Häufige Fragen

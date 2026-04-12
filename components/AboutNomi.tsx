@@ -59,7 +59,7 @@ export default function AboutNomi() {
                 />
               </div>
 
-              <p className="handwritten text-center mt-5 md:mt-6 text-lg md:text-xl lg:text-2xl text-nomi-violet">
+              <p className="handwritten text-center mt-5 md:mt-6 text-lg md:text-xl text-nomi-violet">
                 Das ist Nomi ✦
               </p>
             </div>
@@ -75,6 +75,7 @@ export default function AboutNomi() {
             <div className="eyebrow mb-5 md:mb-6">
               <span className="w-8 md:w-10 h-px bg-mattgold" />
               Wer ist Nomi?
+              <span className="w-8 md:w-10 h-px bg-mattgold" />
             </div>
             <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] mb-6 md:mb-8 text-balance">
               Die Entdeckerin,
@@ -118,7 +119,7 @@ export default function AboutNomi() {
               ))}
             </div>
 
-            <div className="mt-8 md:mt-10 p-6 md:p-8 paper-card hand-border paper-card-elevated relative">
+            <div className="mt-8 md:mt-10 p-6 md:p-8 lg:p-10 paper-card hand-border paper-card-elevated relative">
               <span className="absolute -top-3 left-6 md:left-8 bg-warmcreme px-3 text-mattgold text-xl">
                 &ldquo;
               </span>
