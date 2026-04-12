@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CompassRose from "./CompassRose";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,15 +23,15 @@ export default function Navigation() {
       <div className="container-wide flex items-center justify-between py-3.5 md:py-5 lg:py-6">
         <a
           href="#top"
-          className="flex items-center gap-2.5 md:gap-3 group min-h-[44px]"
+          className="flex items-center min-h-[44px]"
           aria-label="NomiPost Startseite"
         >
-          <div className="w-9 h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 transition-transform duration-700 group-hover:rotate-[15deg]">
-            <CompassRose className="w-full h-full" />
-          </div>
-          <span className="headline-serif text-lg md:text-xl lg:text-[1.35rem] font-semibold text-nomi-violet tracking-tight">
-            NomiPost
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.png"
+            alt="NomiPost"
+            className="h-9 md:h-10 lg:h-11 w-auto"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8 text-[0.9rem] font-medium text-nomi-violet/75">
