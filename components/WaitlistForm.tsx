@@ -285,8 +285,10 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                   Willkommen auf der Liste, {parentName} ✦
                 </h3>
                 <p className="text-sm text-tintengrau leading-snug mt-1">
-                  Schau kurz in dein Postfach – dort wartet Nomis
-                  Bestätigungs-Brief auf dich.
+                  Schau kurz in dein Postfach – dort wartet eine
+                  Nachricht von uns. <strong className="text-nomi-violet/80">Nicht
+                  da? Bitte auch im Spam-Ordner nachschauen</strong> – manchmal
+                  landet die erste Mail dort.
                 </p>
               </div>
             </div>
@@ -426,10 +428,13 @@ export default function WaitlistForm({ variant = "card" }: Props) {
               Bis bald, {parentName} ✦
             </h3>
             <p className="text-tintengrau leading-relaxed max-w-sm mx-auto text-sm md:text-base">
-              Schau noch kurz in dein Postfach – wir haben dir eine
-              Nachricht an{" "}
+              Wir haben dir eine Nachricht an{" "}
               <strong className="text-nomi-violet">{email}</strong>{" "}
               geschickt. Einmal klicken, und wir sehen uns wieder.
+            </p>
+            <p className="text-xs text-tintengrau-light mt-3 max-w-xs mx-auto">
+              Keine Mail bekommen? Schau bitte auch im Spam-Ordner
+              nach – manchmal landet die erste Nachricht dort.
             </p>
             <p className="handwritten text-lg text-mattgold-dark mt-5">
               Nomi meldet sich ✦
