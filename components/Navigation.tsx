@@ -30,7 +30,7 @@ export default function Navigation() {
           <img
             src="/images/Logo.png"
             alt="NomiPost"
-            className="h-9 md:h-10 lg:h-11 w-auto"
+            className="h-7 md:h-8 lg:h-9 w-auto"
           />
         </a>
 

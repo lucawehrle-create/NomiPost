@@ -163,19 +163,13 @@ export default function Hero() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="lg:col-span-5 relative hidden lg:block"
           >
-            <div className="relative transform rotate-[-2deg] hover:rotate-0 transition-transform duration-[800ms] ease-out">
-              <ImageSlot
-                src="/images/hero-visual.png"
-                alt="NomiPost – Ein handgemachter Brief für Kinder"
-                aspect="square"
-                framed
-                priority
-                className="relative z-10 shadow-[0_25px_60px_-15px_rgba(59,45,95,0.3)]"
-                placeholderTitle="Hero-Bild"
-                placeholderDescription="Nomi-Illustration oder Produktfoto, quadratisch 1:1, mind. 900×900 px."
-                filename="/images/hero-visual.png"
-              />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/hero-visual.png"
+              alt="NomiPost – Ein handgemachter Brief für Kinder"
+              className="w-full max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(59,45,95,0.15)]"
+              loading="eager"
+            />
           </motion.div>
         </div>
       </div>
