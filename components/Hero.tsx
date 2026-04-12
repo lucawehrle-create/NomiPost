@@ -57,7 +57,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7"
+            className="lg:col-span-7 min-w-0"
           >
             <motion.div
               initial={{ opacity: 0, x: -10 }}
@@ -66,9 +66,7 @@ export default function Hero() {
               className="eyebrow mb-5 md:mb-8"
             >
               <span className="w-8 md:w-10 h-px bg-mattgold" />
-              <span className="whitespace-nowrap">
-                Persönliche Post für kleine Entdecker
-              </span>
+              Persönliche Post für kleine Entdecker
               <span className="text-mattgold hidden sm:inline">✦</span>
             </motion.div>
 
@@ -102,7 +100,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-tintengrau leading-relaxed max-w-[36rem] text-pretty"
+              className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-tintengrau leading-relaxed max-w-full md:max-w-[36rem] text-pretty"
             >
               Einmal im Monat trifft ein Umschlag im Briefkasten ein –
               persönlich adressiert, liebevoll gestaltet, von{" "}
@@ -116,7 +114,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-8 md:mt-10 w-full max-w-[38rem]"
+              className="mt-8 md:mt-10 w-full max-w-full md:max-w-[38rem]"
             >
               <WaitlistForm variant="hero" />
             </motion.div>
@@ -161,7 +159,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="lg:col-span-5 relative hidden lg:block"
+            className="lg:col-span-5 min-w-0 relative hidden lg:block"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

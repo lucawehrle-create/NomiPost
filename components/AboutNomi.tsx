@@ -41,7 +41,7 @@ export default function AboutNomi() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 flex justify-center order-first"
+            className="lg:col-span-5 min-w-0 flex justify-center order-first"
           >
             {/* Nomi-Portrait mit goldenem Kompass-Akzent */}
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px]">
@@ -72,7 +72,7 @@ export default function AboutNomi() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7"
+            className="lg:col-span-7 min-w-0"
           >
             <div className="eyebrow mb-5 md:mb-6">
               <span className="w-8 md:w-10 h-px bg-mattgold" />
