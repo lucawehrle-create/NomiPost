@@ -143,8 +143,7 @@ function buildHtml({
     <!-- Logo / Brand -->
     <tr>
       <td style="padding:40px 28px 24px; text-align:center;">
-        <span style="font-size:26px; color:#3B2D5F; font-weight:600; letter-spacing:-0.5px; font-family:Georgia,'Times New Roman',serif;">NomiPost</span>
-        <span style="color:#C9A84B; font-size:16px; vertical-align:super; margin-left:2px;">\u2726</span>
+        <img src="https://nomipost.de/images/Logo.png" alt="NomiPost" width="200" height="auto" style="max-width:200px; height:auto;" />
       </td>
     </tr>
 
