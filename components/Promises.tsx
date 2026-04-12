@@ -12,7 +12,7 @@ const promises = [
     icon: Heart,
   },
   {
-    title: "Kunstvoll, nie billig",
+    title: "Kunstvoll bis ins Detail",
     description:
       "Aquarell statt Clip-Art. Handgezeichnete Linien statt Vektoren. Papier, das sich wie ein echtes Kinderbuch anfühlt – und das dein Kind nicht einfach weglegt.",
     icon: Palette,
