@@ -64,14 +64,14 @@ const extras = [
 
 export default function LetterAnatomy() {
   return (
-    <section id="was" className="section-spacing relative">
+    <section id="was" className="section-spacing relative overflow-hidden">
       <WatercolorBlob
-        className="absolute top-20 -left-40 w-[600px] opacity-30 pointer-events-none"
+        className="absolute top-20 left-0 w-[400px] md:w-[600px] opacity-30 pointer-events-none"
         color="#7A5BA6"
         variant={3}
       />
       <WatercolorBlob
-        className="absolute bottom-40 -right-40 w-[500px] opacity-25 pointer-events-none"
+        className="absolute bottom-40 right-0 w-[400px] md:w-[500px] opacity-25 pointer-events-none"
         color="#C9A84B"
         variant={1}
       />

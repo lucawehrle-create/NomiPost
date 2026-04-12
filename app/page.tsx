@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden w-full max-w-[100vw]">
       <Navigation />
       <main>
         <Hero />
@@ -24,6 +24,6 @@ export default function Home() {
         <FinalCta />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

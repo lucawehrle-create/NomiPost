@@ -34,7 +34,7 @@ export default function HowItWorks() {
   return (
     <section
       id="wie"
-      className="section-spacing relative bg-gradient-to-b from-warmcreme via-warmcreme-dark/30 to-warmcreme"
+      className="section-spacing relative overflow-hidden bg-gradient-to-b from-warmcreme via-warmcreme-dark/30 to-warmcreme"
     >
       <div className="container-wide relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-24">

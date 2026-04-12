@@ -13,12 +13,12 @@ export default function Hero() {
     >
       {/* Dezente Aquarell-Akzente im Hintergrund */}
       <WatercolorBlob
-        className="absolute -top-20 -left-20 w-[500px] md:w-[700px] opacity-50 pointer-events-none"
+        className="absolute -top-20 left-0 w-[400px] sm:w-[500px] md:w-[700px] opacity-50 pointer-events-none"
         color="#C9A84B"
         variant={1}
       />
       <WatercolorBlob
-        className="absolute top-60 -right-40 w-[500px] md:w-[800px] opacity-30 md:opacity-40 pointer-events-none"
+        className="absolute top-60 right-0 w-[400px] sm:w-[500px] md:w-[800px] opacity-30 md:opacity-40 pointer-events-none"
         color="#3B2D5F"
         variant={2}
       />

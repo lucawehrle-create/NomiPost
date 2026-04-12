@@ -27,7 +27,7 @@ const promises = [
 
 export default function Promises() {
   return (
-    <section className="section-spacing relative">
+    <section className="section-spacing relative overflow-hidden">
       <div className="container-wide">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-24">
           <div className="eyebrow mb-5 md:mb-6 justify-center">
