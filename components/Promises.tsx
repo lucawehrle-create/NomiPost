@@ -10,36 +10,12 @@ const promises = [
       "Kein Brief von der Stange. Jeder Umschlag enthält eine kleine Welt, die für dein Kind gemacht wurde – mit seinen Lieblingsthemen und einem wiederkehrenden Begleiter, den es sofort erkennt.",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="p1-rough">
-            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" />
-            <feDisplacementMap in="SourceGraphic" scale="1" />
-          </filter>
-        </defs>
-        <g filter="url(#p1-rough)">
-          <path
-            d="M 40 14 C 26 14 16 26 16 40 C 16 54 28 66 40 66 C 52 66 64 54 64 40 C 64 26 54 14 40 14 Z"
-            stroke="#3B2D5F"
-            strokeWidth="2"
-            fill="#FFF8F0"
-            strokeLinecap="round"
-          />
-          <circle cx="30" cy="36" r="2" fill="#3B2D5F" />
-          <circle cx="50" cy="36" r="2" fill="#3B2D5F" />
-          <path
-            d="M 30 48 Q 40 54 50 48"
-            stroke="#3B2D5F"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M 22 22 L 18 16 M 58 22 L 62 16 M 14 40 L 8 40 M 66 40 L 72 40"
-            stroke="#C9A84B"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </g>
+        {/* Versiegelter Briefumschlag */}
+        <rect x="12" y="22" width="56" height="38" rx="3" stroke="#3B2D5F" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M 12 24 L 40 44 L 68 24" stroke="#3B2D5F" strokeWidth="2.5" strokeLinejoin="round" fill="none" />
+        {/* Goldenes Wachs-Siegel */}
+        <circle cx="40" cy="50" r="7" fill="#C9A84B" />
+        <path d="M 40 45 L 41.5 48.5 L 45 49 L 42.5 51.5 L 43 55 L 40 53 L 37 55 L 37.5 51.5 L 35 49 L 38.5 48.5 Z" fill="#FFF8F0" />
       </svg>
     ),
   },
@@ -49,28 +25,14 @@ const promises = [
       "Aquarell statt Clip-Art. Handgezeichnete Linien statt Vektoren. Papier, das sich wie ein echtes Kinderbuch anfühlt – und das dein Kind nicht einfach weglegt.",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="p2-rough">
-            <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" />
-            <feDisplacementMap in="SourceGraphic" scale="1" />
-          </filter>
-        </defs>
-        <g filter="url(#p2-rough)">
-          <path
-            d="M 20 16 L 60 16 L 60 62 L 40 72 L 20 62 Z"
-            stroke="#3B2D5F"
-            strokeWidth="2"
-            fill="#FFF8F0"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M 28 30 L 52 30 M 28 40 L 52 40 M 28 50 L 44 50"
-            stroke="#C9A84B"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <circle cx="40" cy="20" r="3" fill="#C9A84B" />
-        </g>
+        {/* Aufgeschlagenes Buch mit Feder */}
+        <path d="M 40 20 L 40 62" stroke="#3B2D5F" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M 40 20 C 34 18 20 16 14 20 L 14 58 C 20 54 34 56 40 62" stroke="#3B2D5F" strokeWidth="2.5" fill="none" strokeLinejoin="round" />
+        <path d="M 40 20 C 46 18 60 16 66 20 L 66 58 C 60 54 46 56 40 62" stroke="#3B2D5F" strokeWidth="2.5" fill="none" strokeLinejoin="round" />
+        {/* Goldene Seitenlinien */}
+        <path d="M 22 30 L 34 30 M 22 38 L 32 38 M 22 46 L 34 46" stroke="#C9A84B" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+        {/* Gold-Stern */}
+        <circle cx="54" cy="34" r="4" fill="#C9A84B" opacity="0.6" />
       </svg>
     ),
   },
@@ -80,23 +42,17 @@ const promises = [
       "Zum Lesen, Kleben, Malen, Knobeln, Basteln, Anhören und unter das Kopfkissen legen. Bildschirmfreie Fantasiezeit, die von ganz allein entsteht – ohne dass du etwas dazukaufen musst.",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="p3-rough">
-            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" />
-            <feDisplacementMap in="SourceGraphic" scale="1" />
-          </filter>
-        </defs>
-        <g filter="url(#p3-rough)">
-          <path
-            d="M 40 12 L 46 30 L 64 32 L 50 44 L 54 62 L 40 52 L 26 62 L 30 44 L 16 32 L 34 30 Z"
-            stroke="#3B2D5F"
-            strokeWidth="2"
-            fill="#C9A84B"
-            fillOpacity="0.25"
-            strokeLinejoin="round"
-          />
-          <circle cx="40" cy="40" r="4" fill="#C9A84B" />
-        </g>
+        {/* Geschichtete Elemente: Papier + Sticker + Stift */}
+        {/* Hinteres Blatt (schräg) */}
+        <rect x="18" y="16" width="40" height="52" rx="2" stroke="#3B2D5F" strokeWidth="2" transform="rotate(6 38 42)" opacity="0.3" />
+        {/* Mittleres Blatt */}
+        <rect x="20" y="18" width="40" height="52" rx="2" stroke="#3B2D5F" strokeWidth="2" transform="rotate(-3 40 44)" opacity="0.5" />
+        {/* Vorderes Blatt */}
+        <rect x="22" y="14" width="40" height="52" rx="2" stroke="#3B2D5F" strokeWidth="2.5" fill="#FFF8F0" />
+        {/* Inhalt: Zeilen + Stern */}
+        <path d="M 30 28 L 54 28 M 30 36 L 50 36 M 30 44 L 46 44" stroke="#3B2D5F" strokeWidth="1.5" strokeLinecap="round" opacity="0.35" />
+        {/* Gold-Stern als Sticker-Andeutung */}
+        <path d="M 48 52 L 50 47 L 55 48 L 51 44 L 54 40 L 50 42 L 48 38 L 46 42 L 42 40 L 45 44 L 41 48 L 46 47 Z" fill="#C9A84B" />
       </svg>
     ),
   },

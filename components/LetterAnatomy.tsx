@@ -3,7 +3,6 @@
 import { m as motion } from "framer-motion";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
-import ImageSlot from "./ImageSlot";
 
 const items = [
   {
@@ -96,29 +95,6 @@ export default function LetterAnatomy() {
           </p>
           <HandDivider className="mt-8 md:mt-10" />
         </div>
-
-        {/* ─── BILD-SLOT: Letter Preview ─────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-5xl mx-auto mb-12 md:mb-20 lg:mb-24"
-        >
-          <ImageSlot
-            src=""
-            alt="Ein aufgeklappter NomiPost-Brief mit allen Beilagen"
-            aspect="wide"
-            framed={false}
-            className="paper-card hand-border paper-card-elevated overflow-hidden"
-            placeholderTitle="Brief-Vorschau"
-            placeholderDescription="Ein Foto oder eine Illustration des aufgeklappten Briefs mit allen Beilagen – Draufsicht, warmes Setting (Holztisch, Kakao-Tasse, Aquarell-Akzente)."
-            filename="/images/letter-preview.jpg"
-          />
-          <p className="handwritten text-center mt-4 text-lg text-mattgold-dark">
-            So sieht ein Brief aus, wenn du ihn aufklappst ✦
-          </p>
-        </motion.div>
 
         {/* 6 Content-Karten im Raster */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">

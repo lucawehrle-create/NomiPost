@@ -1,10 +1,9 @@
 "use client";
 
 import { m as motion } from "framer-motion";
-import CompassRose from "./CompassRose";
-import EnvelopeIllustration from "./EnvelopeIllustration";
 import WatercolorBlob from "./WatercolorBlob";
 import WaitlistForm from "./WaitlistForm";
+import ImageSlot from "./ImageSlot";
 
 export default function Hero() {
   return (
@@ -24,7 +23,7 @@ export default function Hero() {
         variant={2}
       />
 
-      {/* Dekorative Sterne – jetzt auch auf Mobile */}
+      {/* Dekorative Sterne */}
       <div className="absolute top-28 right-[8%] text-mattgold/40 text-lg md:text-xl lg:text-2xl animate-float-slow pointer-events-none">
         ✦
       </div>
@@ -34,18 +33,23 @@ export default function Hero() {
 
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
-          {/* ───── Mobile-only Umschlag-Vignette (kompakt, oben) ───── */}
+          {/* ───── Mobile-only: kompaktes Hero-Bild oben ───── */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: -3 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden relative mx-auto w-[240px] sm:w-[280px] -mb-4"
+            className="lg:hidden relative mx-auto w-[220px] sm:w-[260px] -mb-2"
           >
-            <div className="absolute -top-2 -right-2 w-16 sm:w-20 animate-float z-20">
-              <CompassRose className="w-full h-full gold-glow" />
-            </div>
-            <div className="absolute inset-0 bg-nomi-violet/10 blur-3xl rounded-full" />
-            <EnvelopeIllustration className="relative w-full drop-shadow-[0_15px_30px_rgba(59,45,95,0.2)]" />
+            <ImageSlot
+              src=""
+              alt="NomiPost – Ein handgemachter Brief für Kinder"
+              aspect="square"
+              framed={false}
+              className="rounded-2xl overflow-hidden shadow-xl shadow-nomi-violet/15"
+              placeholderTitle="Hero-Bild"
+              placeholderDescription="Produkt-Bild oder Nomi-Illustration, quadratisch."
+              filename="/images/hero-visual.png"
+            />
           </motion.div>
 
           {/* ───── Content Column ───── */}
@@ -62,7 +66,9 @@ export default function Hero() {
               className="eyebrow mb-5 md:mb-8"
             >
               <span className="w-8 md:w-10 h-px bg-mattgold" />
-              <span className="whitespace-nowrap">Persönliche Post für kleine Entdecker</span>
+              <span className="whitespace-nowrap">
+                Persönliche Post für kleine Entdecker
+              </span>
               <span className="text-mattgold hidden sm:inline">✦</span>
             </motion.div>
 
@@ -150,38 +156,26 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* ───── Desktop-only: Großer Umschlag + Handwritten Note ───── */}
+          {/* ───── Desktop: Großes Hero-Bild ───── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="lg:col-span-5 relative hidden lg:block"
           >
-            <div className="absolute -top-8 -right-4 lg:-right-8 w-28 lg:w-36 xl:w-40 animate-float z-20">
-              <CompassRose className="w-full h-full gold-glow" />
+            <div className="relative transform rotate-[-2deg] hover:rotate-0 transition-transform duration-[800ms] ease-out">
+              <ImageSlot
+                src=""
+                alt="NomiPost – Ein handgemachter Brief für Kinder"
+                aspect="portrait"
+                framed
+                priority
+                className="relative z-10 shadow-[0_25px_60px_-15px_rgba(59,45,95,0.3)]"
+                placeholderTitle="Hero-Bild"
+                placeholderDescription="Das Hauptbild im Hero: Nomi-Illustration, Produktfoto eines Briefs, oder eine stimmungsvolle Szene. Hochformat 3:4, mind. 900×1200 px."
+                filename="/images/hero-visual.png"
+              />
             </div>
-
-            <div className="relative transform rotate-[-3deg] hover:rotate-0 transition-transform duration-[800ms] ease-out">
-              <div className="absolute inset-0 bg-nomi-violet/15 blur-3xl rounded-full" />
-              <EnvelopeIllustration className="relative w-full max-w-xl mx-auto drop-shadow-[0_25px_50px_rgba(59,45,95,0.25)]" />
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, rotate: -5, y: 20 }}
-              animate={{ opacity: 1, rotate: 2, y: 0 }}
-              transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-              className="absolute -bottom-6 left-4 lg:-left-8"
-            >
-              <div className="paper-card hand-border p-5 max-w-[220px] paper-card-elevated">
-                <p className="handwritten text-nomi-violet text-xl leading-tight">
-                  &ldquo;Du wirst nicht glauben, was ich heute entdeckt habe…&rdquo;
-                </p>
-                <p className="handwritten text-mattgold-dark text-sm mt-2 flex items-center gap-1">
-                  <span className="w-4 h-px bg-mattgold-dark" />
-                  Nomi ✦
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
