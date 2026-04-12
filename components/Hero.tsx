@@ -116,7 +116,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-8 md:mt-10 max-w-[38rem]"
+              className="mt-8 md:mt-10 w-full max-w-[38rem]"
             >
               <WaitlistForm variant="hero" />
             </motion.div>

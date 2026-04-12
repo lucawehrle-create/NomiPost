@@ -165,7 +165,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                   onChange={(e) => setParentName(e.target.value)}
                   placeholder="Dein Vorname"
                   autoComplete="given-name"
-                  className="paper-input py-4"
+                  className="paper-input py-3.5 sm:py-4 px-4 sm:px-5"
                 />
               </div>
               <div>
@@ -180,7 +180,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Deine E-Mail-Adresse"
                   autoComplete="email"
-                  className="paper-input py-4"
+                  className="paper-input py-3.5 sm:py-4 px-4 sm:px-5"
                 />
               </div>
             </div>
