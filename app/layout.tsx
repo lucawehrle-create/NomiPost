@@ -36,19 +36,19 @@ export const metadata: Metadata = {
     url: "https://nomipost.de",
     images: [
       {
-        url: "/images/nomi-portrait.png",
-        width: 1000,
-        height: 1000,
-        alt: "Nomi – das Maskottchen von NomiPost",
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NomiPost – Persönliche Post, die Kinderaugen zum Leuchten bringt",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "NomiPost – Post, die Kinderaugen zum Leuchten bringt",
     description:
       "Jeden Monat ein Brief von Nomi – mit Geschichte, Rätsel und Überraschungen. Jetzt auf die Warteliste!",
-    images: ["/images/nomi-portrait.png"],
+    images: ["/images/og-image.png"],
   },
 };
 
