@@ -64,9 +64,6 @@ export default function Manifesto() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <span className="absolute -top-8 md:-top-12 lg:-top-16 left-1/2 -translate-x-1/2 headline-serif text-7xl md:text-8xl lg:text-[10rem] text-mattgold/40 leading-none font-serif">
-              &ldquo;
-            </span>
             <p className="headline-serif text-[clamp(1.375rem,4.5vw,3.25rem)] font-semibold text-warmcreme leading-[1.25] italic text-balance">
               Stell dir vor, dein Kind zieht in zwanzig Jahren
               <br className="hidden sm:inline" />

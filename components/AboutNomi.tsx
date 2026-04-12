@@ -1,7 +1,6 @@
 "use client";
 
 import { m as motion } from "framer-motion";
-import CompassRose from "./CompassRose";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
 import ImageSlot from "./ImageSlot";
@@ -62,13 +61,8 @@ export default function AboutNomi() {
                 />
               </div>
 
-              {/* Kleine schwebende Kompassrose als Akzent rechts oben */}
-              <div className="absolute -top-5 -right-5 md:-top-6 md:-right-6 w-16 md:w-20 lg:w-24 animate-float z-20">
-                <CompassRose className="w-full h-full gold-glow" />
-              </div>
-
               <p className="handwritten text-center mt-5 md:mt-6 text-lg md:text-xl lg:text-2xl text-nomi-violet">
-                Nomi mit ihrem goldenen Kompass ✦
+                Das ist Nomi ✦
               </p>
             </div>
           </motion.div>
