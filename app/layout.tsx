@@ -27,28 +27,28 @@ export const metadata: Metadata = {
     apple: "/images/nomi-portrait.png",
   },
   openGraph: {
-    title: "NomiPost – Persönliche Post, die Kinderaugen zum Leuchten bringt",
+    title: "NomiPost – Post, die Kinderaugen zum Leuchten bringt",
     description:
-      "Jeden Monat ein persönlicher Brief von Nomi. Geschichte, Rätsel und kleine Überraschungen – Post, an die sich dein Kind noch Jahre später erinnert. Jetzt auf die Warteliste.",
+      "Jeden Monat ein Brief von Nomi – mit Geschichte, Rätsel und Überraschungen. Jetzt auf die Warteliste!",
     type: "website",
     locale: "de_DE",
     siteName: "NomiPost",
     url: "https://nomipost.de",
     images: [
       {
-        url: "/images/hero-visual.png",
+        url: "/images/nomi-portrait.png",
         width: 1000,
         height: 1000,
-        alt: "NomiPost – Persönliche Post für kleine Entdecker",
+        alt: "Nomi – das Maskottchen von NomiPost",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "NomiPost – Persönliche Post, die Kinderaugen zum Leuchten bringt",
+    card: "summary",
+    title: "NomiPost – Post, die Kinderaugen zum Leuchten bringt",
     description:
-      "Jeden Monat ein persönlicher Brief von Nomi. Jetzt auf die Warteliste.",
-    images: ["/images/hero-visual.png"],
+      "Jeden Monat ein Brief von Nomi – mit Geschichte, Rätsel und Überraschungen. Jetzt auf die Warteliste!",
+    images: ["/images/nomi-portrait.png"],
   },
 };
 
