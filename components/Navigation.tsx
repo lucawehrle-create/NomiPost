@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,10 +27,13 @@ export default function Navigation() {
           className="flex items-center min-h-[44px]"
           aria-label="NomiPost Startseite"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/images/Logo.png"
             alt="NomiPost"
+            width={300}
+            height={50}
+            quality={85}
+            priority
             className="h-7 md:h-8 lg:h-9 w-auto"
           />
         </a>

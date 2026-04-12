@@ -1,9 +1,9 @@
 "use client";
 
 import { m as motion } from "framer-motion";
+import Image from "next/image";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
-import ImageSlot from "./ImageSlot";
 
 const traits = [
   {
@@ -47,17 +47,15 @@ export default function AboutNomi() {
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px]">
               <div className="absolute inset-0 bg-mattgold/15 blur-[60px] md:blur-[80px] rounded-full scale-110" />
 
-              {/* Bild-Slot im Vordergrund */}
-              <div className="relative">
-                <ImageSlot
+              <div className="relative z-10 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-[800ms] ease-out overflow-hidden rounded-sm">
+                <Image
                   src="/images/nomi-portrait.png"
                   alt="Nomi, die Entdeckerin – Maskottchen von NomiPost"
-                  aspect="square"
-                  framed
-                  className="relative z-10 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-[800ms] ease-out"
-                  placeholderTitle="Nomi-Portrait"
-                  placeholderDescription="Nomi-Maskottchen, quadratisch 1:1, mind. 900×900 px, Aquarell-Stil."
-                  filename="/images/nomi-portrait.png"
+                  width={800}
+                  height={800}
+                  quality={75}
+                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 380px"
+                  className="w-full h-auto"
                 />
               </div>
 

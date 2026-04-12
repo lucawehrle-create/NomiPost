@@ -23,10 +23,6 @@ export default function CompassRose({ className = "", spin = false }: Props) {
           <stop offset="60%" stopColor="#C9A84B" />
           <stop offset="100%" stopColor="#A68735" />
         </radialGradient>
-        <filter id="roughen">
-          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" />
-          <feDisplacementMap in="SourceGraphic" scale="1.2" />
-        </filter>
       </defs>
 
       {/* Äußerer Kreis, leicht unregelmäßig */}
@@ -38,7 +34,6 @@ export default function CompassRose({ className = "", spin = false }: Props) {
         stroke="#C9A84B"
         strokeWidth="1.5"
         opacity="0.5"
-        filter="url(#roughen)"
       />
       <circle
         cx="100"
@@ -47,7 +42,6 @@ export default function CompassRose({ className = "", spin = false }: Props) {
         fill="none"
         stroke="#C9A84B"
         strokeWidth="2"
-        filter="url(#roughen)"
       />
 
       {/* Himmelsrichtungs-Buchstaben */}

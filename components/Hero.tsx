@@ -1,9 +1,9 @@
 "use client";
 
 import { m as motion } from "framer-motion";
+import Image from "next/image";
 import WatercolorBlob from "./WatercolorBlob";
 import WaitlistForm from "./WaitlistForm";
-import ImageSlot from "./ImageSlot";
 
 export default function Hero() {
   return (
@@ -142,12 +142,15 @@ export default function Hero() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="lg:col-span-5 min-w-0 relative hidden lg:block"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/hero-visual.png"
               alt="NomiPost – Persönliche Post für Kinder"
+              width={600}
+              height={600}
+              quality={80}
+              priority
+              sizes="(max-width: 1024px) 0px, 500px"
               className="w-full max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(59,45,95,0.15)]"
-              loading="eager"
             />
           </motion.div>
         </div>
