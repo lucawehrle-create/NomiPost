@@ -9,8 +9,8 @@ const faqs = [
     a: "Die Briefe sind für Kinder zwischen 5 und 10 Jahren gedacht. Sprache, Schriftgröße und Rätsel-Schwierigkeit passen wir ans Leseniveau deines Kindes an – vom Leseanfänger bis zum kleinen Profi.",
   },
   {
-    q: "Wann startet NomiPost tatsächlich?",
-    a: "Wir bauen NomiPost gerade sorgfältig auf. Bevor wir starten, wollen wir herausfinden, welche Familien wirklich Lust drauf haben. Alle auf der Warteliste bekommen als Erste Bescheid – und sichern sich automatisch einen Early-Bird-Preis.",
+    q: "Wann verschickt Nomi ihren ersten Brief?",
+    a: "Wir arbeiten gerade sorgfältig an den ersten Briefen. Bevor es losgeht, wollen wir herausfinden, welche Familien wirklich Lust drauf haben. Alle auf der Warteliste bekommen als Erste Bescheid – und sichern sich automatisch einen Early-Bird-Preis.",
   },
   {
     q: "Was ist NomiPost eigentlich nicht?",
@@ -22,15 +22,15 @@ const faqs = [
   },
   {
     q: "Wie persönlich wird der Brief wirklich?",
-    a: "Sehr persönlich. Sobald NomiPost startet, fragen wir dich nach Namen und Interessen deines Kindes – inklusive einem wiederkehrenden Begleit-Element (Begleittier oder magischer Gegenstand), das in jedem Brief auftaucht. Für die Warteliste hier reichen Vorname und E-Mail – wir sammeln bewusst keine Kinddaten, solange es noch nicht losgeht.",
+    a: "Sehr persönlich. Sobald es losgeht, fragen wir dich nach dem Namen und den Interessen deines Kindes – inklusive einem wiederkehrenden Begleit-Element, das in jedem Brief auftaucht und das dein Kind sofort erkennt. Für die Warteliste reichen jetzt nur dein Vorname und deine E-Mail.",
   },
   {
     q: "Wie viel wird NomiPost kosten?",
-    a: "Der genaue Preis steht noch nicht fest – das ist auch einer der Gründe für diese Warteliste. Wir möchten etwas schaffen, das sich wirklich lohnt, und dabei einen fairen Preis finden. In der kurzen Bonus-Umfrage nach der Anmeldung kannst du uns deine Vorstellung mitteilen. Freiwillig, versteht sich.",
+    a: "Der genaue Preis steht noch nicht fest – das ist auch einer der Gründe für diese Warteliste. Wir möchten etwas schaffen, das sich wirklich lohnt, und dabei einen fairen Preis finden. In der kurzen Frage nach der Anmeldung kannst du uns verraten, was du dir vorstellen könntest. Freiwillig, versteht sich.",
   },
   {
-    q: "Kann ich jederzeit pausieren oder beenden?",
-    a: "Ja. Sobald NomiPost startet, kannst du jederzeit pausieren oder beenden. Kein Kleingedrucktes, keine Mindestlaufzeit – der aktuelle Monat läuft zu Ende, danach bist du frei.",
+    q: "Kann ich jederzeit pausieren oder aufhören?",
+    a: "Ja. Sobald die Briefe verschickt werden, kannst du jederzeit pausieren oder aufhören. Kein Kleingedrucktes, keine Mindestlaufzeit – der aktuelle Monat läuft zu Ende, und danach bist du frei.",
   },
 ];
 

@@ -68,12 +68,12 @@ export default function Manifesto() {
               &ldquo;
             </span>
             <p className="headline-serif text-[clamp(1.375rem,4.5vw,3.25rem)] font-semibold text-warmcreme leading-[1.25] italic text-balance">
-              Das Ziel ist nicht, dass Eltern ein Abo kaufen.
-              <br />
-              Das Ziel ist, dass ein Kind in zwanzig Jahren sagt:
+              Stell dir vor, dein Kind zieht in zwanzig Jahren
+              <br className="hidden sm:inline" />
+              {" "}eine vergilbte Sammelmappe aus dem Regal –
               <br />
               <span className="text-mattgold not-italic font-semibold">
-                &bdquo;Ich erinnere mich an jeden einzelnen Brief.&ldquo;
+                und erinnert sich an jeden einzelnen Brief.
               </span>
             </p>
           </motion.blockquote>
@@ -98,9 +98,9 @@ export default function Manifesto() {
             className="mt-6 md:mt-8 text-warmcreme/70 text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto text-pretty"
           >
             Jeder Brief ist ein Kunstwerk. Jede Geschichte ein Abenteuer. Jedes
-            Detail eine bewusste Entscheidung. Wir bauen NomiPost nicht, um zu
-            skalieren – wir bauen es, um zu{" "}
-            <span className="text-warmcreme font-medium">bleiben</span>.
+            Detail eine bewusste Entscheidung – weil Kinder den Unterschied
+            spüren, auch wenn sie ihn nicht{" "}
+            <span className="text-warmcreme font-medium">benennen können</span>.
           </motion.p>
         </div>
       </div>

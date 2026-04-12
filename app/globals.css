@@ -21,18 +21,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    /* Verhindert horizontales Wackeln auf Mobile durch absolut
+       positionierte Dekorations-Elemente (Watercolor-Blobs, Sterne) */
+    overflow-x: hidden;
   }
 
   body {
     font-feature-settings: "ss01", "cv11", "kern";
     color: var(--color-ink);
     background-color: var(--color-bg);
+    overflow-x: hidden;
     /* Dezente Papier-Textur über die gesamte Seite */
     background-image:
       radial-gradient(circle at 15% 8%, rgba(201, 168, 75, 0.06) 0%, transparent 40%),
       radial-gradient(circle at 85% 65%, rgba(59, 45, 95, 0.045) 0%, transparent 40%),
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.231 0 0 0 0 0.176 0 0 0 0 0.372 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-attachment: fixed;
   }
 
   ::selection {

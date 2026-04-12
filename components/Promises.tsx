@@ -7,7 +7,7 @@ const promises = [
   {
     title: "Persönlich und einzigartig",
     description:
-      "Nicht nur ein Name in einem Template. Jeder Brief ist eine kleine Welt, die für dein Kind gebaut wurde – mit seinen Lieblingsthemen und einem wiederkehrenden Begleiter, den es sofort erkennt.",
+      "Kein Brief von der Stange. Jeder Umschlag enthält eine kleine Welt, die für dein Kind gemacht wurde – mit seinen Lieblingsthemen und einem wiederkehrenden Begleiter, den es sofort erkennt.",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>

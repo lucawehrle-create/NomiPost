@@ -39,10 +39,9 @@ export default function FinalCta() {
           <HandDivider className="mt-6 md:mt-8 mb-6 md:mb-8" />
 
           <p className="text-base md:text-lg text-tintengrau leading-relaxed max-w-xl mx-auto text-pretty">
-            Vorname, E-Mail, fertig. Keine Werbung, kein Weitersagen, kein
-            Stress. Nur eine Nachricht, sobald Nomis erster Brief auf die
-            Reise geht – und die Zusicherung, dass du zur allerersten Welle
-            gehörst.
+            Nur dein Vorname und deine E-Mail – mehr braucht es nicht. Keine
+            Werbung, kein Stress. Nur eine Nachricht, sobald Nomis erster
+            Brief auf die Reise geht. Und du bist ganz vorne dabei.
           </p>
 
           <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-4">

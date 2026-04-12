@@ -8,13 +8,13 @@ const steps = [
     number: "01",
     title: "Du trägst dich ein",
     description:
-      "Zwei Felder: dein Vorname und deine E-Mail. Mehr brauchen wir jetzt noch nicht – alles andere kommt, wenn NomiPost wirklich startet.",
+      "Zwei Felder: dein Vorname und deine E-Mail. Mehr brauchen wir nicht.",
   },
   {
     number: "02",
     title: "Nomi packt den ersten Umschlag",
     description:
-      "Sobald es losgeht, bekommst du als Erste:r Bescheid. Im ersten Umschlag: Nomis Willkommens-Paket mit Sammelmappe, A2-Poster, Abenteuer-Ausweis – und dem allerersten Brief.",
+      "Wenn Nomi ihren ersten Brief verschickt, bekommst du als Erste:r Bescheid. Im ersten Umschlag: Sammelmappe, A2-Poster, Abenteuer-Ausweis – und Nomis allererster Brief, persönlich adressiert.",
   },
   {
     number: "03",

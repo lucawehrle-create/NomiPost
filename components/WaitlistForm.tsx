@@ -215,9 +215,8 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 </svg>
               </span>
               <span className="text-[0.8rem] text-tintengrau leading-[1.55] text-pretty">
-                Ich möchte per E-Mail Bescheid bekommen, sobald Nomis erster
-                Brief auf die Reise geht. Widerruf jederzeit mit einem Klick.
-                Mehr dazu in der{" "}
+                Ja, ich möchte Bescheid bekommen, sobald Nomis erster Brief
+                auf die Reise geht. Jederzeit abmeldbar. Mehr dazu in der{" "}
                 <a
                   href="/datenschutz"
                   target="_blank"
@@ -246,9 +245,8 @@ export default function WaitlistForm({ variant = "card" }: Props) {
             </button>
 
             <p className="text-[0.7rem] text-tintengrau-light leading-snug">
-              Wir schicken dir gleich eine Bestätigungs-Mail. Kurz den Link
-              klicken – und du bist dabei. Kein Weitersagen an Dritte,
-              versprochen.
+              Du bekommst gleich eine kurze Mail von uns. Einmal klicken,
+              und du bist dabei. Kein Spam, versprochen.
             </p>
           </motion.form>
         )}
@@ -296,9 +294,9 @@ export default function WaitlistForm({ variant = "card" }: Props) {
             <div className="pt-2 border-t border-mattgold/25">
               <p className="text-sm text-tintengrau leading-relaxed mt-4 mb-4">
                 <strong className="text-nomi-violet">
-                  Zwei Fragen noch, wenn du magst –
+                  Zwei kurze Fragen noch, wenn du magst –
                 </strong>{" "}
-                sie helfen uns enorm, NomiPost für euch richtig gut zu machen:
+                sie helfen uns enorm, die Briefe richtig gut für euch zu machen:
               </p>
 
               <div className="space-y-4">
@@ -307,13 +305,13 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                     htmlFor="wl-wishes"
                     className="block text-sm font-semibold text-nomi-violet mb-2"
                   >
-                    Was würde NomiPost zu etwas Besonderem für euch machen?
+                    Was dürfen wir auf keinen Fall falsch machen?
                   </label>
                   <textarea
                     id="wl-wishes"
                     value={wishes}
                     onChange={(e) => setWishes(e.target.value)}
-                    placeholder="Was darf auf keinen Fall fehlen? Worauf achtest du bei so etwas?"
+                    placeholder="Worauf achtest du? Was wäre dir wichtig?"
                     rows={3}
                     className="paper-input resize-none"
                     maxLength={2000}
@@ -363,7 +361,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 disabled={submitting}
                 className="btn-primary py-3 px-6 text-sm"
               >
-                {submitting ? "Danke …" : "Umfrage absenden"}
+                {submitting ? "Danke …" : "Absenden"}
                 {!submitting && <span className="text-mattgold-light">✦</span>}
               </button>
             </div>
@@ -428,10 +426,10 @@ export default function WaitlistForm({ variant = "card" }: Props) {
               Bis bald, {parentName} ✦
             </h3>
             <p className="text-tintengrau leading-relaxed max-w-sm mx-auto text-sm md:text-base">
-              Eine Sache noch: Schau bitte kurz in dein Postfach und klicke
-              auf den Bestätigungs-Link, den wir an{" "}
-              <strong className="text-nomi-violet">{email}</strong> geschickt
-              haben. Sonst verlieren wir uns wieder.
+              Schau noch kurz in dein Postfach – wir haben dir eine
+              Nachricht an{" "}
+              <strong className="text-nomi-violet">{email}</strong>{" "}
+              geschickt. Einmal klicken, und wir sehen uns wieder.
             </p>
             <p className="handwritten text-lg text-mattgold-dark mt-5">
               Nomi meldet sich ✦
