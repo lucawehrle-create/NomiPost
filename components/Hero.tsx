@@ -33,25 +33,6 @@ export default function Hero() {
 
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
-          {/* ───── Mobile-only: kompaktes Hero-Bild oben ───── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden relative mx-auto w-[220px] sm:w-[260px] -mb-2"
-          >
-            <ImageSlot
-              src="/images/hero-visual.png"
-              alt="NomiPost – Persönliche Post für Kinder"
-              aspect="square"
-              framed={false}
-              className="rounded-2xl overflow-hidden shadow-xl shadow-nomi-violet/15"
-              placeholderTitle="Hero-Bild"
-              placeholderDescription="Produkt-Bild oder Nomi-Illustration, quadratisch."
-              filename="/images/hero-visual.png"
-            />
-          </motion.div>
-
           {/* ───── Content Column ───── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

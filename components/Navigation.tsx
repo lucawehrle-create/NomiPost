@@ -22,7 +22,7 @@ export default function Navigation() {
     >
       <div className="container-wide flex items-center justify-between py-3.5 md:py-5 lg:py-6">
         <a
-          href="#top"
+          href="/"
           className="flex items-center min-h-[44px]"
           aria-label="NomiPost Startseite"
         >
@@ -52,7 +52,7 @@ export default function Navigation() {
         </nav>
 
         <a
-          href="#top"
+          href="/#top"
           className="btn-primary py-2.5 px-4 md:px-5 lg:px-6 text-[0.8rem] md:text-sm min-h-[44px]"
         >
           <span className="hidden sm:inline">Warteliste</span>
