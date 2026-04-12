@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   description:
     "Jeden Monat ein handgemachter Brief von Nomi, der dein Kind auf ein Abenteuer mitnimmt. Geschichte, Rätsel, Sticker, Hörbuch – ein Kunstwerk zum Anfassen. Jetzt auf die Warteliste.",
   icons: {
-    icon: "/images/nomi-portrait.jpg",
-    apple: "/images/nomi-portrait.jpg",
+    icon: "/images/nomi-portrait.png",
+    apple: "/images/nomi-portrait.png",
   },
   openGraph: {
     title: "NomiPost – Persönliche Post für kleine Entdecker",
