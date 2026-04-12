@@ -47,8 +47,8 @@ export default function Manifesto() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-mattgold font-semibold mb-8">
               <span className="w-10 h-px bg-mattgold" />
@@ -58,10 +58,10 @@ export default function Manifesto() {
           </motion.div>
 
           <motion.blockquote
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative"
           >
             <p className="headline-serif text-[clamp(1.375rem,4.5vw,3.25rem)] font-semibold text-warmcreme leading-[1.25] italic text-balance">
@@ -88,10 +88,10 @@ export default function Manifesto() {
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="mt-6 md:mt-8 text-warmcreme/70 text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto text-pretty"
           >
             Jeder Brief ist ein Kunstwerk. Jede Geschichte ein Abenteuer. Jedes

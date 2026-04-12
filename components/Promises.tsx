@@ -47,10 +47,10 @@ export default function Promises() {
           {promises.map((p, i) => (
             <motion.div
               key={p.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
               className="text-center group sm:last:col-span-2 lg:last:col-span-1"
             >
               <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-5 md:mb-8 transition-transform duration-700 group-hover:-translate-y-1 group-hover:scale-105">

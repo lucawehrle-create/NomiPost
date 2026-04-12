@@ -18,10 +18,10 @@ export default function FinalCta() {
 
       <div className="container-wide relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="max-w-2xl mx-auto text-center"
         >
           <div className="eyebrow mb-5 md:mb-6 justify-center">

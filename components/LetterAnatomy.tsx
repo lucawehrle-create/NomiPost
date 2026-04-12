@@ -101,7 +101,7 @@ export default function LetterAnatomy() {
           {items.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{
@@ -131,10 +131,10 @@ export default function LetterAnatomy() {
 
         {/* Beilagen-Block */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mt-14 md:mt-20 lg:mt-24 max-w-5xl mx-auto"
         >
           <div className="paper-card hand-border paper-card-elevated p-7 md:p-14 lg:p-16 relative">
@@ -173,8 +173,8 @@ export default function LetterAnatomy() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mt-12 md:mt-16 max-w-4xl mx-auto text-center px-2"
         >
           <p className="handwritten text-xl md:text-2xl text-nomi-violet leading-relaxed">

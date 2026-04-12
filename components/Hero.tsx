@@ -11,7 +11,6 @@ export default function Hero() {
       id="top"
       className="relative overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28"
     >
-      {/* Dezente Aquarell-Akzente im Hintergrund */}
       <WatercolorBlob
         className="absolute -top-20 left-0 w-[400px] sm:w-[500px] md:w-[700px] opacity-50 pointer-events-none"
         color="#C9A84B"
@@ -23,7 +22,6 @@ export default function Hero() {
         variant={2}
       />
 
-      {/* Dekorative Sterne */}
       <div className="absolute top-28 right-[8%] text-mattgold/40 text-lg md:text-xl lg:text-2xl animate-float-slow pointer-events-none">
         ✦
       </div>
@@ -33,23 +31,12 @@ export default function Hero() {
 
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
-          {/* ───── Content Column ───── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 min-w-0"
-          >
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="eyebrow mb-5 md:mb-6"
-            >
+          <div className="lg:col-span-7 min-w-0">
+            <div className="eyebrow mb-5 md:mb-6">
               <span className="w-8 md:w-10 h-px bg-mattgold" />
               Persönliche Post für kleine Entdecker
               <span className="w-8 md:w-10 h-px bg-mattgold" />
-            </motion.div>
+            </div>
 
             <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2rem,7.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
               Ein Brief, der Kinderaugen{" "}
@@ -77,36 +64,19 @@ export default function Hero() {
               bringt.
             </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25 }}
-              className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-tintengrau leading-relaxed max-w-full md:max-w-[36rem] text-pretty"
-            >
+            <p className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-tintengrau leading-relaxed max-w-full md:max-w-[36rem] text-pretty">
               Einmal im Monat trifft ein Umschlag im Briefkasten ein –
               persönlich adressiert, liebevoll gestaltet, von{" "}
               <span className="text-nomi-violet font-semibold">Nomi</span>.
               Keine App, kein Bildschirm. Nur Post aus Papier, an die sich
               dein Kind noch Jahre später erinnert.
-            </motion.p>
+            </p>
 
-            {/* Inline-Form direkt im Hero */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-8 md:mt-10 w-full max-w-full md:max-w-[38rem]"
-            >
+            <div className="mt-8 md:mt-10 w-full max-w-full md:max-w-[38rem]">
               <WaitlistForm variant="hero" />
-            </motion.div>
+            </div>
 
-            {/* Social Proof */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-8 md:mt-10 flex items-center gap-4 md:gap-5 text-sm text-tintengrau-light"
-            >
+            <div className="mt-8 md:mt-10 flex items-center gap-4 md:gap-5 text-sm text-tintengrau-light">
               <div className="flex -space-x-2.5 flex-shrink-0">
                 {[
                   { bg: "#C9A84B", letters: "LM" },
@@ -132,16 +102,10 @@ export default function Hero() {
                   Werde Teil der ersten Welle.
                 </span>
               </p>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          {/* ───── Desktop: Großes Hero-Bild ───── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="lg:col-span-5 min-w-0 relative hidden lg:block"
-          >
+          <div className="lg:col-span-5 min-w-0 relative hidden lg:block">
             <Image
               src="/images/hero-visual.png"
               alt="NomiPost – Persönliche Post für Kinder"
@@ -152,7 +116,7 @@ export default function Hero() {
               sizes="(max-width: 1024px) 0px, 500px"
               className="w-full max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(59,45,95,0.15)]"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

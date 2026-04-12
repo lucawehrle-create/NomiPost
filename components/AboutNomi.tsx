@@ -37,10 +37,10 @@ export default function AboutNomi() {
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 md:gap-14 lg:gap-20 items-center max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="lg:col-span-5 min-w-0 flex justify-center order-first"
           >
             {/* Nomi-Portrait mit goldenem Kompass-Akzent */}
@@ -66,10 +66,10 @@ export default function AboutNomi() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="lg:col-span-7 min-w-0"
           >
             <div className="eyebrow mb-5 md:mb-6">
