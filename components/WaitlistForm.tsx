@@ -134,8 +134,8 @@ export default function WaitlistForm({ variant = "card" }: Props) {
 
   const containerClass =
     variant === "hero"
-      ? "w-full"
-      : "paper-card hand-border paper-card-elevated p-6 md:p-10 lg:p-12 w-full max-w-2xl mx-auto";
+      ? "w-full overflow-hidden"
+      : "paper-card hand-border paper-card-elevated p-6 md:p-10 lg:p-12 w-full max-w-2xl mx-auto overflow-hidden";
 
   return (
     <div className={containerClass}>
@@ -165,7 +165,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                   onChange={(e) => setParentName(e.target.value)}
                   placeholder="Dein Vorname"
                   autoComplete="given-name"
-                  className="paper-input py-3.5 sm:py-4 px-4 sm:px-5"
+                  className="paper-input"
                 />
               </div>
               <div>
@@ -180,7 +180,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Deine E-Mail-Adresse"
                   autoComplete="email"
-                  className="paper-input py-3.5 sm:py-4 px-4 sm:px-5"
+                  className="paper-input"
                 />
               </div>
             </div>
