@@ -14,7 +14,7 @@ const promises = [
   {
     title: "Kunstvoll bis ins Detail",
     description:
-      "Aquarell statt Clip-Art. Handgezeichnete Linien statt Vektoren. Papier, das sich wie ein echtes Kinderbuch anfühlt – und das dein Kind nicht einfach weglegt.",
+      "Jeder Brief soll sich anfühlen wie eine Seite aus einem echten Kinderbuch – mit Illustrationen, die man sich gerne an die Wand hängt, statt sie wegzuwerfen.",
     icon: Palette,
   },
   {

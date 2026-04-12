@@ -6,7 +6,7 @@ import HandDivider from "./HandDivider";
 const faqs = [
   {
     q: "Für welches Alter ist NomiPost gemacht?",
-    a: "Die Briefe sind für Kinder zwischen 5 und 10 Jahren gedacht. Sprache, Schriftgröße und Rätsel-Schwierigkeit passen wir ans Leseniveau deines Kindes an – vom Leseanfänger bis zum kleinen Profi.",
+    a: "Die Briefe sollen für Kinder zwischen 5 und 10 Jahren sein. Unser Ziel ist es, Sprache und Schwierigkeit ans Alter anzupassen – aber wie genau das am Ende aussieht, entwickeln wir gerade.",
   },
   {
     q: "Wann verschickt Nomi ihren ersten Brief?",
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "Was ist NomiPost eigentlich nicht?",
-    a: "Keine Überraschungsbox mit Bastelkram. Kein Abo für generische Kinder-Magazine. Keine App, die Aufmerksamkeit jagt. NomiPost ist ein interaktives Kinderbuch in Briefform – eine durchgehende Geschichte, pädagogisch fundiert, handgemacht im Look und persönlich in jedem Detail. Nicht zum Beschäftigen, sondern zum Schenken.",
+    a: "Keine Überraschungsbox mit Bastelkram. Kein generisches Kinder-Magazin. Keine App, die Aufmerksamkeit jagt. NomiPost soll ein interaktives Kinderbuch in Briefform werden – mit einer durchgehenden Geschichte, liebevoll gestaltet und persönlich in jedem Detail.",
   },
   {
     q: "Wird mein Kind mit Werbung oder Zusatzkäufen konfrontiert?",

@@ -42,7 +42,7 @@ export default function Hero() {
           >
             <ImageSlot
               src="/images/hero-visual.png"
-              alt="NomiPost – Ein handgemachter Brief für Kinder"
+              alt="NomiPost – Persönliche Post für Kinder"
               aspect="square"
               framed={false}
               className="rounded-2xl overflow-hidden shadow-xl shadow-nomi-violet/15"
@@ -105,10 +105,10 @@ export default function Hero() {
               className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-tintengrau leading-relaxed max-w-[36rem] text-pretty"
             >
               Einmal im Monat trifft ein Umschlag im Briefkasten ein –
-              handgemacht, persönlich adressiert, von{" "}
+              persönlich adressiert, liebevoll gestaltet, von{" "}
               <span className="text-nomi-violet font-semibold">Nomi</span>.
-              Keine App, kein Bildschirm. Nur ein Kunstwerk aus Papier, das
-              dein Kind Jahre später noch aus dem Regal zieht.
+              Keine App, kein Bildschirm. Nur Post aus Papier, an die sich
+              dein Kind noch Jahre später erinnert.
             </motion.p>
 
             {/* Inline-Form direkt im Hero */}
@@ -166,7 +166,7 @@ export default function Hero() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/hero-visual.png"
-              alt="NomiPost – Ein handgemachter Brief für Kinder"
+              alt="NomiPost – Persönliche Post für Kinder"
               className="w-full max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(59,45,95,0.15)]"
               loading="eager"
             />

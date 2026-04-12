@@ -8,57 +8,57 @@ const items = [
   {
     title: "Eine Abenteuer-Geschichte",
     description:
-      "Eine echte Geschichte aus Nomis Reisetagebuch. Mit Spot-Illustrationen am Rand und einem Cliffhanger am Ende – damit dein Kind den nächsten Brief kaum erwarten kann.",
-    label: "Seite 1–4",
+      "Eine Geschichte aus Nomis Reisetagebuch, mit Illustrationen und einem Cliffhanger am Ende – damit dein Kind den nächsten Brief kaum erwarten kann.",
+    label: "Idee 1",
   },
   {
     title: "Ein Rätsel zum Knobeln",
     description:
-      "Geheimschrift, Wortsuche oder Quiz – immer verwoben mit der Geschichte. Für die, die gerne zwischen den Zeilen lesen.",
-    label: "Seite 5",
+      "Geheimschrift, Wortsuche oder Quiz – passend zur Geschichte. Für die, die gerne zwischen den Zeilen lesen.",
+    label: "Idee 2",
   },
   {
     title: "Ein Ausmalbild",
     description:
-      "Ganzseitig, handgezeichnet, zum komplett ausfüllen. Keine Vorgaben, keine richtigen Farben – nur Stifte, Zeit, und ein Nachmittag, der im Flug vergeht.",
-    label: "Seite 6",
+      "Ganzseitig, zum komplett ausfüllen. Keine Vorgaben, keine richtigen Farben – nur Stifte, Zeit, und ein Nachmittag, der vergeht wie im Flug.",
+    label: "Idee 3",
   },
   {
     title: "\u201EWusstest du schon?\u201C",
     description:
-      "Vier, fünf Dinge, die Nomi auf ihrer Reise gelernt hat – und die dein Kind beim Abendessen erzählen wird. Versprochen.",
-    label: "Seite 7",
+      "Spannende Fakten, die Nomi auf ihrer Reise entdeckt hat – und die dein Kind beim Abendessen erzählen wird.",
+    label: "Idee 4",
   },
   {
-    title: "Eine Bastelanleitung",
+    title: "Etwas zum Mitmachen",
     description:
-      "Schritt für Schritt, mit Dingen, die sowieso in der Schublade liegen. Kein Bausatz zum Nachkaufen – einfach aufklappen und loslegen.",
-    label: "Seite 8",
+      "Basteln, Experimentieren oder Entdecken – mit Dingen, die sowieso in der Schublade liegen. Ohne Zusatzkauf.",
+    label: "Idee 5",
   },
   {
     title: "Ein Antwortbrief",
     description:
-      "Linien zum Schreiben, ein Feld zum Zeichnen, und eine Adresse. Dein Kind antwortet Nomi zurück – und das ist der Anfang einer echten Brieffreundschaft.",
-    label: "Seite 9",
+      "Dein Kind schreibt Nomi zurück. Vielleicht der Anfang einer echten Brieffreundschaft.",
+    label: "Idee 6",
   },
 ];
 
 const extras = [
   {
-    text: "Ein Stickerbogen",
-    sub: "\u201ESkizzen, die ich unterwegs gemacht habe\u201C",
+    text: "Kleine Beilagen",
+    sub: "Sticker, Postkarten oder andere \u00DCberraschungen \u2013 noch in Planung",
   },
   {
-    text: "Eine Postkarte",
-    sub: "zum Selbstbeschriften und an Oma verschicken",
+    text: "Etwas zum Sammeln",
+    sub: "Damit jeder Brief seinen festen Platz bekommt",
   },
   {
-    text: "Eine wechselnde Beilage",
-    sub: "Maske, Lesezeichen, Decoder\u2026",
+    text: "Ein Hörerlebnis",
+    sub: "Die Geschichte auch zum Anhören \u2013 z.\u202FB. als QR-Code",
   },
   {
-    text: "Ein Hörbuch per QR-Code",
-    sub: "Gute-Nacht-Geschichte, von Nomi selbst gelesen",
+    text: "Und was ihr euch wünscht",
+    sub: "Das finale Paket gestalten wir auch nach eurem Feedback",
   },
 ];
 
@@ -84,14 +84,14 @@ export default function LetterAnatomy() {
             <span className="w-8 md:w-10 h-px bg-mattgold" />
           </div>
           <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
-            Ein ganzes Abenteuer.
+            So stellen wir uns
             <br />
-            <span className="italic">Zum Anfassen.</span>
+            <span className="italic">jeden Brief vor.</span>
           </h2>
           <p className="mt-6 md:mt-8 text-base md:text-lg lg:text-xl text-tintengrau leading-relaxed max-w-2xl mx-auto text-pretty">
-            Jeder Brief ist kein Stapel Papier. Er ist eine kleine Reise, die
-            dein Kind aus dem Umschlag holt – zehn Seiten plus Beilagen,
-            erzählerisch verwoben in Nomis Welt.
+            NomiPost ist noch in der Entwicklung – aber so sieht unsere
+            Vision aus. Was am Ende wirklich im Umschlag steckt, hängt
+            auch von eurem Feedback ab.
           </p>
           <HandDivider className="mt-8 md:mt-10" />
         </div>
@@ -139,13 +139,13 @@ export default function LetterAnatomy() {
         >
           <div className="paper-card hand-border paper-card-elevated p-7 md:p-14 lg:p-16 relative">
             <div className="absolute -top-3.5 left-6 md:left-12 bg-mattgold text-warmcreme px-4 md:px-5 py-1.5 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-semibold rounded-sm shadow-md">
-              Und obendrauf
+              Unsere Ideen
             </div>
             <h3 className="headline-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-nomi-violet mb-7 md:mb-10 leading-tight">
-              Die physischen Beweise
+              Was wir uns außerdem
               <br />
               <span className="italic text-tintengrau text-lg md:text-2xl lg:text-3xl font-normal">
-                von Nomis Reise
+                vorstellen können
               </span>
             </h3>
             <ul className="grid sm:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
@@ -178,9 +178,8 @@ export default function LetterAnatomy() {
           className="mt-12 md:mt-16 max-w-4xl mx-auto text-center px-2"
         >
           <p className="handwritten text-xl md:text-2xl lg:text-3xl text-nomi-violet leading-relaxed">
-            Beim ersten Brief liegt außerdem ein ganzes Willkommens-Paket
-            bei: Sammelmappe, A2-Poster, Namensaufkleber und ein
-            Abenteuer-Ausweis – damit dein Kind von Tag eins weiß:
+            Unsere Idee: Beim allerersten Brief soll es eine besondere
+            Überraschung geben – damit dein Kind von Tag eins weiß:
             <br />
             <span className="text-mattgold-dark">
               Das hier ist etwas Besonderes.

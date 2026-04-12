@@ -14,19 +14,19 @@ const steps = [
     number: "02",
     title: "Nomi packt den ersten Umschlag",
     description:
-      "Wenn Nomi ihren ersten Brief verschickt, bekommst du als Erste:r Bescheid. Im ersten Umschlag: Sammelmappe, A2-Poster, Abenteuer-Ausweis – und Nomis allererster Brief, persönlich adressiert.",
+      "Wenn Nomi ihren ersten Brief verschickt, bekommst du als Erste:r Bescheid – mit einer besonderen Überraschung zum Start.",
   },
   {
     number: "03",
     title: "Jeden Monat eine neue Reise",
     description:
-      "Danach kommt jeden Monat ein neuer Umschlag. Neue Geschichte, neue Welt, neue Rätsel – aber immer dieselbe Nomi, die dein Kind beim Namen nennt.",
+      "Danach soll jeden Monat ein neuer Umschlag kommen. Neue Geschichte, neue Welt, neue Rätsel – aber immer dieselbe Nomi.",
   },
   {
     number: "04",
     title: "Die Sammlung wächst",
     description:
-      "Jeder Brief wandert in die Sammelmappe. Nach einem Jahr hält dein Kind ein ganzes Reisetagebuch in der Hand – einen Schatz, den es später nicht hergibt.",
+      "Jeder Brief soll seinen Platz bekommen. Nach einem Jahr hält dein Kind eine ganze Sammlung in der Hand – etwas, das bleibt.",
   },
 ];
 
