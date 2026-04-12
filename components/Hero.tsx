@@ -41,7 +41,7 @@ export default function Hero() {
             className="lg:hidden relative mx-auto w-[220px] sm:w-[260px] -mb-2"
           >
             <ImageSlot
-              src=""
+              src="/images/hero-visual.png"
               alt="NomiPost – Ein handgemachter Brief für Kinder"
               aspect="square"
               framed={false}

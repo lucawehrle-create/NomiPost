@@ -51,14 +51,14 @@ export default function AboutNomi() {
               {/* Bild-Slot im Vordergrund */}
               <div className="relative">
                 <ImageSlot
-                  src=""
+                  src="/images/nomi-portrait.jpg"
                   alt="Nomi, die Entdeckerin – Maskottchen von NomiPost"
                   aspect="square"
                   framed
                   className="relative z-10 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-[800ms] ease-out"
                   placeholderTitle="Nomi-Portrait"
                   placeholderDescription="Nomi-Maskottchen, quadratisch 1:1, mind. 900×900 px, Aquarell-Stil."
-                  filename="/images/nomi-portrait.png"
+                  filename="/images/nomi-portrait.jpg"
                 />
               </div>
 
