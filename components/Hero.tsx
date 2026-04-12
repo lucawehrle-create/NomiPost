@@ -34,7 +34,7 @@ export default function Hero() {
           <div className="lg:col-span-7 min-w-0">
             <div className="eyebrow mb-5 md:mb-6">
               <span className="w-8 md:w-10 h-px bg-mattgold" />
-              Persönliche Post für kleine Entdecker
+              Die monatliche Post für Kinder von 5–10
               <span className="w-8 md:w-10 h-px bg-mattgold" />
             </div>
 
@@ -65,11 +65,12 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-tintengrau leading-relaxed max-w-full md:max-w-[36rem] text-pretty">
-              Einmal im Monat trifft ein Umschlag im Briefkasten ein –
-              persönlich adressiert, liebevoll gestaltet, von{" "}
-              <span className="text-nomi-violet font-semibold">Nomi</span>.
-              Keine App, kein Bildschirm. Nur Post aus Papier, an die sich
-              dein Kind noch Jahre später erinnert.
+              Jeden Monat verschickt{" "}
+              <span className="text-nomi-violet font-semibold">Nomi</span>,
+              eine kleine Entdeckerin, einen persönlichen Brief an dein Kind –
+              mit einer Geschichte, einem Rätsel und Dingen zum Mitmachen.
+              Eine Alternative zum Bildschirm, auf die sich Kinder wirklich
+              freuen.
             </p>
 
             <div className="mt-8 md:mt-10 w-full max-w-full md:max-w-[38rem]">

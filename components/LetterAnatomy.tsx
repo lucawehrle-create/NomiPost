@@ -9,44 +9,44 @@ const items = [
     title: "Eine Abenteuer-Geschichte",
     description:
       "Eine Geschichte aus Nomis Reisetagebuch, mit Illustrationen und einem Cliffhanger am Ende – damit dein Kind den nächsten Brief kaum erwarten kann.",
-    label: "Idee 1",
+    label: "01",
   },
   {
     title: "Ein Rätsel zum Knobeln",
     description:
       "Geheimschrift, Wortsuche oder Quiz – passend zur Geschichte. Für die, die gerne zwischen den Zeilen lesen.",
-    label: "Idee 2",
+    label: "02",
   },
   {
     title: "Ein Ausmalbild",
     description:
-      "Ganzseitig, zum komplett ausfüllen. Keine Vorgaben, keine richtigen Farben – nur Stifte, Zeit, und ein Nachmittag, der vergeht wie im Flug.",
-    label: "Idee 3",
+      "Eine ganzseitige Illustration zum Ausmalen. Ein ruhiger Nachmittag mit Stiften statt Bildschirm.",
+    label: "03",
   },
   {
     title: "\u201EWusstest du schon?\u201C",
     description:
       "Spannende Fakten, die Nomi auf ihrer Reise entdeckt hat – und die dein Kind beim Abendessen erzählen wird.",
-    label: "Idee 4",
+    label: "04",
   },
   {
     title: "Etwas zum Mitmachen",
     description:
       "Basteln, Experimentieren oder Entdecken – mit Dingen, die sowieso in der Schublade liegen. Ohne Zusatzkauf.",
-    label: "Idee 5",
+    label: "05",
   },
   {
     title: "Ein Antwortbrief",
     description:
       "Dein Kind schreibt Nomi zurück. Vielleicht der Anfang einer echten Brieffreundschaft.",
-    label: "Idee 6",
+    label: "06",
   },
 ];
 
 const extras = [
   {
     text: "Kleine Beilagen",
-    sub: "Sticker, Postkarten oder andere \u00DCberraschungen \u2013 noch in Planung",
+    sub: "Sticker, Postkarten oder andere \u00DCberraschungen",
   },
   {
     text: "Etwas zum Sammeln",
@@ -54,11 +54,11 @@ const extras = [
   },
   {
     text: "Ein Hörerlebnis",
-    sub: "Die Geschichte auch zum Anhören \u2013 z.\u202FB. als QR-Code",
+    sub: "Die Geschichte auch zum Anh\u00F6ren \u2013 z.\u202FB. als QR-Code",
   },
   {
-    text: "Und was ihr euch wünscht",
-    sub: "Das finale Paket gestalten wir auch nach eurem Feedback",
+    text: "Und was dein Kind liebt",
+    sub: "Die Briefe greifen die Interessen deines Kindes auf",
   },
 ];
 
@@ -84,14 +84,13 @@ export default function LetterAnatomy() {
             <span className="w-8 md:w-10 h-px bg-mattgold" />
           </div>
           <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
-            So stellen wir uns
+            Was in jedem Brief
             <br />
-            <span className="italic">jeden Brief vor.</span>
+            <span className="italic">auf dein Kind wartet.</span>
           </h2>
           <p className="mt-6 md:mt-8 text-base md:text-lg lg:text-xl text-tintengrau leading-relaxed max-w-2xl mx-auto text-pretty">
-            NomiPost ist noch in der Entwicklung – aber so sieht unsere
-            Vision aus. Was am Ende wirklich im Umschlag steckt, hängt
-            auch von eurem Feedback ab.
+            Kein Stapel Papier, sondern eine kleine Reise aus dem Umschlag –
+            mehrere Seiten plus Beilagen, erzählerisch verwoben in Nomis Welt.
           </p>
           <HandDivider className="mt-8 md:mt-10" />
         </div>
@@ -139,13 +138,13 @@ export default function LetterAnatomy() {
         >
           <div className="paper-card hand-border paper-card-elevated p-7 md:p-14 lg:p-16 relative">
             <div className="absolute -top-3.5 left-6 md:left-12 bg-mattgold text-warmcreme px-4 md:px-5 py-1.5 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-semibold rounded-sm shadow-md">
-              Unsere Ideen
+              Und obendrauf
             </div>
             <h3 className="headline-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-nomi-violet mb-7 md:mb-10 leading-tight">
-              Was wir uns außerdem
+              Nomis persönliche
               <br />
               <span className="italic text-tintengrau text-lg md:text-2xl lg:text-3xl font-normal">
-                vorstellen können
+                Grüße an dein Kind
               </span>
             </h3>
             <ul className="grid sm:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
@@ -178,8 +177,8 @@ export default function LetterAnatomy() {
           className="mt-12 md:mt-16 max-w-4xl mx-auto text-center px-2"
         >
           <p className="handwritten text-xl md:text-2xl text-nomi-violet leading-relaxed">
-            Unsere Idee: Beim allerersten Brief soll es eine besondere
-            Überraschung geben – damit dein Kind von Tag eins weiß:
+            Und beim allerersten Brief wartet eine besondere Überraschung –
+            damit dein Kind von Tag eins weiß:
             <br />
             <span className="text-mattgold-dark">
               Das hier ist etwas Besonderes.

@@ -12,21 +12,21 @@ const steps = [
   },
   {
     number: "02",
-    title: "Nomi packt den ersten Umschlag",
+    title: "Der erste Brief kommt",
     description:
-      "Wenn Nomi ihren ersten Brief verschickt, bekommst du als Erste:r Bescheid – mit einer besonderen Überraschung zum Start.",
+      "Dein Kind bekommt seinen ersten persönlichen Brief von Nomi – mit einer besonderen Überraschung zum Start.",
   },
   {
     number: "03",
     title: "Jeden Monat eine neue Reise",
     description:
-      "Danach soll jeden Monat ein neuer Umschlag kommen. Neue Geschichte, neue Welt, neue Rätsel – aber immer dieselbe Nomi.",
+      "Danach kommt jeden Monat ein neuer Umschlag. Neue Geschichte, neue Welt, neue Rätsel – aber immer dieselbe Nomi.",
   },
   {
     number: "04",
     title: "Die Sammlung wächst",
     description:
-      "Jeder Brief soll seinen Platz bekommen. Nach einem Jahr hält dein Kind eine ganze Sammlung in der Hand – etwas, das bleibt.",
+      "Jeder Brief findet seinen Platz. Nach einem Jahr hat dein Kind eine ganze Sammlung – etwas, das bleibt.",
   },
 ];
 

@@ -14,7 +14,7 @@ const promises = [
   {
     title: "Kunstvoll bis ins Detail",
     description:
-      "Jeder Brief soll sich anfühlen wie eine Seite aus einem echten Kinderbuch – mit Illustrationen, die man sich gerne an die Wand hängt, statt sie wegzuwerfen.",
+      "Jeder Brief fühlt sich an wie eine Seite aus einem Kinderbuch – mit Illustrationen, die man gerne aufhebt statt wegwirft.",
     icon: Palette,
   },
   {
@@ -36,9 +36,9 @@ export default function Promises() {
             <span className="w-8 md:w-10 h-px bg-mattgold" />
           </div>
           <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
-            Drei Versprechen,
+            Was NomiPost
             <br />
-            <span className="italic">auf die wir alles setzen</span>
+            <span className="italic">anders macht.</span>
           </h2>
           <HandDivider className="mt-8 md:mt-10" />
         </div>

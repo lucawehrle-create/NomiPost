@@ -6,15 +6,15 @@ import HandDivider from "./HandDivider";
 const faqs = [
   {
     q: "Für welches Alter ist NomiPost gemacht?",
-    a: "Die Briefe sollen für Kinder zwischen 5 und 10 Jahren sein. Unser Ziel ist es, Sprache und Schwierigkeit ans Alter anzupassen – aber wie genau das am Ende aussieht, entwickeln wir gerade.",
+    a: "Für Kinder zwischen 5 und 10 Jahren. Sprache und Schwierigkeit der Rätsel passen sich dem Alter an – damit Leseanfänger genauso auf ihre Kosten kommen wie kleine Profis.",
   },
   {
-    q: "Wann verschickt Nomi ihren ersten Brief?",
-    a: "Wir arbeiten gerade sorgfältig an den ersten Briefen. Bevor es losgeht, wollen wir herausfinden, welche Familien wirklich Lust drauf haben. Alle auf der Warteliste bekommen als Erste Bescheid – und sichern sich automatisch einen Early-Bird-Preis.",
+    q: "Wann kommt der erste Brief?",
+    a: "Wir arbeiten gerade an den ersten Briefen. Alle auf der Warteliste bekommen als Erste Bescheid, wenn es losgeht – und sichern sich automatisch einen Early-Bird-Preis.",
   },
   {
     q: "Was ist NomiPost eigentlich nicht?",
-    a: "Keine Überraschungsbox mit Bastelkram. Kein generisches Kinder-Magazin. Keine App, die Aufmerksamkeit jagt. NomiPost soll ein interaktives Kinderbuch in Briefform werden – mit einer durchgehenden Geschichte, liebevoll gestaltet und persönlich in jedem Detail.",
+    a: "Keine Überraschungsbox mit Bastelkram. Kein generisches Kinder-Magazin. Keine App, die Aufmerksamkeit jagt. NomiPost ist ein interaktives Kinderbuch in Briefform – mit einer durchgehenden Geschichte, liebevoll gestaltet und persönlich in jedem Detail.",
   },
   {
     q: "Wird mein Kind mit Werbung oder Zusatzkäufen konfrontiert?",
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "Wie persönlich wird der Brief wirklich?",
-    a: "Sehr persönlich. Sobald es losgeht, fragen wir dich nach dem Namen und den Interessen deines Kindes – inklusive einem wiederkehrenden Begleit-Element, das in jedem Brief auftaucht und das dein Kind sofort erkennt. Für die Warteliste reichen jetzt nur dein Vorname und deine E-Mail.",
+    a: "Sehr persönlich. Die Briefe greifen den Namen und die Interessen deines Kindes auf – inklusive einem wiederkehrenden Begleit-Element, das in jedem Brief auftaucht und das dein Kind sofort erkennt. Für die Warteliste reichen jetzt dein Vorname und deine E-Mail – den Rest fragen wir, wenn es losgeht.",
   },
   {
     q: "Wie viel wird NomiPost kosten?",
