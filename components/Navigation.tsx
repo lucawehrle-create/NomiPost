@@ -28,7 +28,7 @@ export default function Navigation() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/logo.png"
+            src="/images/Logo.png"
             alt="NomiPost"
             className="h-9 md:h-10 lg:h-11 w-auto"
           />

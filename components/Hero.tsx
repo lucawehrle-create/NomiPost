@@ -165,7 +165,7 @@ export default function Hero() {
           >
             <div className="relative transform rotate-[-2deg] hover:rotate-0 transition-transform duration-[800ms] ease-out">
               <ImageSlot
-                src=""
+                src="/images/hero-visual.png"
                 alt="NomiPost – Ein handgemachter Brief für Kinder"
                 aspect="square"
                 framed
