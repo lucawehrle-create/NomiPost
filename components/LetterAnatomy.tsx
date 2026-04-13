@@ -8,7 +8,7 @@ const items = [
   {
     title: "Eine Abenteuer-Geschichte",
     description:
-      "Eine Geschichte aus Nomis Reisetagebuch, mit Illustrationen und einem Cliffhanger am Ende – damit dein Kind den nächsten Brief kaum erwarten kann.",
+      "Nomi erzählt von einem neuen Ort, einer Begegnung, einem Rätsel – mit Illustrationen und einem Cliffhanger am Ende. Dein Kind kann den nächsten Brief kaum erwarten.",
     label: "01",
   },
   {

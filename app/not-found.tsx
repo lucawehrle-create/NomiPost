@@ -15,7 +15,7 @@ export default function NotFound() {
 
         <p className="text-slate-700 leading-relaxed mb-8">
           Die Seite, die du suchst, gibt es leider nicht. Vielleicht hat
-          Nomis Kompass dich in die falsche Richtung geschickt.
+          Nomi dich in die falsche Richtung geschickt.
         </p>
 
         <Link href="/" className="btn-primary">

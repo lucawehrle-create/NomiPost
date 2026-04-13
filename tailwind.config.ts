@@ -125,7 +125,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-fraunces)", "Georgia", "serif"],
+        display: ["Nunito", "system-ui", "sans-serif"],
+        serif: ["Nunito", "system-ui", "sans-serif"], // Fallback for legacy code
         hand: ["var(--font-caveat)", "cursive"],
       },
       fontSize: {

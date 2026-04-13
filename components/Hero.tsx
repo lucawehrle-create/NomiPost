@@ -65,12 +65,12 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed max-w-full md:max-w-[36rem] text-pretty">
-              Jeden Monat verschickt{" "}
-              <span className="text-slate-800 font-semibold">Nomi</span>,
-              eine kleine Entdeckerin, einen persönlichen Brief an dein Kind –
-              mit einer Geschichte, einem Rätsel und Dingen zum Mitmachen.
-              Eine Alternative zum Bildschirm, auf die sich Kinder wirklich
-              freuen.
+              Jeden Monat schickt{" "}
+              <span className="text-blue-600 font-semibold">Nomi</span> –
+              ein neugieriges, tollpatschiges Fantasiewesen – einen
+              persönlichen Brief an dein Kind. Mit einer Geschichte, einem
+              Rätsel und Dingen zum Mitmachen. Eine Alternative zum Bildschirm,
+              auf die sich Kinder wirklich freuen.
             </p>
 
             <div className="mt-8 md:mt-10 w-full max-w-full md:max-w-[38rem]">

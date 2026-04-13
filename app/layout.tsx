@@ -4,19 +4,20 @@ import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/react";
 
 /**
- * Schriftarten via Fontsource als npm-Pakete. Vollständig selbst gehostet,
- * keine Requests an Google (GDPR: LG München 3 O 17493/20).
+ * Schriftarten nach NOMI Brand Strategy v1.0:
+ * - Inter: Body-Text (hohe Lesbarkeit für Eltern-Kommunikation)
+ * - Nunito: Headlines und markante Texte (rund, warm, kindfreundlich)
+ * - Caveat: Nomi-O-Ton (sparsam, nur für spezielle Zitate)
  *
- * Reduziert auf nur die tatsächlich genutzten Weights (Mobile-Performance):
- *   Inter     : 400, 500, 600   (Body, Medium, Semibold)
- *   Fraunces  : 600 + 600 italic (Headlines + Italic-Akzente)
- *   Caveat    : 400              (Handschriftliche Elemente)
+ * Keine Serifenschriften mehr (Brand Guide: "Keine Serifenschriften").
+ * Alles selbst gehostet für DSGVO-Konformität.
  */
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
-import "@fontsource/fraunces/600.css";
-import "@fontsource/fraunces/600-italic.css";
+import "@fontsource/nunito/600.css";
+import "@fontsource/nunito/700.css";
+import "@fontsource/nunito/800.css";
 import "@fontsource/caveat/400.css";
 
 export const metadata: Metadata = {
