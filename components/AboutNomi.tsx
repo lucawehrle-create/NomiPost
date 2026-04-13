@@ -79,7 +79,7 @@ export default function AboutNomi() {
             <h2 className="headline-serif text-display-md font-semibold text-slate-800 leading-[1.05] mb-6 md:mb-8 text-balance">
               Ein Freund,
               <br />
-              <span className="italic">den es so noch nie gab.</span>
+              <span className="italic text-blue-600">den es so noch nie gab.</span>
             </h2>
             <HandDivider className="mb-6 md:mb-8 justify-start" />
             <div className="space-y-4 md:space-y-5 text-base md:text-lg text-slate-700 leading-relaxed text-pretty max-w-2xl">

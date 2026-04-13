@@ -33,7 +33,7 @@ export default function FinalCta() {
           <h2 className="headline-serif text-[clamp(2rem,6.5vw,3.5rem)] font-semibold text-slate-800 leading-[1.05] text-balance">
             Sei dabei,
             <br />
-            <span className="italic">wenn die Post losgeht.</span>
+            <span className="italic text-blue-600">wenn die Post losgeht.</span>
           </h2>
 
           <HandDivider className="mt-8 mb-8" />

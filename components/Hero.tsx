@@ -41,7 +41,7 @@ export default function Hero() {
             <h1 className="headline-serif font-semibold text-slate-800 text-balance text-[clamp(2rem,7.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
               Ein Brief, der Kinderaugen{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 italic text-slate-800">
+                <span className="relative z-10 text-blue-600">
                   zum Leuchten
                 </span>
                 <svg
@@ -54,7 +54,7 @@ export default function Hero() {
                 >
                   <path
                     d="M 3 10 Q 80 2 150 8 T 297 6"
-                    stroke="#FBBF24"
+                    stroke="#3B82F6"
                     strokeWidth="4"
                     strokeLinecap="round"
                     fill="none"

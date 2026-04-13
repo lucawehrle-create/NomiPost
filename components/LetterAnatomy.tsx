@@ -86,7 +86,7 @@ export default function LetterAnatomy() {
           <h2 className="headline-serif text-display-md font-semibold text-slate-800 leading-[1.05] text-balance">
             Was in jedem Brief
             <br />
-            <span className="italic">auf dein Kind wartet.</span>
+            <span className="italic text-blue-600">auf dein Kind wartet.</span>
           </h2>
           <p className="mt-6 md:mt-8 text-base md:text-lg lg:text-xl text-slate-700 leading-relaxed max-w-2xl mx-auto text-pretty">
             Kein Stapel Papier, sondern eine kleine Reise aus dem Umschlag –
@@ -111,7 +111,7 @@ export default function LetterAnatomy() {
               className="paper-card p-6 md:p-8 lg:p-10 hand-border group hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-500"
             >
               <div className="flex items-start justify-between mb-4 md:mb-5">
-                <span className="handwritten text-xl md:text-2xl text-amber-700">
+                <span className="text-xs font-bold tracking-[0.2em] text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
                   {item.label}
                 </span>
                 <span className="text-amber-500 text-lg group-hover:rotate-[90deg] transition-transform duration-700">
@@ -137,7 +137,7 @@ export default function LetterAnatomy() {
           className="mt-14 md:mt-20 lg:mt-24 max-w-5xl mx-auto"
         >
           <div className="paper-card hand-border paper-card-elevated p-7 md:p-14 lg:p-16 relative">
-            <div className="absolute -top-3.5 left-6 md:left-12 bg-amber-400 text-white px-4 md:px-5 py-1.5 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-semibold rounded-sm shadow-md">
+            <div className="absolute -top-3.5 left-6 md:left-12 bg-blue-500 text-white px-4 md:px-5 py-1.5 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-semibold rounded-full shadow-md">
               Und obendrauf
             </div>
             <h3 className="headline-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-800 mb-7 md:mb-10 leading-tight">
@@ -153,7 +153,7 @@ export default function LetterAnatomy() {
                   key={e.text}
                   className="flex items-start gap-4 group"
                 >
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full border-[1.5px] border-amber-400 flex items-center justify-center text-amber-500 group-hover:bg-amber-400 group-hover:text-white transition-all duration-500">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white group-hover:bg-blue-600 transition-all duration-500">
                     ✦
                   </span>
                   <div>

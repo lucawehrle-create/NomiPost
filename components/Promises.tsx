@@ -38,7 +38,7 @@ export default function Promises() {
           <h2 className="headline-serif text-display-md font-semibold text-slate-800 leading-[1.05] text-balance">
             Was NomiPost
             <br />
-            <span className="italic">anders macht.</span>
+            <span className="italic text-blue-600">anders macht.</span>
           </h2>
           <HandDivider className="mt-8 md:mt-10" />
         </div>

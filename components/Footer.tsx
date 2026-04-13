@@ -33,36 +33,36 @@ export default function Footer() {
               <li>
                 <a
                   href="#was"
-                  className="hover:text-slate-800 transition-colors inline-flex items-center gap-2 group"
+                  className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
                 >
-                  <span className="w-0 h-px bg-slate-800 group-hover:w-4 transition-all duration-300" />
+                  <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
                   Was steckt im Brief?
                 </a>
               </li>
               <li>
                 <a
                   href="#wie"
-                  className="hover:text-slate-800 transition-colors inline-flex items-center gap-2 group"
+                  className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
                 >
-                  <span className="w-0 h-px bg-slate-800 group-hover:w-4 transition-all duration-300" />
+                  <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
                   Wie es funktioniert
                 </a>
               </li>
               <li>
                 <a
                   href="#nomi"
-                  className="hover:text-slate-800 transition-colors inline-flex items-center gap-2 group"
+                  className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
                 >
-                  <span className="w-0 h-px bg-slate-800 group-hover:w-4 transition-all duration-300" />
+                  <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
                   Über Nomi
                 </a>
               </li>
               <li>
                 <a
                   href="#faq"
-                  className="hover:text-slate-800 transition-colors inline-flex items-center gap-2 group"
+                  className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
                 >
-                  <span className="w-0 h-px bg-slate-800 group-hover:w-4 transition-all duration-300" />
+                  <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
                   Fragen & Antworten
                 </a>
               </li>

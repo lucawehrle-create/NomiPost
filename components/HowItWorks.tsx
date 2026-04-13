@@ -46,7 +46,7 @@ export default function HowItWorks() {
           <h2 className="headline-serif text-display-md font-semibold text-slate-800 leading-[1.05] text-balance">
             Von der Anmeldung
             <br />
-            <span className="italic">bis zu leuchtenden Augen am Briefkasten</span>
+            <span className="italic text-blue-600">bis zu leuchtenden Augen am Briefkasten</span>
           </h2>
           <HandDivider className="mt-8 md:mt-10" />
         </div>
@@ -54,7 +54,7 @@ export default function HowItWorks() {
         {/* Timeline: auf Mobile vertikal mit Connector-Linie links, auf Desktop horizontal */}
         <div className="max-w-7xl mx-auto relative">
           {/* Horizontale Verbindungslinie – nur Desktop */}
-          <div className="hidden lg:block absolute top-[3.75rem] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
+          <div className="hidden lg:block absolute top-[3.75rem] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-8 relative">
             {steps.map((step, i) => (
@@ -73,9 +73,9 @@ export default function HowItWorks() {
                 <div className="flex lg:flex-col items-start gap-5 lg:gap-0">
                   <div className="flex-shrink-0 lg:mb-6">
                     <div className="relative w-14 h-14 md:w-[4.5rem] md:h-[4.5rem]">
-                      <div className="absolute inset-0 bg-amber-400/10 rounded-full blur-xl scale-125" />
-                      <div className="relative w-full h-full rounded-full border-2 border-amber-400 bg-slate-50 flex items-center justify-center shadow-sm">
-                        <span className="headline-serif text-xl md:text-2xl text-amber-700 font-semibold">
+                      <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-xl scale-125" />
+                      <div className="relative w-full h-full rounded-full border-2 border-blue-500 bg-white flex items-center justify-center shadow-sm">
+                        <span className="headline-serif text-xl md:text-2xl text-blue-600 font-semibold">
                           {step.number}
                         </span>
                       </div>

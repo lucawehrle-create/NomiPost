@@ -49,7 +49,7 @@ export default function FAQ() {
           <h2 className="headline-serif text-display-md font-semibold text-slate-800 leading-[1.05] text-balance">
             Noch ein paar Antworten
             <br />
-            <span className="italic">für dich</span>
+            <span className="italic text-blue-600">für dich</span>
           </h2>
           <HandDivider className="mt-8 md:mt-10" />
         </div>
