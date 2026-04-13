@@ -9,11 +9,11 @@ export default function NotFound() {
           <CompassRose className="w-full h-full" />
         </div>
 
-        <h1 className="headline-serif text-4xl md:text-5xl font-semibold text-nomi-violet mb-4">
+        <h1 className="headline-serif text-4xl md:text-5xl font-semibold text-slate-800 mb-4">
           Hier ist nichts.
         </h1>
 
-        <p className="text-tintengrau leading-relaxed mb-8">
+        <p className="text-slate-700 leading-relaxed mb-8">
           Die Seite, die du suchst, gibt es leider nicht. Vielleicht hat
           Nomis Kompass dich in die falsche Richtung geschickt.
         </p>

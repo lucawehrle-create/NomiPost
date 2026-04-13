@@ -19,9 +19,9 @@ export default function CompassRose({ className = "", spin = false }: Props) {
     >
       <defs>
         <radialGradient id="goldGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#E0C878" />
-          <stop offset="60%" stopColor="#C9A84B" />
-          <stop offset="100%" stopColor="#A68735" />
+          <stop offset="0%" stopColor="#FCD34D" />
+          <stop offset="60%" stopColor="#FBBF24" />
+          <stop offset="100%" stopColor="#B45309" />
         </radialGradient>
       </defs>
 
@@ -31,7 +31,7 @@ export default function CompassRose({ className = "", spin = false }: Props) {
         cy="100"
         r="92"
         fill="none"
-        stroke="#C9A84B"
+        stroke="#FBBF24"
         strokeWidth="1.5"
         opacity="0.5"
       />
@@ -40,13 +40,13 @@ export default function CompassRose({ className = "", spin = false }: Props) {
         cy="100"
         r="78"
         fill="none"
-        stroke="#C9A84B"
+        stroke="#FBBF24"
         strokeWidth="2"
       />
 
       {/* Himmelsrichtungs-Buchstaben */}
       <g
-        fill="#3B2D5F"
+        fill="#1E293B"
         fontFamily="var(--font-fraunces), Georgia, serif"
         fontSize="14"
         fontWeight="600"
@@ -70,46 +70,46 @@ export default function CompassRose({ className = "", spin = false }: Props) {
       {/* Nord (länger, dunkler) */}
       <polygon
         points="100,100 108,100 100,18 92,100"
-        fill="#3B2D5F"
+        fill="#1E293B"
       />
       <polygon
         points="100,100 108,100 100,18"
-        fill="#5B4B82"
+        fill="#475569"
       />
 
       {/* Süd */}
       <polygon
         points="100,100 108,100 100,182 92,100"
-        fill="#C9A84B"
+        fill="#FBBF24"
       />
       <polygon
         points="100,100 108,100 100,182"
-        fill="#A68735"
+        fill="#B45309"
       />
 
       {/* Ost */}
       <polygon
         points="100,100 100,92 182,100 100,108"
-        fill="#C9A84B"
+        fill="#FBBF24"
       />
       <polygon
         points="100,100 100,92 182,100"
-        fill="#A68735"
+        fill="#B45309"
       />
 
       {/* West */}
       <polygon
         points="100,100 100,92 18,100 100,108"
-        fill="#C9A84B"
+        fill="#FBBF24"
       />
       <polygon
         points="100,100 100,92 18,100"
-        fill="#A68735"
+        fill="#B45309"
       />
 
       {/* Mittelpunkt */}
-      <circle cx="100" cy="100" r="6" fill="#3B2D5F" />
-      <circle cx="100" cy="100" r="3" fill="#C9A84B" />
+      <circle cx="100" cy="100" r="6" fill="#1E293B" />
+      <circle cx="100" cy="100" r="3" fill="#FBBF24" />
     </svg>
   );
 }

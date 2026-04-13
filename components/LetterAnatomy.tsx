@@ -72,23 +72,23 @@ export default function LetterAnatomy() {
       />
       <WatercolorBlob
         className="absolute bottom-40 right-0 w-[400px] md:w-[500px] opacity-25 pointer-events-none"
-        color="#C9A84B"
+        color="#FBBF24"
         variant={1}
       />
 
       <div className="container-wide relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20">
           <div className="eyebrow mb-5 md:mb-6 justify-center">
-            <span className="w-8 md:w-10 h-px bg-mattgold" />
+            <span className="w-8 md:w-10 h-px bg-amber-400" />
             Was im Umschlag steckt
-            <span className="w-8 md:w-10 h-px bg-mattgold" />
+            <span className="w-8 md:w-10 h-px bg-amber-400" />
           </div>
-          <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] text-balance">
+          <h2 className="headline-serif text-display-md font-semibold text-slate-800 leading-[1.05] text-balance">
             Was in jedem Brief
             <br />
             <span className="italic">auf dein Kind wartet.</span>
           </h2>
-          <p className="mt-6 md:mt-8 text-base md:text-lg lg:text-xl text-tintengrau leading-relaxed max-w-2xl mx-auto text-pretty">
+          <p className="mt-6 md:mt-8 text-base md:text-lg lg:text-xl text-slate-700 leading-relaxed max-w-2xl mx-auto text-pretty">
             Kein Stapel Papier, sondern eine kleine Reise aus dem Umschlag –
             mehrere Seiten plus Beilagen, erzählerisch verwoben in Nomis Welt.
           </p>
@@ -111,17 +111,17 @@ export default function LetterAnatomy() {
               className="paper-card p-6 md:p-8 lg:p-10 hand-border group hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-500"
             >
               <div className="flex items-start justify-between mb-4 md:mb-5">
-                <span className="handwritten text-xl md:text-2xl text-mattgold-dark">
+                <span className="handwritten text-xl md:text-2xl text-amber-700">
                   {item.label}
                 </span>
-                <span className="text-mattgold text-lg group-hover:rotate-[90deg] transition-transform duration-700">
+                <span className="text-amber-500 text-lg group-hover:rotate-[90deg] transition-transform duration-700">
                   ✦
                 </span>
               </div>
-              <h3 className="headline-serif text-lg md:text-xl lg:text-2xl font-semibold text-nomi-violet mb-2 md:mb-3 leading-tight">
+              <h3 className="headline-serif text-lg md:text-xl lg:text-2xl font-semibold text-slate-800 mb-2 md:mb-3 leading-tight">
                 {item.title}
               </h3>
-              <p className="text-[0.9rem] md:text-[0.95rem] text-tintengrau leading-relaxed text-pretty">
+              <p className="text-[0.9rem] md:text-[0.95rem] text-slate-700 leading-relaxed text-pretty">
                 {item.description}
               </p>
             </motion.div>
@@ -137,13 +137,13 @@ export default function LetterAnatomy() {
           className="mt-14 md:mt-20 lg:mt-24 max-w-5xl mx-auto"
         >
           <div className="paper-card hand-border paper-card-elevated p-7 md:p-14 lg:p-16 relative">
-            <div className="absolute -top-3.5 left-6 md:left-12 bg-mattgold text-warmcreme px-4 md:px-5 py-1.5 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-semibold rounded-sm shadow-md">
+            <div className="absolute -top-3.5 left-6 md:left-12 bg-amber-400 text-white px-4 md:px-5 py-1.5 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-semibold rounded-sm shadow-md">
               Und obendrauf
             </div>
-            <h3 className="headline-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-nomi-violet mb-7 md:mb-10 leading-tight">
+            <h3 className="headline-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-800 mb-7 md:mb-10 leading-tight">
               Nomis persönliche
               <br />
-              <span className="italic text-tintengrau text-lg md:text-2xl lg:text-3xl font-normal">
+              <span className="italic text-slate-700 text-lg md:text-2xl lg:text-3xl font-normal">
                 Grüße an dein Kind
               </span>
             </h3>
@@ -153,14 +153,14 @@ export default function LetterAnatomy() {
                   key={e.text}
                   className="flex items-start gap-4 group"
                 >
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full border-[1.5px] border-mattgold flex items-center justify-center text-mattgold group-hover:bg-mattgold group-hover:text-warmcreme transition-all duration-500">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full border-[1.5px] border-amber-400 flex items-center justify-center text-amber-500 group-hover:bg-amber-400 group-hover:text-white transition-all duration-500">
                     ✦
                   </span>
                   <div>
-                    <p className="text-nomi-violet font-semibold leading-tight">
+                    <p className="text-slate-800 font-semibold leading-tight">
                       {e.text}
                     </p>
-                    <p className="text-sm text-tintengrau-light mt-1">{e.sub}</p>
+                    <p className="text-sm text-slate-500 mt-1">{e.sub}</p>
                   </div>
                 </li>
               ))}
@@ -176,11 +176,11 @@ export default function LetterAnatomy() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mt-12 md:mt-16 max-w-4xl mx-auto text-center px-2"
         >
-          <p className="handwritten text-xl md:text-2xl text-nomi-violet leading-relaxed">
+          <p className="handwritten text-xl md:text-2xl text-slate-800 leading-relaxed">
             Und beim allerersten Brief wartet eine besondere Überraschung –
             damit dein Kind von Tag eins weiß:
             <br />
-            <span className="text-mattgold-dark">
+            <span className="text-amber-700">
               Das hier ist etwas Besonderes.
             </span>
           </p>

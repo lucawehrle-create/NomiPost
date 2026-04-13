@@ -10,16 +10,16 @@ export default function AdminLogin() {
             <CompassRose className="w-full h-full" />
           </div>
           <div>
-            <p className="text-xs uppercase tracking-widest text-mattgold-dark font-semibold">
+            <p className="text-xs uppercase tracking-widest text-amber-700 font-semibold">
               NomiPost
             </p>
-            <h1 className="headline-serif text-2xl font-semibold text-nomi-violet">
+            <h1 className="headline-serif text-2xl font-semibold text-slate-800">
               Admin-Bereich
             </h1>
           </div>
         </div>
 
-        <p className="text-sm text-tintengrau mb-6">
+        <p className="text-sm text-slate-700 mb-6">
           Bitte das Admin-Passwort eingeben, um die Warteliste einzusehen.
         </p>
 
@@ -27,7 +27,7 @@ export default function AdminLogin() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-semibold text-nomi-violet mb-2"
+              className="block text-sm font-semibold text-slate-800 mb-2"
             >
               Passwort
             </label>

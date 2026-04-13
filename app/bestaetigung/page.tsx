@@ -70,21 +70,21 @@ export default async function BestaetigungPage({ searchParams }: Props) {
             {status === "confirmed" && (
               <>
                 <div className="eyebrow mb-4 justify-center">
-                  <span className="w-10 h-px bg-mattgold" />
+                  <span className="w-10 h-px bg-amber-400" />
                   Geschafft
-                  <span className="w-10 h-px bg-mattgold" />
+                  <span className="w-10 h-px bg-amber-400" />
                 </div>
-                <h1 className="headline-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-nomi-violet leading-[1.05] mb-6">
+                <h1 className="headline-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 leading-[1.05] mb-6">
                   Vielen Dank, {parentName}! ✦
                 </h1>
                 <HandDivider className="mb-6" />
-                <p className="text-lg text-tintengrau leading-relaxed max-w-lg mx-auto">
+                <p className="text-lg text-slate-700 leading-relaxed max-w-lg mx-auto">
                   Deine Anmeldung zur Warteliste ist{" "}
-                  <strong className="text-nomi-violet">jetzt bestätigt</strong>.
+                  <strong className="text-slate-800">jetzt bestätigt</strong>.
                   Wir melden uns bei dir, sobald Nomis erster Brief auf die
                   Reise geht.
                 </p>
-                <p className="handwritten text-2xl text-mattgold-dark mt-8">
+                <p className="handwritten text-2xl text-amber-700 mt-8">
                   Bis bald, dein NomiPost-Team
                 </p>
               </>
@@ -92,11 +92,11 @@ export default async function BestaetigungPage({ searchParams }: Props) {
 
             {status === "already" && (
               <>
-                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-nomi-violet leading-tight mb-6">
+                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-slate-800 leading-tight mb-6">
                   Schon bestätigt ✦
                 </h1>
                 <HandDivider className="mb-6" />
-                <p className="text-lg text-tintengrau leading-relaxed">
+                <p className="text-lg text-slate-700 leading-relaxed">
                   Hallo {parentName}, deine Anmeldung wurde bereits bestätigt.
                   Du musst nichts weiter tun – wir melden uns bei dir, sobald
                   NomiPost startet.
@@ -106,11 +106,11 @@ export default async function BestaetigungPage({ searchParams }: Props) {
 
             {status === "invalid" && (
               <>
-                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-nomi-violet leading-tight mb-6">
+                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-slate-800 leading-tight mb-6">
                   Bestätigung fehlgeschlagen
                 </h1>
                 <HandDivider className="mb-6" />
-                <p className="text-lg text-tintengrau leading-relaxed max-w-lg mx-auto">
+                <p className="text-lg text-slate-700 leading-relaxed max-w-lg mx-auto">
                   Dieser Bestätigungs-Link ist entweder abgelaufen oder
                   ungültig. Trag dich am besten erneut in die Warteliste ein.
                 </p>
@@ -119,18 +119,18 @@ export default async function BestaetigungPage({ searchParams }: Props) {
                   className="btn-primary mt-8 inline-flex"
                 >
                   Zur Warteliste
-                  <span className="text-mattgold-light">✦</span>
+                  <span className="text-amber-300">✦</span>
                 </Link>
               </>
             )}
 
             {status === "no-token" && (
               <>
-                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-nomi-violet leading-tight mb-6">
+                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-slate-800 leading-tight mb-6">
                   Kein Bestätigungs-Token
                 </h1>
                 <HandDivider className="mb-6" />
-                <p className="text-lg text-tintengrau leading-relaxed max-w-lg mx-auto">
+                <p className="text-lg text-slate-700 leading-relaxed max-w-lg mx-auto">
                   Diese Seite wird nur über einen persönlichen Link in deiner
                   Bestätigungs-E-Mail aufgerufen. Falls du gerade keine
                   Anmeldung bestätigen möchtest, kehre zur Startseite zurück.

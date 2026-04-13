@@ -17,7 +17,7 @@ export default function Navigation() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-warmcreme/90 backdrop-blur-xl border-b border-nomi-violet/5 shadow-[0_1px_20px_-5px_rgba(59,45,95,0.08)]"
+          ? "bg-slate-50/90 backdrop-blur-xl border-b border-slate-100 shadow-[0_1px_20px_-5px_rgba(30,41,59,0.08)]"
           : "bg-transparent"
       }`}
     >
@@ -38,20 +38,20 @@ export default function Navigation() {
           />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8 text-[0.9rem] font-medium text-nomi-violet/75">
+        <nav className="hidden md:flex items-center gap-8 text-[0.9rem] font-medium text-slate-800/75">
           <a
             href="#was"
-            className="relative hover:text-nomi-violet transition-colors duration-300 group py-2"
+            className="relative hover:text-slate-800 transition-colors duration-300 group py-2"
           >
             Was drin ist
-            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
+            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-amber-400 transition-all duration-500 group-hover:w-full" />
           </a>
           <a
             href="#faq"
-            className="relative hover:text-nomi-violet transition-colors duration-300 group py-2"
+            className="relative hover:text-slate-800 transition-colors duration-300 group py-2"
           >
             Fragen
-            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-mattgold transition-all duration-500 group-hover:w-full" />
+            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-amber-400 transition-all duration-500 group-hover:w-full" />
           </a>
         </nav>
 
@@ -61,7 +61,7 @@ export default function Navigation() {
         >
           <span className="hidden sm:inline">Warteliste</span>
           <span className="sm:hidden">Jetzt dabei sein</span>
-          <span className="text-mattgold-light text-xs hidden sm:inline">✦</span>
+          <span className="text-amber-300 text-xs hidden sm:inline">✦</span>
         </a>
       </div>
     </header>

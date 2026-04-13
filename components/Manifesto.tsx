@@ -6,7 +6,7 @@ import WatercolorBlob from "./WatercolorBlob";
 export default function Manifesto() {
   return (
     <section className="relative py-20 md:py-32 lg:py-44 overflow-hidden">
-      <div className="absolute inset-0 bg-nomi-violet" />
+      <div className="absolute inset-0 bg-slate-800" />
 
       {/* Subtile Sterne im Hintergrund */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
@@ -20,9 +20,9 @@ export default function Manifesto() {
               height="120"
               patternUnits="userSpaceOnUse"
             >
-              <text x="20" y="30" fill="#FFF8F0" fontSize="14">✦</text>
-              <text x="80" y="70" fill="#FFF8F0" fontSize="10">✦</text>
-              <text x="40" y="100" fill="#FFF8F0" fontSize="12">✦</text>
+              <text x="20" y="30" fill="#F8FAFC" fontSize="14">✦</text>
+              <text x="80" y="70" fill="#F8FAFC" fontSize="10">✦</text>
+              <text x="40" y="100" fill="#F8FAFC" fontSize="12">✦</text>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#stars)" />
@@ -30,15 +30,15 @@ export default function Manifesto() {
       </div>
 
       {/* Goldener Lichtschein oben */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-mattgold/20 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-400/20 blur-[120px] rounded-full pointer-events-none" />
       <WatercolorBlob
         className="absolute bottom-0 left-0 w-[600px] opacity-20 pointer-events-none"
-        color="#C9A84B"
+        color="#FBBF24"
         variant={2}
       />
       <WatercolorBlob
         className="absolute top-0 right-0 w-[500px] opacity-15 pointer-events-none"
-        color="#C9A84B"
+        color="#FBBF24"
         variant={3}
       />
 
@@ -50,10 +50,10 @@ export default function Manifesto() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-mattgold font-semibold mb-8">
-              <span className="w-10 h-px bg-mattgold" />
+            <div className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-amber-500 font-semibold mb-8">
+              <span className="w-10 h-px bg-amber-400" />
               Unser Nordstern
-              <span className="w-10 h-px bg-mattgold" />
+              <span className="w-10 h-px bg-amber-400" />
             </div>
           </motion.div>
 
@@ -64,12 +64,12 @@ export default function Manifesto() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative"
           >
-            <p className="headline-serif text-[clamp(1.375rem,4.5vw,3.25rem)] font-semibold text-warmcreme leading-[1.25] italic text-balance">
+            <p className="headline-serif text-[clamp(1.375rem,4.5vw,3.25rem)] font-semibold text-white leading-[1.25] italic text-balance">
               Stell dir vor, dein Kind zieht in zwanzig Jahren
               <br className="hidden sm:inline" />
               {" "}eine vergilbte Sammelmappe aus dem Regal –
               <br />
-              <span className="text-mattgold not-italic font-semibold">
+              <span className="text-amber-500 not-italic font-semibold">
                 und erinnert sich an jeden einzelnen Brief.
               </span>
             </p>
@@ -82,9 +82,9 @@ export default function Manifesto() {
             transition={{ duration: 1, delay: 0.4 }}
             className="mt-14 flex items-center justify-center gap-4"
           >
-            <span className="w-16 h-px bg-mattgold/40" />
-            <span className="text-mattgold text-xl">✦</span>
-            <span className="w-16 h-px bg-mattgold/40" />
+            <span className="w-16 h-px bg-amber-400/40" />
+            <span className="text-amber-500 text-xl">✦</span>
+            <span className="w-16 h-px bg-amber-400/40" />
           </motion.div>
 
           <motion.p
@@ -92,12 +92,12 @@ export default function Manifesto() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-            className="mt-6 md:mt-8 text-warmcreme/70 text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto text-pretty"
+            className="mt-6 md:mt-8 text-white/70 text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto text-pretty"
           >
             Jeder Brief ist ein Kunstwerk. Jede Geschichte ein Abenteuer. Jedes
             Detail eine bewusste Entscheidung – weil Kinder den Unterschied
             spüren, auch wenn sie ihn nicht{" "}
-            <span className="text-warmcreme font-medium">benennen können</span>.
+            <span className="text-white font-medium">benennen können</span>.
           </motion.p>
         </div>
       </div>

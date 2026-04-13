@@ -82,18 +82,18 @@ export default function ImageSlot({
           }`}
         >
           {/* Dekorativer Rahmen – dicker gestrichelt, markenkonform */}
-          <div className="absolute inset-4 border-2 border-dashed border-mattgold/30 rounded-sm pointer-events-none" />
+          <div className="absolute inset-4 border-2 border-dashed border-amber-400/30 rounded-sm pointer-events-none" />
 
           {/* Aquarell-Fleck als Akzent */}
-          <div className="absolute top-4 right-4 text-mattgold/50 text-2xl opacity-60 rotate-12">
+          <div className="absolute top-4 right-4 text-amber-400/50 text-2xl opacity-60 rotate-12">
             ✦
           </div>
-          <div className="absolute bottom-4 left-4 text-mattgold/50 text-xl opacity-40 -rotate-12">
+          <div className="absolute bottom-4 left-4 text-amber-400/50 text-xl opacity-40 -rotate-12">
             ✦
           </div>
 
           {/* Bild-Icon */}
-          <div className="relative w-14 h-14 mb-4 text-mattgold-dark/70">
+          <div className="relative w-14 h-14 mb-4 text-amber-700/70">
             <svg
               viewBox="0 0 48 48"
               fill="none"
@@ -122,15 +122,15 @@ export default function ImageSlot({
             </svg>
           </div>
 
-          <p className="handwritten text-xl md:text-2xl text-mattgold-dark leading-none mb-1">
+          <p className="handwritten text-xl md:text-2xl text-amber-700 leading-none mb-1">
             {placeholderTitle}
           </p>
 
-          <p className="text-[0.75rem] text-tintengrau leading-snug max-w-[85%] mt-2 mb-3 text-pretty">
+          <p className="text-[0.75rem] text-slate-700 leading-snug max-w-[85%] mt-2 mb-3 text-pretty">
             {placeholderDescription}
           </p>
 
-          <code className="text-[0.65rem] text-tintengrau-light/80 font-mono bg-warmcreme-dark/40 px-2 py-1 rounded-sm break-all max-w-[90%]">
+          <code className="text-[0.65rem] text-slate-500/80 font-mono bg-slate-100/60 px-2 py-1 rounded-sm break-all max-w-[90%]">
             {filename}
           </code>
         </div>

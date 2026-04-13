@@ -102,10 +102,10 @@ export default function AdminDashboard({ entries, mode }: Props) {
               <CompassRose className="w-full h-full" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-widest text-mattgold-dark font-semibold">
+              <p className="text-xs uppercase tracking-widest text-amber-700 font-semibold">
                 NomiPost · Admin
               </p>
-              <h1 className="headline-serif text-2xl md:text-3xl font-semibold text-nomi-violet">
+              <h1 className="headline-serif text-2xl md:text-3xl font-semibold text-slate-800">
                 Warteliste & Umfrage-Daten
               </h1>
             </div>
@@ -114,7 +114,7 @@ export default function AdminDashboard({ entries, mode }: Props) {
           <form action={logoutAction}>
             <button
               type="submit"
-              className="text-sm text-nomi-violet/70 hover:text-nomi-violet underline underline-offset-4"
+              className="text-sm text-slate-800/70 hover:text-slate-800 underline underline-offset-4"
             >
               Abmelden
             </button>
@@ -125,12 +125,12 @@ export default function AdminDashboard({ entries, mode }: Props) {
         <div className="mb-8 paper-card hand-border p-4 text-sm flex items-center gap-3 flex-wrap">
           <span
             className={`inline-block w-2 h-2 rounded-full ${
-              mode === "supabase" ? "bg-green-600" : "bg-mattgold"
+              mode === "supabase" ? "bg-green-600" : "bg-amber-400"
             }`}
           />
-          <span className="text-tintengrau">
+          <span className="text-slate-700">
             Speicher-Modus:{" "}
-            <strong className="text-nomi-violet">
+            <strong className="text-slate-800">
               {mode === "supabase" ? "Supabase" : "Lokale JSON-Datei"}
             </strong>
             {mode === "file" && " (data/waitlist.json)"}
@@ -169,8 +169,8 @@ export default function AdminDashboard({ entries, mode }: Props) {
         {/* Tabelle */}
         <div className="paper-card hand-border overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-nomi-violet/5 border-b-2 border-nomi-violet/10">
-              <tr className="text-left text-nomi-violet">
+            <thead className="bg-slate-800/5 border-b-2 border-slate-200/70">
+              <tr className="text-left text-slate-800">
                 <th className="p-3 font-semibold">Datum</th>
                 <th className="p-3 font-semibold">Name</th>
                 <th className="p-3 font-semibold">E-Mail</th>
@@ -182,7 +182,7 @@ export default function AdminDashboard({ entries, mode }: Props) {
             <tbody>
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="p-8 text-center text-tintengrau-light">
+                  <td colSpan={6} className="p-8 text-center text-slate-500">
                     {entries.length === 0
                       ? "Noch keine Einträge. Sobald sich jemand in die Warteliste einträgt, erscheint er hier."
                       : "Keine Treffer für deine Suche."}
@@ -192,9 +192,9 @@ export default function AdminDashboard({ entries, mode }: Props) {
               {filtered.map((e) => (
                 <tr
                   key={e.id ?? e.email}
-                  className="border-b border-nomi-violet/10 hover:bg-nomi-violet/5"
+                  className="border-b border-slate-200/70 hover:bg-slate-800/5"
                 >
-                  <td className="p-3 text-tintengrau-light whitespace-nowrap">
+                  <td className="p-3 text-slate-500 whitespace-nowrap">
                     {e.created_at
                       ? new Date(e.created_at).toLocaleDateString("de-DE", {
                           day: "2-digit",
@@ -203,14 +203,14 @@ export default function AdminDashboard({ entries, mode }: Props) {
                         })
                       : "–"}
                   </td>
-                  <td className="p-3 font-medium text-nomi-violet">
+                  <td className="p-3 font-medium text-slate-800">
                     {e.parent_name}
                   </td>
-                  <td className="p-3 text-tintengrau">{e.email}</td>
+                  <td className="p-3 text-slate-700">{e.email}</td>
                   <td className="p-3 text-xs whitespace-nowrap">
                     <span
                       className={`inline-flex items-center gap-1 ${
-                        e.confirmed_at ? "text-green-700" : "text-mattgold-dark"
+                        e.confirmed_at ? "text-green-700" : "text-amber-700"
                       }`}
                       title={
                         e.confirmed_at
@@ -221,11 +221,11 @@ export default function AdminDashboard({ entries, mode }: Props) {
                       {e.confirmed_at ? "✓ Bestätigt" : "⧖ Wartet"}
                     </span>
                   </td>
-                  <td className="p-3 text-tintengrau">
+                  <td className="p-3 text-slate-700">
                     {e.price_expectation || "–"}
                   </td>
-                  <td className="p-3 text-tintengrau text-xs max-w-[380px]">
-                    {e.wishes || <span className="text-tintengrau-light">–</span>}
+                  <td className="p-3 text-slate-700 text-xs max-w-[380px]">
+                    {e.wishes || <span className="text-slate-500">–</span>}
                   </td>
                 </tr>
               ))}
@@ -234,8 +234,8 @@ export default function AdminDashboard({ entries, mode }: Props) {
         </div>
 
         {/* DSGVO-Hinweis für den Admin */}
-        <div className="mt-8 p-5 border-l-4 border-mattgold bg-mattgold/10 text-sm text-tintengrau">
-          <strong className="text-nomi-violet">DSGVO-Hinweis:</strong> Alle
+        <div className="mt-8 p-5 border-l-4 border-amber-400 bg-amber-400/10 text-sm text-slate-700">
+          <strong className="text-slate-800">DSGVO-Hinweis:</strong> Alle
           Einträge enthalten Einwilligungs-Zeitpunkt (<code>consent_at</code>)
           und Text-Version (<code>consent_text_version</code>) als Nachweis
           gemäß Art. 7 Abs. 1 DSGVO. IP-Adressen (Signup + Confirmation)
@@ -251,10 +251,10 @@ export default function AdminDashboard({ entries, mode }: Props) {
 function StatCard({ label, value }: { label: string; value: number }) {
   return (
     <div className="paper-card hand-border p-5">
-      <p className="text-xs uppercase tracking-widest text-mattgold-dark font-semibold">
+      <p className="text-xs uppercase tracking-widest text-amber-700 font-semibold">
         {label}
       </p>
-      <p className="headline-serif text-3xl font-semibold text-nomi-violet mt-2">
+      <p className="headline-serif text-3xl font-semibold text-slate-800 mt-2">
         {value}
       </p>
     </div>
@@ -273,22 +273,22 @@ function AnalysisCard({
 
   return (
     <div className="paper-card hand-border p-6">
-      <h3 className="headline-serif text-lg font-semibold text-nomi-violet mb-4">
+      <h3 className="headline-serif text-lg font-semibold text-slate-800 mb-4">
         {title}
       </h3>
       {entries.length === 0 ? (
-        <p className="text-sm text-tintengrau-light">Noch keine Daten.</p>
+        <p className="text-sm text-slate-500">Noch keine Daten.</p>
       ) : (
         <ul className="space-y-2">
           {entries.slice(0, 8).map(([label, count]) => (
             <li key={label}>
-              <div className="flex justify-between text-xs text-tintengrau mb-1">
+              <div className="flex justify-between text-xs text-slate-700 mb-1">
                 <span>{label}</span>
                 <span className="font-semibold">{count}</span>
               </div>
-              <div className="h-1.5 bg-nomi-violet/10 rounded-full overflow-hidden">
+              <div className="h-1.5 bg-slate-800/5 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-mattgold"
+                  className="h-full bg-amber-400"
                   style={{ width: `${(count / max) * 100}%` }}
                 />
               </div>

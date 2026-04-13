@@ -13,19 +13,19 @@ export default function Hero() {
     >
       <WatercolorBlob
         className="absolute -top-20 left-0 w-[400px] sm:w-[500px] md:w-[700px] opacity-50 pointer-events-none"
-        color="#C9A84B"
+        color="#FBBF24"
         variant={1}
       />
       <WatercolorBlob
         className="absolute top-60 right-0 w-[400px] sm:w-[500px] md:w-[800px] opacity-30 md:opacity-40 pointer-events-none"
-        color="#3B2D5F"
+        color="#1E293B"
         variant={2}
       />
 
-      <div className="absolute top-28 right-[8%] text-mattgold/40 text-lg md:text-xl lg:text-2xl animate-float-slow pointer-events-none">
+      <div className="absolute top-28 right-[8%] text-amber-400/40 text-lg md:text-xl lg:text-2xl animate-float-slow pointer-events-none">
         ✦
       </div>
-      <div className="absolute top-40 left-[6%] text-mattgold/30 text-base md:text-lg lg:text-xl hidden sm:block animate-float pointer-events-none">
+      <div className="absolute top-40 left-[6%] text-amber-400/30 text-base md:text-lg lg:text-xl hidden sm:block animate-float pointer-events-none">
         ✦
       </div>
 
@@ -33,15 +33,15 @@ export default function Hero() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
           <div className="lg:col-span-7 min-w-0">
             <div className="eyebrow mb-5 md:mb-6">
-              <span className="w-8 md:w-10 h-px bg-mattgold" />
+              <span className="w-8 md:w-10 h-px bg-amber-400" />
               Die monatliche Post für Kinder von 5–10
-              <span className="w-8 md:w-10 h-px bg-mattgold" />
+              <span className="w-8 md:w-10 h-px bg-amber-400" />
             </div>
 
-            <h1 className="headline-serif font-semibold text-nomi-violet text-balance text-[clamp(2rem,7.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
+            <h1 className="headline-serif font-semibold text-slate-800 text-balance text-[clamp(2rem,7.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
               Ein Brief, der Kinderaugen{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 italic text-nomi-violet">
+                <span className="relative z-10 italic text-slate-800">
                   zum Leuchten
                 </span>
                 <svg
@@ -54,7 +54,7 @@ export default function Hero() {
                 >
                   <path
                     d="M 3 10 Q 80 2 150 8 T 297 6"
-                    stroke="#C9A84B"
+                    stroke="#FBBF24"
                     strokeWidth="4"
                     strokeLinecap="round"
                     fill="none"
@@ -64,9 +64,9 @@ export default function Hero() {
               bringt.
             </h1>
 
-            <p className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-tintengrau leading-relaxed max-w-full md:max-w-[36rem] text-pretty">
+            <p className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed max-w-full md:max-w-[36rem] text-pretty">
               Jeden Monat verschickt{" "}
-              <span className="text-nomi-violet font-semibold">Nomi</span>,
+              <span className="text-slate-800 font-semibold">Nomi</span>,
               eine kleine Entdeckerin, einen persönlichen Brief an dein Kind –
               mit einer Geschichte, einem Rätsel und Dingen zum Mitmachen.
               Eine Alternative zum Bildschirm, auf die sich Kinder wirklich
@@ -77,17 +77,17 @@ export default function Hero() {
               <WaitlistForm variant="hero" />
             </div>
 
-            <div className="mt-8 md:mt-10 flex items-center gap-4 md:gap-5 text-sm text-tintengrau-light">
+            <div className="mt-8 md:mt-10 flex items-center gap-4 md:gap-5 text-sm text-slate-500">
               <div className="flex -space-x-2.5 flex-shrink-0">
                 {[
-                  { bg: "#C9A84B", letters: "LM" },
-                  { bg: "#3B2D5F", letters: "JK" },
+                  { bg: "#FBBF24", letters: "LM" },
+                  { bg: "#1E293B", letters: "JK" },
                   { bg: "#7A5BA6", letters: "SB" },
-                  { bg: "#A68735", letters: "AM" },
+                  { bg: "#B45309", letters: "AM" },
                 ].map((p, i) => (
                   <div
                     key={i}
-                    className="w-8 h-8 md:w-9 md:h-9 rounded-full border-[3px] border-warmcreme flex items-center justify-center text-[10px] md:text-[11px] text-warmcreme font-semibold shadow-sm"
+                    className="w-8 h-8 md:w-9 md:h-9 rounded-full border-[3px] border-white flex items-center justify-center text-[10px] md:text-[11px] text-white font-semibold shadow-sm"
                     style={{ backgroundColor: p.bg }}
                   >
                     {p.letters}
@@ -95,7 +95,7 @@ export default function Hero() {
                 ))}
               </div>
               <p className="leading-tight">
-                <span className="font-semibold text-nomi-violet text-[13px] md:text-sm">
+                <span className="font-semibold text-slate-800 text-[13px] md:text-sm">
                   Die ersten Familien sind schon dabei.
                 </span>
                 <br />
@@ -115,7 +115,7 @@ export default function Hero() {
               quality={80}
               priority
               sizes="(max-width: 1024px) 0px, 500px"
-              className="w-full max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(59,45,95,0.15)]"
+              className="w-full max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(30,41,59,0.15)]"
             />
           </div>
         </div>

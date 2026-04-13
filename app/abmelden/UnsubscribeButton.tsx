@@ -37,21 +37,21 @@ export default function UnsubscribeButton({ token }: Props) {
   if (state === "done") {
     return (
       <div className="space-y-4">
-        <div className="w-16 h-16 mx-auto rounded-full bg-mattgold/20 flex items-center justify-center">
+        <div className="w-16 h-16 mx-auto rounded-full bg-amber-400/20 flex items-center justify-center">
           <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
             <path
               d="M 8 20 L 16 28 L 32 12"
-              stroke="#C9A84B"
+              stroke="#FBBF24"
               strokeWidth="4"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
         </div>
-        <p className="headline-serif text-2xl text-nomi-violet">
+        <p className="headline-serif text-2xl text-slate-800">
           Du bist jetzt abgemeldet.
         </p>
-        <p className="text-sm text-tintengrau">
+        <p className="text-sm text-slate-700">
           Alle deine Daten wurden gelöscht. Keine weiteren E-Mails von uns.
         </p>
       </div>

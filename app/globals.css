@@ -4,16 +4,8 @@
 
 @layer base {
   :root {
-    --color-bg: #fff8f0;
-    --color-ink: #3a3a3a;
-    /* Selbst-gehostete Schriften via Fontsource (GDPR-konform) */
-    --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --font-fraunces: "Fraunces", Georgia, "Times New Roman", serif;
-    --font-caveat: "Caveat", "Brush Script MT", cursive;
-  }
-
-  body {
-    font-family: var(--font-inter);
+    --color-bg: #f8fafc; /* Slate 50 */
+    --color-ink: #1e293b; /* Slate 800 */
   }
 
   html {
@@ -21,50 +13,44 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    /* Verhindert horizontales Wackeln auf Mobile durch absolut
-       positionierte Dekorations-Elemente (Watercolor-Blobs, Sterne) */
     overflow-x: hidden;
   }
 
   body {
+    font-family: var(--font-inter);
     font-feature-settings: "ss01", "cv11", "kern";
     color: var(--color-ink);
     background-color: var(--color-bg);
     overflow-x: hidden;
-    /* Dezente Papier-Textur über die gesamte Seite */
-    background-image:
-      radial-gradient(circle at 15% 8%, rgba(201, 168, 75, 0.06) 0%, transparent 40%),
-      radial-gradient(circle at 85% 65%, rgba(59, 45, 95, 0.045) 0%, transparent 40%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.231 0 0 0 0 0.176 0 0 0 0 0.372 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   ::selection {
-    background: rgba(201, 168, 75, 0.35);
-    color: #2a1f47;
+    background: #fef3c7; /* Amber 100 */
+    color: #1e293b; /* Slate 800 */
   }
 
-  /* Subtileres, elegantes Scrollbar-Styling */
+  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #fff8f0;
+    background: #f8fafc;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(59, 45, 95, 0.2);
-    border: 3px solid #fff8f0;
+    background: #cbd5e1; /* Slate 300 */
+    border: 3px solid #f8fafc;
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 45, 95, 0.35);
+    background: #94a3b8; /* Slate 400 */
   }
 }
 
 @layer components {
-  /* Container: Mobile-first (px-5 = 20px), Desktop großzügig */
+  /* Container */
   .container-narrow {
     @apply mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 lg:px-16;
   }
@@ -77,7 +63,7 @@
     @apply mx-auto w-full max-w-[96rem] px-5 sm:px-6 md:px-10 lg:px-16 xl:px-24;
   }
 
-  /* Section-Spacing – mobile-first, stark skalierend auf Desktop */
+  /* Section-Spacing */
   .section-spacing {
     @apply py-16 md:py-24 lg:py-40;
   }
@@ -86,61 +72,43 @@
     @apply py-14 md:py-20 lg:py-32;
   }
 
-  /* Buttons – mit echtem Premium-Feeling, Touch-freundlich (min 44px) */
+  /* ────── BUTTONS ────── */
+  /* Primary CTA — Coral 400 (nomi/brand/accent), für wichtige Aktionen */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-3 rounded-full bg-nomi-violet px-7 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-warmcreme transition-all duration-500 ease-out min-h-[48px];
+    @apply relative inline-flex items-center justify-center gap-3 rounded-full bg-coral-400 px-7 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-white transition-all duration-300 ease-out min-h-[48px];
     box-shadow:
-      0 1px 0 rgba(255, 248, 240, 0.15) inset,
-      0 10px 30px -10px rgba(59, 45, 95, 0.4),
-      0 4px 12px -4px rgba(59, 45, 95, 0.3);
-  }
-
-  .btn-primary::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 9999px;
-    background: linear-gradient(
-      135deg,
-      rgba(201, 168, 75, 0.3) 0%,
-      transparent 40%,
-      transparent 60%,
-      rgba(201, 168, 75, 0.2) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.5s ease;
+      0 1px 0 rgba(255, 255, 255, 0.2) inset,
+      0 10px 30px -10px rgba(248, 113, 113, 0.45),
+      0 4px 12px -4px rgba(248, 113, 113, 0.3);
   }
 
   .btn-primary:hover {
-    @apply -translate-y-0.5 bg-nomi-violet-dark;
+    @apply -translate-y-0.5 bg-coral-500;
     box-shadow:
-      0 1px 0 rgba(255, 248, 240, 0.2) inset,
-      0 20px 40px -10px rgba(59, 45, 95, 0.5),
-      0 8px 20px -4px rgba(59, 45, 95, 0.35);
-  }
-
-  .btn-primary:hover::before {
-    opacity: 1;
+      0 1px 0 rgba(255, 255, 255, 0.25) inset,
+      0 20px 40px -10px rgba(239, 68, 68, 0.55),
+      0 8px 20px -4px rgba(239, 68, 68, 0.4);
   }
 
   .btn-primary:focus-visible {
-    @apply outline-none ring-2 ring-mattgold ring-offset-4 ring-offset-warmcreme;
+    @apply outline-none ring-2 ring-coral-400 ring-offset-4 ring-offset-slate-50;
   }
 
   .btn-primary:disabled {
     @apply opacity-60 cursor-not-allowed hover:translate-y-0;
   }
 
+  /* Secondary — Outlined, Blue 500 (nomi/brand/primary) */
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-nomi-violet/25 bg-warmcreme/50 backdrop-blur-sm px-7 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-nomi-violet transition-all duration-500 ease-out hover:border-nomi-violet/60 hover:bg-warmcreme hover:-translate-y-0.5 min-h-[48px];
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-blue-500/30 bg-white px-7 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-blue-600 transition-all duration-300 ease-out hover:border-blue-500 hover:bg-blue-50 hover:-translate-y-0.5 min-h-[48px];
   }
 
-  /* Eyebrow Label – der kleine Gold-Akzent über jeder Headline */
+  /* Eyebrow */
   .eyebrow {
-    @apply inline-flex items-center flex-wrap gap-2 sm:gap-3 text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.3em] text-mattgold-dark font-semibold;
+    @apply inline-flex items-center flex-wrap gap-2 sm:gap-3 text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.3em] text-amber-700 font-semibold;
   }
 
-  /* Serif Headlines mit Premium Features */
+  /* Headlines */
   .headline-serif {
     font-family: var(--font-fraunces), Georgia, serif;
     font-feature-settings: "ss01", "kern", "liga", "dlig";
@@ -152,79 +120,94 @@
     font-family: var(--font-caveat), cursive;
   }
 
-  /* Paper Card – handgemachte Brief-Optik mit Mehrschicht-Schatten */
+  /* Surfaces */
   .paper-card {
-    @apply relative rounded-sm bg-warmcreme;
+    @apply relative rounded-lg bg-white border border-slate-200;
     box-shadow:
-      0 1px 2px rgba(59, 45, 95, 0.04),
-      0 4px 12px -2px rgba(59, 45, 95, 0.08),
-      0 24px 48px -12px rgba(59, 45, 95, 0.12);
+      0 1px 2px rgba(30, 41, 59, 0.04),
+      0 4px 12px -2px rgba(30, 41, 59, 0.06),
+      0 24px 48px -12px rgba(30, 41, 59, 0.08);
   }
 
   .paper-card-elevated {
     box-shadow:
-      0 1px 2px rgba(59, 45, 95, 0.06),
-      0 8px 24px -4px rgba(59, 45, 95, 0.12),
-      0 32px 64px -16px rgba(59, 45, 95, 0.18);
+      0 1px 2px rgba(30, 41, 59, 0.06),
+      0 8px 24px -4px rgba(30, 41, 59, 0.1),
+      0 32px 64px -16px rgba(30, 41, 59, 0.12);
   }
 
-  /* Handgezeichneter Rahmen */
+  /* Card-Rahmen (ehem. hand-border) */
   .hand-border {
-    border: 1.5px solid rgba(59, 45, 95, 0.85);
-    border-radius: 8px 12px 6px 14px / 10px 8px 12px 6px;
+    border: 1px solid #e2e8f0; /* Slate 200 */
+    border-radius: 12px;
   }
 
   .hand-border-gold {
-    border: 1.5px solid rgba(201, 168, 75, 0.6);
-    border-radius: 8px 12px 6px 14px / 10px 8px 12px 6px;
+    border: 1.5px solid rgba(251, 191, 36, 0.4); /* Amber 400 */
+    border-radius: 12px;
   }
 
   .hand-divider {
     height: 2px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 6' preserveAspectRatio='none'%3E%3Cpath d='M 1 3 Q 15 1 30 3 T 60 3 T 90 3 T 119 3' stroke='%233B2D5F' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 6' preserveAspectRatio='none'%3E%3Cpath d='M 1 3 Q 15 1 30 3 T 60 3 T 90 3 T 119 3' stroke='%23FBBF24' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
     background-size: 120px 6px;
   }
 
-  /* Input im Papier-Look – Touch-freundlich (min 48px) + kein iOS-Zoom */
+  /* Inputs */
   .paper-input {
-    @apply w-full max-w-full rounded-lg border-[1.5px] border-nomi-violet/15 bg-warmcreme/70 px-3 sm:px-5 py-3.5 sm:py-4 text-[15px] sm:text-base text-tintengrau placeholder:text-tintengrau-light/70 transition-all duration-300 focus:border-nomi-violet focus:bg-warmcreme focus:outline-none focus:ring-2 focus:ring-inset focus:ring-nomi-violet/10 min-h-[48px] sm:min-h-[52px];
+    @apply w-full max-w-full rounded-lg border-[1.5px] border-slate-200 bg-white px-3 sm:px-5 py-3.5 sm:py-4 text-[15px] sm:text-base text-slate-800 placeholder:text-slate-400 transition-all duration-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500/20 min-h-[48px] sm:min-h-[52px];
     font-size: 16px;
     box-sizing: border-box;
   }
 
   .paper-select {
-    @apply paper-input appearance-none bg-[url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%20fill='%233B2D5F'%3E%3Cpath%20d='M5.25%207.5L10%2012.25%2014.75%207.5z'/%3E%3C/svg%3E")] bg-[length:20px_20px] bg-[right_0.75rem_center] sm:bg-[right_1.25rem_center] bg-no-repeat pr-10 sm:pr-12 cursor-pointer;
+    @apply paper-input appearance-none bg-[url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%20fill='%231E293B'%3E%3Cpath%20d='M5.25%207.5L10%2012.25%2014.75%207.5z'/%3E%3C/svg%3E")] bg-[length:20px_20px] bg-[right_0.75rem_center] sm:bg-[right_1.25rem_center] bg-no-repeat pr-10 sm:pr-12 cursor-pointer;
   }
 
-  /* Tag/Chip Button für Multi-Select – Touch-freundlich */
+  /* Chips */
   .chip {
-    @apply cursor-pointer select-none rounded-full border-[1.5px] border-nomi-violet/20 bg-warmcreme px-4 py-2.5 text-sm font-medium text-nomi-violet transition-all duration-300 hover:border-nomi-violet/60 hover:-translate-y-0.5 min-h-[40px] inline-flex items-center;
+    @apply cursor-pointer select-none rounded-full border-[1.5px] border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-blue-500/50 hover:text-blue-600 hover:-translate-y-0.5 min-h-[40px] inline-flex items-center;
   }
 
   .chip-active {
-    @apply border-nomi-violet bg-nomi-violet text-warmcreme shadow-md shadow-nomi-violet/30;
+    @apply border-blue-500 bg-blue-500 text-white shadow-md shadow-blue-500/30 hover:text-white;
   }
 
-  /* Typografie für Rechtstexte – ruhig, gut lesbar */
+  /* Gold-Sparkle Utility */
+  .gold-sparkle {
+    position: relative;
+  }
+
+  .gold-sparkle::after {
+    content: "✦";
+    position: absolute;
+    color: #fbbf24; /* Amber 400 */
+    font-size: 0.75em;
+    top: -0.25em;
+    right: -0.75em;
+    opacity: 0.7;
+  }
+
+  /* ────── LEGAL PAGES TYPOGRAPHY ────── */
   .legal-content h2 {
-    @apply headline-serif text-2xl lg:text-[1.75rem] font-semibold text-nomi-violet leading-tight mt-12 mb-4;
+    @apply headline-serif text-2xl lg:text-[1.75rem] font-semibold text-slate-800 leading-tight mt-12 mb-4;
   }
 
   .legal-content h3 {
-    @apply headline-serif text-xl font-semibold text-nomi-violet leading-tight mt-8 mb-3;
+    @apply headline-serif text-xl font-semibold text-slate-800 leading-tight mt-8 mb-3;
   }
 
   .legal-content p {
-    @apply text-[1.0625rem] leading-[1.7] text-tintengrau;
+    @apply text-[1.0625rem] leading-[1.7] text-slate-700;
   }
 
   .legal-content a {
-    @apply text-nomi-violet underline decoration-mattgold decoration-1 underline-offset-[3px] hover:decoration-2;
+    @apply text-blue-600 underline decoration-blue-300 decoration-1 underline-offset-[3px] hover:decoration-2;
   }
 
   .legal-content strong {
-    @apply text-nomi-violet font-semibold;
+    @apply text-slate-800 font-semibold;
   }
 
   .legal-content ul {
@@ -237,30 +220,15 @@
 
   .legal-content ul li::before {
     content: "✦";
-    @apply absolute left-0 top-0 text-mattgold text-sm;
+    @apply absolute left-0 top-0 text-amber-500 text-sm;
   }
 
   .legal-content .placeholder {
-    @apply inline-block rounded-sm bg-mattgold/15 text-nomi-violet px-2 py-0.5 border border-mattgold/40 text-sm font-mono;
+    @apply inline-block rounded-sm bg-amber-100 text-slate-800 px-2 py-0.5 border border-amber-300 text-sm font-mono;
   }
 
   .legal-content .notice {
-    @apply rounded-sm border-l-4 border-mattgold bg-mattgold/10 p-5 my-6 text-[0.95rem];
-  }
-
-  /* Gold-Sparkle Utility */
-  .gold-sparkle {
-    position: relative;
-  }
-
-  .gold-sparkle::after {
-    content: "✦";
-    position: absolute;
-    color: #c9a84b;
-    font-size: 0.75em;
-    top: -0.25em;
-    right: -0.75em;
-    opacity: 0.7;
+    @apply rounded-lg border-l-4 border-amber-400 bg-amber-50 p-5 my-6 text-[0.95rem];
   }
 }
 
@@ -273,20 +241,12 @@
     text-wrap: pretty;
   }
 
-  .mask-fade-bottom {
-    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  }
-
-  .mask-fade-right {
-    mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  }
-
-  /* Gold-Glow für Premium-Akzente */
+  /* Gold-Glow für Amber-Akzente */
   .gold-glow {
-    filter: drop-shadow(0 0 20px rgba(201, 168, 75, 0.35));
+    filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.4));
   }
 
   .violet-glow {
-    filter: drop-shadow(0 0 40px rgba(59, 45, 95, 0.25));
+    filter: drop-shadow(0 0 40px rgba(167, 139, 250, 0.3));
   }
 }

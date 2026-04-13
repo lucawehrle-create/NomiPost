@@ -10,7 +10,7 @@ type Props = {
  */
 export default function WatercolorBlob({
   className = "",
-  color = "#C9A84B",
+  color = "#FBBF24",
   variant = 1,
 }: Props) {
   // Drei leicht verschiedene Formen via border-radius

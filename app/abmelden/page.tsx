@@ -49,25 +49,25 @@ export default async function AbmeldenPage({ searchParams }: Props) {
             {status === "ready" && (
               <>
                 <div className="eyebrow mb-4 justify-center">
-                  <span className="w-10 h-px bg-mattgold" />
+                  <span className="w-10 h-px bg-amber-400" />
                   Widerruf deiner Einwilligung
-                  <span className="w-10 h-px bg-mattgold" />
+                  <span className="w-10 h-px bg-amber-400" />
                 </div>
-                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-nomi-violet leading-tight mb-6">
+                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-slate-800 leading-tight mb-6">
                   Schade, dass du gehst
                 </h1>
                 <HandDivider className="mb-6" />
-                <p className="text-lg text-tintengrau leading-relaxed mb-2">
+                <p className="text-lg text-slate-700 leading-relaxed mb-2">
                   Hallo {parentName}, du möchtest dich von der NomiPost-
                   Warteliste abmelden.
                 </p>
-                <p className="text-sm text-tintengrau-light mb-8">
+                <p className="text-sm text-slate-500 mb-8">
                   Eingetragene E-Mail: <strong>{email}</strong>
                 </p>
-                <p className="text-sm text-tintengrau leading-relaxed max-w-lg mx-auto mb-8">
+                <p className="text-sm text-slate-700 leading-relaxed max-w-lg mx-auto mb-8">
                   Mit einem Klick auf den Button unten werden alle deine
                   Daten aus unserer Datenbank{" "}
-                  <strong className="text-nomi-violet">
+                  <strong className="text-slate-800">
                     unwiderruflich gelöscht
                   </strong>
                   . Wir werden dich nicht mehr kontaktieren.
@@ -78,15 +78,15 @@ export default async function AbmeldenPage({ searchParams }: Props) {
 
             {status === "invalid" && (
               <>
-                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-nomi-violet leading-tight mb-6">
+                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-slate-800 leading-tight mb-6">
                   Link ungültig
                 </h1>
                 <HandDivider className="mb-6" />
-                <p className="text-lg text-tintengrau leading-relaxed max-w-lg mx-auto">
+                <p className="text-lg text-slate-700 leading-relaxed max-w-lg mx-auto">
                   Dieser Abmelde-Link ist entweder bereits verwendet oder
                   ungültig. Falls du weiterhin Post von uns bekommst, schreibe
                   uns bitte eine E-Mail an{" "}
-                  <span className="text-nomi-violet">
+                  <span className="text-slate-800">
                     [datenschutz@deine-domain.de]
                   </span>
                   .
@@ -99,15 +99,15 @@ export default async function AbmeldenPage({ searchParams }: Props) {
 
             {status === "no-token" && (
               <>
-                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-nomi-violet leading-tight mb-6">
+                <h1 className="headline-serif text-3xl md:text-4xl font-semibold text-slate-800 leading-tight mb-6">
                   Abmelden
                 </h1>
                 <HandDivider className="mb-6" />
-                <p className="text-lg text-tintengrau leading-relaxed max-w-lg mx-auto">
+                <p className="text-lg text-slate-700 leading-relaxed max-w-lg mx-auto">
                   Um dich abzumelden, klicke bitte auf den persönlichen
                   Abmelde-Link in einer unserer E-Mails. Alternativ schreibe
                   uns eine formlose Nachricht an{" "}
-                  <span className="text-nomi-violet">
+                  <span className="text-slate-800">
                     [datenschutz@deine-domain.de]
                   </span>
                   .

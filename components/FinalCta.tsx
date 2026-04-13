@@ -12,7 +12,7 @@ export default function FinalCta() {
     >
       <WatercolorBlob
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] opacity-25 pointer-events-none"
-        color="#C9A84B"
+        color="#FBBF24"
         variant={1}
       />
 
@@ -25,12 +25,12 @@ export default function FinalCta() {
           className="max-w-2xl mx-auto text-center"
         >
           <div className="eyebrow mb-5 md:mb-6 justify-center">
-            <span className="w-8 md:w-10 h-px bg-mattgold" />
+            <span className="w-8 md:w-10 h-px bg-amber-400" />
             <span className="text-pretty">Nomi packt schon den ersten Umschlag</span>
-            <span className="w-8 md:w-10 h-px bg-mattgold" />
+            <span className="w-8 md:w-10 h-px bg-amber-400" />
           </div>
 
-          <h2 className="headline-serif text-[clamp(2rem,6.5vw,3.5rem)] font-semibold text-nomi-violet leading-[1.05] text-balance">
+          <h2 className="headline-serif text-[clamp(2rem,6.5vw,3.5rem)] font-semibold text-slate-800 leading-[1.05] text-balance">
             Sei dabei,
             <br />
             <span className="italic">wenn die Post losgeht.</span>
@@ -38,7 +38,7 @@ export default function FinalCta() {
 
           <HandDivider className="mt-8 mb-8" />
 
-          <p className="text-base md:text-lg text-tintengrau leading-relaxed max-w-xl mx-auto text-pretty">
+          <p className="text-base md:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto text-pretty">
             Nur dein Vorname und deine E-Mail – mehr braucht es nicht. Keine
             Werbung, kein Stress. Nur eine Nachricht, sobald Nomis erster
             Brief auf die Reise geht. Und du bist ganz vorne dabei.
@@ -66,7 +66,7 @@ export default function FinalCta() {
             </a>
           </div>
 
-          <p className="handwritten text-lg md:text-xl text-mattgold-dark mt-8 md:mt-10">
+          <p className="handwritten text-lg md:text-xl text-amber-700 mt-8 md:mt-10">
             Wir freuen uns auf dich ✦
           </p>
         </motion.div>

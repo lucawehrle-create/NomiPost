@@ -196,13 +196,13 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 />
                 <span
                   aria-hidden="true"
-                  className="block w-5 h-5 rounded-[4px] border-[1.5px] border-nomi-violet/30 bg-warmcreme transition-all duration-200 peer-checked:bg-nomi-violet peer-checked:border-nomi-violet peer-focus-visible:ring-2 peer-focus-visible:ring-mattgold peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-warmcreme group-hover:border-nomi-violet/60"
+                  className="block w-5 h-5 rounded-[4px] border-[1.5px] border-slate-300 bg-slate-50 transition-all duration-200 peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-focus-visible:ring-2 peer-focus-visible:ring-blue-500/50 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-slate-50 group-hover:border-blue-500/60"
                 />
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 16 16"
                   fill="none"
-                  className="absolute inset-0 w-5 h-5 p-0.5 text-warmcreme opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none"
+                  className="absolute inset-0 w-5 h-5 p-0.5 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none"
                 >
                   <path
                     d="M 3 8 L 6.5 11.5 L 13 4.5"
@@ -214,14 +214,14 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                   />
                 </svg>
               </span>
-              <span className="text-[0.8rem] text-tintengrau leading-[1.55] text-pretty">
+              <span className="text-[0.8rem] text-slate-700 leading-[1.55] text-pretty">
                 Ja, ich möchte Bescheid bekommen, sobald Nomis erster Brief
                 auf die Reise geht. Jederzeit abmeldbar. Mehr dazu in der{" "}
                 <a
                   href="/datenschutz"
                   target="_blank"
                   rel="noopener"
-                  className="underline decoration-mattgold decoration-1 underline-offset-2 hover:decoration-2 text-nomi-violet"
+                  className="underline decoration-amber-400 decoration-1 underline-offset-2 hover:decoration-2 text-slate-800"
                 >
                   Datenschutzerklärung
                 </a>
@@ -241,10 +241,10 @@ export default function WaitlistForm({ variant = "card" }: Props) {
               className="btn-primary w-full sm:w-auto text-base"
             >
               {submitting ? "Einen Moment …" : "Nomi Bescheid geben"}
-              {!submitting && <span className="text-mattgold-light">✦</span>}
+              {!submitting && <span className="text-amber-300">✦</span>}
             </button>
 
-            <p className="text-[0.7rem] text-tintengrau-light leading-snug">
+            <p className="text-[0.7rem] text-slate-500 leading-snug">
               Du bekommst gleich eine kurze Mail von uns. Einmal klicken,
               und du bist dabei. Kein Spam, versprochen.
             </p>
@@ -263,7 +263,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
             className="space-y-5"
           >
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-mattgold/20 flex items-center justify-center">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-amber-400/20 flex items-center justify-center">
                 <svg
                   width="22"
                   height="22"
@@ -273,7 +273,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 >
                   <path
                     d="M 5 12 L 10 17 L 19 8"
-                    stroke="#C9A84B"
+                    stroke="#FBBF24"
                     strokeWidth="3"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -281,21 +281,21 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="headline-serif text-xl md:text-2xl font-semibold text-nomi-violet leading-tight">
+                <h3 className="headline-serif text-xl md:text-2xl font-semibold text-slate-800 leading-tight">
                   Willkommen auf der Liste, {parentName} ✦
                 </h3>
-                <p className="text-sm text-tintengrau leading-snug mt-1">
+                <p className="text-sm text-slate-700 leading-snug mt-1">
                   Schau kurz in dein Postfach – dort wartet eine
-                  Nachricht von uns. <strong className="text-nomi-violet/80">Nicht
+                  Nachricht von uns. <strong className="text-slate-800/80">Nicht
                   da? Bitte auch im Spam-Ordner nachschauen</strong> – manchmal
                   landet die erste Mail dort.
                 </p>
               </div>
             </div>
 
-            <div className="pt-2 border-t border-mattgold/25">
-              <p className="text-sm text-tintengrau leading-relaxed mt-4 mb-4">
-                <strong className="text-nomi-violet">
+            <div className="pt-2 border-t border-amber-400/25">
+              <p className="text-sm text-slate-700 leading-relaxed mt-4 mb-4">
+                <strong className="text-slate-800">
                   Zwei kurze Fragen noch, wenn du magst –
                 </strong>{" "}
                 sie helfen uns enorm, die Briefe richtig gut für euch zu machen:
@@ -305,7 +305,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 <div>
                   <label
                     htmlFor="wl-wishes"
-                    className="block text-sm font-semibold text-nomi-violet mb-2"
+                    className="block text-sm font-semibold text-slate-800 mb-2"
                   >
                     Was dürfen wir auf keinen Fall falsch machen?
                   </label>
@@ -323,7 +323,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 <div>
                   <label
                     htmlFor="wl-price"
-                    className="block text-sm font-semibold text-nomi-violet mb-2"
+                    className="block text-sm font-semibold text-slate-800 mb-2"
                   >
                     Was wäre für dich ein fairer Monatspreis?
                   </label>
@@ -354,7 +354,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
               <button
                 type="button"
                 onClick={handleSkip}
-                className="text-sm text-nomi-violet/70 hover:text-nomi-violet underline underline-offset-4 transition-colors"
+                className="text-sm text-slate-800/70 hover:text-slate-800 underline underline-offset-4 transition-colors"
               >
                 Überspringen – ich bin schon drin
               </button>
@@ -364,21 +364,21 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 className="btn-primary py-3 px-6 text-sm"
               >
                 {submitting ? "Danke …" : "Absenden"}
-                {!submitting && <span className="text-mattgold-light">✦</span>}
+                {!submitting && <span className="text-amber-300">✦</span>}
               </button>
             </div>
 
             {devConfirmUrl && (
-              <div className="mt-4 p-3 border-l-4 border-mattgold bg-mattgold/10 text-left rounded-sm">
-                <p className="text-[0.65rem] font-semibold text-mattgold-dark uppercase tracking-wider mb-1">
+              <div className="mt-4 p-3 border-l-4 border-amber-400 bg-amber-400/10 text-left rounded-sm">
+                <p className="text-[0.65rem] font-semibold text-amber-700 uppercase tracking-wider mb-1">
                   Dev-Modus
                 </p>
-                <p className="text-[0.7rem] text-tintengrau mb-1">
+                <p className="text-[0.7rem] text-slate-700 mb-1">
                   Kein Mail-Service konfiguriert – Bestätigungs-Link direkt:
                 </p>
                 <a
                   href={devConfirmUrl}
-                  className="text-[0.7rem] text-nomi-violet underline break-all"
+                  className="text-[0.7rem] text-slate-800 underline break-all"
                 >
                   {devConfirmUrl}
                 </a>
@@ -396,7 +396,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="text-center py-4"
           >
-            <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-mattgold/20 flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-amber-400/20 flex items-center justify-center">
               <svg
                 width="32"
                 height="32"
@@ -410,13 +410,13 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                   width="36"
                   height="26"
                   rx="2"
-                  stroke="#C9A84B"
+                  stroke="#FBBF24"
                   strokeWidth="3"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M 6 14 L 24 28 L 42 14"
-                  stroke="#C9A84B"
+                  stroke="#FBBF24"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -424,30 +424,30 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 />
               </svg>
             </div>
-            <h3 className="headline-serif text-2xl md:text-3xl font-semibold text-nomi-violet leading-tight mb-3">
+            <h3 className="headline-serif text-2xl md:text-3xl font-semibold text-slate-800 leading-tight mb-3">
               Bis bald, {parentName} ✦
             </h3>
-            <p className="text-tintengrau leading-relaxed max-w-sm mx-auto text-sm md:text-base">
+            <p className="text-slate-700 leading-relaxed max-w-sm mx-auto text-sm md:text-base">
               Wir haben dir eine Nachricht an{" "}
-              <strong className="text-nomi-violet">{email}</strong>{" "}
+              <strong className="text-slate-800">{email}</strong>{" "}
               geschickt. Einmal klicken, und wir sehen uns wieder.
             </p>
-            <p className="text-xs text-tintengrau-light mt-3 max-w-xs mx-auto">
+            <p className="text-xs text-slate-500 mt-3 max-w-xs mx-auto">
               Keine Mail bekommen? Schau bitte auch im Spam-Ordner
               nach – manchmal landet die erste Nachricht dort.
             </p>
-            <p className="handwritten text-lg text-mattgold-dark mt-5">
+            <p className="handwritten text-lg text-amber-700 mt-5">
               Nomi meldet sich ✦
             </p>
 
             {devConfirmUrl && (
-              <div className="mt-6 p-3 border-l-4 border-mattgold bg-mattgold/10 text-left rounded-sm max-w-md mx-auto">
-                <p className="text-[0.65rem] font-semibold text-mattgold-dark uppercase tracking-wider mb-1">
+              <div className="mt-6 p-3 border-l-4 border-amber-400 bg-amber-400/10 text-left rounded-sm max-w-md mx-auto">
+                <p className="text-[0.65rem] font-semibold text-amber-700 uppercase tracking-wider mb-1">
                   Dev-Modus
                 </p>
                 <a
                   href={devConfirmUrl}
-                  className="text-[0.7rem] text-nomi-violet underline break-all"
+                  className="text-[0.7rem] text-slate-800 underline break-all"
                 >
                   {devConfirmUrl}
                 </a>

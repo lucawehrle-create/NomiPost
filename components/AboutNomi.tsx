@@ -30,7 +30,7 @@ export default function AboutNomi() {
       />
       <WatercolorBlob
         className="absolute bottom-10 left-0 w-[500px] opacity-20 pointer-events-none"
-        color="#C9A84B"
+        color="#FBBF24"
         variant={2}
       />
 
@@ -45,7 +45,7 @@ export default function AboutNomi() {
           >
             {/* Nomi-Portrait mit goldenem Kompass-Akzent */}
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px]">
-              <div className="absolute inset-0 bg-mattgold/15 blur-[60px] md:blur-[80px] rounded-full scale-110" />
+              <div className="absolute inset-0 bg-amber-400/15 blur-[60px] md:blur-[80px] rounded-full scale-110" />
 
               <div className="relative z-10 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-[800ms] ease-out overflow-hidden rounded-sm">
                 <Image
@@ -59,7 +59,7 @@ export default function AboutNomi() {
                 />
               </div>
 
-              <p className="handwritten text-center mt-5 md:mt-6 text-lg md:text-xl text-nomi-violet">
+              <p className="handwritten text-center mt-5 md:mt-6 text-lg md:text-xl text-slate-800">
                 Das ist Nomi ✦
               </p>
             </div>
@@ -73,17 +73,17 @@ export default function AboutNomi() {
             className="lg:col-span-7 min-w-0"
           >
             <div className="eyebrow mb-5 md:mb-6">
-              <span className="w-8 md:w-10 h-px bg-mattgold" />
+              <span className="w-8 md:w-10 h-px bg-amber-400" />
               Wer ist Nomi?
-              <span className="w-8 md:w-10 h-px bg-mattgold" />
+              <span className="w-8 md:w-10 h-px bg-amber-400" />
             </div>
-            <h2 className="headline-serif text-display-md font-semibold text-nomi-violet leading-[1.05] mb-6 md:mb-8 text-balance">
+            <h2 className="headline-serif text-display-md font-semibold text-slate-800 leading-[1.05] mb-6 md:mb-8 text-balance">
               Die Entdeckerin,
               <br />
               <span className="italic">die dein Kind in sein Zimmer einlädt.</span>
             </h2>
             <HandDivider className="mb-6 md:mb-8 justify-start" />
-            <div className="space-y-4 md:space-y-5 text-base md:text-lg text-tintengrau leading-relaxed text-pretty max-w-2xl">
+            <div className="space-y-4 md:space-y-5 text-base md:text-lg text-slate-700 leading-relaxed text-pretty max-w-2xl">
               <p>
                 Nomi ist kein Maskottchen. Sie ist die Absenderin jedes Briefes,
                 die Erzählerin jeder Geschichte – und die unsichtbare Freundin,
@@ -107,12 +107,12 @@ export default function AboutNomi() {
               {traits.map((t) => (
                 <div
                   key={t.title}
-                  className="border-l-[1.5px] border-mattgold/40 pl-4 py-1"
+                  className="border-l-[1.5px] border-amber-400/40 pl-4 py-1"
                 >
-                  <p className="headline-serif text-base md:text-lg font-semibold text-nomi-violet mb-1">
+                  <p className="headline-serif text-base md:text-lg font-semibold text-slate-800 mb-1">
                     {t.title}
                   </p>
-                  <p className="text-xs text-tintengrau-light leading-relaxed">
+                  <p className="text-xs text-slate-500 leading-relaxed">
                     {t.text}
                   </p>
                 </div>
@@ -120,16 +120,16 @@ export default function AboutNomi() {
             </div>
 
             <div className="mt-8 md:mt-10 p-6 md:p-8 lg:p-10 paper-card hand-border paper-card-elevated relative">
-              <span className="absolute -top-3 left-6 md:left-8 bg-warmcreme px-3 text-mattgold text-xl">
+              <span className="absolute -top-3 left-6 md:left-8 bg-slate-50 px-3 text-amber-500 text-xl">
                 &ldquo;
               </span>
-              <p className="handwritten text-lg md:text-xl lg:text-2xl text-nomi-violet italic leading-relaxed">
+              <p className="handwritten text-lg md:text-xl lg:text-2xl text-slate-800 italic leading-relaxed">
                 Psst&hellip; ich verrate dir ein Geheimnis. Unter den Steinen
                 am Bach lebt etwas, das noch nie jemand gesehen hat. Wollen
                 wir herausfinden, was es ist?
               </p>
-              <p className="handwritten text-mattgold-dark text-right mt-3 flex items-center justify-end gap-2">
-                <span className="w-6 h-px bg-mattgold-dark" />
+              <p className="handwritten text-amber-700 text-right mt-3 flex items-center justify-end gap-2">
+                <span className="w-6 h-px bg-amber-700" />
                 Nomi
               </p>
             </div>
