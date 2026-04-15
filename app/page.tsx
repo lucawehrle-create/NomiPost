@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Promises from "@/components/Promises";
 import LetterAnatomy from "@/components/LetterAnatomy";
+import TheJourney from "@/components/TheJourney";
 import HowItWorks from "@/components/HowItWorks";
 import AboutNomi from "@/components/AboutNomi";
 import Manifesto from "@/components/Manifesto";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Promises />
         <LetterAnatomy />
+        <TheJourney />
         <HowItWorks />
         <AboutNomi />
         <Manifesto />
