@@ -73,9 +73,15 @@ export default function HowItWorks() {
                 <div className="flex lg:flex-col items-start gap-5 lg:gap-0">
                   <div className="flex-shrink-0 lg:mb-6">
                     <div className="relative w-14 h-14 md:w-[4.5rem] md:h-[4.5rem]">
-                      <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-xl scale-125" />
-                      <div className="relative w-full h-full rounded-full border-2 border-blue-500 bg-white flex items-center justify-center shadow-sm">
-                        <span className="headline-serif text-xl md:text-2xl text-blue-600 font-semibold">
+                      <div className="absolute inset-0 bg-blue-500/15 rounded-full blur-2xl scale-125" />
+                      <div
+                        className="relative w-full h-full rounded-full bg-blue-500 flex items-center justify-center"
+                        style={{
+                          boxShadow:
+                            "0 12px 24px -6px rgba(59, 130, 246, 0.45), 0 4px 10px -2px rgba(59, 130, 246, 0.25)",
+                        }}
+                      >
+                        <span className="headline-serif text-xl md:text-2xl text-white font-semibold">
                           {step.number}
                         </span>
                       </div>

@@ -69,8 +69,8 @@ export default function FAQ() {
                   {faq.q}
                 </span>
                 <span
-                  className={`flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-full border-[1.5px] border-amber-400 flex items-center justify-center text-amber-700 transition-all duration-500 group-hover:bg-amber-400 group-hover:text-white ${
-                    open === i ? "rotate-45 bg-amber-400 text-white" : ""
+                  className={`flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 transition-all duration-500 group-hover:bg-amber-400 group-hover:text-white ${
+                    open === i ? "rotate-45 bg-amber-400 text-white shadow-[0_8px_16px_-4px_rgba(251,191,36,0.4)]" : ""
                   }`}
                   aria-hidden="true"
                 >

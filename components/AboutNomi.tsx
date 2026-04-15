@@ -104,7 +104,7 @@ export default function AboutNomi() {
               {traits.map((t) => (
                 <div
                   key={t.title}
-                  className="border-l-[1.5px] border-amber-400/40 pl-4 py-1"
+                  className="rounded-2xl bg-amber-50/60 px-4 py-3 md:px-5 md:py-4"
                 >
                   <p className="headline-serif text-base md:text-lg font-semibold text-slate-800 mb-1">
                     {t.title}

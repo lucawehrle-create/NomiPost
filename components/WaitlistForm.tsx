@@ -196,7 +196,7 @@ export default function WaitlistForm({ variant = "card" }: Props) {
                 />
                 <span
                   aria-hidden="true"
-                  className="block w-5 h-5 rounded-[4px] border-[1.5px] border-slate-300 bg-slate-50 transition-all duration-200 peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-focus-visible:ring-2 peer-focus-visible:ring-blue-500/50 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-slate-50 group-hover:border-blue-500/60"
+                  className="block w-5 h-5 rounded-md bg-slate-100 shadow-[inset_0_0_0_1.5px_rgba(148,163,184,0.4)] transition-all duration-200 peer-checked:bg-blue-500 peer-checked:shadow-[0_4px_10px_-2px_rgba(59,130,246,0.4)] peer-focus-visible:ring-2 peer-focus-visible:ring-blue-500/50 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-slate-50 group-hover:bg-slate-200"
                 />
                 <svg
                   aria-hidden="true"

@@ -142,7 +142,14 @@ export default function TheJourney() {
 
               {/* Visuelle Mini-Karte: 12 Felder im 4x3 Raster */}
               <div className="lg:col-span-5 min-w-0">
-                <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-50 via-amber-50/50 to-emerald-50/60 border-[1.5px] border-amber-400/40 p-5 md:p-6 overflow-hidden">
+                <div
+                  className="relative aspect-[4/3] bg-gradient-to-br from-blue-50 via-amber-50/50 to-emerald-50/60 p-5 md:p-6 overflow-hidden"
+                  style={{
+                    borderRadius: "24px",
+                    boxShadow:
+                      "inset 0 2px 6px rgba(251, 191, 36, 0.08), 0 10px 30px -10px rgba(30, 41, 59, 0.08)",
+                  }}
+                >
                   {/* Dezente Sterne im Hintergrund */}
                   <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
                     <div className="absolute top-[15%] left-[20%] text-amber-700 text-xs">✦</div>
@@ -155,11 +162,22 @@ export default function TheJourney() {
                     {Array.from({ length: 12 }).map((_, i) => (
                       <div
                         key={i}
-                        className={`rounded-lg border-[1.5px] border-dashed flex items-center justify-center text-[9px] md:text-[10px] font-semibold transition-colors ${
+                        className="rounded-xl flex items-center justify-center text-[9px] md:text-[10px] font-semibold transition-colors"
+                        style={
                           i < 2
-                            ? "bg-amber-400/80 border-amber-500 text-white shadow-sm"
-                            : "bg-white/60 border-slate-300 text-slate-400"
-                        }`}
+                            ? {
+                                background: "#FBBF24",
+                                color: "#FFFFFF",
+                                boxShadow:
+                                  "0 6px 12px -3px rgba(251, 191, 36, 0.45), 0 2px 4px -1px rgba(251, 191, 36, 0.3)",
+                              }
+                            : {
+                                background: "rgba(255, 255, 255, 0.6)",
+                                color: "#94A3B8",
+                                boxShadow:
+                                  "inset 0 0 0 1px rgba(203, 213, 225, 0.5)",
+                              }
+                        }
                       >
                         {i < 2 ? "✦" : i + 1}
                       </div>
