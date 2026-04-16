@@ -116,7 +116,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 min-w-0 relative hidden lg:block">
+          <div className="lg:col-span-5 min-w-0 relative flex justify-center">
             <Image
               src="/images/hero-visual.png"
               alt="NomiPost – Persönliche Post für Kinder"
@@ -124,8 +124,8 @@ export default function Hero() {
               height={600}
               quality={80}
               priority
-              sizes="(max-width: 1024px) 0px, 500px"
-              className="w-full max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(30,41,59,0.15)]"
+              sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 500px"
+              className="w-[280px] sm:w-[320px] md:w-[340px] lg:w-full lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(30,41,59,0.12)]"
             />
           </div>
         </div>

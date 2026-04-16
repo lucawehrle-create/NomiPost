@@ -3,13 +3,17 @@
 import { m as motion } from "framer-motion";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
+import WaitlistForm from "./WaitlistForm";
 
 export default function FinalCta() {
   return (
     <section
       id="warteliste"
       className="relative section-spacing-sm overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #FFFBF5 0%, #FFF5E6 50%, #FFFBF5 100%)" }}
+      style={{
+        background:
+          "linear-gradient(180deg, #FFFBF5 0%, #FFF5E6 50%, #FFFBF5 100%)",
+      }}
     >
       <WatercolorBlob
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] opacity-25 pointer-events-none"
@@ -39,31 +43,13 @@ export default function FinalCta() {
 
           <HandDivider className="mt-8 mb-8" />
 
-          <p className="text-base md:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto text-pretty">
+          <p className="text-base md:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto text-pretty mb-8 md:mb-10">
             Vorname und E-Mail — mehr braucht es nicht. Wir melden uns,
             sobald der erste Brief auf die Reise geht.
           </p>
 
-          <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a href="#top" className="btn-primary">
-              Jetzt eintragen
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M12 19V5M5 12l7-7 7 7"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+          <div className="max-w-md mx-auto">
+            <WaitlistForm variant="hero" />
           </div>
 
           <p className="handwritten text-lg md:text-xl text-amber-700 mt-8 md:mt-10">
