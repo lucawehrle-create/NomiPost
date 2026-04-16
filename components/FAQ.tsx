@@ -5,32 +5,32 @@ import HandDivider from "./HandDivider";
 
 const faqs = [
   {
-    q: "Für welches Alter ist NomiPost gemacht?",
-    a: "Für Kinder zwischen 5 und 10 Jahren. Sprache und Schwierigkeit der Rätsel passen sich dem Alter an – damit Leseanfänger genauso auf ihre Kosten kommen wie kleine Profis.",
+    q: "F\u00FCr welches Alter ist NomiPost gemacht?",
+    a: "F\u00FCr Kinder zwischen 5 und 10 Jahren. Sprache und Schwierigkeit passen sich dem Alter an \u2014 damit Leseanf\u00E4nger genauso auf ihre Kosten kommen wie kleine Profis.",
   },
   {
     q: "Wann kommt der erste Brief?",
-    a: "Wir arbeiten gerade an den ersten Briefen. Alle auf der Warteliste bekommen als Erste Bescheid, wenn es losgeht – und sichern sich automatisch einen Early-Bird-Preis.",
+    a: "Wir arbeiten gerade an den ersten Briefen. Alle auf der Warteliste erfahren als Erste, wann es losgeht \u2014 und sichern sich einen Early-Bird-Preis.",
   },
   {
-    q: "Was ist NomiPost eigentlich nicht?",
-    a: "Keine Überraschungsbox mit Bastelkram. Kein generisches Kinder-Magazin. Keine App, die Aufmerksamkeit jagt. NomiPost ist ein interaktives Kinderbuch in Briefform – mit einer durchgehenden Geschichte, liebevoll gestaltet und persönlich in jedem Detail.",
+    q: "Was unterscheidet NomiPost von anderen Kinderprodukten?",
+    a: "NomiPost ist ein interaktives Kinderbuch in Briefform \u2014 mit einer durchgehenden Geschichte, liebevoll illustriert und pers\u00F6nlich in jedem Detail. Keine \u00DCberraschungsbox mit Bastelkram. Kein generisches Kinder-Magazin. Keine App.",
   },
   {
-    q: "Wird mein Kind mit Werbung oder Zusatzkäufen konfrontiert?",
-    a: "Niemals. NomiPost ist komplett werbefrei. Keine Cross-Promotion, keine In-App-Käufe, keine versteckten Kosten. Was im Umschlag steckt, ist alles – ohne Nachkaufen, ohne Haken.",
+    q: "Gibt es Werbung oder versteckte Kosten?",
+    a: "Nein. NomiPost ist komplett werbefrei. Was im Umschlag steckt, ist alles \u2014 ohne Nachkaufen, ohne Haken.",
   },
   {
-    q: "Wie persönlich wird der Brief wirklich?",
-    a: "Sehr persönlich. Die Briefe greifen den Namen und die Interessen deines Kindes auf – inklusive einem wiederkehrenden Begleit-Element, das in jedem Brief auftaucht und das dein Kind sofort erkennt. Für die Warteliste reichen jetzt dein Vorname und deine E-Mail – den Rest fragen wir, wenn es losgeht.",
+    q: "Wie pers\u00F6nlich wird der Brief wirklich?",
+    a: "Sehr. Die Briefe verwenden den Namen deines Kindes und greifen seine Interessen auf. F\u00FCr die Warteliste reichen Vorname und E-Mail \u2014 den Rest fragen wir, wenn es losgeht.",
   },
   {
     q: "Wie viel wird NomiPost kosten?",
-    a: "Der genaue Preis steht noch nicht fest – das ist auch einer der Gründe für diese Warteliste. Wir möchten etwas schaffen, das sich wirklich lohnt, und dabei einen fairen Preis finden. In der kurzen Frage nach der Anmeldung kannst du uns verraten, was du dir vorstellen könntest. Freiwillig, versteht sich.",
+    a: "Der genaue Preis steht noch nicht fest \u2014 wir m\u00F6chten etwas schaffen, das sich wirklich lohnt, und einen fairen Preis finden. Nach der Anmeldung kannst du uns verraten, was du dir vorstellen k\u00F6nntest.",
   },
   {
-    q: "Kann ich jederzeit pausieren oder aufhören?",
-    a: "Ja. Sobald die Briefe verschickt werden, kannst du jederzeit pausieren oder aufhören. Kein Kleingedrucktes, keine Mindestlaufzeit – der aktuelle Monat läuft zu Ende, und danach bist du frei.",
+    q: "Kann ich jederzeit aufh\u00F6ren?",
+    a: "Ja. Kein Kleingedrucktes, keine Mindestlaufzeit. Du kannst jederzeit pausieren oder k\u00FCndigen.",
   },
 ];
 

@@ -38,9 +38,9 @@ export default function Characters() {
             <span className="italic text-blue-600">fünf Persönlichkeiten.</span>
           </h2>
           <p className="mt-6 md:mt-8 text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto text-pretty">
-            Auf der Reise begegnet Nomi Freunden, die bleiben — jeder mit einer
-            eigenen Farbe, einer eigenen Art. Jedes Kind findet sich in einem von
-            ihnen wieder.
+            Nomi reist nicht allein. Unterwegs begegnet Nomi vier Freunden —
+            jeder mit einem eigenen Charakter. Dein Kind wird schnell einen
+            Liebling haben.
           </p>
           <HandDivider className="mt-8 md:mt-10" />
         </div>
@@ -221,7 +221,7 @@ export default function Characters() {
                           className="w-1.5 h-1.5 rounded-full"
                           style={{ backgroundColor: active.colorHex }}
                         />
-                        Archetyp
+                        Wer ist das?
                       </span>
                       <p className="headline-serif text-lg md:text-xl font-semibold text-slate-800 mb-2.5 leading-tight">
                         {active.archetype}
@@ -235,7 +235,7 @@ export default function Characters() {
                     <div className="mb-7 md:mb-8">
                       <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-semibold px-3 py-1 rounded-full mb-3 bg-amber-50 text-amber-700">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                        Für dein Kind
+                        Was dein Kind lernt
                       </span>
                       <p className="text-[0.9rem] md:text-base text-slate-600 leading-[1.7] text-pretty">
                         {active.funktion}

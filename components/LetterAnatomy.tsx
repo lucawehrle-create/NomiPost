@@ -6,27 +6,27 @@ import WatercolorBlob from "./WatercolorBlob";
 
 const items = [
   {
-    title: "Eine Abenteuer-Geschichte",
+    title: "Eine illustrierte Geschichte",
     description:
-      "Nomi erz\u00E4hlt von einem neuen Ort, einer Begegnung, einem R\u00E4tsel \u2013 mit Illustrationen und einem Cliffhanger am Ende.",
+      "Nomi erz\u00E4hlt von den Orten, die es entdeckt hat \u2014 spannend, liebevoll illustriert, mit einem Cliffhanger, der Lust auf den n\u00E4chsten Brief macht.",
     color: "#3B82F6",
   },
   {
     title: "R\u00E4tsel & Mitmach-Seiten",
     description:
-      "Geheimschrift, Knobeleien, Bastel-Ideen \u2013 passend zur Geschichte. Mit Dingen, die sowieso in der Schublade liegen.",
+      "Geheimschrift, Knobeleien, Bastel-Ideen \u2014 alles passend zur Geschichte. Ohne Zusatzmaterial, ohne Aufwand f\u00FCr dich.",
     color: "#059669",
   },
   {
     title: "Sammelkarten & Sticker",
     description:
-      "Zwei Sammelkarten und ein Entdecker-Sticker in jedem Brief. Nach 12 Monaten: eine vollst\u00E4ndige Sammlung.",
+      "Zwei Sammelkarten und ein Entdecker-Sticker in jedem Brief. Nach 12 Monaten: eine vollst\u00E4ndige Sammlung f\u00FCrs Kinderzimmer.",
     color: "#7C3AED",
   },
   {
     title: "Ein Antwortbrief",
     description:
-      "Dein Kind schreibt Nomi zur\u00FCck. Vielleicht der Anfang einer echten Brieffreundschaft.",
+      "Dein Kind schreibt Nomi zur\u00FCck \u2014 und wird Teil der Geschichte.",
     color: "#DC2626",
   },
 ];

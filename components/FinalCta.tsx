@@ -27,7 +27,7 @@ export default function FinalCta() {
         >
           <div className="eyebrow mb-5 md:mb-6 justify-center">
             <span className="w-8 md:w-10 h-px bg-amber-400" />
-            <span className="text-pretty">Nomi packt schon den ersten Umschlag</span>
+            <span className="text-pretty">Der erste Brief entsteht gerade</span>
             <span className="w-8 md:w-10 h-px bg-amber-400" />
           </div>
 
@@ -40,9 +40,8 @@ export default function FinalCta() {
           <HandDivider className="mt-8 mb-8" />
 
           <p className="text-base md:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto text-pretty">
-            Nur dein Vorname und deine E-Mail – mehr braucht es nicht. Keine
-            Werbung, kein Stress. Nur eine Nachricht, sobald Nomis erster
-            Brief auf die Reise geht. Und du bist ganz vorne dabei.
+            Vorname und E-Mail — mehr braucht es nicht. Wir melden uns,
+            sobald der erste Brief auf die Reise geht.
           </p>
 
           <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -68,7 +67,7 @@ export default function FinalCta() {
           </div>
 
           <p className="handwritten text-lg md:text-xl text-amber-700 mt-8 md:mt-10">
-            Wir freuen uns auf dich ✦
+            Nomi freut sich auf dein Kind ✦
           </p>
         </motion.div>
       </div>

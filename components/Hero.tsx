@@ -46,7 +46,7 @@ export default function Hero() {
           <div className="lg:col-span-7 min-w-0">
             <div className="eyebrow mb-5 md:mb-6">
               <span className="w-8 md:w-10 h-px bg-amber-400" />
-              Die monatliche Post für Kinder von 5–10
+              Persönliche Post für Kinder von 5 bis 10
               <span className="w-8 md:w-10 h-px bg-amber-400" />
             </div>
 
@@ -77,12 +77,10 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed max-w-full md:max-w-[36rem] text-pretty">
-              Jeden Monat schickt{" "}
-              <span className="text-blue-600 font-semibold">Nomi</span> –
-              ein neugieriges, tollpatschiges Fantasiewesen – einen
-              persönlichen Brief an dein Kind. Mit einer Geschichte, einem
-              Rätsel und Dingen zum Mitmachen. Eine Alternative zum Bildschirm,
-              auf die sich Kinder wirklich freuen.
+              <span className="text-blue-600 font-semibold">Nomi</span> ist
+              ein Fantasiewesen auf Entdeckungsreise — und schreibt deinem Kind
+              jeden Monat einen persönlichen Brief. Mit illustrierten Geschichten,
+              Rätseln, Sammelkarten und Dingen zum Mitmachen. Ohne Bildschirm.
             </p>
 
             <div className="mt-8 md:mt-10 w-full max-w-full md:max-w-[38rem]">
@@ -108,11 +106,11 @@ export default function Hero() {
               </div>
               <p className="leading-tight">
                 <span className="font-semibold text-slate-800 text-[13px] md:text-sm">
-                  Die ersten Familien sind schon dabei.
+                  Die ersten Familien warten schon.
                 </span>
                 <br />
                 <span className="text-[11px] md:text-xs">
-                  Werde Teil der ersten Welle.
+                  Sichere dir deinen Platz.
                 </span>
               </p>
             </div>
