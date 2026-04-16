@@ -1,74 +1,75 @@
 "use client";
 
 import { m as motion } from "framer-motion";
-import { Mail, Layers, MapPin } from "lucide-react";
 
 const stats = [
   {
     number: "12",
     label: "Briefe",
-    sub: "Eine Geschichte, die Monat f\u00FCr Monat w\u00E4chst.",
-    icon: Mail,
+    sub: "Jeden Monat ein neues Abenteuer — eine Geschichte, die w\u00E4chst.",
     color: "#3B82F6",
+    emoji: "\uD83D\uDCE8",
   },
   {
     number: "24",
     label: "Sammelkarten",
-    sub: "Zwei pro Brief \u2013 eine kleine Galerie f\u00FCrs Kinderzimmer.",
-    icon: Layers,
+    sub: "Zwei in jedem Umschlag. Freunde, Orte, Entdeckungen — zum Tauschen und Aufbewahren.",
     color: "#7C3AED",
+    emoji: "\u2728",
   },
   {
     number: "1",
     label: "Entdecker-Karte",
-    sub: "12 Sticker, 12 Felder \u2013 nach einem Jahr ist die Welt komplett.",
-    icon: MapPin,
+    sub: "Gro\u00DFes Poster mit 12 Feldern. Jeden Monat kommt ein Sticker dazu — bis die Welt komplett ist.",
     color: "#059669",
+    emoji: "\uD83D\uDDFA\uFE0F",
   },
 ];
 
 export default function TheJourney() {
   return (
     <section
-      className="relative overflow-hidden py-12 md:py-16 lg:py-20"
+      className="relative overflow-hidden py-14 md:py-20 lg:py-24"
       style={{
         background:
           "linear-gradient(180deg, #FFF9EE 0%, #FFFBF5 50%, #FFF9EE 100%)",
       }}
     >
       <div className="container-wide relative z-10">
+        <div className="text-center mb-10 md:mb-14">
+          <p className="handwritten text-lg md:text-xl text-amber-700">
+            Was nach 12 Monaten entsteht ✦
+          </p>
+        </div>
+
         <div className="max-w-5xl mx-auto">
-          <div className="grid sm:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+          <div className="grid sm:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{
-                  duration: 0.4,
-                  delay: i * 0.08,
+                  duration: 0.45,
+                  delay: i * 0.1,
                   ease: "easeOut",
                 }}
-                className="text-center"
+                className="paper-card p-6 md:p-8 text-center group hover:-translate-y-1 transition-all duration-500"
               >
-                <div className="relative w-10 h-10 md:w-12 md:h-12 mx-auto mb-3">
-                  <stat.icon
-                    className="w-full h-full"
-                    style={{ color: stat.color }}
-                    strokeWidth={1.5}
-                  />
+                <div className="text-3xl md:text-4xl mb-3 md:mb-4">
+                  {stat.emoji}
                 </div>
                 <div
-                  className="headline-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-none mb-1"
+                  className="headline-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-none mb-2"
                   style={{ color: stat.color }}
                 >
                   {stat.number}
                 </div>
-                <p className="headline-serif text-base md:text-lg font-semibold text-slate-800 mb-1">
+                <p className="headline-serif text-base md:text-lg font-semibold text-slate-800 mb-3">
                   {stat.label}
                 </p>
-                <p className="text-sm text-slate-500 leading-relaxed text-pretty max-w-[220px] mx-auto">
+                <p className="text-sm text-slate-500 leading-relaxed text-pretty">
                   {stat.sub}
                 </p>
               </motion.div>

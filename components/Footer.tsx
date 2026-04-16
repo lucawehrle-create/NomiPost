@@ -1,23 +1,28 @@
-import CompassRose from "./CompassRose";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden pt-14 pb-10 md:pt-20 md:pb-12 lg:pt-28 lg:pb-14 border-t border-amber-200/40" style={{ background: "linear-gradient(180deg, #FFF8EE 0%, #FFF5E6 100%)" }}>
+    <footer
+      className="relative overflow-hidden pt-14 pb-10 md:pt-20 md:pb-12 lg:pt-28 lg:pb-14 border-t border-amber-200/40"
+      style={{
+        background: "linear-gradient(180deg, #FFF8EE 0%, #FFF5E6 100%)",
+      }}
+    >
       <div className="container-wide">
         <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-start">
           <div className="sm:col-span-2 lg:col-span-5">
-            <div className="flex items-center gap-3 mb-4 md:mb-5">
-              <div className="w-11 h-11 md:w-12 md:h-12">
-                <CompassRose className="w-full h-full" />
-              </div>
-              <span className="headline-serif text-xl md:text-2xl font-semibold text-slate-800">
-                NomiPost
-              </span>
-            </div>
+            <a href="/" className="inline-block mb-5 md:mb-6">
+              <Image
+                src="/images/Logo.png"
+                alt="NomiPost"
+                width={300}
+                height={50}
+                className="h-8 md:h-9 w-auto"
+              />
+            </a>
             <p className="text-sm lg:text-base text-slate-500 leading-relaxed max-w-sm mb-5 md:mb-6">
               Persönliche Post für kleine Entdecker. Abenteuer in Briefform,
-              jeden Monat neu. Etwas, an das sich dein Kind noch Jahre
-              später erinnert.
+              jeden Monat neu.
             </p>
             <p className="handwritten text-base md:text-lg text-amber-700 flex items-center gap-2">
               <span className="w-6 h-px bg-amber-700" />
@@ -65,17 +70,17 @@ export default function Footer() {
               Bleib in Kontakt
             </h4>
             <p className="text-sm text-slate-700 mb-5 leading-relaxed">
-              Zwei Felder, und du bist dabei. Wir melden uns, sobald Nomis
-              erster Umschlag auf die Reise geht.
+              Vorname und E-Mail — mehr braucht es nicht. Wir melden uns,
+              sobald der erste Brief fertig ist.
             </p>
-            <a href="#warteliste" className="btn-primary py-3 px-6 text-sm">
+            <a href="#top" className="btn-primary py-3 px-6 text-sm">
               Zur Warteliste
               <span className="text-amber-300 text-xs">✦</span>
             </a>
           </div>
         </div>
 
-        <div className="mt-10 md:mt-16 lg:mt-20 pt-6 md:pt-8 border-t border-slate-200/70 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="mt-10 md:mt-16 lg:mt-20 pt-6 md:pt-8 border-t border-amber-200/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} NomiPost · Mit Liebe gestaltet ✦</p>
           <div className="flex items-center gap-6">
             <a
