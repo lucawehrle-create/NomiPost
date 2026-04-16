@@ -8,21 +8,24 @@ import WatercolorBlob from "./WatercolorBlob";
 const stats = [
   {
     number: "12",
-    label: "persönliche Briefe",
-    sub: "Eine Geschichte, die Monat für Monat wächst.",
+    label: "pers\u00F6nliche Briefe",
+    sub: "Eine Geschichte, die Monat f\u00FCr Monat w\u00E4chst.",
     icon: Mail,
+    color: "#3B82F6",
   },
   {
     number: "24",
     label: "Sammelkarten",
     sub: "Zwei in jedem Umschlag. Eine kleine Galerie im Kinderzimmer.",
     icon: Layers,
+    color: "#7C3AED",
   },
   {
     number: "12",
     label: "Entdecker-Sticker",
-    sub: "Für die große Karte, die im ersten Brief mitkommt.",
+    sub: "F\u00FCr die gro\u00DFe Karte, die im ersten Brief mitkommt.",
     icon: MapPin,
+    color: "#059669",
   },
 ];
 
@@ -31,7 +34,8 @@ export default function TheJourney() {
   return (
     <section
       id="reise"
-      className="section-spacing relative overflow-hidden bg-gradient-to-b from-slate-50/60 via-white to-slate-50/40"
+      className="section-spacing relative overflow-hidden"
+      style={{ background: "linear-gradient(180deg, #FFF9EE 0%, #FFFBF5 40%, #FFF9EE 100%)" }}
     >
       <WatercolorBlob
         className="absolute top-20 right-0 w-[500px] opacity-20 pointer-events-none"
@@ -79,15 +83,16 @@ export default function TheJourney() {
               className="paper-card hand-border p-7 md:p-9 lg:p-10 text-center sm:last:col-span-2 lg:last:col-span-1 group hover:-translate-y-1 transition-all duration-500"
             >
               <div className="relative w-12 h-12 md:w-14 md:h-14 mx-auto mb-4 md:mb-5">
-                <div className="absolute inset-0 bg-amber-400/10 rounded-full blur-xl" />
+                <div className="absolute inset-0 rounded-full blur-xl" style={{ backgroundColor: `${stat.color}15` }} />
                 <div className="relative w-full h-full flex items-center justify-center">
                   <stat.icon
-                    className="w-6 h-6 md:w-7 md:h-7 text-amber-700"
+                    className="w-6 h-6 md:w-7 md:h-7"
+                    style={{ color: stat.color }}
                     strokeWidth={1.5}
                   />
                 </div>
               </div>
-              <div className="headline-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-blue-600 leading-none mb-3">
+              <div className="headline-serif text-5xl md:text-6xl lg:text-7xl font-semibold leading-none mb-3" style={{ color: stat.color }}>
                 {stat.number}
               </div>
               <p className="headline-serif text-base md:text-lg lg:text-xl font-semibold text-slate-800 mb-2">

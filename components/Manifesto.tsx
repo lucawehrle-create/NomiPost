@@ -6,7 +6,7 @@ import WatercolorBlob from "./WatercolorBlob";
 export default function Manifesto() {
   return (
     <section className="relative py-20 md:py-32 lg:py-44 overflow-hidden">
-      <div className="absolute inset-0 bg-slate-800" />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #1a2744 0%, #1e293b 50%, #1f2937 100%)" }} />
 
       {/* Subtile Sterne im Hintergrund */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none">

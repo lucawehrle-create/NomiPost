@@ -9,6 +9,7 @@ export default function FinalCta() {
     <section
       id="warteliste"
       className="relative section-spacing-sm overflow-hidden"
+      style={{ background: "linear-gradient(180deg, #FFFBF5 0%, #FFF5E6 50%, #FFFBF5 100%)" }}
     >
       <WatercolorBlob
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] opacity-25 pointer-events-none"

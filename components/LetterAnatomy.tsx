@@ -10,36 +10,42 @@ const items = [
     description:
       "Nomi erzählt von einem neuen Ort, einer Begegnung, einem Rätsel – mit Illustrationen und einem Cliffhanger am Ende. Dein Kind kann den nächsten Brief kaum erwarten.",
     label: "01",
+    color: "#3B82F6",
   },
   {
     title: "Ein Rätsel zum Knobeln",
     description:
       "Geheimschrift, Wortsuche oder Quiz – passend zur Geschichte. Für die, die gerne zwischen den Zeilen lesen.",
     label: "02",
+    color: "#059669",
   },
   {
     title: "Ein Ausmalbild",
     description:
       "Eine ganzseitige Illustration zum Ausmalen. Ein ruhiger Nachmittag mit Stiften statt Bildschirm.",
     label: "03",
+    color: "#7C3AED",
   },
   {
     title: "\u201EWusstest du schon?\u201C",
     description:
       "Spannende Fakten, die Nomi auf ihrer Reise entdeckt hat – und die dein Kind beim Abendessen erzählen wird.",
     label: "04",
+    color: "#D97706",
   },
   {
     title: "Etwas zum Mitmachen",
     description:
       "Basteln, Experimentieren oder Entdecken – mit Dingen, die sowieso in der Schublade liegen. Ohne Zusatzkauf.",
     label: "05",
+    color: "#DC2626",
   },
   {
     title: "Ein Antwortbrief",
     description:
       "Dein Kind schreibt Nomi zurück. Vielleicht der Anfang einer echten Brieffreundschaft.",
     label: "06",
+    color: "#3B82F6",
   },
 ];
 
@@ -108,13 +114,27 @@ export default function LetterAnatomy() {
                 delay: (i % 3) * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="paper-card p-6 md:p-8 lg:p-10 hand-border group hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-500"
+              className="paper-card p-6 md:p-8 lg:p-10 hand-border group hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
             >
+              {/* Colored top bar */}
+              <div
+                className="absolute top-0 left-0 right-0 h-[3px]"
+                style={{ backgroundColor: item.color }}
+              />
               <div className="flex items-start justify-between mb-4 md:mb-5">
-                <span className="text-xs font-bold tracking-[0.2em] text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
+                <span
+                  className="text-xs font-bold tracking-[0.2em] px-2.5 py-1 rounded-full"
+                  style={{
+                    color: item.color,
+                    backgroundColor: `${item.color}14`,
+                  }}
+                >
                   {item.label}
                 </span>
-                <span className="text-amber-500 text-lg group-hover:rotate-[90deg] transition-transform duration-700">
+                <span
+                  className="text-lg group-hover:rotate-[90deg] transition-transform duration-700"
+                  style={{ color: item.color }}
+                >
                   ✦
                 </span>
               </div>

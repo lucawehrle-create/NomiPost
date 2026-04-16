@@ -2,7 +2,7 @@ import CompassRose from "./CompassRose";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden pt-14 pb-10 md:pt-20 md:pb-12 lg:pt-28 lg:pb-14 border-t border-slate-200/70 bg-gradient-to-b from-slate-50 to-slate-100/60">
+    <footer className="relative overflow-hidden pt-14 pb-10 md:pt-20 md:pb-12 lg:pt-28 lg:pb-14 border-t border-amber-200/40" style={{ background: "linear-gradient(180deg, #FFF8EE 0%, #FFF5E6 100%)" }}>
       <div className="container-wide">
         <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-start">
           <div className="sm:col-span-2 lg:col-span-5">

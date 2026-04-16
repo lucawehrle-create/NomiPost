@@ -10,18 +10,27 @@ const promises = [
     description:
       "Kein Brief von der Stange. Jeder Umschlag enthält eine kleine Welt, die für dein Kind gemacht wurde – mit seinen Lieblingsthemen und einem wiederkehrenden Begleiter, den es sofort erkennt.",
     icon: Heart,
+    iconColor: "text-blue-500",
+    glowColor: "bg-blue-400/20",
+    bgTint: "bg-blue-50/50",
   },
   {
     title: "Kunstvoll bis ins Detail",
     description:
       "Jeder Brief fühlt sich an wie eine Seite aus einem Kinderbuch – mit Illustrationen, die man gerne aufhebt statt wegwirft.",
     icon: Palette,
+    iconColor: "text-violet-600",
+    glowColor: "bg-violet-400/20",
+    bgTint: "bg-violet-50/50",
   },
   {
     title: "Mehr als nur lesen",
     description:
       "Zum Lesen, Kleben, Malen, Knobeln, Basteln, Anhören und unter das Kopfkissen legen. Bildschirmfreie Fantasiezeit, die von ganz allein entsteht – ohne dass du etwas dazukaufen musst.",
     icon: Sparkles,
+    iconColor: "text-amber-500",
+    glowColor: "bg-amber-400/20",
+    bgTint: "bg-amber-50/50",
   },
 ];
 
@@ -51,13 +60,13 @@ export default function Promises() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-              className="text-center group sm:last:col-span-2 lg:last:col-span-1"
+              className={`text-center group sm:last:col-span-2 lg:last:col-span-1 rounded-3xl ${p.bgTint} p-8 md:p-10`}
             >
               <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-5 md:mb-8 transition-transform duration-700 group-hover:-translate-y-1 group-hover:scale-105">
-                <div className="absolute inset-0 bg-amber-400/10 rounded-full blur-2xl" />
+                <div className={`absolute inset-0 ${p.glowColor} rounded-full blur-2xl`} />
                 <div className="relative w-full h-full flex items-center justify-center">
                   <p.icon
-                    className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-slate-800"
+                    className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 ${p.iconColor}`}
                     strokeWidth={1.5}
                   />
                 </div>

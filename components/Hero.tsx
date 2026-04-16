@@ -28,6 +28,18 @@ export default function Hero() {
       <div className="absolute top-40 left-[6%] text-amber-400/30 text-base md:text-lg lg:text-xl hidden sm:block animate-float pointer-events-none">
         ✦
       </div>
+      <div className="absolute top-[45%] right-[3%] text-blue-400/30 text-sm md:text-base animate-twinkle pointer-events-none">
+        ✦
+      </div>
+      <div className="absolute top-[18%] left-[15%] text-emerald-400/25 text-xs md:text-sm hidden md:block animate-float-slow pointer-events-none" style={{ animationDelay: "2s" }}>
+        ✦
+      </div>
+      <div className="absolute top-[65%] left-[4%] text-coral-400/25 text-sm hidden lg:block animate-twinkle pointer-events-none" style={{ animationDelay: "1.5s" }}>
+        ✦
+      </div>
+      <div className="absolute top-[55%] right-[12%] text-amber-300/20 text-xs animate-float pointer-events-none" style={{ animationDelay: "3s" }}>
+        ✦
+      </div>
 
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
@@ -87,7 +99,7 @@ export default function Hero() {
                 ].map((p, i) => (
                   <div
                     key={i}
-                    className="w-8 h-8 md:w-9 md:h-9 rounded-full border-[3px] border-white flex items-center justify-center text-[10px] md:text-[11px] text-white font-semibold shadow-sm"
+                    className="w-8 h-8 md:w-9 md:h-9 rounded-full border-[3px] border-white flex items-center justify-center text-[10px] md:text-[11px] text-white font-semibold shadow-[0_2px_8px_rgba(251,191,36,0.25)]"
                     style={{ backgroundColor: p.bg }}
                   >
                     {p.letters}

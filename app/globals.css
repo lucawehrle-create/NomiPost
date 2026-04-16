@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --color-bg: #f8fafc; /* Slate 50 */
-    --color-ink: #1e293b; /* Slate 800 */
+    --color-bg: #FFFBF5;
+    --color-ink: #1e293b;
   }
 
   html {
@@ -25,27 +25,26 @@
   }
 
   ::selection {
-    background: #fef3c7; /* Amber 100 */
-    color: #1e293b; /* Slate 800 */
+    background: #fef3c7;
+    color: #1e293b;
   }
 
-  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #f8fafc;
+    background: var(--color-bg);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #cbd5e1; /* Slate 300 */
-    border: 3px solid #f8fafc;
+    background: #e2c9a0;
+    border: 3px solid var(--color-bg);
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8; /* Slate 400 */
+    background: #c9a97a;
   }
 }
 
@@ -120,21 +119,22 @@
     font-family: var(--font-caveat), cursive;
   }
 
-  /* Surfaces — Soft 3D / Vinyl Toy: keine Outlines, weiche Volumen via Schatten */
+  /* Surfaces — Soft 3D / Vinyl Toy */
   .paper-card {
-    @apply relative bg-white;
+    @apply relative;
+    background: #FFFFFF;
     border-radius: 28px;
     box-shadow:
-      0 2px 4px -1px rgba(30, 41, 59, 0.03),
-      0 10px 20px -4px rgba(30, 41, 59, 0.06),
-      0 30px 60px -20px rgba(30, 41, 59, 0.1);
+      0 2px 4px -1px rgba(180, 140, 80, 0.04),
+      0 10px 24px -6px rgba(180, 140, 80, 0.08),
+      0 32px 64px -20px rgba(30, 41, 59, 0.08);
   }
 
   .paper-card-elevated {
     box-shadow:
-      0 4px 8px -2px rgba(30, 41, 59, 0.04),
-      0 16px 32px -8px rgba(30, 41, 59, 0.08),
-      0 40px 80px -20px rgba(30, 41, 59, 0.14);
+      0 4px 8px -2px rgba(180, 140, 80, 0.06),
+      0 16px 36px -8px rgba(180, 140, 80, 0.10),
+      0 44px 88px -20px rgba(30, 41, 59, 0.12);
   }
 
   /* Reine Radius-Angabe — kein Outline, passend zum Vinyl-Toy-Look */
@@ -255,7 +255,6 @@
     text-wrap: pretty;
   }
 
-  /* Gold-Glow für Amber-Akzente */
   .gold-glow {
     filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.4));
   }
@@ -264,3 +263,20 @@
     filter: drop-shadow(0 0 40px rgba(167, 139, 250, 0.3));
   }
 }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-twinkle { animation: twinkle 3s ease-in-out infinite; }

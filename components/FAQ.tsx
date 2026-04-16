@@ -38,7 +38,11 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-spacing relative overflow-hidden">
+    <section
+      id="faq"
+      className="section-spacing relative overflow-hidden"
+      style={{ background: "linear-gradient(180deg, #FFFBF5 0%, #FFF7EB 50%, #FFFBF5 100%)" }}
+    >
       <div className="container-wide relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20">
           <div className="eyebrow mb-5 md:mb-6 justify-center">
