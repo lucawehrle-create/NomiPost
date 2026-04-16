@@ -117,16 +117,28 @@ export default function Hero() {
           </div>
 
           <div className="lg:col-span-5 min-w-0 relative flex justify-center">
-            <Image
-              src="/images/hero-visual.png"
-              alt="NomiPost – Persönliche Post für Kinder"
-              width={600}
-              height={600}
-              quality={80}
-              priority
-              sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 500px"
-              className="w-[280px] sm:w-[320px] md:w-[340px] lg:w-full lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-[0_20px_40px_rgba(30,41,59,0.12)]"
-            />
+            <div className="relative">
+              {/* Weicher Glow hinter Nomi */}
+              <div
+                className="absolute inset-0 rounded-full pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(251,191,36,0.08) 50%, transparent 70%)",
+                  filter: "blur(40px)",
+                  transform: "scale(1.3)",
+                }}
+              />
+              <Image
+                src="/images/nomi-body.png"
+                alt="Nomi — das Fantasiewesen hinter NomiPost"
+                width={800}
+                height={800}
+                quality={80}
+                priority
+                sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, 400px"
+                className="relative z-10 w-[220px] sm:w-[260px] md:w-[280px] lg:w-[360px] xl:w-[400px] h-auto mx-auto drop-shadow-[0_24px_48px_rgba(59,130,246,0.18)]"
+              />
+            </div>
           </div>
         </div>
       </div>
