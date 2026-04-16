@@ -197,9 +197,6 @@ export default function Characters() {
                       >
                         {active.name}
                       </h3>
-                      <p className="text-[11px] font-mono uppercase tracking-[0.2em] mt-2 text-slate-400">
-                        {active.colorLabel}
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -267,82 +264,25 @@ export default function Characters() {
                       </p>
                     </div>
 
-                    {/* Grid: Signatur + Persönlichkeit */}
-                    <div className="grid sm:grid-cols-2 gap-6 md:gap-8 mb-7 md:mb-8">
-                      {/* Erkennungszeichen */}
-                      <div>
-                        <p className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-400 mb-3">
-                          Erkennungszeichen
-                        </p>
-                        <ul className="space-y-2.5">
-                          {active.signaturElemente.map((e) => (
-                            <li
-                              key={e}
-                              className="flex items-start gap-2.5 text-[0.85rem] text-slate-600 leading-snug"
-                            >
-                              <span
-                                className="flex-shrink-0 w-[7px] h-[7px] rounded-full mt-[5px]"
-                                style={{
-                                  backgroundColor: active.colorHex,
-                                  boxShadow: `0 0 6px ${active.colorHex}40`,
-                                }}
-                              />
-                              <span>{e}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Persönlichkeit */}
-                      <div>
-                        <p className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-400 mb-3">
-                          Persönlichkeit
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {active.traits.map((t) => (
-                            <span
-                              key={t}
-                              className="text-xs font-semibold px-3.5 py-[6px] rounded-full transition-colors"
-                              style={{
-                                backgroundColor: `${active.colorHex}10`,
-                                color: active.colorHex,
-                                boxShadow: `0 2px 8px -3px ${active.colorHex}25`,
-                              }}
-                            >
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Schwäche – warmer Abschluss */}
-                    <div className="mt-auto pt-2">
-                      <div
-                        className="relative p-5 md:p-6 overflow-hidden"
-                        style={{ borderRadius: "20px" }}
-                      >
-                        {/* Hintergrund mit subtiler Charakter-Farbe */}
-                        <div
-                          className="absolute inset-0 pointer-events-none"
-                          style={{
-                            background: `linear-gradient(135deg, ${active.colorHex}06 0%, ${active.colorHex}03 100%)`,
-                            borderRadius: "20px",
-                            boxShadow: `inset 0 0 0 1px ${active.colorHex}10`,
-                          }}
-                        />
-                        <div className="relative">
-                          <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-2 flex items-center gap-2 text-slate-400">
-                            <span
-                              className="w-4 h-px"
-                              style={{ backgroundColor: `${active.colorHex}30` }}
-                            />
-                            Macht menschlich
-                          </p>
-                          <p className="text-[0.85rem] text-slate-500 leading-relaxed text-pretty italic">
-                            {active.schwaeche}
-                          </p>
-                        </div>
+                    {/* Persönlichkeit */}
+                    <div className="mt-auto">
+                      <p className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-400 mb-3">
+                        Persönlichkeit
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {active.traits.map((t) => (
+                          <span
+                            key={t}
+                            className="text-xs font-semibold px-3.5 py-[6px] rounded-full"
+                            style={{
+                              backgroundColor: `${active.colorHex}10`,
+                              color: active.colorHex,
+                              boxShadow: `0 2px 8px -3px ${active.colorHex}25`,
+                            }}
+                          >
+                            {t}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>

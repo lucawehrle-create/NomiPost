@@ -2,14 +2,11 @@ export type Character = {
   id: string;
   name: string;
   colorHex: string;
-  colorLabel: string;
   quote: string;
   archetype: string;
   archetypeText: string;
   funktion: string;
-  signaturElemente: string[];
   traits: string[];
-  schwaeche: string;
 };
 
 export const characters: Character[] = [
@@ -17,38 +14,24 @@ export const characters: Character[] = [
     id: "nomi",
     name: "Nomi",
     colorHex: "#3B82F6",
-    colorLabel: "Blue",
     quote: "Huch! Hast du das auch gerade gesehen?",
     archetype: "Die Neugierige / Das Herz der Reise",
     archetypeText:
-      "Nomi ist ein Fantasiewesen – kein Tier, kein Mensch. Mit leuchtendem Stirnmal, großen runden Ohren und einer kleinen Antenne, mit der Nomi neue Ideen empfängt. Nomi ist das Wesen, das losgeht, bevor es weiß, wohin – und genau das macht die Reise spannend.",
+      "Nomi ist ein Fantasiewesen \u2013 kein Tier, kein Mensch. Mit leuchtendem Stirnmal, gro\u00DFen runden Ohren und einer kleinen Antenne, mit der Nomi neue Ideen empf\u00E4ngt. Nomi ist das Wesen, das losgeht, bevor es wei\u00DF, wohin \u2013 und genau das macht die Reise spannend.",
     funktion:
-      "Nomi ist die Einladung, die Welt mit offenen Augen zu betrachten. Nomi zeigt: Fragen stellen ist das Schönste, was man tun kann — und jede Antwort führt zur nächsten Frage.",
-    signaturElemente: [
-      "Leuchtendes Stirnmal",
-      "Große runde Ohren",
-      "Kleine Antenne für neue Ideen",
-    ],
+      "Nomi ist die Einladung, die Welt mit offenen Augen zu betrachten. Nomi zeigt: Fragen stellen ist das Sch\u00F6nste, was man tun kann \u2014 und jede Antwort f\u00FChrt zur n\u00E4chsten Frage.",
     traits: ["Neugierig", "Mutig", "Tollpatschig", "Warmherzig", "Verbindend"],
-    schwaeche:
-      "Stolpert über die eigenen Füße, wenn die Neugier größer ist als die Vorsicht. Nomi lernt, dass Innehalten manchmal der mutigste Schritt ist.",
   },
   {
     id: "lumi",
     name: "Lumi",
     colorHex: "#059669",
-    colorLabel: "Emerald",
-    quote: "Warte mal — lass mich das genauer anschauen.",
+    quote: "Warte mal \u2014 lass mich das genauer anschauen.",
     archetype: "Die Forscherin / Die Denkerin",
     archetypeText:
       "Lumi beobachtet. Wo andere hinrennen, bleibt Lumi kurz stehen. Lumi ist das Kind, das Steine umdreht, Wolken z\u00E4hlt und fragt: \u201EWarum ist der Himmel blau?\u201C \u2014 und nicht aufh\u00F6rt, bis eine Antwort kommt.",
     funktion:
-      "Repräsentiert den kognitiven Entdeckertrieb — das Bedürfnis, die Welt zu verstehen. Kinder zwischen 5 und 10 stellen bis zu 300 Fragen am Tag. Lumi zeigt: Fragen stellen ist klug, nicht nervig.",
-    signaturElemente: [
-      "Kopfausprägung — wie eine Antenne für Entdeckungen",
-      "Augenringe — wie eine Forscherbrille",
-      "Lupen-Stirnmal",
-    ],
+      "Repr\u00E4sentiert den kognitiven Entdeckertrieb \u2014 das Bed\u00FCrfnis, die Welt zu verstehen. Kinder zwischen 5 und 10 stellen bis zu 300 Fragen am Tag. Lumi zeigt: Fragen stellen ist klug, nicht nervig.",
     traits: [
       "Neugierig",
       "Geduldig",
@@ -56,25 +39,17 @@ export const characters: Character[] = [
       "Leise inspirierend",
       "Scharfsinnig",
     ],
-    schwaeche:
-      "Vergisst die Zeit beim Beobachten. Verpasst manchmal den Moment, weil Lumi das Detail so genau nachzeichnet. Muss lernen, manchmal einfach loszulassen und zu genießen, statt zu analysieren.",
   },
   {
     id: "kira",
     name: "Kira",
     colorHex: "#DC2626",
-    colorLabel: "Coral",
-    quote: "Los geht's! Wir schaffen das — zusammen!",
+    quote: "Los geht\u2019s! Wir schaffen das \u2014 zusammen!",
     archetype: "Die Mutige / Die Abenteurerin",
     archetypeText:
-      "Kira ist die Erste, die den Berg hochrennt, die Welle reitet, ins Problem hinein ruft. Nicht waghalsig — mutig. Kira hat auch mal Bammel, macht's aber trotzdem. Kira handelt aus Neugier und Begeisterung, nicht aus Dominanz.",
+      "Kira ist die Erste, die den Berg hochrennt, die Welle reitet, ins Problem hinein ruft. Nicht waghalsig \u2014 mutig. Kira hat auch mal Bammel, macht\u2019s aber trotzdem. Kira handelt aus Neugier und Begeisterung, nicht aus Dominanz.",
     funktion:
-      "Repräsentiert den motorischen Drang und das Gefühl von Selbstwirksamkeit. Kinder zwischen 5 und 10 wollen testen, wie weit sie kommen. Mit Kira lernt dein Kind: Mut ist nicht Angstfreiheit, sondern Handeln trotz Bammel.",
-    signaturElemente: [
-      "Flammenkrone — die weiche Spitze auf dem Kopf",
-      "Mini-Flügelchen an den Schultern",
-      "Sternen-Herz",
-    ],
+      "Repr\u00E4sentiert den motorischen Drang und das Gef\u00FChl von Selbstwirksamkeit. Kinder zwischen 5 und 10 wollen testen, wie weit sie kommen. Mit Kira lernt dein Kind: Mut ist nicht Angstfreiheit, sondern Handeln trotz Bammel.",
     traits: [
       "Mutig",
       "Energisch",
@@ -83,51 +58,35 @@ export const characters: Character[] = [
       "Ermutigend",
       "Temperamentvoll",
     ],
-    schwaeche:
-      "Kann nicht stillsitzen. Muss immer etwas tun. Kira lernt mit der Zeit, dass Pause machen kein Aufgeben ist — und Zuhören genauso mutig sein kann wie Loslegen.",
   },
   {
     id: "milo",
     name: "Milo",
     colorHex: "#7C3AED",
-    colorLabel: "Violet",
-    quote: "Was wäre, wenn…?",
-    archetype: "Der Kreative / Der Träumer",
+    quote: "Was w\u00E4re, wenn\u2026?",
+    archetype: "Der Kreative / Der Tr\u00E4umer",
     archetypeText:
-      "Milo sieht, was andere übersehen. Milo erzählt die Geschichten zwischen den Dingen: warum der Baum traurig aussieht, was die Wolken miteinander besprechen, wie die Welt wäre, wenn Schatten sprechen könnten.",
+      "Milo sieht, was andere \u00FCbersehen. Milo erz\u00E4hlt die Geschichten zwischen den Dingen: warum der Baum traurig aussieht, was die Wolken miteinander besprechen, wie die Welt w\u00E4re, wenn Schatten sprechen k\u00F6nnten.",
     funktion:
-      "Repräsentiert die Vorstellungskraft — das Bedürfnis, aus Wirklichkeit etwas Eigenes zu machen. Für Kinder, die gerne tagträumen, malen, erfinden. Milo zeigt: Fantasie ist keine Flucht. Sie ist eine eigene Art zu verstehen.",
-    signaturElemente: [
-      "Traum-Krone",
-      "Farbtupfer-Fell",
-      "Geschichten-Stirnmal",
-    ],
+      "Repr\u00E4sentiert die Vorstellungskraft \u2014 das Bed\u00FCrfnis, aus Wirklichkeit etwas Eigenes zu machen. F\u00FCr Kinder, die gerne tagtr\u00E4umen, malen, erfinden. Milo zeigt: Fantasie ist keine Flucht. Sie ist eine eigene Art zu verstehen.",
     traits: [
       "Fantasievoll",
       "Sensibel",
       "Verspielt",
-      "Tiefgründig",
+      "Tiefgr\u00FCndig",
       "Empathisch",
     ],
-    schwaeche:
-      "Verliert sich manchmal in den eigenen Gedanken. Milo lernt, dass das Teilen einer Idee sie nicht kleiner, sondern größer macht.",
   },
   {
     id: "tiko",
     name: "Tiko",
     colorHex: "#D97706",
-    colorLabel: "Amber",
-    quote: "Warte — gleich passiert was Lustiges!",
-    archetype: "Der Lustige / Die fröhliche Seele",
+    quote: "Warte \u2014 gleich passiert was Lustiges!",
+    archetype: "Der Lustige / Die fr\u00F6hliche Seele",
     archetypeText:
-      "Tiko lacht viel. Tiko ist das Wesen, das aus dem Stolpern eine Vorstellung macht und aus dem Regen einen Tanz. Tiko nimmt Dinge ernst — aber nie zu ernst.",
+      "Tiko lacht viel. Tiko ist das Wesen, das aus dem Stolpern eine Vorstellung macht und aus dem Regen einen Tanz. Tiko nimmt Dinge ernst \u2014 aber nie zu ernst.",
     funktion:
-      "Repräsentiert die Freude und das Spielerische — eine Grundhaltung, die Kinder brauchen, um Fehler ohne Angst zu machen. Mit Tiko lernt dein Kind: Lachen verbindet, und sich selbst nicht zu ernst nehmen ist eine echte Stärke.",
-    signaturElemente: [
-      "Spaß-Krone",
-      "Grinse-Öhrchen",
-      "Blubber-Stirnmal",
-    ],
+      "Repr\u00E4sentiert die Freude und das Spielerische \u2014 eine Grundhaltung, die Kinder brauchen, um Fehler ohne Angst zu machen. Mit Tiko lernt dein Kind: Lachen verbindet, und sich selbst nicht zu ernst nehmen ist eine echte St\u00E4rke.",
     traits: [
       "Lustig",
       "Herzlich",
@@ -136,7 +95,5 @@ export const characters: Character[] = [
       "Verbindend",
       "Unbeschwert",
     ],
-    schwaeche:
-      "Vergisst manchmal, dass nicht alles ein Witz ist. Tiko lernt mit der Zeit, auch leise sein zu dürfen — und dass Trost manchmal mehr wert ist als ein neuer Spaß.",
   },
 ];
