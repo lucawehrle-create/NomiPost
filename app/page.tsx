@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Promises from "@/components/Promises";
 import LetterAnatomy from "@/components/LetterAnatomy";
 import TheJourney from "@/components/TheJourney";
+import Characters from "@/components/Characters";
 import HowItWorks from "@/components/HowItWorks";
 import AboutNomi from "@/components/AboutNomi";
 import Manifesto from "@/components/Manifesto";
@@ -19,6 +20,7 @@ export default function Home() {
         <Promises />
         <LetterAnatomy />
         <TheJourney />
+        <Characters />
         <HowItWorks />
         <AboutNomi />
         <Manifesto />

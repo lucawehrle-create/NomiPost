@@ -26,14 +26,6 @@ const stats = [
   },
 ];
 
-// Die fünf Freunde – bewusst anonym. Farben erzählen genug.
-const friends = [
-  { color: "#3B82F6", ring: "ring-blue-500/30" },
-  { color: "#059669", ring: "ring-emerald-500/30" },
-  { color: "#DC2626", ring: "ring-coral-500/30" },
-  { color: "#7C3AED", ring: "ring-violet-500/30" },
-  { color: "#D97706", ring: "ring-amber-500/30" },
-];
 
 export default function TheJourney() {
   return (
@@ -189,47 +181,6 @@ export default function TheJourney() {
                 </p>
               </div>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Fünf-Freunde-Teaser: Farben, keine Namen */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mt-14 md:mt-20 lg:mt-24 max-w-3xl mx-auto text-center"
-        >
-          <p className="eyebrow justify-center mb-5 md:mb-6">
-            <span className="w-8 md:w-10 h-px bg-amber-400" />
-            Unterwegs
-            <span className="w-8 md:w-10 h-px bg-amber-400" />
-          </p>
-          <h3 className="headline-serif text-2xl md:text-3xl lg:text-[2rem] font-semibold text-slate-800 mb-5 md:mb-6 leading-tight text-balance">
-            Nomi reist nicht allein.
-          </h3>
-          <p className="text-base md:text-lg text-slate-700 leading-relaxed text-pretty max-w-2xl mx-auto mb-8 md:mb-10">
-            Auf der Reise begegnet Nomi Freunden, die bleiben – jeder mit einer
-            eigenen Farbe, einer eigenen Art. Wer sie sind, verrät der erste
-            Brief.
-          </p>
-          <div className="flex items-center justify-center gap-3 md:gap-5">
-            {friends.map((f, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.4,
-                  delay: 0.2 + i * 0.08,
-                  ease: "easeOut",
-                }}
-                className={`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full ring-4 ${f.ring} shadow-sm`}
-                style={{ backgroundColor: f.color }}
-                aria-hidden="true"
-              />
-            ))}
           </div>
         </motion.div>
 
