@@ -41,38 +41,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#reise"
-                  className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
-                >
-                  <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
-                  Die Sammlung
-                </a>
-              </li>
-              <li>
-                <a
                   href="#freunde"
                   className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
                 >
                   <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
                   Nomis Freunde
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#wie"
-                  className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
-                >
-                  <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
-                  Wie es funktioniert
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#nomi"
-                  className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
-                >
-                  <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
-                  Über Nomi
                 </a>
               </li>
               <li>

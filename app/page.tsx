@@ -1,11 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Promises from "@/components/Promises";
 import LetterAnatomy from "@/components/LetterAnatomy";
 import TheJourney from "@/components/TheJourney";
 import Characters from "@/components/Characters";
-import HowItWorks from "@/components/HowItWorks";
-import AboutNomi from "@/components/AboutNomi";
 import Manifesto from "@/components/Manifesto";
 import FAQ from "@/components/FAQ";
 import FinalCta from "@/components/FinalCta";
@@ -17,12 +14,9 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <Promises />
         <LetterAnatomy />
         <TheJourney />
         <Characters />
-        <HowItWorks />
-        <AboutNomi />
         <Manifesto />
         <FAQ />
         <FinalCta />
