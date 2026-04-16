@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { m as motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
 import { characters } from "@/lib/characters";
@@ -55,9 +56,6 @@ export default function Characters() {
                 aria-label={`${c.name} anzeigen`}
                 aria-pressed={isActive}
                 className="group flex flex-col items-center gap-2.5 md:gap-3 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4"
-                style={
-                  { "--char-color": c.colorHex } as React.CSSProperties
-                }
               >
                 <div className="relative">
                   {/* Glow hinter dem aktiven Kreis */}
@@ -81,19 +79,13 @@ export default function Characters() {
                       transform: isActive ? "scale(1.12)" : "scale(1)",
                     }}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={`/images/${c.id}-head.png`}
-                      alt=""
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      draggable={false}
+                      alt={c.name}
+                      fill
+                      sizes="96px"
+                      className="object-cover"
                     />
-                    <span className="absolute inset-0 flex items-center justify-center text-white/30 headline-serif text-2xl md:text-3xl lg:text-4xl font-bold select-none pointer-events-none">
-                      {c.name[0]}
-                    </span>
                   </div>
                 </div>
                 <span
@@ -122,8 +114,9 @@ export default function Characters() {
                 {/* ── Left: Character stage ── */}
                 <div className="lg:col-span-5 min-w-0 relative">
                   <div
-                    className="relative h-full min-h-[340px] sm:min-h-[400px] lg:min-h-[600px] overflow-hidden flex flex-col items-center justify-end"
+                    className="relative overflow-hidden flex flex-col items-center justify-end"
                     style={{
+                      minHeight: "clamp(340px, 50vw, 600px)",
                       background: `
                         radial-gradient(ellipse 70% 55% at 50% 45%, ${active.colorHex}20 0%, transparent 70%),
                         linear-gradient(180deg, ${active.colorHex}08 0%, ${active.colorHex}04 100%)
@@ -164,32 +157,17 @@ export default function Characters() {
                     </div>
 
                     {/* Body-Bild */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`/images/${active.id}-body.png`}
-                      alt={active.name}
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                      className="relative z-10 w-auto max-w-[75%] sm:max-w-[65%] lg:max-w-[80%] object-contain object-bottom"
-                      style={{ height: "78%", maxHeight: "480px" }}
-                      draggable={false}
-                    />
-
-                    {/* Placeholder-Initial */}
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <span
-                        className="headline-serif font-bold select-none opacity-[0.05]"
-                        style={{
-                          fontSize: "clamp(140px, 24vw, 240px)",
-                          color: active.colorHex,
-                        }}
-                      >
-                        {active.name[0]}
-                      </span>
+                    <div className="relative z-10 w-[65%] sm:w-[55%] lg:w-[70%] flex-1 min-h-0">
+                      <Image
+                        src={`/images/${active.id}-body.png`}
+                        alt={active.name}
+                        fill
+                        sizes="(max-width: 1024px) 55vw, 350px"
+                        className="object-contain object-bottom"
+                      />
                     </div>
 
-                    {/* Name + Farbe – unten zentriert */}
+                    {/* Name – unten zentriert */}
                     <div className="relative z-20 text-center pb-8 sm:pb-10 lg:pb-12 pt-4">
                       <h3
                         className="headline-serif text-4xl sm:text-5xl md:text-[3.5rem] font-bold leading-none"
