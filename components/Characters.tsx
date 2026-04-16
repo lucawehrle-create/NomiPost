@@ -44,8 +44,8 @@ export default function Characters() {
           <HandDivider className="mt-8 md:mt-10" />
         </div>
 
-        {/* Character buttons */}
-        <div className="flex justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mb-10 md:mb-14">
+        {/* ─── Character selector ─── */}
+        <div className="flex justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16">
           {characters.map((c) => {
             const isActive = activeId === c.id;
             return (
@@ -54,40 +54,51 @@ export default function Characters() {
                 onClick={() => setActiveId(c.id)}
                 aria-label={`${c.name} anzeigen`}
                 aria-pressed={isActive}
-                className="group flex flex-col items-center gap-2 md:gap-3 focus:outline-none"
+                className="group flex flex-col items-center gap-2.5 md:gap-3 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4"
+                style={
+                  { "--char-color": c.colorHex } as React.CSSProperties
+                }
               >
-                <div
-                  className="relative rounded-full overflow-hidden transition-all duration-500"
-                  style={{
-                    width: "clamp(56px, 10vw, 96px)",
-                    height: "clamp(56px, 10vw, 96px)",
-                    backgroundColor: c.colorHex,
-                    boxShadow: isActive
-                      ? `0 0 0 4px rgba(255,255,255,1), 0 0 0 7px ${c.colorHex}60, 0 14px 30px -6px ${c.colorHex}50`
-                      : `0 6px 16px -4px ${c.colorHex}30`,
-                    transform: isActive ? "scale(1.1)" : "scale(1)",
-                  }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`/images/characters/${c.id}-head.png`}
-                    alt=""
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
+                <div className="relative">
+                  {/* Glow hinter dem aktiven Kreis */}
+                  <div
+                    className="absolute inset-0 rounded-full blur-xl transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      backgroundColor: c.colorHex,
+                      opacity: isActive ? 0.3 : 0,
+                      transform: "scale(1.4)",
                     }}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    draggable={false}
                   />
-                  {/* Fallback: Anfangsbuchstabe */}
-                  <span className="absolute inset-0 flex items-center justify-center text-white/40 headline-serif text-2xl md:text-3xl lg:text-4xl font-bold select-none pointer-events-none">
-                    {c.name[0]}
-                  </span>
+                  <div
+                    className="relative rounded-full overflow-hidden transition-all duration-500"
+                    style={{
+                      width: "clamp(52px, 11vw, 96px)",
+                      height: "clamp(52px, 11vw, 96px)",
+                      backgroundColor: c.colorHex,
+                      boxShadow: isActive
+                        ? `0 0 0 3px #fff, 0 0 0 6px ${c.colorHex}50, 0 16px 32px -8px ${c.colorHex}40`
+                        : `inset 0 -6px 16px -4px rgba(0,0,0,0.12), 0 6px 16px -6px ${c.colorHex}25`,
+                      transform: isActive ? "scale(1.12)" : "scale(1)",
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`/images/characters/${c.id}-head.png`}
+                      alt=""
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      draggable={false}
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center text-white/30 headline-serif text-2xl md:text-3xl lg:text-4xl font-bold select-none pointer-events-none">
+                      {c.name[0]}
+                    </span>
+                  </div>
                 </div>
                 <span
                   className="text-xs md:text-sm font-semibold transition-all duration-300"
-                  style={{
-                    color: isActive ? c.colorHex : "#94A3B8",
-                  }}
+                  style={{ color: isActive ? c.colorHex : "#94A3B8" }}
                 >
                   {c.name}
                 </span>
@@ -96,31 +107,63 @@ export default function Characters() {
           })}
         </div>
 
-        {/* Active character panel */}
+        {/* ─── Character detail panel ─── */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active.id}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-5xl mx-auto"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-[68rem] mx-auto"
           >
-            <div
-              className="paper-card paper-card-elevated overflow-hidden"
-              style={{
-                borderTop: `3px solid ${active.colorHex}`,
-              }}
-            >
+            <div className="paper-card paper-card-elevated overflow-hidden">
               <div className="grid lg:grid-cols-12">
-                {/* Left: body image */}
-                <div className="lg:col-span-4 min-w-0 relative">
+                {/* ── Left: Character stage ── */}
+                <div className="lg:col-span-5 min-w-0 relative">
                   <div
-                    className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-auto lg:h-full min-h-[280px] sm:min-h-[340px] overflow-hidden flex items-end justify-center"
+                    className="relative h-full min-h-[340px] sm:min-h-[400px] lg:min-h-[600px] overflow-hidden flex flex-col items-center justify-end"
                     style={{
-                      background: `linear-gradient(180deg, ${active.colorHex}10 0%, ${active.colorHex}06 100%)`,
+                      background: `
+                        radial-gradient(ellipse 70% 55% at 50% 45%, ${active.colorHex}20 0%, transparent 70%),
+                        linear-gradient(180deg, ${active.colorHex}08 0%, ${active.colorHex}04 100%)
+                      `,
                     }}
                   >
+                    {/* Großer, weicher Glow */}
+                    <div
+                      className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
+                      style={{
+                        width: "min(320px, 70%)",
+                        height: "min(320px, 70%)",
+                        background: `radial-gradient(circle, ${active.colorHex}28 0%, transparent 70%)`,
+                        filter: "blur(40px)",
+                      }}
+                    />
+
+                    {/* Dezentes Muster */}
+                    <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+                      <div
+                        className="absolute top-[12%] left-[18%] text-xl"
+                        style={{ color: active.colorHex }}
+                      >
+                        ✦
+                      </div>
+                      <div
+                        className="absolute top-[25%] right-[22%] text-sm"
+                        style={{ color: active.colorHex }}
+                      >
+                        ✦
+                      </div>
+                      <div
+                        className="absolute bottom-[30%] left-[28%] text-base"
+                        style={{ color: active.colorHex }}
+                      >
+                        ✦
+                      </div>
+                    </div>
+
+                    {/* Body-Bild */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={`/images/characters/${active.id}-body.png`}
@@ -128,124 +171,180 @@ export default function Characters() {
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
                       }}
-                      className="relative z-10 w-auto h-[85%] max-w-[80%] object-contain object-bottom"
+                      className="relative z-10 w-auto max-w-[75%] sm:max-w-[65%] lg:max-w-[80%] object-contain object-bottom"
+                      style={{ height: "78%", maxHeight: "480px" }}
                       draggable={false}
                     />
-                    {/* Placeholder wenn kein Bild */}
+
+                    {/* Placeholder-Initial */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <span
-                        className="headline-serif font-bold select-none opacity-[0.07]"
+                        className="headline-serif font-bold select-none opacity-[0.05]"
                         style={{
-                          fontSize: "clamp(120px, 20vw, 200px)",
+                          fontSize: "clamp(140px, 24vw, 240px)",
                           color: active.colorHex,
                         }}
                       >
                         {active.name[0]}
                       </span>
                     </div>
+
+                    {/* Name + Farbe – unten zentriert */}
+                    <div className="relative z-20 text-center pb-8 sm:pb-10 lg:pb-12 pt-4">
+                      <h3
+                        className="headline-serif text-4xl sm:text-5xl md:text-[3.5rem] font-bold leading-none"
+                        style={{ color: active.colorHex }}
+                      >
+                        {active.name}
+                      </h3>
+                      <p className="text-[11px] font-mono uppercase tracking-[0.2em] mt-2 text-slate-400">
+                        {active.colorLabel}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Right: character details */}
-                <div className="lg:col-span-8 min-w-0 p-6 sm:p-8 md:p-10 lg:p-12">
-                  {/* Name + Color Label */}
-                  <div className="flex flex-wrap items-baseline gap-3 mb-1">
-                    <h3
-                      className="headline-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-none"
-                      style={{ color: active.colorHex }}
-                    >
-                      {active.name}
-                    </h3>
-                    <span className="text-[11px] font-mono uppercase text-slate-400 tracking-wider">
-                      {active.colorLabel}
-                    </span>
-                  </div>
-
-                  {/* Quote */}
-                  <p className="handwritten text-lg sm:text-xl md:text-2xl text-slate-600 italic mt-3 mb-6 md:mb-8">
-                    „{active.quote}"
-                  </p>
-
-                  {/* Archetyp */}
-                  <div className="mb-5 md:mb-6">
-                    <p className="text-[10px] uppercase tracking-[0.25em] font-semibold text-slate-400 mb-1.5">
-                      Archetyp
-                    </p>
-                    <p className="headline-serif text-base md:text-lg font-semibold text-slate-800 mb-2 leading-tight">
-                      {active.archetype}
-                    </p>
-                    <p className="text-sm md:text-[0.9rem] text-slate-600 leading-relaxed text-pretty">
-                      {active.archetypeText}
-                    </p>
-                  </div>
-
-                  {/* Funktion */}
-                  <div className="mb-5 md:mb-6">
-                    <p className="text-[10px] uppercase tracking-[0.25em] font-semibold text-slate-400 mb-1.5">
-                      Für dein Kind
-                    </p>
-                    <p className="text-sm md:text-[0.9rem] text-slate-600 leading-relaxed text-pretty">
-                      {active.funktion}
-                    </p>
-                  </div>
-
-                  {/* Signatur-Elemente */}
-                  <div className="mb-5 md:mb-6">
-                    <p className="text-[10px] uppercase tracking-[0.25em] font-semibold text-slate-400 mb-2">
-                      Signatur-Elemente
-                    </p>
-                    <ul className="space-y-1.5">
-                      {active.signaturElemente.map((e) => (
-                        <li
-                          key={e}
-                          className="flex items-start gap-2.5 text-sm text-slate-600"
-                        >
-                          <span
-                            className="flex-shrink-0 mt-0.5"
-                            style={{ color: active.colorHex }}
-                          >
-                            ✦
-                          </span>
-                          <span>{e}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Persönlichkeit — Chips */}
-                  <div className="mb-5 md:mb-6">
-                    <p className="text-[10px] uppercase tracking-[0.25em] font-semibold text-slate-400 mb-2.5">
-                      Persönlichkeit
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {active.traits.map((t) => (
+                {/* ── Right: Character details ── */}
+                <div className="lg:col-span-7 min-w-0 flex flex-col">
+                  <div className="p-7 sm:p-9 md:p-10 lg:px-14 lg:py-12 flex flex-col flex-1">
+                    {/* Zitat — emotional hook */}
+                    <div className="mb-8 md:mb-10">
+                      <div className="flex items-start gap-3 md:gap-4">
                         <span
-                          key={t}
-                          className="text-xs font-semibold px-3 py-1.5 rounded-full"
-                          style={{
-                            backgroundColor: `${active.colorHex}12`,
-                            color: active.colorHex,
-                          }}
+                          className="flex-shrink-0 headline-serif text-4xl md:text-5xl leading-[0.8] select-none mt-1"
+                          style={{ color: `${active.colorHex}40` }}
                         >
-                          {t}
+                          &bdquo;
                         </span>
-                      ))}
+                        <p
+                          className="handwritten text-xl sm:text-2xl md:text-[1.65rem] leading-[1.4]"
+                          style={{ color: active.colorHex }}
+                        >
+                          {active.quote}
+                        </p>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Schwäche */}
-                  <div
-                    className="p-4 md:p-5 rounded-2xl"
-                    style={{
-                      backgroundColor: `${active.colorHex}08`,
-                    }}
-                  >
-                    <p className="text-[10px] uppercase tracking-[0.25em] font-semibold text-slate-400 mb-1.5">
-                      Macht menschlich
-                    </p>
-                    <p className="text-sm text-slate-600 leading-relaxed text-pretty">
-                      {active.schwaeche}
-                    </p>
+                    {/* Trennlinie im Charakter-Farbton */}
+                    <div
+                      className="h-px w-full mb-8 md:mb-10"
+                      style={{
+                        background: `linear-gradient(90deg, ${active.colorHex}30, ${active.colorHex}08 80%, transparent)`,
+                      }}
+                    />
+
+                    {/* Archetyp */}
+                    <div className="mb-7 md:mb-8">
+                      <span
+                        className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-semibold px-3 py-1 rounded-full mb-3"
+                        style={{
+                          backgroundColor: `${active.colorHex}10`,
+                          color: active.colorHex,
+                        }}
+                      >
+                        <span
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{ backgroundColor: active.colorHex }}
+                        />
+                        Archetyp
+                      </span>
+                      <p className="headline-serif text-lg md:text-xl font-semibold text-slate-800 mb-2.5 leading-tight">
+                        {active.archetype}
+                      </p>
+                      <p className="text-[0.9rem] md:text-base text-slate-600 leading-[1.7] text-pretty">
+                        {active.archetypeText}
+                      </p>
+                    </div>
+
+                    {/* Für dein Kind */}
+                    <div className="mb-7 md:mb-8">
+                      <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-semibold px-3 py-1 rounded-full mb-3 bg-amber-50 text-amber-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                        Für dein Kind
+                      </span>
+                      <p className="text-[0.9rem] md:text-base text-slate-600 leading-[1.7] text-pretty">
+                        {active.funktion}
+                      </p>
+                    </div>
+
+                    {/* Grid: Signatur + Persönlichkeit */}
+                    <div className="grid sm:grid-cols-2 gap-6 md:gap-8 mb-7 md:mb-8">
+                      {/* Erkennungszeichen */}
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-400 mb-3">
+                          Erkennungszeichen
+                        </p>
+                        <ul className="space-y-2.5">
+                          {active.signaturElemente.map((e) => (
+                            <li
+                              key={e}
+                              className="flex items-start gap-2.5 text-[0.85rem] text-slate-600 leading-snug"
+                            >
+                              <span
+                                className="flex-shrink-0 w-[7px] h-[7px] rounded-full mt-[5px]"
+                                style={{
+                                  backgroundColor: active.colorHex,
+                                  boxShadow: `0 0 6px ${active.colorHex}40`,
+                                }}
+                              />
+                              <span>{e}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Persönlichkeit */}
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-400 mb-3">
+                          Persönlichkeit
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {active.traits.map((t) => (
+                            <span
+                              key={t}
+                              className="text-xs font-semibold px-3.5 py-[6px] rounded-full transition-colors"
+                              style={{
+                                backgroundColor: `${active.colorHex}10`,
+                                color: active.colorHex,
+                                boxShadow: `0 2px 8px -3px ${active.colorHex}25`,
+                              }}
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Schwäche – warmer Abschluss */}
+                    <div className="mt-auto pt-2">
+                      <div
+                        className="relative p-5 md:p-6 overflow-hidden"
+                        style={{ borderRadius: "20px" }}
+                      >
+                        {/* Hintergrund mit subtiler Charakter-Farbe */}
+                        <div
+                          className="absolute inset-0 pointer-events-none"
+                          style={{
+                            background: `linear-gradient(135deg, ${active.colorHex}06 0%, ${active.colorHex}03 100%)`,
+                            borderRadius: "20px",
+                            boxShadow: `inset 0 0 0 1px ${active.colorHex}10`,
+                          }}
+                        />
+                        <div className="relative">
+                          <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-2 flex items-center gap-2 text-slate-400">
+                            <span
+                              className="w-4 h-px"
+                              style={{ backgroundColor: `${active.colorHex}30` }}
+                            />
+                            Macht menschlich
+                          </p>
+                          <p className="text-[0.85rem] text-slate-500 leading-relaxed text-pretty italic">
+                            {active.schwaeche}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
