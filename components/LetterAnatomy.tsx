@@ -83,7 +83,7 @@ export default function LetterAnatomy() {
                   className="text-lg"
                   style={{ color: item.color }}
                 >
-                  \u2726
+                  ✦
                 </span>
               </div>
               <h3 className="headline-serif text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3 leading-tight">

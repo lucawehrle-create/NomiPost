@@ -46,10 +46,10 @@ export default function HowItWorks() {
     >
       {/* Floating decorations */}
       <div className="absolute top-16 left-[10%] text-amber-400/20 text-sm animate-twinkle pointer-events-none">
-        \u2726
+        ✦
       </div>
       <div className="absolute bottom-20 right-[15%] text-blue-400/15 text-lg animate-twinkle pointer-events-none" style={{ animationDelay: "1.5s" }}>
-        \u2726
+        ✦
       </div>
 
       <div className="container-wide relative z-10">
