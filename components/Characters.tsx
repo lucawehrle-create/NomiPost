@@ -83,7 +83,7 @@ export default function Characters() {
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={`/images/characters/${c.id}-head.png`}
+                      src={`/images/${c.id}-head.png`}
                       alt=""
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
@@ -166,7 +166,7 @@ export default function Characters() {
                     {/* Body-Bild */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={`/images/characters/${active.id}-body.png`}
+                      src={`/images/${active.id}-body.png`}
                       alt={active.name}
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
