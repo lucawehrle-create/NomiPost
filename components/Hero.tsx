@@ -4,6 +4,7 @@ import { m as motion } from "framer-motion";
 import Image from "next/image";
 import WatercolorBlob from "./WatercolorBlob";
 import WaitlistForm from "./WaitlistForm";
+import { Cloud, RollingHills, Flower, Butterfly } from "./MagicElements";
 
 export default function Hero() {
   return (
@@ -22,22 +23,38 @@ export default function Hero() {
         variant={2}
       />
 
-      <div className="absolute top-28 right-[8%] text-amber-400/40 text-lg md:text-xl lg:text-2xl animate-float-slow pointer-events-none">
+      {/* Fluffy clouds floating */}
+      <Cloud
+        className="absolute top-20 right-[12%] w-[90px] md:w-[120px] lg:w-[140px] opacity-80 animate-float-slow pointer-events-none"
+        style={{ animationDelay: "0s" }}
+      />
+      <Cloud
+        className="absolute top-32 left-[8%] w-[70px] md:w-[100px] opacity-70 animate-float pointer-events-none hidden sm:block"
+        style={{ animationDelay: "2s" }}
+      />
+      <Cloud
+        className="absolute top-[38%] right-[3%] w-[60px] md:w-[80px] opacity-60 animate-float-slow pointer-events-none hidden md:block"
+        style={{ animationDelay: "4s" }}
+      />
+
+      {/* Butterfly */}
+      <Butterfly
+        color="#7C3AED"
+        className="absolute top-[25%] left-[52%] w-6 md:w-8 opacity-80 animate-float pointer-events-none hidden md:block"
+        style={{ animationDelay: "1.5s" }}
+      />
+
+      {/* Stars */}
+      <div className="absolute top-28 right-[8%] text-amber-400/40 text-lg md:text-xl lg:text-2xl animate-twinkle pointer-events-none">
         ✦
       </div>
-      <div className="absolute top-40 left-[6%] text-amber-400/30 text-base md:text-lg lg:text-xl hidden sm:block animate-float pointer-events-none">
+      <div className="absolute top-[45%] right-[3%] text-blue-400/30 text-sm md:text-base animate-twinkle pointer-events-none" style={{ animationDelay: "1s" }}>
         ✦
       </div>
-      <div className="absolute top-[45%] right-[3%] text-blue-400/30 text-sm md:text-base animate-twinkle pointer-events-none">
+      <div className="absolute top-[18%] left-[15%] text-emerald-400/30 text-xs md:text-sm hidden md:block animate-twinkle pointer-events-none" style={{ animationDelay: "2s" }}>
         ✦
       </div>
-      <div className="absolute top-[18%] left-[15%] text-emerald-400/25 text-xs md:text-sm hidden md:block animate-float-slow pointer-events-none" style={{ animationDelay: "2s" }}>
-        ✦
-      </div>
-      <div className="absolute top-[65%] left-[4%] text-coral-400/25 text-sm hidden lg:block animate-twinkle pointer-events-none" style={{ animationDelay: "1.5s" }}>
-        ✦
-      </div>
-      <div className="absolute top-[55%] right-[12%] text-amber-300/20 text-xs animate-float pointer-events-none" style={{ animationDelay: "3s" }}>
+      <div className="absolute top-[65%] left-[4%] text-coral-400/30 text-sm hidden lg:block animate-twinkle pointer-events-none" style={{ animationDelay: "1.5s" }}>
         ✦
       </div>
 
@@ -128,6 +145,21 @@ export default function Hero() {
                   transform: "scale(1.3)",
                 }}
               />
+
+              {/* Flowers around Nomi */}
+              <Flower
+                color="#FBBF24"
+                className="absolute -bottom-2 -left-4 md:-left-8 w-6 md:w-8 opacity-90 z-0 pointer-events-none"
+              />
+              <Flower
+                color="#DC2626"
+                className="absolute bottom-2 -right-2 md:-right-6 w-5 md:w-7 opacity-85 z-0 pointer-events-none"
+              />
+              <Flower
+                color="#7C3AED"
+                className="absolute -bottom-4 left-[38%] w-4 md:w-6 opacity-80 z-0 pointer-events-none"
+              />
+
               <Image
                 src="/images/nomi-body.png"
                 alt="Nomi — das Fantasiewesen hinter NomiPost"
@@ -142,6 +174,9 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Rolling hills at bottom */}
+      <RollingHills className="absolute bottom-0 left-0 right-0 w-full h-[80px] md:h-[120px] lg:h-[140px] pointer-events-none" />
     </section>
   );
 }

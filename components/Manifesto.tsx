@@ -29,6 +29,24 @@ export default function Manifesto() {
         </svg>
       </div>
 
+      {/* Moon */}
+      <div className="absolute top-16 md:top-20 right-[8%] md:right-[12%] w-16 md:w-24 lg:w-28 aspect-square pointer-events-none animate-float-slow">
+        <div
+          className="w-full h-full rounded-full"
+          style={{
+            background: "radial-gradient(circle at 35% 35%, #FEF3C7, #FBBF24)",
+            boxShadow: "0 0 60px rgba(251, 191, 36, 0.4), 0 0 100px rgba(251, 191, 36, 0.25)",
+          }}
+        />
+      </div>
+
+      {/* Bright twinkling stars */}
+      <div className="absolute top-24 left-[10%] text-amber-300 text-xl md:text-2xl animate-twinkle pointer-events-none">✦</div>
+      <div className="absolute top-40 left-[25%] text-amber-200 text-base md:text-lg animate-twinkle pointer-events-none" style={{ animationDelay: "1s" }}>✦</div>
+      <div className="absolute top-32 right-[35%] text-amber-300 text-sm md:text-base animate-twinkle pointer-events-none" style={{ animationDelay: "2s" }}>✦</div>
+      <div className="absolute bottom-32 left-[18%] text-amber-300 text-lg md:text-xl animate-twinkle pointer-events-none" style={{ animationDelay: "1.5s" }}>✦</div>
+      <div className="absolute bottom-40 right-[15%] text-amber-200 text-sm md:text-base animate-twinkle pointer-events-none" style={{ animationDelay: "0.5s" }}>✦</div>
+
       {/* Goldener Lichtschein oben */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-400/20 blur-[120px] rounded-full pointer-events-none" />
       <WatercolorBlob
