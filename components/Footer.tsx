@@ -37,7 +37,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-slate-700">
               <li>
                 <a
-                  href="#was"
+                  href="/#was"
                   className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
                 >
                   <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
@@ -46,7 +46,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#freunde"
+                  href="/#freunde"
                   className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
                 >
                   <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
@@ -55,7 +55,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#faq"
+                  href="/#faq"
                   className="hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
                 >
                   <span className="w-0 h-px bg-blue-500 group-hover:w-4 transition-all duration-300" />
@@ -73,7 +73,7 @@ export default function Footer() {
               Vorname und E-Mail — mehr braucht es nicht. Wir melden uns,
               sobald der erste Brief fertig ist.
             </p>
-            <a href="#top" className="btn-primary py-3 px-6 text-sm">
+            <a href="/#top" className="btn-primary py-3 px-6 text-sm">
               Zur Warteliste
               <span className="text-amber-300 text-xs">✦</span>
             </a>
