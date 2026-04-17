@@ -4,7 +4,7 @@ import { m as motion } from "framer-motion";
 import Image from "next/image";
 import WatercolorBlob from "./WatercolorBlob";
 import WaitlistForm from "./WaitlistForm";
-import { Cloud, RollingHills, Flower, Butterfly } from "./MagicElements";
+import { Cloud, RollingHills } from "./MagicElements";
 
 export default function Hero() {
   return (
@@ -35,13 +35,6 @@ export default function Hero() {
       <Cloud
         className="absolute top-[38%] right-[3%] w-[60px] md:w-[80px] opacity-60 animate-float-slow pointer-events-none hidden md:block"
         style={{ animationDelay: "4s" }}
-      />
-
-      {/* Butterfly */}
-      <Butterfly
-        color="#7C3AED"
-        className="absolute top-[25%] left-[52%] w-6 md:w-8 opacity-80 animate-float pointer-events-none hidden md:block"
-        style={{ animationDelay: "1.5s" }}
       />
 
       {/* Stars */}
@@ -144,20 +137,6 @@ export default function Hero() {
                   filter: "blur(40px)",
                   transform: "scale(1.3)",
                 }}
-              />
-
-              {/* Flowers around Nomi */}
-              <Flower
-                color="#FBBF24"
-                className="absolute -bottom-2 -left-4 md:-left-8 w-6 md:w-8 opacity-90 z-0 pointer-events-none"
-              />
-              <Flower
-                color="#DC2626"
-                className="absolute bottom-2 -right-2 md:-right-6 w-5 md:w-7 opacity-85 z-0 pointer-events-none"
-              />
-              <Flower
-                color="#7C3AED"
-                className="absolute -bottom-4 left-[38%] w-4 md:w-6 opacity-80 z-0 pointer-events-none"
               />
 
               <Image

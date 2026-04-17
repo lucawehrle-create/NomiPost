@@ -1,10 +1,9 @@
 "use client";
 
 import { m as motion } from "framer-motion";
-import Image from "next/image";
 import HandDivider from "./HandDivider";
 import WatercolorBlob from "./WatercolorBlob";
-import { Cloud, Flower } from "./MagicElements";
+import { Cloud } from "./MagicElements";
 
 const items = [
   {
@@ -49,38 +48,6 @@ export default function LetterAnatomy() {
 
       {/* Cloud accent */}
       <Cloud className="absolute top-8 right-[8%] w-[80px] md:w-[110px] opacity-70 animate-float-slow pointer-events-none" />
-
-      {/* Lumi peeking from the left edge */}
-      <div className="absolute top-[40%] -left-8 md:-left-4 lg:left-0 w-20 md:w-28 lg:w-32 pointer-events-none z-0 hidden sm:block animate-float-slow" style={{ animationDelay: "1s" }}>
-        <Image
-          src="/images/lumi-body.png"
-          alt=""
-          width={300}
-          height={300}
-          className="w-full h-auto drop-shadow-[0_12px_24px_rgba(5,150,105,0.2)]"
-        />
-      </div>
-
-      {/* Tiko peeking from right */}
-      <div className="absolute bottom-10 -right-8 md:right-4 lg:right-8 w-16 md:w-24 lg:w-28 pointer-events-none z-0 hidden md:block animate-float" style={{ animationDelay: "2.5s" }}>
-        <Image
-          src="/images/tiko-body.png"
-          alt=""
-          width={300}
-          height={300}
-          className="w-full h-auto drop-shadow-[0_12px_24px_rgba(217,119,6,0.2)]"
-        />
-      </div>
-
-      {/* Scattered flowers */}
-      <Flower
-        color="#DC2626"
-        className="absolute top-[30%] left-[40%] w-4 md:w-5 opacity-40 pointer-events-none hidden lg:block"
-      />
-      <Flower
-        color="#7C3AED"
-        className="absolute bottom-[25%] left-[15%] w-5 md:w-6 opacity-50 pointer-events-none"
-      />
 
       <div className="container-wide relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20">

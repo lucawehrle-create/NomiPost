@@ -1,8 +1,7 @@
 "use client";
 
 import { m as motion } from "framer-motion";
-import Image from "next/image";
-import { Cloud, Flower } from "./MagicElements";
+import { Cloud } from "./MagicElements";
 
 const stats = [
   {
@@ -41,20 +40,6 @@ export default function TheJourney() {
       <Cloud className="absolute top-4 left-[5%] w-[70px] md:w-[100px] opacity-70 animate-float-slow pointer-events-none" />
       <Cloud className="absolute top-8 right-[6%] w-[90px] md:w-[120px] opacity-75 animate-float pointer-events-none" style={{ animationDelay: "3s" }} />
 
-      {/* Kira peeking from right edge */}
-      <div className="absolute bottom-0 -right-6 md:right-2 lg:right-6 w-16 md:w-24 lg:w-28 pointer-events-none z-0 hidden md:block animate-float" style={{ animationDelay: "1.5s" }}>
-        <Image
-          src="/images/kira-body.png"
-          alt=""
-          width={300}
-          height={300}
-          className="w-full h-auto drop-shadow-[0_12px_24px_rgba(220,38,38,0.2)]"
-        />
-      </div>
-
-      {/* Flowers */}
-      <Flower color="#FBBF24" className="absolute bottom-8 left-[15%] w-5 md:w-6 opacity-60 pointer-events-none" />
-      <Flower color="#059669" className="absolute top-1/2 left-[3%] w-4 md:w-5 opacity-50 pointer-events-none hidden md:block" />
 
       <div className="container-wide relative z-10">
         <div className="text-center mb-10 md:mb-14">
