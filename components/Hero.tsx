@@ -140,14 +140,14 @@ export default function Hero() {
               />
 
               <Image
-                src="/images/nomi-body.png"
-                alt="Nomi — das Fantasiewesen hinter NomiPost"
+                src="/images/header.png"
+                alt="Nomi schreibt einen Brief an dein Kind"
                 width={800}
                 height={800}
-                quality={80}
+                quality={85}
                 priority
-                sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, 400px"
-                className="relative z-10 w-[220px] sm:w-[260px] md:w-[280px] lg:w-[360px] xl:w-[400px] h-auto mx-auto drop-shadow-[0_24px_48px_rgba(59,130,246,0.18)]"
+                sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 440px"
+                className="relative z-10 w-[260px] sm:w-[300px] md:w-[320px] lg:w-[400px] xl:w-[440px] h-auto mx-auto drop-shadow-[0_24px_48px_rgba(59,130,246,0.15)]"
               />
             </div>
           </div>
