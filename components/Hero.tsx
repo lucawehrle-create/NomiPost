@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28"
+      className="relative overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-10 md:pt-28 md:pb-12 lg:pt-28 lg:pb-16"
     >
       <WatercolorBlob
         className="absolute -top-20 left-0 w-[400px] sm:w-[500px] md:w-[700px] opacity-50 pointer-events-none"
@@ -52,15 +52,15 @@ export default function Hero() {
       </div>
 
       <div className="container-wide relative z-10">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
           <div className="lg:col-span-7 min-w-0">
-            <div className="eyebrow mb-5 md:mb-6">
+            <div className="eyebrow mb-3 md:mb-4">
               <span className="w-8 md:w-10 h-px bg-amber-400" />
               Persönliche Post für Kinder von 5 bis 10
               <span className="w-8 md:w-10 h-px bg-amber-400" />
             </div>
 
-            <h1 className="headline-serif font-semibold text-slate-800 text-balance text-[clamp(2rem,7.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
+            <h1 className="headline-serif font-semibold text-slate-800 text-balance text-[clamp(1.75rem,6vw,3.75rem)] leading-[1.08] tracking-[-0.025em]">
               Ein Brief, der Kinderaugen{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-blue-600">
@@ -86,18 +86,18 @@ export default function Hero() {
               bringt.
             </h1>
 
-            <p className="mt-6 md:mt-10 text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed max-w-full md:max-w-[36rem] text-pretty">
+            <p className="mt-4 md:mt-5 text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-full md:max-w-[34rem] text-pretty">
               <span className="text-blue-600 font-semibold">Nomi</span> ist
               ein Fantasiewesen auf Entdeckungsreise — und schreibt deinem Kind
               jeden Monat einen persönlichen Brief. Mit illustrierten Geschichten,
               Rätseln, Sammelkarten und Dingen zum Mitmachen. Ohne Bildschirm.
             </p>
 
-            <div className="mt-8 md:mt-10 w-full max-w-full md:max-w-[38rem]">
+            <div className="mt-5 md:mt-6 w-full max-w-full md:max-w-[38rem]">
               <WaitlistForm variant="hero" />
             </div>
 
-            <div className="mt-8 md:mt-10 flex items-center gap-4 md:gap-5 text-sm text-slate-500">
+            <div className="mt-5 md:mt-6 flex items-center gap-4 md:gap-5 text-sm text-slate-500">
               <div className="flex -space-x-2.5 flex-shrink-0">
                 {[
                   { bg: "#FBBF24", letters: "LM" },
@@ -126,7 +126,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 min-w-0 relative flex justify-center lg:-mt-12 xl:-mt-16">
+          <div className="lg:col-span-5 min-w-0 relative flex justify-center items-start lg:-mt-6">
             <div className="relative">
               {/* Weicher Glow hinter Nomi */}
               <div
@@ -146,8 +146,8 @@ export default function Hero() {
                 height={800}
                 quality={85}
                 priority
-                sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 440px"
-                className="relative z-10 w-[260px] sm:w-[300px] md:w-[320px] lg:w-[400px] xl:w-[440px] h-auto mx-auto drop-shadow-[0_24px_48px_rgba(59,130,246,0.15)]"
+                sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 360px"
+                className="relative z-10 w-[240px] sm:w-[260px] md:w-[280px] lg:w-[330px] xl:w-[360px] h-auto mx-auto drop-shadow-[0_24px_48px_rgba(59,130,246,0.15)]"
               />
             </div>
           </div>
