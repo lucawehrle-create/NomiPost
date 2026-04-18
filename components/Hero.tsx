@@ -126,7 +126,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 min-w-0 relative flex justify-center">
+          <div className="lg:col-span-5 min-w-0 relative flex justify-center lg:-mt-12 xl:-mt-16">
             <div className="relative">
               {/* Weicher Glow hinter Nomi */}
               <div
