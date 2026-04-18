@@ -4,20 +4,22 @@ import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/react";
 
 /**
- * Schriftarten nach NOMI Brand Strategy v1.0:
- * - Inter: Body-Text (hohe Lesbarkeit für Eltern-Kommunikation)
- * - Nunito: Headlines und markante Texte (rund, warm, kindfreundlich)
+ * Schriftarten nach NOMI Brand Strategy:
+ * - Nunito: Body-Text (rund, warm, kindfreundlich, hohe Lesbarkeit)
+ * - Fredoka: Headlines und markante Texte (verspielt, einzigartig, Kinderbuch-Feel)
  * - Caveat: Nomi-O-Ton (sparsam, nur für spezielle Zitate)
  *
- * Keine Serifenschriften mehr (Brand Guide: "Keine Serifenschriften").
  * Alles selbst gehostet für DSGVO-Konformität.
  */
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/nunito/700.css";
 import "@fontsource/nunito/800.css";
+import "@fontsource/fredoka/400.css";
+import "@fontsource/fredoka/500.css";
+import "@fontsource/fredoka/600.css";
+import "@fontsource/fredoka/700.css";
 import "@fontsource/caveat/400.css";
 
 export const metadata: Metadata = {
@@ -25,8 +27,8 @@ export const metadata: Metadata = {
   description:
     "Jeden Monat ein persönlicher Brief von Nomi, der Kinderaugen zum Leuchten bringt. Geschichte, Rätsel und kleine Überraschungen – Post, an die sich dein Kind noch Jahre später erinnert.",
   icons: {
-    icon: "/images/nomi-portrait.png",
-    apple: "/images/nomi-portrait.png",
+    icon: "/images/nomi-head.png",
+    apple: "/images/nomi-head.png",
   },
   openGraph: {
     title: "NomiPost – Post, die Kinderaugen zum Leuchten bringt",
@@ -55,7 +57,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F8FAFC",
+  themeColor: "#FFFBF5",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -68,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className="bg-slate-50 text-slate-800 antialiased">
+      <body className="text-slate-800 antialiased" style={{ backgroundColor: "var(--color-bg)" }}>
         <Providers>{children}</Providers>
         <Analytics />
       </body>

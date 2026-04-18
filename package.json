@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/caveat": "^5.2.8",
+    "@fontsource/fredoka": "^5.2.10",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/nunito": "^5.2.7",
     "@supabase/supabase-js": "^2.45.4",
