@@ -146,8 +146,8 @@ export default function Hero() {
                 height={800}
                 quality={85}
                 priority
-                sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 440px"
-                className="relative z-10 w-[260px] sm:w-[300px] md:w-[320px] lg:w-[400px] xl:w-[440px] h-auto mx-auto drop-shadow-[0_24px_48px_rgba(59,130,246,0.15)]"
+                sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 520px"
+                className="relative z-10 w-[300px] sm:w-[340px] md:w-[360px] lg:w-[460px] xl:w-[520px] h-auto mx-auto drop-shadow-[0_24px_48px_rgba(59,130,246,0.15)]"
               />
             </div>
           </div>
