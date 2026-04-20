@@ -49,9 +49,10 @@ export default function FinalCta() {
 
           <HandDivider className="mt-8 mb-8" />
 
-          <p className="text-base md:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto text-pretty mb-8 md:mb-10">
-            Vorname und E-Mail — mehr braucht es nicht. Wir melden uns,
-            sobald der erste Brief auf die Reise geht.
+          <p className="text-base md:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto text-pretty mb-4 md:mb-5">
+            NomiPost gibt es noch nicht — aber der erste Brief entsteht gerade.
+            Wer jetzt auf der Warteliste steht, bekommt ihn als Erstes — plus ein
+            kleines Willkommensgeschenk.
           </p>
 
           <div className="max-w-md mx-auto">

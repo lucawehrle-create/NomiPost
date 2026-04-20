@@ -94,6 +94,15 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 md:mt-10 w-full max-w-full md:max-w-[38rem]">
+              <div className="mb-4 md:mb-5 p-4 md:p-5 rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.06) 0%, rgba(251,191,36,0.06) 100%)" }}>
+                <p className="headline-serif text-sm md:text-base font-semibold text-slate-800 mb-1">
+                  ✦ Nomi schreibt gerade am ersten Brief.
+                </p>
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                  Trag dich auf die Warteliste ein, damit du es nicht verpasst.
+                  Alle auf der Liste bekommen den ersten Brief <span className="font-semibold text-blue-600">vor allen anderen</span> — und ein kleines Willkommensgeschenk zum Start.
+                </p>
+              </div>
               <WaitlistForm variant="hero" />
             </div>
 
