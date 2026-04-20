@@ -15,11 +15,11 @@ type Props = {
 };
 
 const priceOptions = [
-  { value: "u15", label: "unter 15 €" },
-  { value: "15-20", label: "15 – 20 €" },
-  { value: "20-25", label: "20 – 25 €" },
-  { value: "25-30", label: "25 – 30 €" },
-  { value: "30+", label: "über 30 €" },
+  { value: "u8", label: "unter 8 €" },
+  { value: "8-10", label: "8 – 10 €" },
+  { value: "10-13", label: "10 – 13 €" },
+  { value: "13-15", label: "13 – 15 €" },
+  { value: "15+", label: "über 15 €" },
   { value: "unsicher", label: "Bin mir unsicher" },
 ];
 
